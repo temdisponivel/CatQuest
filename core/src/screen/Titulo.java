@@ -1,62 +1,37 @@
 package screen;
 
 import catquest.CatQuest;
+import classe.Tela;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Titulo implements Screen
+public class Titulo implements Tela
 {
-	CatQuest _jogo;
-	
-	public Titulo(CatQuest jogo)
-	{
-		_jogo = jogo;
-	}
-	
+
 	@Override
-	public void show()
+	public void Iniciar(CatQuest jogo)
 	{
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void render(float delta)
+	public void Atualiza(float deltaTime)
 	{
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void resize(int width, int height)
+	public void Desenha(SpriteBatch spriteBash)
 	{
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void pause()
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void resume()
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void hide()
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void dispose()
+	public void Encerrar()
 	{
 		// TODO Auto-generated method stub
 		

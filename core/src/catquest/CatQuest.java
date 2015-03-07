@@ -1,34 +1,69 @@
 package catquest;
 
-import screen.Titulo;
+import classe.Tela;
 
-import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.TimeUtils;
 
 /**
  * Classe que contém todas as informações padrões do jogo. Quase todos os métodos e propriedades são estáticos.
  * @author Matheus
  *
  */
-public class CatQuest extends Game
+public class CatQuest implements ApplicationListener
 {
-	static private SpriteBatch _spriteBatch;
-	static private long _deltaTime;
+	static int _idObjeto = 0;
+	static Tela _telaAtual = null;
+	static SpriteBatch _bash = null;
+	Camera _camera = null;
 	
 	@Override
 	public void create()
 	{
-		_spriteBatch = new SpriteBatch();
-		screen = new Titulo(this);
-		_deltaTime = 0;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resize(int width, int height)
+	{
 	}
 
 	@Override
 	public void render()
 	{
-		screen.render(_deltaTime);
+		
+	}
+
+	@Override
+	public void pause()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resume()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dispose()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static Integer GetNovoId()
+	{
+		return new Integer(_idObjeto);
+	}
+	
+	public static SpriteBatch GetSpriteBash()
+	{
+		return _bash;
 	}
 }

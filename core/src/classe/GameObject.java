@@ -1,5 +1,6 @@
 package classe;
 
+import util.Camada;
 import catquest.CatQuest;
 
 import com.badlogic.gdx.graphics.Texture;
@@ -21,7 +22,7 @@ public abstract class GameObject
 	static private int _tipo = 0;
 	private Rectangle _posicaoTela = null;
 	private Animation _animacao = null;
-	private Integer _camada = 0;
+	private Camada _camada = null;
 	private Integer _id = null;
 	
 	public GameObject()
@@ -37,7 +38,7 @@ public abstract class GameObject
 		return _id;
 	}
 	
-	public Integer GetCamada()
+	public Camada GetCamada()
 	{
 		return _camada;
 	}

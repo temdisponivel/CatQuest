@@ -15,15 +15,16 @@ public class CatQuest implements ApplicationListener
 {
 	static int _idObjeto = 0;
 	static Tela _telaAtual = null;
-	static SpriteBatch _bash = null;
+	static SpriteBatch _batch = null;
 	Camera _camera = null;
 	
 	@Override
 	public void create()
 	{
 		// TODO Auto-generated method stub
-		
+		_batsh.
 	}
+	
 
 	@Override
 	public void resize(int width, int height)
@@ -62,8 +63,8 @@ public class CatQuest implements ApplicationListener
 		return new Integer(_idObjeto);
 	}
 	
-	public static SpriteBatch GetSpriteBash()
+	public static SpriteBatch GetSpriteBatch()
 	{
-		return _bash;
+		return _batch;
 	}
 }

@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import catquest.CatQuest;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.sun.swing.internal.plaf.basic.resources.basic;
 
 public abstract class Tela
 {
@@ -37,7 +38,7 @@ public abstract class Tela
 		});
 	}
 	
-	public void Desenha(final SpriteBatch spriteBash)
+	public void Desenha(final SpriteBatch spriteBatch)
 	{
 		//para cada lista das camadas
 		_listasGameObject.values().forEach(new Consumer<ListaGameObeject>()
@@ -51,7 +52,8 @@ public abstract class Tela
 					@Override
 					public void accept(GameObject gameObject)
 					{
-						gameObject.Desenha(spriteBash);
+						spriteBatch.setColor(gameObject.GetCamada().GetCor());
+						gameObject.Desenha(spriteBatch);
 					}
 				});
 			}
@@ -60,8 +62,8 @@ public abstract class Tela
 	
 	public void InserirGameObject(GameObject gameObject)
 	{
-		if (gameObject.GetCamada() > _listasGameObject.size())
-			_listasGameObject.put(gameObject.GetCamada(), new ListaGameObeject());
+		if (gameObject.GetCamada().hashCode() > _listasGameObject.size())
+			_listasGameObject.put(gameObject.GetCamada().GetIdCamada(), new ListaGameObeject());
 		
 		_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
 	}

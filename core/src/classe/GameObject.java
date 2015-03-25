@@ -1,6 +1,7 @@
 package classe;
 
 import util.Camada;
+import util.PonteiroDe;
 import catquest.CatQuest;
 
 import com.badlogic.gdx.graphics.Texture;
@@ -22,12 +23,13 @@ public abstract class GameObject
 	static private int _tipo = 0;
 	private Rectangle _posicaoTela = null;
 	private Animation _animacao = null;
-	private Camada _camada = null;
+	private PonteiroDe<Camada> _camada = null;
 	private Integer _id = null;
 	
 	public GameObject()
 	{
 		_id = CatQuest.GetNovoId();
+		_camada = CatQuest.GetCamada(CatQuest.Camadas.FUNDO);
 	}
 	
 	public abstract void Atualiza(float deltaTime);
@@ -40,6 +42,6 @@ public abstract class GameObject
 	
 	public Camada GetCamada()
 	{
-		return _camada;
+		return _camada.GetRef();
 	}
 }

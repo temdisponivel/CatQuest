@@ -6,7 +6,7 @@ import classe.Tela;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class GamePlay implements Tela
+public class GamePlay extends Tela
 {
 
 	@Override

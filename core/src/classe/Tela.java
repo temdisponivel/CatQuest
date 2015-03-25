@@ -3,6 +3,7 @@ package classe;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
+import util.Camada;
 import catquest.CatQuest;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,11 +11,11 @@ import com.sun.swing.internal.plaf.basic.resources.basic;
 
 public abstract class Tela
 {
-	static private HashMap<Integer, ListaGameObeject> _listasGameObject = null;
+	static private HashMap<Camada, ListaGameObeject> _listasGameObject = null;
 	
 	public void Iniciar(CatQuest jogo)
 	{
-		_listasGameObject = new HashMap<Integer, ListaGameObeject>();
+		_listasGameObject = new HashMap<Camada, ListaGameObeject>();
 	}
 	
 	public void Atualiza(final float deltaTime)
@@ -63,7 +64,7 @@ public abstract class Tela
 	public void InserirGameObject(GameObject gameObject)
 	{
 		if (gameObject.GetCamada().hashCode() > _listasGameObject.size())
-			_listasGameObject.put(gameObject.GetCamada().GetIdCamada(), new ListaGameObeject());
+			_listasGameObject.put(gameObject.GetCamada(), new ListaGameObeject());
 		
 		_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
 	}

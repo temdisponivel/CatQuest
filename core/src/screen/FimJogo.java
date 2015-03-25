@@ -5,7 +5,7 @@ import classe.Tela;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class FimJogo implements Tela
+public class FimJogo extends Tela
 {
 
 	@Override

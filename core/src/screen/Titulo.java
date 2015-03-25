@@ -6,7 +6,7 @@ import classe.Tela;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Titulo implements Tela
+public class Titulo extends Tela
 {
 
 	@Override

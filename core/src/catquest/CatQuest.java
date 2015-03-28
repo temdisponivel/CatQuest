@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 
 /**
  * Classe que contém todas as informações padrões do jogo. Quase todos os métodos e propriedades são estáticos.
@@ -41,8 +42,8 @@ public class CatQuest implements ApplicationListener
 		_batch = new SpriteBatch();
 		_batch.setColor(Color.WHITE);
 		_camera = new OrthographicCamera();
-		_camera.setToOrtho(false, 1024/2, 768/2);
-		(_telaAtual = new Introducao()).Iniciar(this);
+		_camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		(_telaAtual = new Introducao()).Iniciar();
 		_chatuba = new Texture(Gdx.files.absolute("C:\\Users\\Matheus\\Desktop\\chatuba.jpg"));
 	}
 	

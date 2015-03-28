@@ -15,7 +15,13 @@ public class Camada
 	public Camada(int id)
 	{
 		_idCamada = new Integer(id);
-		_cor = Color.BLACK;
+		_cor = Color.WHITE;
+	}
+	
+	public Camada(int id, Color cor)
+	{
+		this(id);
+		_cor = cor;
 	}
 	
 	public Integer GetIdCamada()

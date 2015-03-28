@@ -10,10 +10,10 @@ public class Menu extends Tela
 {
 
 	@Override
-	public void Iniciar(CatQuest jogo)
+	public void Iniciar()
 	{
 		// TODO Auto-generated method stub
-		super.Iniciar(jogo);
+		super.Iniciar();
 	}
 
 	@Override

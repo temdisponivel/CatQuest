@@ -10,7 +10,7 @@ public class GamePlay extends Tela
 {
 
 	@Override
-	public void Iniciar(CatQuest jogo)
+	public void Iniciar()
 	{
 		// TODO Auto-generated method stub
 		

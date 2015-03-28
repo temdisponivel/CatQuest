@@ -32,7 +32,6 @@ public class CatQuest implements ApplicationListener
 	static SpriteBatch _batch = null;
 	static PonteiroDe[] _camadas;
 	OrthographicCamera _camera = null;
-	Texture _chatuba = null;
 	
 	@Override
 	public void create()
@@ -42,8 +41,7 @@ public class CatQuest implements ApplicationListener
 		_batch.setColor(Color.WHITE);
 		_camera = new OrthographicCamera();
 		_camera.setToOrtho(false, 1024/2, 768/2);
-		(_telaAtual = new Introducao()).Iniciar(this);
-		_chatuba = new Texture(Gdx.files.absolute("C:\\Users\\Matheus\\Desktop\\chatuba.jpg"));
+		(_telaAtual = new Introducao()).Iniciar();
 	}
 	
 
@@ -60,6 +58,7 @@ public class CatQuest implements ApplicationListener
 	    
 		_camera.update();
 		_camera.translate(10*Gdx.graphics.getDeltaTime(), 0);
+		_camera.zoom = 0.5f;
 		_batch.setProjectionMatrix(_camera.combined);
 		
 		_batch.begin();
@@ -94,6 +93,7 @@ public class CatQuest implements ApplicationListener
 	{
 		_camadas = new PonteiroDe[1];
 		_camadas[0] = new PonteiroDe<Camada>();
+		_camadas[0].SetRef(new Camada(0));
 	}
 	
 	@SuppressWarnings("unchecked")

@@ -2,15 +2,15 @@ package classe;
 
 import java.util.TreeMap;
 
-public class ListaGameObeject extends TreeMap<Integer, GameObject>
+public class ListaGameObject extends TreeMap<Integer, GameObject>
 {
 	private static final long serialVersionUID = -4729550419524770454L;
 	
-	public ListaGameObeject()
+	public ListaGameObject()
 	{
 	}
 	
-	public ListaGameObeject(GameObject gameObject)
+	public ListaGameObject(GameObject gameObject)
 	{
 		Adicionar(gameObject);
 	}

@@ -1,6 +1,8 @@
 package classe;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import util.Camada;
@@ -11,20 +13,30 @@ import com.sun.swing.internal.plaf.basic.resources.basic;
 
 public abstract class Tela
 {
-	static private HashMap<Camada, ListaGameObeject> _listasGameObject = null;
+	static private HashMap<Camada, ListaGameObject> _listasGameObject = null;
 	
-	public void Iniciar(CatQuest jogo)
+	public void Iniciar()
 	{
-		_listasGameObject = new HashMap<Camada, ListaGameObeject>();
+		_listasGameObject = new HashMap<Camada, ListaGameObject>();
 	}
 	
 	public void Atualiza(final float deltaTime)
 	{
+		
+		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
+		{
+			for (Entry<Integer, GameObject> entradaGameObject : entrada.getValue().entrySet())
+			{
+				entradaGameObject.getValue().Atualiza(deltaTime);
+			}
+		}
+		
+		/*
 		//para cada lista das camadas
-		_listasGameObject.values().forEach(new Consumer<ListaGameObeject>()
+		_listasGameObject.values().forEach(new Consumer<ListaGameObject>()
 		{
 			@Override
-			public void accept(ListaGameObeject lista)
+			public void accept(ListaGameObject lista)
 			{
 				//para cada gameobject de cada lista
 				lista.values().forEach(new Consumer<GameObject>()
@@ -37,15 +49,26 @@ public abstract class Tela
 				});
 			}
 		});
+		*/
 	}
 	
 	public void Desenha(final SpriteBatch spriteBatch)
 	{
+		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
+		{
+			for (Entry<Integer, GameObject> entradaGameObject : entrada.getValue().entrySet())
+			{
+				spriteBatch.setColor(entradaGameObject.getValue().GetCamada().GetCor());
+				entradaGameObject.getValue().Desenha(spriteBatch);
+			}
+		}
+		
+		/*
 		//para cada lista das camadas
-		_listasGameObject.values().forEach(new Consumer<ListaGameObeject>()
+		_listasGameObject.forEach(new Consumer<ListaGameObject>()
 		{
 			@Override
-			public void accept(ListaGameObeject lista)
+			public void accept(ListaGameObject lista)
 			{
 				//para cada gameobject de cada lista
 				lista.values().forEach(new Consumer<GameObject>()
@@ -59,12 +82,13 @@ public abstract class Tela
 				});
 			}
 		});
+		*/
 	}
 	
 	public void InserirGameObject(GameObject gameObject)
 	{
-		if (gameObject.GetCamada().hashCode() > _listasGameObject.size())
-			_listasGameObject.put(gameObject.GetCamada(), new ListaGameObeject());
+		if (gameObject.GetCamada().hashCode() >= _listasGameObject.size())
+			_listasGameObject.put(gameObject.GetCamada(), new ListaGameObject());
 		
 		_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
 	}

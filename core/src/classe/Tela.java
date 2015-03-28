@@ -7,7 +7,6 @@ import util.Camada;
 import catquest.CatQuest;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.sun.swing.internal.plaf.basic.resources.basic;
 
 public abstract class Tela
 {

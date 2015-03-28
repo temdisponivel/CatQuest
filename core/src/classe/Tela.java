@@ -12,7 +12,7 @@ public abstract class Tela
 {
 	static private HashMap<Camada, ListaGameObeject> _listasGameObject = null;
 	
-	public void Iniciar(CatQuest jogo)
+	public void Iniciar()
 	{
 		_listasGameObject = new HashMap<Camada, ListaGameObeject>();
 	}

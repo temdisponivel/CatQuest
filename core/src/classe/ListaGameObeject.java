@@ -22,6 +22,6 @@ public class ListaGameObeject extends TreeMap<Integer, GameObject>
 	
 	public GameObject Remover(GameObject gameObject)
 	{
-		return super.remove(gameObject.GetId());
+		return super.remove(gameObject.GetId()); 
 	}
 }

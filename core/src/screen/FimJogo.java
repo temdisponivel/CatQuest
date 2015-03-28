@@ -9,7 +9,7 @@ public class FimJogo extends Tela
 {
 
 	@Override
-	public void Iniciar()
+	public void Iniciar(CatQuest jogo)
 	{
 		// TODO Auto-generated method stub
 		

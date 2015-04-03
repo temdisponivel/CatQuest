@@ -1,11 +1,9 @@
-package classe;
+package classes;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.function.Consumer;
 
 import util.Camada;
-import catquest.CatQuest;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

@@ -1,12 +1,10 @@
-package screen;
+package telas;
 
-import catquest.CatQuest;
-import classe.Tela;
+import classes.Tela;
 
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Titulo extends Tela
+public class FimJogo extends Tela
 {
 
 	@Override

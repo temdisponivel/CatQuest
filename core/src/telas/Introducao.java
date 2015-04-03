@@ -1,7 +1,7 @@
-package screen;
+package telas;
 
-import classe.GameObject;
-import classe.Tela;
+import classes.GameObject;
+import classes.Tela;
 
 public class Introducao extends Tela
 {

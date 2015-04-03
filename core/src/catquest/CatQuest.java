@@ -1,24 +1,17 @@
 package catquest;
 
 import java.util.Stack;
-import java.util.function.Consumer;
 
-import screen.Introducao;
-import sun.misc.GC;
+import telas.Introducao;
 import util.Camada;
-import util.PonteiroDe;
-import classe.GameObject;
-import classe.Tela;
+import classes.Tela;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -28,19 +21,32 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class CatQuest implements ApplicationListener
 {
+	/**
+	 * Enumerador com todas as camadas do jogo
+	 * @author Matheus
+	 *
+	 */
 	public enum Camadas
 	{
 		FUNDO,
 		PERSONAGENS,
 	};
 	
+	/**
+	 * Enumerador com todos os modos do jogo
+	 * @author Matheus
+	 *
+	 */
 	public enum ModoJogo
 	{
 		COOP,
 		SINGLE,
 	};
 	
+	//singleton
 	static public CatQuest instancia;
+	
+	//propriedades do jogo
 	int _idObjeto = 0;
 	Stack<Tela> _pilhaTelas = null;
 	Tela[] _telas = null;
@@ -49,6 +55,9 @@ public class CatQuest implements ApplicationListener
 	OrthographicCamera _camera = null;
 	float _stateTime = 0;
 	
+	/**
+	 * Contrutor do singleton.
+	 */
 	public CatQuest()
 	{
 		if (instancia == null)
@@ -133,79 +142,114 @@ public class CatQuest implements ApplicationListener
 		
 	}
 	
+	/**
+	 * Função para construção de todas as camadas do jogo e suas propriedades.
+	 */
 	private void ControiCamadas()
 	{
 		_camadas = new Camada[1];
 		_camadas[0] = new Camada();
 	}
 	
+	/**
+	 * Retorna uma referencia para a instacia da camada desejada.
+	 * @param camada {@link Camada} a retornar referencia.
+	 * @return Referencia para a camada.
+	 */
 	public Camada GetCamada(Camadas camada)
 	{
 		return _camadas[camada.ordinal()];
 	}
 	
+	/**
+	 * Retorna um novo ID único para gameobjects.
+	 * @return
+	 */
 	public Integer GetNovoId()
 	{
 		return new Integer(_idObjeto);
 	}
 	
+	/**
+	 * Retorna a SpriteBatch do jogo.
+	 * @return Referencia para {@link SpriteBatch} do jogo.
+	 */
 	public SpriteBatch GetSpriteBatch()
 	{
 		return _batch;
 	}
 	
+	/**
+	 * Adiciona uma tela a pilha de telas do jogo. A última tela adiciona sempre será renderizada por último.
+	 * @param tela {@link Tela} a ser adicionada na pilha.
+	 */
 	public void AdicionaTela(Tela tela)
 	{
 		_pilhaTelas.add(tela);
-		_pilhaTelas.toArray(_telas);
+		_telas = _pilhaTelas.toArray(_telas);
 	}
 	
+	/**
+	 * Retirar a última tela da pilha.
+	 */
 	public void RetiraTela()
 	{
 		_pilhaTelas.pop();
 		_pilhaTelas.toArray(_telas);
 	}
 	
+	/**
+	 * Retorna a {@link Tela} atual do jogo. A última tela da pilha.
+	 * @return
+	 */
 	public Tela GetTelaAtual()
 	{
 		return _pilhaTelas.lastElement();
 	}
 	
+	/**
+	 * Retorna a {@link OrthographicCamera} do jogo.
+	 * @return
+	 */
 	public OrthographicCamera GetCamera()
 	{
 		return _camera;
 	}
 	
+	/**
+	 * Retornas todas as {@link Camada} do jogo.
+	 * @return Um vetor de {@link Camada}
+	 */
 	public final Camada[] GetCamadas()
 	{
 		return _camadas;
 	}
 	
+	/**
+	 * Definir uma nova posição a {@link OrthographicCamera} do jogo.
+	 * @param posicao {@link Vector2} com o x e y do canto superior esquerda da camera.
+	 */
 	public void SetPosicaoCamera(Vector2 posicao)
 	{
 		if (posicao != null)
 			_camera.translate(posicao);
 	}
 	
+	/**
+	 * Retorna um {@link Vector2} com o tamanho da tela. X = Width e Y = Height.
+	 * @return {@link Vector2} com o tamanho da tela.
+	 */
 	public final Vector2 GetTamanhoTela()
 	{
 		return new Vector2(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); 
 	}
 	
+	/**
+	 * Retorna o state time. A soma de todos os {@link com.badlogic.gdx.Graphics#getDeltaTime()} desde o inicio do jogo.
+	 * @return Retorna um float com a soma dos deltatimes do jogo.
+	 */
 	public final float GetStateTime()
 	{
 		return _stateTime;
-	}
-	
-	public void PosicionaGameObject(Vector2 posicaoRelativaTextura, Vector2 posicaoRelativaTela, GameObject gameObjectCentralizar)
-	{
-		posicaoRelativaTextura.x = gameObjectCentralizar.GetSprite().getWidth() - posicaoRelativaTela.x;
-		posicaoRelativaTextura.y = gameObjectCentralizar.GetSprite().getHeight() - posicaoRelativaTela.y;
-		
-		posicaoRelativaTela.x = Gdx.graphics.getWidth() - posicaoRelativaTela.x;
-		posicaoRelativaTela.y = Gdx.graphics.getHeight() - posicaoRelativaTela.y;
-		
-		gameObjectCentralizar.GetPosicao().x = posicaoRelativaTela.x - posicaoRelativaTextura.x;
-		gameObjectCentralizar.GetPosicao().y = posicaoRelativaTela.y - posicaoRelativaTextura.y;
 	}
 }

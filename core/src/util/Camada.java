@@ -7,6 +7,7 @@ public class Camada
 	Integer _idCamada;
 	Color _cor;
 	boolean _colidivel = false;
+	boolean _ativa;
 	
 	public Camada()
 	{
@@ -41,6 +42,16 @@ public class Camada
 	public void SetColidivel(boolean colidivel)
 	{
 		_colidivel = colidivel;
+	}
+	
+	public boolean GetAtiva()
+	{
+		return _ativa;
+	}
+	
+	public void SetAtiva(boolean ativa)
+	{
+		_ativa = ativa;
 	}
 	
 	@Override

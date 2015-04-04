@@ -3,6 +3,7 @@ package catquest;
 import java.util.Stack;
 
 import classes.uteis.Camada;
+import classes.uteis.Configuracoes;
 import classes.telas.*;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -12,6 +13,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Json;
 
 /**
  * Classe que contém todas as informações padrões do jogo. Quase todos os métodos e propriedades são estáticos.
@@ -50,8 +52,9 @@ public class CatQuest implements ApplicationListener
 	private Camada[] _camadas = null;
 	private OrthographicCamera _camera = null;
 	private float _stateTime = 0;
+	private Configuracoes _configuracoes = null;
 	private ModoJogo _modoJogo = ModoJogo.SINGLE;
-	private boolean _atualiza = true, _desenha = true;
+	private boolean _atualiza = true, _desenha = true, _mostraFPS = false;
 	
 	/**
 	 * Contrutor do singleton.
@@ -67,7 +70,7 @@ public class CatQuest implements ApplicationListener
 	@Override
 	public void create()
 	{
-		IniciaJogo(true);
+		this.IniciaJogo(true);
 	}
 	
 
@@ -80,10 +83,10 @@ public class CatQuest implements ApplicationListener
 	public void render()
 	{
 		if (_atualiza)
-			Atualiza();
-		
+			this.Atualiza();
+
 		if (_desenha)
-			Desenha();
+			this.Desenha();
 	}
 	
 	/**
@@ -92,7 +95,7 @@ public class CatQuest implements ApplicationListener
 	private void Atualiza()
 	{
 		/* ------------------ ATUALIZA ------------------- */
-		TrataEntradaUsuario();
+		this.TrataEntradaUsuario();
 		
 		for (int i = _telas.length - 1; i >= 0; i--)
 		{
@@ -131,6 +134,9 @@ public class CatQuest implements ApplicationListener
 		/* ----------------- FIM DESENHA  --------------------*/
 	}
 	
+	/**
+	 * Trata toda a interação com o usuário.
+	 */
 	private void TrataEntradaUsuario()
 	{
 		
@@ -162,6 +168,9 @@ public class CatQuest implements ApplicationListener
 	 */
 	private void IniciaJogo(boolean intro)
 	{
+		this.CarregarConfig();
+		Gdx.graphics.setDisplayMode(_configuracoes.GetWidth(), _configuracoes.GetHeight(), _configuracoes.GetFullscreen());
+		
 		this.ControiCamadas();
 		_atualiza = true;
 		_desenha = true;
@@ -195,7 +204,7 @@ public class CatQuest implements ApplicationListener
 		
 		_pilhaTelas.clear();
 		
-		IniciaJogo(false);
+		this.IniciaJogo(false);
 	}
 	
 	/**
@@ -224,6 +233,67 @@ public class CatQuest implements ApplicationListener
 	{
 		_camadas = new Camada[1];
 		_camadas[0] = new Camada();
+	}
+	
+	/**
+	 * Grava as informações de configurações no arquivo padrão.
+	 */
+	public void GravarConfig()
+	{
+		Json json = new Json();
+		json.setUsePrototypes(false);
+		String config = json.toJson(_configuracoes);
+		Gdx.files.local("arquivos\\config.data").writeString(config, false);
+	}
+	
+	/**
+	 * Carrega as configurações do usuário.
+	 */
+	public void CarregarConfig()
+	{
+		if (_configuracoes == null)
+			_configuracoes = new Configuracoes();
+		
+		if (!Gdx.files.local("arquivos\\config.data").exists())
+		{
+			_configuracoes.SetAudio(true);
+			_configuracoes.SetFullScreen(false);
+			_configuracoes.SetHeight(768);
+			_configuracoes.SetWidth(1024);
+			_configuracoes.SetMostraFPS(false);
+			_configuracoes.SetVolumeMusica(50);
+			_configuracoes.SetVolumeSom(50);
+		}
+		else
+		{
+			Json json = new Json();
+			String config = Gdx.files.local("arquivos\\config.data").readString();
+			_configuracoes = json.fromJson(Configuracoes.class, config);
+		}
+		
+		this.GravarConfig();
+	}
+	
+	/**
+	 * Retorna as {@link Configuracoes} do jogo. Repare que caso altere as configurações, deve chamar {@link #GravarConfig()}.
+	 * @return Configurações do jogo.
+	 */
+	public Configuracoes GetConfig()
+	{
+		if (_configuracoes == null)
+			this.CarregarConfig();
+		
+		return _configuracoes;
+	}
+	
+	/**
+	 * Define novas configurações para o jogo e salva em arquivo em seguida.
+	 * @param config Novas configurações para o jogo.
+	 */
+	public void SetConfig(Configuracoes config)
+	{
+		_configuracoes = config;
+		this.GravarConfig();
 	}
 	
 	/**
@@ -311,12 +381,30 @@ public class CatQuest implements ApplicationListener
 	}
 	
 	/**
-	 * Retorna um {@link Vector2} com o tamanho da tela. X = Width e Y = Height.
-	 * @return {@link Vector2} com o tamanho da tela.
+	 * Retorna a largura da tela.
+	 * @return Largura da tela.
 	 */
-	public final Vector2 GetTamanhoTela()
+	public float GetLarguraTela()
 	{
-		return new Vector2(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); 
+		return Gdx.graphics.getWidth(); 
+	}
+	
+	/**
+	 * Retorna a altura da tela.
+	 * @return Altura da tela.
+	 */
+	public float GetAlturaTela()
+	{
+		return Gdx.graphics.getHeight(); 
+	}
+	
+	/**
+	 * Retorna se está em full screen.
+	 * @return True se está em full screen.
+	 */
+	public boolean GetFullScreen()
+	{
+		return Gdx.graphics.isFullscreen();
 	}
 	
 	/**
@@ -364,6 +452,8 @@ public class CatQuest implements ApplicationListener
 		_atualiza = false;
 		_desenha = false;
 		_modoJogo = modo;
-		ReiniciaJogo();
+		this.ReiniciaJogo();
 	}
+	
+	
 }

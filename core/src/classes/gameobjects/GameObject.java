@@ -82,6 +82,7 @@ public abstract class GameObject
 	 */
 	public void Redefine()
 	{
+		this.Encerra();
 		this.Inicia();
 	}
 	

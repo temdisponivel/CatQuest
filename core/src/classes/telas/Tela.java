@@ -67,7 +67,7 @@ public class Tela
 	public void AtualizaCamadaGameObject(GameObject gameObject)
 	{
 		_listasGameObject.get(gameObject.GetCamada()).Remover(gameObject);
-		InserirGameObject(gameObject);
+		this.InserirGameObject(gameObject);
 	}
 	
 	public boolean GetSeDesenha()
@@ -120,7 +120,7 @@ public class Tela
 	
 	public void ReiniciaTela()
 	{
-		Encerrar();
-		Iniciar();
+		this.Encerrar();
+		this.Iniciar();
 	}
 }

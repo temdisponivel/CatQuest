@@ -1,9 +1,9 @@
-package classes;
+package classes.telas;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
-
-import util.Camada;
+import classes.gameobjects.GameObject;
+import classes.uteis.*;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

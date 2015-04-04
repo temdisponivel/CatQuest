@@ -1,7 +1,6 @@
-package telas;
+package classes.telas;
 
-import classes.GameObject;
-import classes.Tela;
+import classes.gameobjects.GameObject;
 
 public class Introducao extends Tela
 {

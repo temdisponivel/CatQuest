@@ -1,6 +1,7 @@
-package classes;
+package classes.uteis;
 
 import java.util.HashMap;
+import classes.gameobjects.GameObject;
 
 public class ListaGameObject extends HashMap<Integer, GameObject>
 {

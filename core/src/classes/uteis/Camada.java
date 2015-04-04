@@ -1,4 +1,4 @@
-package util;
+package classes.uteis;
 
 import com.badlogic.gdx.graphics.Color;
 

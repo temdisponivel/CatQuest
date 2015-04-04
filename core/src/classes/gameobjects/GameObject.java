@@ -1,6 +1,7 @@
-package classes;
+package classes.gameobjects;
 
-import util.Camada;
+import classes.uteis.Camada;
+import classes.telas.Tela;
 import catquest.CatQuest;
 
 import com.badlogic.gdx.files.FileHandle;

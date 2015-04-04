@@ -1,10 +1,8 @@
-package telas;
-
-import classes.Tela;
+package classes.telas;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class FimJogo extends Tela
+public class Titulo extends Tela
 {
 
 	@Override

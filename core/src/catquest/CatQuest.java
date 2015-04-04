@@ -2,9 +2,8 @@ package catquest;
 
 import java.util.Stack;
 
-import telas.Introducao;
-import util.Camada;
-import classes.Tela;
+import classes.uteis.Camada;
+import classes.telas.*;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;

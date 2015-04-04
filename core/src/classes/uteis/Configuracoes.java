@@ -48,7 +48,7 @@ public class Configuracoes
 	/**
 	 * Define um novo volume para os {@link com.badlogic.gdx.audio.Sound sons} do jogo. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
 	 * Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma largura.
-	 * @param volumeSom
+	 * @param volumeSom Novo volume para o som.
 	 */
 	public void SetVolumeSom(float volumeSom)
 	{
@@ -87,7 +87,7 @@ public class Configuracoes
 	/**
 	 * Define uma nova altura para o jogo. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
 	 * Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma altura.
-	 * @param width Nova largura para o jogo.
+	 * @param height Nova Altura para o jogo.
 	 */
 	public void SetHeight(int height)
 	{

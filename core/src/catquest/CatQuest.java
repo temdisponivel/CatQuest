@@ -4,6 +4,7 @@ import java.util.Stack;
 
 import classes.uteis.Camada;
 import classes.uteis.Configuracoes;
+import classes.gameobjects.GameObject;
 import classes.telas.*;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -164,26 +165,46 @@ public class CatQuest implements ApplicationListener
 	 */
 	private void IniciaJogo(boolean intro)
 	{
+		//CARREGA CONFIGURAÇÕES E APLICA
 		this.CarregarConfig();
 		this.AplicarConfiguracoes();
 		
+		//CONTRÓI AS CAMADAS DO JOGO
 		this.ControiCamadas();
+		
+		//ATUALIZA E DESENHA COMO TRUE PARA GAMELOOP COMPLETO
 		_atualiza = true;
 		_desenha = true;
+		
+		//CARREGA FONTE
+		_fonte = new BitmapFont(Gdx.files.local("fonte\\catquest.fnt"));
+		
+		//CRIA SPRITEBATCH PARA DESENHAR COISAS NA TELA
 		_batch = new SpriteBatch();
+		
+		//CRIA CAMERA ORTOGRAFICA PARA QUE NÃO TENHA DIFERENÇA ENTRE PROFUNDIDADE.
+		//CRIA COM O TAMANHO DAS CONFIGURAÇÕES
 		_camera = new OrthographicCamera();
-		_camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		_camera.setToOrtho(false, _configuracoes.GetWidth(), _configuracoes.GetHeight());
+		
+		//CRIA A PILHA DE TELAS
 		_pilhaTelas = new Stack<Tela>();
 		
+		//SE FOR PRA COMEÇAR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
 		if (intro)
 			_pilhaTelas.add(new Introducao());
+		//SE NÃO, COMEÇA DO MENU (USADO QUANDO REINICIAR O JOGO).
 		else
 			_pilhaTelas.add(new Titulo());
 		
+		//INICIA A TELA ATUAL
 		_pilhaTelas.lastElement().Iniciar();
+		
+		//CRIA UM NOVO VETOR DE TELAS - INICIALMENTE COM 1 POSICAO E PREENCHE COM AS TELAS DA PILHA
+		//UM VETOR E UMA PILHA PARA QUE NÃO TENHAMOS QUE DAR POP E PUSH TODA HORA. O VETOR É ATUALIZA SEMPRE QUE UMA NOVA TELA
+		//É CRIADA OU REMOVIDA
 		_telas = new Tela[1];
 		_telas = _pilhaTelas.toArray(_telas);
-		 _fonte = new BitmapFont(Gdx.files.local("fonte\\catquest.fnt"));
 	}
 	
 	/**
@@ -192,7 +213,8 @@ public class CatQuest implements ApplicationListener
 	public void ReiniciaJogo()
 	{
 		_batch.dispose();
-
+		
+		//ENCERRA TODAS AS TELAS, LIMPA O VETOR E REINICIA O JOGO
 		for (int i = _telas.length - 1; i >= 0; i--)
 		{
 			_telas[i].Encerrar();
@@ -212,6 +234,7 @@ public class CatQuest implements ApplicationListener
 		_atualiza = false;
 		_desenha = false;
 		
+		//ENCERRA TODAS AS TELAS, LIMPA O VETOR E ENCERRA O JOGO
 		for (int i = _telas.length - 1; i >= 0; i--)
 		{
 			_telas[i].Encerrar();
@@ -318,8 +341,8 @@ public class CatQuest implements ApplicationListener
 	}
 	
 	/**
-	 * Retorna um novo ID único para gameobjects.
-	 * @return
+	 * Retorna um novo ID único para {@link GameObject}.
+	 * @return Um novo ID para GameObject
 	 */
 	public Integer GetNovoId()
 	{
@@ -356,7 +379,7 @@ public class CatQuest implements ApplicationListener
 	
 	/**
 	 * Retorna a {@link Tela} atual do jogo. A última tela da pilha.
-	 * @return
+	 * @return A tela atual.
 	 */
 	public Tela GetTelaAtual()
 	{
@@ -365,7 +388,7 @@ public class CatQuest implements ApplicationListener
 	
 	/**
 	 * Retorna a {@link OrthographicCamera} do jogo.
-	 * @return
+	 * @return Camera do jogo.
 	 */
 	public OrthographicCamera GetCamera()
 	{
@@ -438,7 +461,7 @@ public class CatQuest implements ApplicationListener
 	
 	/**
 	 * Define se o jogo deve rodar a rotina de desenho.
-	 * @param atualiza True para rodar a rotina de desenho.
+	 * @param desenha True para rodar a rotina de {@link #Desenha()}.
 	 */
 	public void SetSeDesenha(boolean desenha)
 	{

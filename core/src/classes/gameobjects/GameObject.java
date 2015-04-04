@@ -69,6 +69,7 @@ public abstract class GameObject
 	/**
 	 * Função chamada sempre que este objeto colidi com um objeto da lista {@link #_colidiveis}
 	 * @param colidiu {@link GameObject} que colidiu com este.
+	 * @param <T> Qualquer classe que herde de GameObject.
 	 */
 	public abstract <T extends GameObject> void AoColidir(T colidiu);
 	
@@ -105,8 +106,7 @@ public abstract class GameObject
 	}
 	
 	/**
-	 * Seta uma nova camada. <b>Esta função deve ser usada somente por {@link Tela#AtualizaCamadaGameObject(GameObject, Camada)}.
-	 * Caso contrário, o objeto ainda será desenha e atualizado na camada anterior.</b> 
+	 * Seta uma nova camada.
 	 * @param novaCamada {@link Camada} nova camada do objeto.
 	 */
 	public void SetCamada(Camada novaCamada)
@@ -179,16 +179,16 @@ public abstract class GameObject
 	
 	/**
 	 * Define se o game object será atualiza. Se false, não roda a rotina de {@link #Atualiza(float)}. 
-	 * @param ativo True para rodar a rotina de {@link #Atualiza(float)}. 
+	 * @param atualiza True para rodar a rotina de {@link #Atualiza(float)}. 
 	 */
-	public void SetSeAtualiza(boolean atualza)
+	public void SetSeAtualiza(boolean atualiza)
 	{
-		_atualiza = atualza;
+		_atualiza = atualiza;
 	}
 	
 	/**
 	 * Define se o game object será desenhado. Se false, não roda a rotina de {@link #Desenha(SpriteBatch)}. 
-	 * @param ativo True para rodar a rotina de {@link #Desenha(SpriteBatch)}. 
+	 * @param desenha True para rodar a rotina de {@link #Desenha(SpriteBatch)}. 
 	 */
 	public void SetSeDesenha(boolean desenha)
 	{
@@ -214,7 +214,7 @@ public abstract class GameObject
 	
 	/**
 	 * Retorna o {@link TipoGameObject} do game object.
-	 * @return
+	 * @return O tipo do game object.
 	 */
 	public final TipoGameObject GetTipo()
 	{

@@ -92,8 +92,7 @@ public class Tela
 	/**
 	 * Função que remove um {@link GameObject} da tela.
 	 * @param remover {@link GameObject} a ser removido.
-	 * @return Retorna null caso não seja possível remover (é possível que ele não seja removido devido a atualização erronea de {@link Camada}.), senão, o objeto removido.
-	 * @see {@link GameObject#SetCamada(Camada)}
+	 * @return O objeto removido.
 	 */
 	public GameObject Remover(GameObject remover)
 	{
@@ -108,7 +107,7 @@ public class Tela
 	
 	/**
 	 * 
-	 * @param contem {@GameObject} a verificar se existe na tela.
+	 * @param contem {@link GameObject} a verificar se existe na tela.
 	 * @return True caso exista na tela, falso caso contrário.
 	 */
 	public boolean ContemGameObject(GameObject contem)
@@ -144,7 +143,7 @@ public class Tela
 	}
 	
 	/**
-	 * @param desenha True para rodar a rotina de {@link #Atualiza(float)}, false caso contrário.
+	 * @param atualiza True para rodar a rotina de {@link #Atualiza(float)}, false caso contrário.
 	 */
 	public void SetSeAtualiza(boolean atualiza)
 	{

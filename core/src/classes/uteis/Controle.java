@@ -1,11 +1,14 @@
 package classes.uteis;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.ControllerListener;
+import com.badlogic.gdx.controllers.Controllers;
 import com.badlogic.gdx.controllers.PovDirection;
 import com.badlogic.gdx.math.Vector3;
 
-public class Controle implements ControllerListener, Controller
+public class Controle implements ControllerListener
 {
 	/**
 	 * Direções possíveis de movimentação dos controles.
@@ -26,103 +29,103 @@ public class Controle implements ControllerListener, Controller
 	};
 	
 	/**
-	 * Retorna a direção informada pelo usuário através do teclado ou controle.
-	 * @return {@link Controle.DIRECOES} Que o usuário informou via teclado ou controle. {@link Controle.DIRECOES#CENTRO} quando nada informado.
+	 * Players para requisição dos comandos.
+	 * @author Matheus
+	 *
 	 */
-	public Controle.DIRECOES GetDirecao()
+	public enum PLAYER
 	{
+		PLAYER1,
+		PLAYER2,
+	}
+	
+	private Controller _controle1 = null;
+	private Controller _controle2 = null;
+	
+	
+	public Controle()
+	{
+		Controllers.addListener(this);
 		
-		return Controle.DIRECOES.CENTRO;
-	}
-
-	@Override
-	public boolean getButton(int buttonCode)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public float getAxis(int axisCode)
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public PovDirection getPov(int povCode)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean getSliderX(int sliderCode)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean getSliderY(int sliderCode)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public Vector3 getAccelerometer(int accelerometerCode)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setAccelerometerSensitivity(float sensitivity)
-	{
-		// TODO Auto-generated method stub
+		if (Controllers.getControllers().size >= 1)
+		{
+			_controle1 = Controllers.getControllers().get(0);
+		}
 		
+		if (Controllers.getControllers().size >= 2)
+		{
+			_controle2 = Controllers.getControllers().get(1);
+		}
 	}
-
-	@Override
-	public String getName()
+	
+	/**
+	 * Retorna a direção informada pelo usuário através do teclado ou controle.
+	 * @param player {@link PLAYER} o qual quer saber a direção.
+	 * @return {@link DIRECOES} Que o usuário informou via teclado ou controle. {@link DIRECOES#CENTRO} quando nada informado.
+	 */
+	public DIRECOES GetDirecao(PLAYER player)
 	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addListener(ControllerListener listener)
-	{
-		// TODO Auto-generated method stub
+		int direcao = 0;
 		
-	}
-
-	@Override
-	public void removeListener(ControllerListener listener)
-	{
-		// TODO Auto-generated method stub
+		if (player == PLAYER.PLAYER1)
+		{
+			if (_controle1 == null)
+			{
+				if(Gdx.input.isButtonPressed(Keys.LEFT))
+					direcao += direcao;
+			}
+		}
 		
+		return DIRECOES.values()[direcao];
 	}
 
 	@Override
 	public void connected(Controller controller)
 	{
-		// TODO Auto-generated method stub
+		//valida se o controle é de xbox 360
+		if (!(controller.getName().toLowerCase().contains("xbox") && controller.getName().toLowerCase().contains("360")))
+			return;
 		
+		if (_controle1 == null)
+		{
+			_controle1 = controller;
+			_controle1.addListener(this);
+		}
+		else if (_controle2 == null)
+		{
+			_controle2 = controller;
+			_controle2.addListener(this);
+		}
 	}
 
 	@Override
 	public void disconnected(Controller controller)
 	{
-		// TODO Auto-generated method stub
-		
+		if (_controle1 == controller)
+		{
+			_controle1 = null;
+		}
+		else if (_controle2 == controller)
+		{
+			_controle2 = null;
+		}
 	}
 
 	@Override
 	public boolean buttonDown(Controller controller, int buttonCode)
 	{
-		// TODO Auto-generated method stub
+		if (controller != _controle1 && controller != _controle2)
+			return false;
+		
+		if (controller == _controle1)
+		{
+			
+		}
+		else if (controller == _controle2)
+		{
+			
+		}
+		
 		return false;
 	}
 

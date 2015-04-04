@@ -18,7 +18,7 @@ public class ListaGameObject extends HashMap<Integer, GameObject>
 	
 	/**
 	 * Cria uma lista e adiciona um objeto nela.
-	 * @param gameObject
+	 * @param gameObject GameObject a incluir na nova lista.
 	 */
 	public ListaGameObject(GameObject gameObject)
 	{

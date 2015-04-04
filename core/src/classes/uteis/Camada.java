@@ -4,7 +4,7 @@ import catquest.CatQuest;
 import com.badlogic.gdx.graphics.Color;
 
 /**
- * Classe utilizada para organizar os a ordem em que os {@link classes.gameobjects.GameObject GameObjects} serão atualizados e desenhados em cada {@link Tela}.
+ * Classe utilizada para organizar os a ordem em que os {@link classes.gameobjects.GameObject GameObjects} serão atualizados e desenhados em cada {@link classes.telas.Tela tela}.
  * Também contém a cor em que todos eles serão desenhados e flags que simbolizam quando é pra atualizar e quando é pra desenhar.
  * @author Matheus
  *
@@ -52,7 +52,6 @@ public class Camada
 	 * 
 	 * @return {@link Color} em que os objetos dessa {@link Camada} serão desenhados. Esta cor é definida na {@link com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch} 
 	 * antes de desenhar os {@link classes.gameobjects.GameObject GameObjects} desta camada.
-	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch#setColor(Color) SpriteBatch}
 	 */
 	public Color GetCor()
 	{
@@ -62,7 +61,7 @@ public class Camada
 	/**
 	 * Define uma {@link Color Cor} para que os objetos dessa cor sejam desenhados. Esta cor é definida na {@link com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch} 
 	 * antes de desenhas os {@link classes.gameobjects.GameObject GameObjects} desta camada.
-	 * @param cor
+	 * @param cor Nova cor para camada.
 	 */
 	public void SetCor(Color cor)
 	{
@@ -99,7 +98,7 @@ public class Camada
 	
 	/**
 	 * Define se os {@link classes.gameobjects.GameObject GameObjects} desta {@link Camada} serão {@link classes.gameobjects.GameObject#Atualiza(float) Atualizados} no gameloop.
-	 * @param atualiza True para {@link classes.gameobjects.GameObject#Atualiza(float) Atualizar} os {@link GameObject}.
+	 * @param atualiza True para {@link classes.gameobjects.GameObject#Atualiza(float) Atualizar} os game objects.
 	 */
 	public void SetAtualiza(boolean atualiza)
 	{
@@ -138,8 +137,8 @@ public class Camada
 	/**
 	 * Seta se {@link classes.gameobjects.GameObject GameObjects} desta {@link Camada} serão 
 	 * {@link classes.gameobjects.GameObject#Desenha(com.badlogic.gdx.graphics.g2d.SpriteBatch) Desenhado} e
-	 * {@link classes.gameobjects.GameObject#Atualiza(float) Atualizado}. </br>
-	 * O mesmo que: {@link Camada#SetAtualiza(ativa)} e {@link Camada#SetDesenha(ativa)}.
+	 * {@link classes.gameobjects.GameObject#Atualiza(float) Atualizado}. <br>
+	 * O mesmo que: {@link Camada#SetAtualiza(boolean)} e {@link Camada#SetDesenha(boolean)}.
 	 * @param ativa True para desenhar e atualizar, false para não desenhar e atualizar.
 	 */
 	public void SetAtiva(boolean ativa)

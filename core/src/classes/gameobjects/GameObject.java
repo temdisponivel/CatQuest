@@ -1,5 +1,7 @@
 package classes.gameobjects;
 
+import java.util.ArrayList;
+
 import classes.uteis.Camada;
 import classes.telas.Tela;
 import catquest.CatQuest;
@@ -20,44 +22,37 @@ public abstract class GameObject
 		CENARIO,
 	}
 	
-	private Sprite _texturaObjeto = null;
+	private Sprite _sprite = null;
 	private TipoGameObject _tipo;
 	private Vector2 _posicaoTela = null;
 	private Animation _animacao = null;
 	private Camada _camada = null;
 	private Integer _id = null;
 	private Tela _telaInserido = null;
+	private boolean _ativo = true;
+	private ArrayList<GameObject> _colidiveis = null;
 	
-	public GameObject()
+	public void Atualiza(float deltaTime)
 	{
-		_id = CatQuest.instancia.GetNovoId();
-		_camada = CatQuest.instancia.GetCamada(CatQuest.Camadas.FUNDO);
-		_posicaoTela = new Vector2();
-		_tipo = TipoGameObject.HEROI;
+		if (!_ativo)
+			return;
+		
+		_sprite = (Sprite) _animacao.getKeyFrame(CatQuest.instancia.GetStateTime());
 	}
-	
-	public GameObject(FileHandle caminhoTextura)
-	{
-		this();
-		_texturaObjeto = new Sprite(new Texture(caminhoTextura));
-		_posicaoTela.x = CatQuest.instancia.GetTamanhoTela().x;
-		_posicaoTela.y = CatQuest.instancia.GetTamanhoTela().y;
-	}
-	
-	public GameObject(FileHandle caminhoTextura, CatQuest.Camadas camada)
-	{
-		this(caminhoTextura);
-		_camada = CatQuest.instancia.GetCamada(camada);
-	}
-	
-	public abstract void Atualiza(float deltaTime);
 	
 	public void Desenha(SpriteBatch bash)
 	{
-		bash.draw(_texturaObjeto, 0, 0);
+		if (_ativo)
+			bash.draw(_sprite, _posicaoTela.x, _posicaoTela.y);
 	}
 	
 	public abstract <T extends GameObject> void AoColidir(T colidiu);
+	public abstract void Inicia();
+	
+	public void Redefine()
+	{
+		this.Inicia();
+	}
 	
 	public final Integer GetId()
 	{
@@ -92,6 +87,36 @@ public abstract class GameObject
 	public void SetTela(Tela tela)
 	{
 		_telaInserido = tela;
+	}
+	
+	public boolean GetAtivo()
+	{
+		return _ativo;
+	}
+	
+	public void SetAtivo(boolean ativo)
+	{
+		_ativo = ativo;
+	}
+	
+	public TipoGameObject GetTipo()
+	{
+		return _tipo;
+	}
+	
+	public boolean ValidaColisao(GameObject colidiu)
+	{
+		if (colidiu == null || _colidiveis.contains(colidiu.GetTipo()))
+			return false;
+		
+		if (this._sprite.getBoundingRectangle().overlaps(colidiu.GetSprite().getBoundingRectangle()))
+		{
+			this.AoColidir(colidiu);
+			colidiu.AoColidir(this);
+			return true;
+		}
+		
+		return false;
 	}
 }
 

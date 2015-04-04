@@ -53,6 +53,7 @@ public class CatQuest implements ApplicationListener
 	Camada[] _camadas = null;
 	OrthographicCamera _camera = null;
 	float _stateTime = 0;
+	boolean _atualiza = true, _desenha = true;
 	
 	/**
 	 * Contrutor do singleton.
@@ -88,7 +89,20 @@ public class CatQuest implements ApplicationListener
 	@Override
 	public void render()
 	{
+		if (_atualiza)
+			Atualiza();
+		
+		if (_desenha)
+			Desenha();
+	}
+	
+	/**
+	 * Função que roda a lógica de atualização do jogo. AI, colições, mudança de posições, etc; são gerenciadas aqui.
+	 */
+	private void Atualiza()
+	{
 		/* ------------------ ATUALIZA ------------------- */
+		TrataEntradaUsuario();
 		
 		for (int i = _telas.length - 1; i >= 0; i--)
 		{
@@ -102,11 +116,17 @@ public class CatQuest implements ApplicationListener
 		_batch.setProjectionMatrix(_camera.combined);
 		
 		/* ---------------- FIM ATUALIZA --------------------*/
+	}
 	
+	/**
+	 * Função que roda a lógica de desenho do jogo.
+	 */
+	private void Desenha()
+	{
 		/* ---------------- DESENHA -----------------------*/
 		
 		//LIMPA TELA
-		Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+		Gdx.gl.glClearColor(0, 0, 0f, 1);
 	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 	    //DESENHA
@@ -118,6 +138,11 @@ public class CatQuest implements ApplicationListener
 		_batch.end();
 		
 		/* ----------------- FIM DESENHA  --------------------*/
+	}
+	
+	private void TrataEntradaUsuario()
+	{
+		
 	}
 
 	@Override
@@ -250,5 +275,23 @@ public class CatQuest implements ApplicationListener
 	public final float GetStateTime()
 	{
 		return _stateTime;
+	}
+	
+	/**
+	 * Define se o jogo deve rodar a rotina de atualização.
+	 * @param atualiza True para rodar a rotina de atualização.
+	 */
+	public void SetSeAtualiza(boolean atualiza)
+	{
+		_atualiza = atualiza;
+	}
+	
+	/**
+	 * Define se o jogo deve rodar a rotina de desenho.
+	 * @param atualiza True para rodar a rotina de desenho.
+	 */
+	public void SetSeDesenha(boolean desenha)
+	{
+		_desenha = desenha;
 	}
 }

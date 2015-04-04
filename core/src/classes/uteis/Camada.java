@@ -1,9 +1,14 @@
 package classes.uteis;
 
 import catquest.CatQuest;
-
 import com.badlogic.gdx.graphics.Color;
 
+/**
+ * Classe utilizada para organizar os a ordem em que os {@link classes.gameobjects.GameObject GameObjects} serão atualizados e desenhados em cada {@link Tela}.
+ * Também contém a cor em que todos eles serão desenhados e flags que simbolizam quando é pra atualizar e quando é pra desenhar.
+ * @author Matheus
+ *
+ */
 public class Camada
 {
 	private Integer _idCamada;
@@ -34,59 +39,113 @@ public class Camada
 		_cor = Color.WHITE;
 	}
 	
+	/**
+	 * 
+	 * @return {@link Integer} contendo o ID da camada. Para comparação entre camadas, usar {@link Integer#equals(Object)}.
+	 */
 	public Integer GetIdCamada()
 	{
 		return _idCamada;
 	}
 	
+	/**
+	 * 
+	 * @return {@link Color} em que os objetos dessa {@link Camada} serão desenhados. Esta cor é definida na {@link com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch} 
+	 * antes de desenhar os {@link classes.gameobjects.GameObject GameObjects} desta camada.
+	 * @see {@link com.badlogic.gdx.graphics.g2d.SpriteBatch#setColor(Color) SpriteBatch}
+	 */
 	public Color GetCor()
 	{
 		return _cor;
 	}
 	
+	/**
+	 * Define uma {@link Color Cor} para que os objetos dessa cor sejam desenhados. Esta cor é definida na {@link com.badlogic.gdx.graphics.g2d.SpriteBatch SpriteBatch} 
+	 * antes de desenhas os {@link classes.gameobjects.GameObject GameObjects} desta camada.
+	 * @param cor
+	 */
 	public void SetCor(Color cor)
 	{
 		_cor = cor;
 	}
 	
+	/**
+	 * 
+	 * @return True caso a lógica de colisão seja feita para os {@link classes.gameobjects.GameObject GameObjects} que estão vinculados a esta {@link Camada}.
+	 */
 	public boolean GetColidivel()
 	{
 		return _colidivel;
 	}
 	
+	/**
+	 * Define se os {@link classes.gameobjects.GameObject GameObjects} vinculados a esta {@link Camada} vão verificar colisões.
+	 * @param colidivel True para que seja rodada a logica de colisão nas interações do game loop.
+	 */
 	public void SetColidivel(boolean colidivel)
 	{
 		_colidivel = colidivel;
 	}
 	
+	/**
+	 * 
+	 * @return True caso os {@link classes.gameobjects.GameObject GameObjects} vinculados a esta {@link Camada} 
+	 * estejam sendo {@link classes.gameobjects.GameObject#Atualiza(float) Atualizados} no gameloop. Caso contrário, false.
+	 */
 	public boolean GetAtualiza()
 	{
 		return _atualiza;
 	}
 	
+	/**
+	 * Define se os {@link classes.gameobjects.GameObject GameObjects} desta {@link Camada} serão {@link classes.gameobjects.GameObject#Atualiza(float) Atualizados} no gameloop.
+	 * @param atualiza True para {@link classes.gameobjects.GameObject#Atualiza(float) Atualizar} os {@link GameObject}.
+	 */
 	public void SetAtualiza(boolean atualiza)
 	{
 		_atualiza = atualiza;
 	}
 	
+	/**
+	 * 
+	 * @return True caso os {@link classes.gameobjects.GameObject GameObjects} vinculados a esta {@link Camada} 
+	 * estejam sendo {@link classes.gameobjects.GameObject#Desenha(com.badlogic.gdx.graphics.g2d.SpriteBatch) Desenhados} no gameloop. Caso contrário, false.
+	 */
 	public boolean GetDesenha()
 	{
 		return _desenha;
 	}
 	
+	/**
+	 * Define se os {@link classes.gameobjects.GameObject GameObjects} desta {@link Camada} serão 
+	 * {@link classes.gameobjects.GameObject#Desenha(com.badlogic.gdx.graphics.g2d.SpriteBatch) Desenhados} no gameloop.
+	 * @param desenha True para {@link classes.gameobjects.GameObject#Desenha(com.badlogic.gdx.graphics.g2d.SpriteBatch) Desenhar} os {@link classes.gameobjects.GameObject GameObjects}.
+	 */
 	public void SetDesenha(boolean desenha)
 	{
 		_desenha = desenha;
 	}
 	
+	/**
+	 * 
+	 * @return Meso que {@link Camada#GetAtualiza()} || {@link Camada#GetDesenha()}.
+	 */
 	public boolean GetAtiva()
 	{
 		return _atualiza && _desenha;
 	}
 	
+	/**
+	 * Seta se {@link classes.gameobjects.GameObject GameObjects} desta {@link Camada} serão 
+	 * {@link classes.gameobjects.GameObject#Desenha(com.badlogic.gdx.graphics.g2d.SpriteBatch) Desenhado} e
+	 * {@link classes.gameobjects.GameObject#Atualiza(float) Atualizado}. </br>
+	 * O mesmo que: {@link Camada#SetAtualiza(ativa)} e {@link Camada#SetDesenha(ativa)}.
+	 * @param ativa True para desenhar e atualizar, false para não desenhar e atualizar.
+	 */
 	public void SetAtiva(boolean ativa)
 	{
-		_atualiza = _desenha = ativa;
+		this.SetAtualiza(ativa);
+		this.SetDesenha(ativa);
 	}
 	
 	@Override

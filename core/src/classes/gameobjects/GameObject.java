@@ -22,22 +22,22 @@ public abstract class GameObject
 	 * @author Matheus
 	 *
 	 */
-	static public enum TipoGameObject
+	public enum TipoGameObject
 	{
 		INIMIGO,
 		HEROI,
 		CENARIO,
-	}
+	};
 	
-	private Sprite _sprite = null;
-	private TipoGameObject _tipo;
-	private Vector2 _posicaoTela = null;
-	private Animation _animacao = null;
-	private Camada _camada = null;
-	private Integer _id = null;
-	private Tela _telaInserido = null;
-	private boolean _atualiza = true, _desenha = true;
-	private HashSet<GameObject.TipoGameObject> _colidiveis = null;
+	protected Sprite _sprite = null;
+	protected TipoGameObject _tipo;
+	protected Vector2 _posicaoTela = null;
+	protected Animation _animacao = null;
+	protected Camada _camada = null;
+	protected Integer _id = null;
+	protected Tela _telaInserido = null;
+	protected boolean _atualiza = true, _desenha = true;
+	protected HashSet<GameObject.TipoGameObject> _colidiveis = null;
 	
 	public GameObject()
 	{

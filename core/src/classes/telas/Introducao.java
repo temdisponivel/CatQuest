@@ -1,29 +1,23 @@
 package classes.telas;
 
-import classes.gameobjects.GameObject;
+import classes.uteis.ListaGameObject;
+import catquest.CatQuest;
+import catquest.CatQuest.Camadas;
 
 public class Introducao extends Tela
 {
-	GameObject _chatuba = null;
 	@Override
 	public void Iniciar() 
 	{
-		//_chatuba = new GameObject(Gdx.files.internal("imagens/chatuba.jpg"), catquest.CatQuest.Camadas.FUNDO);
 		super.Iniciar();
+		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.OBJETOS_ESTATICOS), new ListaGameObject());
+		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.PERSONAGENS), new ListaGameObject());
+		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.UI), new ListaGameObject());
 	}
 	
 	@Override
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-		//CatQuest.instancia.SetPosicaoCamera(_chatuba.GetPosicao());
 	}
-
-	@Override
-	public void Encerrar()
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
 }

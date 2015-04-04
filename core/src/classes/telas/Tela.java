@@ -14,8 +14,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class Tela
 {
-	private HashMap<Camada, ListaGameObject> _listasGameObject = null;
-	private boolean _desenha = true, _atualiza = true;
+	protected HashMap<Camada, ListaGameObject> _listasGameObject = null;
+	protected boolean _desenha = true, _atualiza = true;
 	
 	/**
 	 * Função que inicia as propriedades da tela.
@@ -35,7 +35,7 @@ public class Tela
 		
 		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
 		{
-			if (!entrada.getKey().GetAtualiza() || !_atualiza)
+			if (!entrada.getKey().GetAtualiza() || !_atualiza || !entrada.getValue().GetAtiva())
 				continue;
 			
 			for (Entry<Integer, GameObject> entrada2 : entrada.getValue().entrySet())
@@ -64,7 +64,7 @@ public class Tela
 	{		
 		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
 		{
-			if (!entrada.getKey().GetDesenha() || !_desenha)
+			if (!entrada.getKey().GetDesenha() || !_desenha || !entrada.getValue().GetAtiva())
 				continue;
 			
 			spriteBatch.setColor(entrada.getKey().GetCor());

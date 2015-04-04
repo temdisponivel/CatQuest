@@ -11,9 +11,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.StringBuilder;
 
 /**
  * Classe que contém todas as informações padrões do jogo. Quase todos os métodos e propriedades são estáticos.
@@ -27,7 +29,7 @@ public class CatQuest implements ApplicationListener
 	 * @author Matheus
 	 *
 	 */
-	static public enum Camadas
+	public enum Camadas
 	{
 		OBJETOS_ESTATICOS,
 		PERSONAGENS,
@@ -39,7 +41,7 @@ public class CatQuest implements ApplicationListener
 	 * @author Matheus
 	 *
 	 */
-	static public enum ModoJogo
+	public enum ModoJogo
 	{
 		COOP,
 		SINGLE,
@@ -56,6 +58,7 @@ public class CatQuest implements ApplicationListener
 	private Configuracoes _configuracoes = null;
 	private ModoJogo _modoJogo = ModoJogo.SINGLE;
 	private boolean _atualiza = true, _desenha = true;
+	private BitmapFont _fonte = null;
 	
 	/**
 	 * Contrutor do singleton.
@@ -125,11 +128,16 @@ public class CatQuest implements ApplicationListener
 		
 	    //DESENHA
 	    _batch.setColor(Color.WHITE);
+	    
 	    _batch.begin();
 	    for (int i = _telas.length - 1; i >= 0; i--)
 		{
 			_telas[i].Desenha(_batch);
 		}
+	    
+	    if (_configuracoes.GetMostraFPS())
+			//_fonte.draw(_batch, new StringBuilder(3).append(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()/2, this.GetAlturaTela()/2);
+			
 		_batch.end();
 		
 		/* ----------------- FIM DESENHA  --------------------*/
@@ -140,7 +148,6 @@ public class CatQuest implements ApplicationListener
 	 */
 	private void TrataEntradaUsuario()
 	{
-		
 	}
 
 	@Override
@@ -158,7 +165,7 @@ public class CatQuest implements ApplicationListener
 	private void IniciaJogo(boolean intro)
 	{
 		this.CarregarConfig();
-		Gdx.graphics.setDisplayMode(_configuracoes.GetWidth(), _configuracoes.GetHeight(), _configuracoes.GetFullscreen());
+		this.AplicarConfiguracoes();
 		
 		this.ControiCamadas();
 		_atualiza = true;
@@ -176,6 +183,7 @@ public class CatQuest implements ApplicationListener
 		_pilhaTelas.lastElement().Iniciar();
 		_telas = new Tela[1];
 		_telas = _pilhaTelas.toArray(_telas);
+		 _fonte = new BitmapFont(Gdx.files.local("fonte\\catquest.fnt"));
 	}
 	
 	/**
@@ -249,8 +257,8 @@ public class CatQuest implements ApplicationListener
 		{
 			_configuracoes.SetAudio(true);
 			_configuracoes.SetFullScreen(false);
-			_configuracoes.SetHeight(768);
 			_configuracoes.SetWidth(1024);
+			_configuracoes.SetHeight(768);
 			_configuracoes.SetMostraFPS(false);
 			_configuracoes.SetVolumeMusica(50);
 			_configuracoes.SetVolumeSom(50);
@@ -263,6 +271,18 @@ public class CatQuest implements ApplicationListener
 		}
 		
 		this.GravarConfig();
+		this.AplicarConfiguracoes();
+	}
+	
+	/**
+	 * Define as configurações atuais do jogo. Caso as configurações ainda não tenham sido definidas, chama {@link CatQuest#CarregarConfig()} e depois define.
+	 */
+	public void AplicarConfiguracoes()
+	{
+		if (_configuracoes == null)
+			this.CarregarConfig();
+		
+		Gdx.graphics.setDisplayMode(_configuracoes.GetWidth(), _configuracoes.GetHeight(), _configuracoes.GetFullscreen());
 	}
 	
 	/**

@@ -1,4 +1,5 @@
 package classes.uteis;
+
 /**
  * Classe usada para serialização e deserialização para JSON e gravar em arquivo
  * com as configurações do usuário.
@@ -16,41 +17,78 @@ public class Configuracoes
 	private boolean _mostraFPS;
 	private boolean _audio;
 	
+	/**
+	 * 
+	 * @return O volume em que as {@link com.badlogic.gdx.audio.Music musicas} estão sendo tocadas.
+	 */
 	public float GetVolumeMusica()
 	{
 		return _volumeMusica;
 	}
 
+	/**
+	 * Define um novo volume para {@link com.badlogic.gdx.audio.Music musicas} do jogo. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
+	 * @param volumeMusica Um valor entre 0 e 100.
+	 */
 	public void SetVolumeMusica(float volumeMusica)
 	{
-		this._volumeMusica = volumeMusica;
+		if (volumeMusica >= 0 && volumeMusica <= 100)
+			this._volumeMusica = volumeMusica;
 	}
-
+	
+	/**
+	 * 
+	 * @return O volume em que os {@link com.badlogic.gdx.audio.Sound sons} estão sendo tocados.
+	 */
 	public float GetVolumeSom()
 	{
 		return _volumeSom;
 	}
-
+	
+	/**
+	 * Define um novo volume para os {@link com.badlogic.gdx.audio.Sound sons} do jogo. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
+	 * Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma largura.
+	 * @param volumeSom
+	 */
 	public void SetVolumeSom(float volumeSom)
 	{
-		this._volumeSom = volumeSom;
+		if (volumeSom >= 0 && volumeSom <= 100)
+			this._volumeSom = volumeSom;
 	}
-
+	
+	/**
+	 * Retorna a largura da tela do jogo. Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma largura.
+	 * @return Largura da tela.
+	 */
 	public int GetWidth()
 	{
 		return _width;
 	}
-
+	
+	/**
+	 * Define uma nova largura para o jogo. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
+	 * Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma largura.
+	 * @param width Nova largura para o jogo.
+	 */
 	public void SetWidth(int width)
 	{
 		this._width = width;
 	}
-
+	
+	/**
+	 * Retorna a altura da tela do jogo. Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma altura.
+	 * @return Altura da tela do jogo.
+	 */
 	public int GetHeight()
 	{
 		return _height;
 	}
-
+	
+	/**
+	 * Define uma nova altura para o jogo. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
+	 * Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma altura.
+	 * @param width Nova largura para o jogo.
+	 */
 	public void SetHeight(int height)
 	{
 		this._height = height;

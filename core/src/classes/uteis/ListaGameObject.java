@@ -6,7 +6,7 @@ import classes.gameobjects.GameObject;
 public class ListaGameObject extends HashMap<Integer, GameObject>
 {
 	private static final long serialVersionUID = 7807392367834454439L;
-	static boolean _ativa = true;
+	private static boolean _ativa = true;
 	
 	public ListaGameObject(){};
 	

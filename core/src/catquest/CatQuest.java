@@ -25,7 +25,7 @@ public class CatQuest implements ApplicationListener
 	 * @author Matheus
 	 *
 	 */
-	public enum Camadas
+	static public enum Camadas
 	{
 		FUNDO,
 		PERSONAGENS,
@@ -36,24 +36,22 @@ public class CatQuest implements ApplicationListener
 	 * @author Matheus
 	 *
 	 */
-	public enum ModoJogo
+	static public enum ModoJogo
 	{
 		COOP,
 		SINGLE,
 	};
 	
-	//singleton
 	static public CatQuest instancia;
-	
-	//propriedades do jogo
-	int _idObjeto = 0;
-	Stack<Tela> _pilhaTelas = null;
-	Tela[] _telas = null;
-	SpriteBatch _batch = null;
-	Camada[] _camadas = null;
-	OrthographicCamera _camera = null;
-	float _stateTime = 0;
-	boolean _atualiza = true, _desenha = true;
+	private int _idObjeto = 0;
+	private Stack<Tela> _pilhaTelas = null;
+	private Tela[] _telas = null;
+	private SpriteBatch _batch = null;
+	private Camada[] _camadas = null;
+	private OrthographicCamera _camera = null;
+	private float _stateTime = 0;
+	private ModoJogo _modoJogo = ModoJogo.SINGLE;
+	private boolean _atualiza = true, _desenha = true;
 	
 	/**
 	 * Contrutor do singleton.
@@ -69,15 +67,7 @@ public class CatQuest implements ApplicationListener
 	@Override
 	public void create()
 	{
-		this.ControiCamadas();
-		_batch = new SpriteBatch();
-		_batch.setColor(Color.WHITE);
-		_camera = new OrthographicCamera();
-		_camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		(_pilhaTelas = new Stack<Tela>()).add(new Introducao());
-		_pilhaTelas.lastElement().Iniciar();
-		_telas = new Tela[1];
-		_telas = _pilhaTelas.toArray(_telas);
+		IniciaJogo(true);
 	}
 	
 
@@ -130,6 +120,7 @@ public class CatQuest implements ApplicationListener
 	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 	    //DESENHA
+	    _batch.setColor(Color.WHITE);
 	    _batch.begin();
 	    for (int i = _telas.length - 1; i >= 0; i--)
 		{
@@ -164,6 +155,66 @@ public class CatQuest implements ApplicationListener
 	{
 		// TODO Auto-generated method stub
 		
+	}
+	
+	/**
+	 * Inicia o jogo. Roda toda a rotina de iniciar as propriedades, chamas as primeiras funções, carregar telas, etc.
+	 */
+	private void IniciaJogo(boolean intro)
+	{
+		this.ControiCamadas();
+		_atualiza = true;
+		_desenha = true;
+		_batch = new SpriteBatch();
+		_camera = new OrthographicCamera();
+		_camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		_pilhaTelas = new Stack<Tela>();
+		
+		if (intro)
+			_pilhaTelas.add(new Introducao());
+		else
+			_pilhaTelas.add(new Titulo());
+		
+		_pilhaTelas.lastElement().Iniciar();
+		_telas = new Tela[1];
+		_telas = _pilhaTelas.toArray(_telas);
+	}
+	
+	/**
+	 * Reinicia o jogo do inicio a partir do titulo.
+	 */
+	public void ReiniciaJogo()
+	{
+		_batch.dispose();
+
+		for (int i = _telas.length - 1; i >= 0; i--)
+		{
+			_telas[i].Encerrar();
+			_telas = null;
+		}
+		
+		_pilhaTelas.clear();
+		
+		IniciaJogo(false);
+	}
+	
+	/**
+	 * Função que fecha o jogo.
+	 */
+	public void EncerraJogo()
+	{
+		_atualiza = false;
+		_desenha = false;
+		
+		for (int i = _telas.length - 1; i >= 0; i--)
+		{
+			_telas[i].Encerrar();
+			_telas = null;
+		}
+		
+		_batch.flush();
+		_batch.dispose();
+		Gdx.app.exit();
 	}
 	
 	/**
@@ -293,5 +344,26 @@ public class CatQuest implements ApplicationListener
 	public void SetSeDesenha(boolean desenha)
 	{
 		_desenha = desenha;
+	}
+	
+	/**
+	 * 
+	 * @return Modo do jogo.
+	 */
+	public ModoJogo GetModoJogo()
+	{
+		return _modoJogo;
+	}
+	
+	/**
+	 * Seta um novo modo para o jogo. O jogo é reiniciado após setar.
+	 * @param modo Novo modo de jogo.
+	 */
+	public void SetModoJogo(ModoJogo modo)
+	{
+		_atualiza = false;
+		_desenha = false;
+		_modoJogo = modo;
+		ReiniciaJogo();
 	}
 }

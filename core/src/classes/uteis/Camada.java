@@ -4,10 +4,10 @@ import com.badlogic.gdx.graphics.Color;
 
 public class Camada
 {
-	Integer _idCamada;
-	Color _cor;
-	boolean _colidivel = false;
-	boolean _ativa;
+	private Integer _idCamada;
+	private Color _cor;
+	private boolean _colidivel = false;
+	private boolean _ativa;
 	
 	public Camada()
 	{

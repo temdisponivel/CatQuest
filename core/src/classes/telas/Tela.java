@@ -7,11 +7,19 @@ import classes.uteis.*;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public abstract class Tela
+/**
+ * Classe base para todas as telas. Tela é o que guarda e gerencia todos os gameobjects que estão sendo manipulados pelo jogo.
+ * @author Matheus
+ *
+ */
+public class Tela
 {
-	static private HashMap<Camada, ListaGameObject> _listasGameObject = null;
-	static private boolean _desenha = true, _atualiza = true;
+	private HashMap<Camada, ListaGameObject> _listasGameObject = null;
+	private boolean _desenha = true, _atualiza = true;
 	
+	/**
+	 * Função que inicia as propriedades da tela.
+	 */
 	public void Iniciar()
 	{
 		_listasGameObject = new HashMap<Camada, ListaGameObject>();
@@ -19,12 +27,9 @@ public abstract class Tela
 	
 	public void Atualiza(final float deltaTime)
 	{
-		if (!_atualiza)
-			return;
-		
 		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
 		{
-			if (!entrada.getKey().GetAtiva())
+			if (!entrada.getKey().GetAtiva() || !_atualiza)
 				continue;
 			
 			for (Entry<Integer, GameObject> entrada2 : entrada.getValue().entrySet())
@@ -35,14 +40,13 @@ public abstract class Tela
 	}
 	
 	public void Desenha(final SpriteBatch spriteBatch)
-	{
-		if (!_desenha)
-			return;
-		
+	{		
 		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
 		{
-			if (!entrada.getKey().GetAtiva())
+			if (!entrada.getKey().GetAtiva() || !_desenha)
 				continue;
+			
+			spriteBatch.setColor(entrada.getKey().GetCor());
 			
 			for (Entry<Integer, GameObject> entrada2 : entrada.getValue().entrySet())
 			{
@@ -66,25 +70,57 @@ public abstract class Tela
 		InserirGameObject(gameObject);
 	}
 	
-	public boolean GetDesenha()
+	public boolean GetSeDesenha()
 	{
 		return _desenha;
 	}
 	
-	public boolean GetAtualiza()
+	public boolean GetSeAtualiza()
 	{
 		return _atualiza;
 	}
 	
-	public void SetDesenha(boolean desenha)
+	public void SetSeDesenha(boolean desenha)
 	{
 		_desenha = desenha;
 	}
 	
-	public void SetAtualiza(boolean atualiza)
+	public void SetSeAtualiza(boolean atualiza)
 	{
 		_atualiza = atualiza;
 	}
 	
-	public abstract void Encerrar();
+	
+	public void SetAtiva(boolean ativa)
+	{
+		_desenha = ativa;
+		_atualiza = ativa;
+	}
+	
+	public boolean GetAtiva()
+	{
+		return _desenha && _atualiza;
+	}
+	
+	public void Encerrar()
+	{
+		_atualiza = false;
+		_desenha = false;
+
+		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
+		{
+			for (Entry<Integer, GameObject> entrada2 : entrada.getValue().entrySet())
+			{
+				entrada2.getValue().Encerra();
+			}
+		}
+		
+		_listasGameObject.clear();
+	}
+	
+	public void ReiniciaTela()
+	{
+		Encerrar();
+		Iniciar();
+	}
 }

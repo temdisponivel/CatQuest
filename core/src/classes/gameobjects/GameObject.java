@@ -105,6 +105,16 @@ public abstract class GameObject
 	}
 	
 	/**
+	 * Seta uma nova camada. <b>Esta função deve ser usada somente por {@link Tela#AtualizaCamadaGameObject(GameObject, Camada)}.
+	 * Caso contrário, o objeto ainda será desenha e atualizado na camada anterior.</b> 
+	 * @param novaCamada {@link Camada} nova camada do objeto.
+	 */
+	public void SetCamada(Camada novaCamada)
+	{
+		_camada = novaCamada;
+	}
+	
+	/**
 	 * Retorna a posição deste game object na tela;
 	 * @return {@link Vector2}
 	 */
@@ -186,6 +196,23 @@ public abstract class GameObject
 	}
 	
 	/**
+	 * 
+	 * @return False caso não esteja rodando a rotina de {@link #Atualiza(float)} <b>e</b> {@link #Desenha(SpriteBatch)}. True caso esteja rodando qualquer uma - ou ambas - as duas.
+	 */
+	public boolean GetSeAtivo()
+	{
+		return _desenha || _atualiza;
+	}
+	
+	/**
+	 * @param ativo True para ativar a chamada das rotinas de {@link #Atualiza(float)} e {@link #Desenha(SpriteBatch)}. False para desabilitar ambas.
+	 */
+	public void SetAtivo(boolean ativo)
+	{
+		_desenha = _atualiza = ativo;
+	}
+	
+	/**
 	 * Retorna o {@link TipoGameObject} do game object.
 	 * @return
 	 */
@@ -219,6 +246,8 @@ public abstract class GameObject
 	 */
 	public void Encerra()
 	{
+		this.SetAtivo(false);
+		_telaInserido.Remover(this);
 		_colidiveis.clear();
 	}
 }

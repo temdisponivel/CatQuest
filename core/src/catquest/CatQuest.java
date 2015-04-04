@@ -29,8 +29,9 @@ public class CatQuest implements ApplicationListener
 	 */
 	static public enum Camadas
 	{
-		FUNDO,
+		OBJETOS_ESTATICOS,
 		PERSONAGENS,
+		UI,
 	};
 	
 	/**
@@ -54,7 +55,7 @@ public class CatQuest implements ApplicationListener
 	private float _stateTime = 0;
 	private Configuracoes _configuracoes = null;
 	private ModoJogo _modoJogo = ModoJogo.SINGLE;
-	private boolean _atualiza = true, _desenha = true, _mostraFPS = false;
+	private boolean _atualiza = true, _desenha = true;
 	
 	/**
 	 * Contrutor do singleton.
@@ -143,25 +144,13 @@ public class CatQuest implements ApplicationListener
 	}
 
 	@Override
-	public void pause()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public void pause()	{}
 
 	@Override
-	public void resume()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public void resume() {}
 
 	@Override
-	public void dispose()
-	{
-		// TODO Auto-generated method stub
-		
-	}
+	public void dispose() {}
 	
 	/**
 	 * Inicia o jogo. Roda toda a rotina de iniciar as propriedades, chamas as primeiras funções, carregar telas, etc.
@@ -231,8 +220,10 @@ public class CatQuest implements ApplicationListener
 	 */
 	private void ControiCamadas()
 	{
-		_camadas = new Camada[1];
-		_camadas[0] = new Camada();
+		_camadas = new Camada[3];
+		_camadas[CatQuest.Camadas.OBJETOS_ESTATICOS.ordinal()] = new Camada(CatQuest.Camadas.OBJETOS_ESTATICOS);
+		_camadas[CatQuest.Camadas.PERSONAGENS.ordinal()] = new Camada(CatQuest.Camadas.PERSONAGENS);
+		_camadas[CatQuest.Camadas.UI.ordinal()] = new Camada(CatQuest.Camadas.UI);
 	}
 	
 	/**
@@ -453,7 +444,5 @@ public class CatQuest implements ApplicationListener
 		_desenha = false;
 		_modoJogo = modo;
 		this.ReiniciaJogo();
-	}
-	
-	
+	}	
 }

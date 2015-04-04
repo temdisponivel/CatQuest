@@ -1,5 +1,7 @@
 package classes.uteis;
 
+import catquest.CatQuest;
+
 import com.badlogic.gdx.graphics.Color;
 
 public class Camada
@@ -7,16 +9,29 @@ public class Camada
 	private Integer _idCamada;
 	private Color _cor;
 	private boolean _colidivel = false;
-	private boolean _ativa;
+	private boolean _atualiza = true, _desenha = true;
 	
-	public Camada()
+	public Camada(CatQuest.Camadas id)
 	{
-	}
-	
-	public Camada(int id)
-	{
-		_idCamada = new Integer(id);
-		_cor = Color.BLACK;
+		_idCamada = new Integer(id.ordinal());
+		
+		switch (id)
+		{
+		case OBJETOS_ESTATICOS:
+			_colidivel = false;
+			_atualiza = false;
+			break;
+		case PERSONAGENS:
+		case UI: 
+			_colidivel = true;
+			_atualiza = true;
+			_desenha = true;
+			break;
+		default:
+			break;
+		}
+		
+		_cor = Color.WHITE;
 	}
 	
 	public Integer GetIdCamada()
@@ -44,14 +59,34 @@ public class Camada
 		_colidivel = colidivel;
 	}
 	
+	public boolean GetAtualiza()
+	{
+		return _atualiza;
+	}
+	
+	public void SetAtualiza(boolean atualiza)
+	{
+		_atualiza = atualiza;
+	}
+	
+	public boolean GetDesenha()
+	{
+		return _desenha;
+	}
+	
+	public void SetDesenha(boolean desenha)
+	{
+		_desenha = desenha;
+	}
+	
 	public boolean GetAtiva()
 	{
-		return _ativa;
+		return _atualiza && _desenha;
 	}
 	
 	public void SetAtiva(boolean ativa)
 	{
-		_ativa = ativa;
+		_atualiza = _desenha = ativa;
 	}
 	
 	@Override

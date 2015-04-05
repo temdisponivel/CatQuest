@@ -35,7 +35,7 @@ public class CarregarMusica implements Runnable
 	{
 		if (!arquivo.exists())
 		{
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null, true);
 		}
 			
 		_arquivo = arquivo;

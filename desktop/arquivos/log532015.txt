@@ -1,0 +1,49 @@
+
+Data: Sun Apr 05 05:29:39 BRT 2015 | Mensagem: Não foi possível encontrar o arquivo: rarebsr
+StackTrace: 
+catquest.CatQuest.CriarNovaMusica(CatQuest.java:464)
+classes.telas.Introducao.Iniciar(Introducao.java:22)
+catquest.CatQuest.IniciaJogo(CatQuest.java:228)
+catquest.CatQuest.create(CatQuest.java:89)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Arquivo não encontrado.
+
+Data: Sun Apr 05 05:29:39 BRT 2015 | Mensagem: TESTE LOG
+
+Data: Sun Apr 05 05:30:30 BRT 2015 | Mensagem: Não foi possível encontrar o arquivo: rarebsr
+StackTrace: 
+catquest.CatQuest.CriarNovaMusica(CatQuest.java:464)
+classes.telas.Introducao.Iniciar(Introducao.java:22)
+catquest.CatQuest.IniciaJogo(CatQuest.java:228)
+catquest.CatQuest.create(CatQuest.java:89)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Arquivo não encontrado.
+
+Data: Sun Apr 05 05:30:30 BRT 2015 | Mensagem: TESTE LOG
+
+Data: Sun Apr 05 05:33:09 BRT 2015 | Mensagem: Não foi possível encontrar o arquivo: rarebsr
+StackTrace: 
+catquest.CatQuest.CriarNovaMusica(CatQuest.java:464)
+classes.telas.Introducao.Iniciar(Introducao.java:22)
+catquest.CatQuest.IniciaJogo(CatQuest.java:228)
+catquest.CatQuest.create(CatQuest.java:89)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Arquivo não encontrado.
+
+Data: Sun Apr 05 05:33:09 BRT 2015 | Mensagem: TESTE LOG
+
+Data: Sun Apr 05 05:33:36 BRT 2015 | Mensagem: Não foi possível encontrar o arquivo: rarebsr
+StackTrace: 
+catquest.CatQuest.CriarNovaMusica(CatQuest.java:464)
+classes.telas.Introducao.Iniciar(Introducao.java:22)
+catquest.CatQuest.IniciaJogo(CatQuest.java:228)
+catquest.CatQuest.create(CatQuest.java:89)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Arquivo não encontrado.
+
+Data: Sun Apr 05 05:33:36 BRT 2015 | Mensagem: TESTE LOG
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro irreversível.

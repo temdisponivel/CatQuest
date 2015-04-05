@@ -1,13 +1,9 @@
 package classes.telas;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map.Entry;
-
 import classes.gameobjects.GameObject;
 import classes.uteis.*;
-
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

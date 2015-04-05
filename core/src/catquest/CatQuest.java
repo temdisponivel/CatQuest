@@ -2,8 +2,9 @@
 
 package catquest;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Stack;
-
 import classes.uteis.Camada;
 import classes.uteis.CarregarMusica;
 import classes.uteis.CarregarMusicaListner;
@@ -11,7 +12,6 @@ import classes.uteis.Configuracoes;
 import classes.uteis.Log;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
-
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -90,7 +90,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 		catch (Exception e)
 		{
-			Log.Logar("Erro ao iniciar o jogo.", e);
+			Log.Logar("Erro ao iniciar o jogo.", e, true);
 		}
 	}
 	
@@ -113,7 +113,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 		catch (Exception e)
 		{
-			Log.Logar("Erro no loop principal", e);
+			Log.Logar("Erro no loop principal", e, true);
 		}
 	}
 	
@@ -185,9 +185,13 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	
 	/**
 	 * Inicia o jogo. Roda toda a rotina de iniciar as propriedades, chamas as primeiras funções, carregar telas, etc.
+	 * @throws IOException Quando não for possível criar arquivo de log.
 	 */
-	private void IniciaJogo(boolean intro)
+	private void IniciaJogo(boolean intro) throws IOException
 	{
+		if (!Log.log.exists())
+			Log.log.file().createNewFile();
+		
 		//CARREGA CONFIGURAÇÕES E APLICA
 		this.CarregarConfig();
 		this.AplicarConfiguracoes();
@@ -252,7 +256,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 		catch (Exception e)
 		{
-			Log.Logar("Erro ao reiniciar o jogo.", e);
+			Log.Logar("Erro ao reiniciar o jogo.", e, true);
 		}
 	}
 	
@@ -265,14 +269,15 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		_desenha = false;
 		
 		//ENCERRA TODAS AS TELAS, LIMPA O VETOR E ENCERRA O JOGO
-		for (int i = _telas.length - 1; i >= 0; i--)
+		if (_telas != null)
 		{
-			_telas[i].Encerrar();
-			_telas = null;
+			for (int i = _telas.length - 1; i >= 0; i--)
+			{
+				_telas[i].Encerrar();
+				_telas = null;
+			}
 		}
 		
-		_batch.flush();
-		_batch.dispose();
 		Gdx.app.exit();
 	}
 	
@@ -456,7 +461,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, 0, false, true, this, null).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
 	/**
@@ -470,7 +475,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, 0, false, true, this, listener).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
 	/**
@@ -487,7 +492,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, this, listener).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
 	/**
@@ -505,16 +510,22 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, listenerFimMusica != null ? listenerFimMusica : this, listener).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
+	/**
+	 * Cria um novo {@link Sound som}. Quando não for mais utilizar, chamar {@link Sound#dispose()}.
+	 * Ao tocar os sons, sempre utilize o volume: {@link Configuracoes#GetVolumeSom()}/100.
+	 * @param arquivo Arquivo de som.
+	 * @return Novo som ou nulo caso não encontre o arquivo (caso isso ocorra, o jogo será encerrado em seguida).
+	 */
 	public Sound CriarNovoSom(FileHandle arquivo)
 	{
 		if (arquivo.exists())
 			return Gdx.audio.newSound(arquivo);
 		else
 		{
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 			return null;
 		}
 	}

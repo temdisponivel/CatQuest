@@ -228,7 +228,7 @@ public abstract class GameObject
 	 */
 	public boolean ValidaColisao(GameObject colidiu)
 	{
-		if (colidiu == null || _colidiveis.contains(colidiu.GetTipo()))
+		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()))
 			return false;
 		
 		if (this._sprite.getBoundingRectangle().overlaps(colidiu.GetSprite().getBoundingRectangle()))

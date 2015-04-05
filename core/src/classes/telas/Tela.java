@@ -1,10 +1,15 @@
 package classes.telas;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map.Entry;
+
 import classes.gameobjects.GameObject;
 import classes.uteis.*;
 
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Music.OnCompletionListener;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
@@ -12,10 +17,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  * @author Matheus
  *
  */
-public class Tela
+public class Tela implements OnCompletionListener
 {
 	protected HashMap<Camada, ListaGameObject> _listasGameObject = null;
 	protected boolean _desenha = true, _atualiza = true;
+	private ListaGameObject _gameObjectsColisoes = null;
 	
 	/**
 	 * Função que inicia as propriedades da tela.
@@ -23,6 +29,7 @@ public class Tela
 	public void Iniciar()
 	{
 		_listasGameObject = new HashMap<Camada, ListaGameObject>();
+		_gameObjectsColisoes = new ListaGameObject();
 	}
 	
 	/**
@@ -53,7 +60,31 @@ public class Tela
 			}
 		}
 		
-		//TODO: implementar colisoes. Pensar se é melhor crar uma interface de colidiveis com a lista de colidiveis e pa
+		/* ------------------------ COLISOES ------------------------------------*/
+		
+		//cria uma lista com todos os gameobjects colidiveis de todas as camadas
+		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
+		{
+			//se nao for pra atualizar, se a lista nao estiver ativa, se a camada nao for de colidiveis
+			if (!_atualiza || !entrada.getValue().GetAtiva() || !entrada.getKey().GetColidivel())
+				continue;
+			
+			_gameObjectsColisoes.putAll(entrada.getValue());
+		}
+		
+		//percorre a lista de todos os gameobjects
+		int i = 0, ii = 0;
+		for (Entry<Integer, GameObject> entrada : _gameObjectsColisoes.entrySet())
+		{
+			ii = 0;
+			for (Entry<Integer, GameObject> entrada2 : _gameObjectsColisoes.entrySet())
+			{
+				if (ii++ <= i++)
+					continue;
+				
+				entrada.getValue().ValidaColisao(entrada2.getValue());
+			}
+		}
 	}
 	
 	/**
@@ -184,6 +215,7 @@ public class Tela
 		}
 		
 		_listasGameObject.clear();
+		_listasGameObject.clear();
 	}
 	
 	/**
@@ -193,5 +225,11 @@ public class Tela
 	{
 		this.Encerrar();
 		this.Iniciar();
+	}
+
+	@Override
+	public void onCompletion(Music music)
+	{
+		music.dispose();
 	}
 }

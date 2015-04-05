@@ -67,14 +67,14 @@ public abstract class GameObject
 	}
 	
 	/**
-	 * Função chamada sempre que este objeto colidi com um objeto da lista {@link #_colidiveis}
+	 * Função chamada sempre que este objeto colidi com um objeto da lista objetos colidiveis.
 	 * @param colidiu {@link GameObject} que colidiu com este.
 	 * @param <T> Qualquer classe que herde de GameObject.
 	 */
 	public abstract <T extends GameObject> void AoColidir(T colidiu);
 	
 	/**
-	 * Função com toda a rotina de iniciação das propriedades do objeto. Com excessão do {@link #_id}, porque o ID já é definido no contrutor desta classe.
+	 * Função com toda a rotina de iniciação das propriedades do objeto. Com excessão do ID, porque o ID já é definido no contrutor desta classe.
 	 */
 	public abstract void Inicia();
 	

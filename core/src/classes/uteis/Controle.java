@@ -1,3 +1,5 @@
+//TODO: TERMINAR DE IMPLEMENTAR CONTROLES. JOGADOR DEVE ESCOLHER COM QUAL VAI JOGAR. IMPLEMENTAR GETMOUSE, GETTECLA E ETC.
+
 package classes.uteis;
 
 import com.badlogic.gdx.Gdx;
@@ -8,6 +10,11 @@ import com.badlogic.gdx.controllers.Controllers;
 import com.badlogic.gdx.controllers.PovDirection;
 import com.badlogic.gdx.math.Vector3;
 
+/**
+ * Classe que gerencia os controles do jogo. Aqui ficam os botões apertados, mouse, etc.
+ * @author Matheus
+ *
+ */
 public class Controle implements ControllerListener
 {
 	/**

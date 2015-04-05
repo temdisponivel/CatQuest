@@ -1,5 +1,7 @@
 package classes.uteis;
 
+import catquest.CatQuest;
+
 /**
  * Classe usada para serialização e deserialização para JSON e gravar em arquivo
  * com as configurações do usuário.
@@ -93,32 +95,56 @@ public class Configuracoes
 	{
 		this._height = height;
 	}
-
+	
+	/**
+	 * Retorna se o jogo está em fullscreen ou não.
+	 * @return True caso em fullscreen.
+	 */
 	public boolean GetFullscreen()
 	{
 		return _fullscreen;
 	}
 
+	/**
+	 * Define se o jogo deve entrar em fullscreen. Efetivação via {@link CatQuest#AplicarConfiguracoes()}
+	 * @param fullscreen True para entrar em fullscreen.
+	 */
 	public void SetFullScreen(boolean fullscreen)
 	{
 		this._fullscreen = fullscreen;
 	}
-
+	
+	/**
+	 * Retorna se o jogo está mostrando a quantidade de FPS em que está rodando.
+	 * @return True se está mostrando.
+	 */
 	public boolean GetMostraFPS()
 	{
 		return _mostraFPS;
 	}
 
+	/**
+	 * Define se o jogo deve mostrar a quantidade de FPS. Efetivação via {@link CatQuest#AplicarConfiguracoes()}.
+	 * @param mostraFPS True para mostrar FPS.
+	 */
 	public void SetMostraFPS(boolean mostraFPS)
 	{
 		this._mostraFPS = mostraFPS;
 	}
-
+	
+	/**
+	 * Retorna se o audio do jogo está ativo.
+	 * @return True se está ativo.
+	 */
 	public boolean GetAudio()
 	{
 		return _audio;
 	}
-
+	
+	/**
+	 * Define se o audio do jogo será ativado. Efetivação via {@link CatQuest#AplicarConfiguracoes()}.
+	 * @param audio True para ativar.
+	 */
 	public void SetAudio(boolean audio)
 	{
 		this._audio = audio;
@@ -144,15 +170,15 @@ public class Configuracoes
 			erro = true;
 		}
 		
-		if (_volumeMusica < 0)
+		if (_volumeMusica < 0 || _volumeMusica > 100)
 		{
-			this.SetVolumeMusica(0); 
+			this.SetVolumeMusica(50); 
 			erro = true;
 		}
 		
-		if (_volumeSom < 0)
+		if (_volumeSom < 0 || _volumeMusica > 100)
 		{
-			this.SetVolumeSom(0); 
+			this.SetVolumeSom(50); 
 			erro = true;
 		}
 		

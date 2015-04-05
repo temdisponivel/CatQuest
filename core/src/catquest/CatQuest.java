@@ -1,14 +1,23 @@
+//TODO: EDITAR TODO O CÓDIGO PARA QUE FIQUE EM UM SÓ IDIOMA, PADRONIZADO E COM FINAL NOS PARAMETROS ETC. FAZER CONTROLES< TERMINAR SOM
+
 package catquest;
 
 import java.util.Stack;
 
 import classes.uteis.Camada;
+import classes.uteis.CarregarMusica;
+import classes.uteis.CarregarMusicaListner;
 import classes.uteis.Configuracoes;
+import classes.uteis.Log;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Music.OnCompletionListener;
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -23,7 +32,7 @@ import com.badlogic.gdx.utils.StringBuilder;
  * @author Matheus
  *
  */
-public class CatQuest implements ApplicationListener
+public class CatQuest implements ApplicationListener, OnCompletionListener
 {
 	/**
 	 * Enumerador com todas as camadas do jogo
@@ -75,7 +84,14 @@ public class CatQuest implements ApplicationListener
 	@Override
 	public void create()
 	{
-		this.IniciaJogo(true);
+		try
+		{
+			this.IniciaJogo(true);
+		}
+		catch (Exception e)
+		{
+			Log.Logar("Erro ao iniciar o jogo.", e);
+		}
 	}
 	
 
@@ -87,11 +103,18 @@ public class CatQuest implements ApplicationListener
 	@Override
 	public void render()
 	{
-		if (_atualiza)
-			this.Atualiza();
-
-		if (_desenha)
-			this.Desenha();
+		try
+		{
+			if (_atualiza)
+				this.Atualiza();
+	
+			if (_desenha)
+				this.Desenha();
+		}
+		catch (Exception e)
+		{
+			Log.Logar("Erro no loop principal", e);
+		}
 	}
 	
 	/**
@@ -137,7 +160,7 @@ public class CatQuest implements ApplicationListener
 		}
 	    
 	    if (_configuracoes.GetMostraFPS())
-			//_fonte.draw(_batch, new StringBuilder(3).append(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()/2, this.GetAlturaTela()/2);
+			_fonte.draw(_batch, new StringBuilder(3).append(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()/2, this.GetAlturaTela()/2);
 			
 		_batch.end();
 		
@@ -212,18 +235,25 @@ public class CatQuest implements ApplicationListener
 	 */
 	public void ReiniciaJogo()
 	{
-		_batch.dispose();
-		
-		//ENCERRA TODAS AS TELAS, LIMPA O VETOR E REINICIA O JOGO
-		for (int i = _telas.length - 1; i >= 0; i--)
+		try
 		{
-			_telas[i].Encerrar();
-			_telas = null;
+			_batch.dispose();
+			
+			//ENCERRA TODAS AS TELAS, LIMPA O VETOR E REINICIA O JOGO
+			for (int i = _telas.length - 1; i >= 0; i--)
+			{
+				_telas[i].Encerrar();
+				_telas = null;
+			}
+			
+			_pilhaTelas.clear();
+			
+			this.IniciaJogo(false);
 		}
-		
-		_pilhaTelas.clear();
-		
-		this.IniciaJogo(false);
+		catch (Exception e)
+		{
+			Log.Logar("Erro ao reiniciar o jogo.", e);
+		}
 	}
 	
 	/**
@@ -306,6 +336,8 @@ public class CatQuest implements ApplicationListener
 			this.CarregarConfig();
 		
 		Gdx.graphics.setDisplayMode(_configuracoes.GetWidth(), _configuracoes.GetHeight(), _configuracoes.GetFullscreen());
+		
+		this.GravarConfig();
 	}
 	
 	/**
@@ -415,6 +447,79 @@ public class CatQuest implements ApplicationListener
 	}
 	
 	/**
+	 * Cria uma nova {@link Music} com as configurações do jogo. Carrega a música iniciando tocando, sem loop, a partir de 0 segundo.
+	 * Quando a música chegar ao fim, ela será liberada da memória.
+	 * @param arquivo Arquivo da música.
+	 */
+	public void CriarNovaMusica(FileHandle arquivo)
+	{
+		if (arquivo.exists())
+			new CarregarMusica(arquivo, 0, false, true, this, null).run();
+		else
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+	}
+	
+	/**
+	 * Cria uma nova {@link Music} com as configurações do jogo. Carrega a música iniciando tocando, sem loop, a partir de 0 segundo.
+	 * Quando a música chegar ao fim, ela será liberada da memória. Portanto, não mexer na referencia.
+	 * @param arquivo Arquivo da música.
+	 * @param listener Listener que será chamado ao completar o carregamento da música na memória. Pode ser null.
+	 */
+	public void CriarNovaMusica(FileHandle arquivo, CarregarMusicaListner listener)
+	{
+		if (arquivo.exists())
+			new CarregarMusica(arquivo, 0, false, true, this, listener).run();
+		else
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+	}
+	
+	/**
+	 * Cria uma nova {@link Music} com as configurações do jogo.
+	 * Quando a música chegar ao fim, ela será liberada da memória. Portanto, não mexer na referencia.
+	 * @param arquivo {@link FileHandle} contendo o arquivo da música.
+	 * @param posicaoLoop Posição que a música deve começar a tocar.
+	 * @param isLooping Se a música deve ficar em loop.
+	 * @param isPlaing Se a música já deve ser tocada após criar.
+	 * @param listener Listener que será chamado ao completar o carregamento da música na memória. Pode ser null. Pode ser null.
+	 */
+	public void CriarNovaMusica(FileHandle arquivo, float posicaoLoop, boolean isLooping, boolean isPlaing, CarregarMusicaListner listener)
+	{
+		if (arquivo.exists())
+			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, this, listener).run();
+		else
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+	}
+	
+	/**
+	 * Cria uma nova {@link Music} com as configurações do jogo.
+	 * Quando a música chegar ao fim, será chamado o listener {@link OnCompletionListener}. Caso seja nulo, a música será liberada da memória.
+	 * @param arquivo {@link FileHandle} contendo o arquivo da música.
+	 * @param posicaoLoop Posição que a música deve começar a tocar.
+	 * @param isLooping Se a música deve ficar em loop.
+	 * @param isPlaing Se a música já deve ser tocada após criar.
+	 * @param listener Listener que será chamado ao completar o carregamento da música na memória. Pode ser null.
+	 * @param listenerFimMusica Listener que será chamado ao término da música. Pode ser null.
+	 */
+	public void CriarNovaMusica(FileHandle arquivo, float posicaoLoop, boolean isLooping, boolean isPlaing, OnCompletionListener listenerFimMusica, CarregarMusicaListner listener)
+	{
+		if (arquivo.exists())
+			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, listenerFimMusica != null ? listenerFimMusica : this, listener).run();
+		else
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+	}
+	
+	public Sound CriarNovoSom(FileHandle arquivo)
+	{
+		if (arquivo.exists())
+			return Gdx.audio.newSound(arquivo);
+		else
+		{
+			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.name(), null);
+			return null;
+		}
+	}
+	
+	/**
 	 * Retorna a largura da tela.
 	 * @return Largura da tela.
 	 */
@@ -461,7 +566,7 @@ public class CatQuest implements ApplicationListener
 	
 	/**
 	 * Define se o jogo deve rodar a rotina de desenho.
-	 * @param desenha True para rodar a rotina de {@link #Desenha()}.
+	 * @param desenha True para rodar a rotina de desenha do gameloop.
 	 */
 	public void SetSeDesenha(boolean desenha)
 	{
@@ -487,5 +592,11 @@ public class CatQuest implements ApplicationListener
 		_desenha = false;
 		_modoJogo = modo;
 		this.ReiniciaJogo();
-	}	
+	}
+
+	@Override
+	public void onCompletion(Music music)
+	{
+		music.dispose();
+	}
 }

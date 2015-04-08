@@ -2,8 +2,11 @@
 
 package classes.uteis;
 
+import catquest.CatQuest;
+import classes.telas.Menu;
+import classes.uteis.Player.TipoPlayer;
+
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.ControllerListener;
 import com.badlogic.gdx.controllers.Controllers;
@@ -22,68 +25,88 @@ public class Controle implements ControllerListener
 	 * @author Matheus
 	 *
 	 */
-	public enum DIRECOES
+	public class Direcoes
 	{
-		CENTRO,
-		ESQUERDA,
-		DIREITA,
-		CIMA,
-		BAIXO,
-		NORDESTE,
-		SUDESTE,
-		NOROESTE,
-		SUDOESTE,
+		static public final int CENTRO = 0;
+		static public final int ESQUERDA = 7;
+		static public final int DIREITA = 11;
+		static public final int CIMA = 23;
+		static public final int BAIXO = 31;
+		static public final int NORDESTE = 34;
+		static public final int SUDESTE = 44;
+		static public final int NOROESTE = 30;
+		static public final int SUDOESTE = 38;
 	};
 	
 	/**
-	 * Players para requisição dos comandos.
+	 * Enumerador para os tipos de controle.
 	 * @author Matheus
 	 *
 	 */
-	public enum PLAYER
+	public enum TipoControle
 	{
-		PLAYER1,
-		PLAYER2,
+		TECLADO,
+		CONTROLE,
 	}
 	
-	private Controller _controle1 = null;
-	private Controller _controle2 = null;
+	private Controller _controle = null;
+	private ConjuntoComandos _conjunto = null;
 	
-	
-	public Controle()
+	/**
+	 * Contrói um novo controle baseado no {@link TipoPlayer} que vai utilizar.
+	 * @param tipoPlayer {@link TipoPlayer} que vai utilizar o controle.
+	 */
+	public Controle(TipoPlayer tipoPlayer)
 	{
 		Controllers.addListener(this);
 		
-		if (Controllers.getControllers().size >= 1)
+		for (Controller controle : Controllers.getControllers())
 		{
-			_controle1 = Controllers.getControllers().get(0);
+			if (controle.getName().toLowerCase().contains("xbox") && controle.getName().toLowerCase().contains("360"))
+			{
+				if (controle != CatQuest.instancia.GetPlayer(tipoPlayer == TipoPlayer.UM ? tipoPlayer : TipoPlayer.DOIS).GetControle())
+				{
+					_controle = controle;
+					break;
+				}
+			}
 		}
 		
-		if (Controllers.getControllers().size >= 2)
-		{
-			_controle2 = Controllers.getControllers().get(1);
-		}
+		_conjunto = new ConjuntoComandos(tipoPlayer, this.GetTipoControle());
 	}
 	
 	/**
 	 * Retorna a direção informada pelo usuário através do teclado ou controle.
-	 * @param player {@link PLAYER} o qual quer saber a direção.
-	 * @return {@link DIRECOES} Que o usuário informou via teclado ou controle. {@link DIRECOES#CENTRO} quando nada informado.
+	 * @return {@link Direcoes} Que o usuário informou via teclado ou controle. {@link Direcoes#CENTRO} quando nada informado.
 	 */
-	public DIRECOES GetDirecao(PLAYER player)
+	public int GetDirecao()
 	{
-		int direcao = 0;
+		int direcao = Direcoes.CENTRO;
 		
-		if (player == PLAYER.PLAYER1)
+		if (_controle == null)
 		{
-			if (_controle1 == null)
-			{
-				if(Gdx.input.isButtonPressed(Keys.LEFT))
-					direcao += direcao;
-			}
+			if (Gdx.input.isKeyPressed(_conjunto.ESQUERDA))
+				direcao += Direcoes.ESQUERDA;
+			else if (Gdx.input.isKeyPressed(_conjunto.DIREITA))
+				direcao += Direcoes.DIREITA;
+			if (Gdx.input.isKeyPressed(_conjunto.CIMA))
+				direcao += Direcoes.CIMA;
+			else if (Gdx.input.isKeyPressed(_conjunto.BAIXO))
+				direcao += Direcoes.BAIXO;
+		}
+		else
+		{
+			if (_controle.getAxis(_conjunto.ESQUERDA) <= -1/3)
+				direcao += Direcoes.ESQUERDA;
+			else if (_controle.getAxis(_conjunto.DIREITA) >= 1/3)
+				direcao += Direcoes.DIREITA;
+			if (_controle.getAxis(_conjunto.CIMA) >= 1/3)
+				direcao += Direcoes.CIMA;
+			else if (_controle.getAxis(_conjunto.BAIXO)  <= -1/3)
+				direcao += Direcoes.BAIXO;
 		}
 		
-		return DIRECOES.values()[direcao];
+		return direcao;
 	}
 
 	@Override
@@ -93,89 +116,92 @@ public class Controle implements ControllerListener
 		if (!(controller.getName().toLowerCase().contains("xbox") && controller.getName().toLowerCase().contains("360")))
 			return;
 		
-		if (_controle1 == null)
+		if (_controle == null)
 		{
-			_controle1 = controller;
-			_controle1.addListener(this);
-		}
-		else if (_controle2 == null)
-		{
-			_controle2 = controller;
-			_controle2.addListener(this);
+			_controle = controller;
+			_controle.addListener(this);
 		}
 	}
 
 	@Override
 	public void disconnected(Controller controller)
 	{
-		if (_controle1 == controller)
+		if (_controle == controller)
 		{
-			_controle1 = null;
-		}
-		else if (_controle2 == controller)
-		{
-			_controle2 = null;
+			_controle = null;
+			_conjunto.SetConjuntoTeclado();
+			CatQuest.instancia.AdicionaTela(new Menu(), false, true);
 		}
 	}
 
 	@Override
 	public boolean buttonDown(Controller controller, int buttonCode)
 	{
-		if (controller != _controle1 && controller != _controle2)
-			return false;
-		
-		if (controller == _controle1)
-		{
-			
-		}
-		else if (controller == _controle2)
-		{
-			
-		}
-		
 		return false;
 	}
 
 	@Override
 	public boolean buttonUp(Controller controller, int buttonCode)
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean axisMoved(Controller controller, int axisCode, float value)
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean povMoved(Controller controller, int povCode, PovDirection value)
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean xSliderMoved(Controller controller, int sliderCode, boolean value)
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean ySliderMoved(Controller controller, int sliderCode, boolean value)
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean accelerometerMoved(Controller controller, int accelerometerCode, Vector3 value)
 	{
-		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
+	/**
+	 * @return O {@link TipoControle} que o player está jogando.
+	 */
+	public TipoControle GetTipoControle()
+	{
+		if (_controle != null)
+			return TipoControle.CONTROLE;
+		else
+			return TipoControle.TECLADO;
+	}
+	
+	/**
+	 * Retorna o {@link ConjuntoComandos} do controle.
+	 * @return {@link ConjuntoComandos} do controle.
+	 */
+	public ConjuntoComandos GetConjunto()
+	{
+		return _conjunto;
+	}
+	
+	/**
+	 * Define um novo {@link ConjuntoComandos} conjunto de comandos do controle.
+	 * @param conjunto {@link ConjuntoComandos} de comandos do controle.
+	 */
+	public void SetConjunto(ConjuntoComandos conjunto)
+	{
+		_conjunto = conjunto;
+	}
 }

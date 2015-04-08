@@ -27,8 +27,8 @@ public class CarregarMusica implements Runnable
 	 * @param posicaoLoop Posição que a música deve começar a tocar.
 	 * @param isLooping Se a música deve ficar em loop.
 	 * @param isPlaing Se a música já deve ser tocada após criar.
-	 * @param listenerCarregarMusica Listener que será chamado ao completar o carregamento da música na memória.
-	 * @param listener Listener que será chamado ao término da música.
+	 * @param listenerCarregarMusica {@link OnCompletionListener} que será chamado ao completar o carregamento da música na memória.
+	 * @param listener {@link CarregarMusicaListner} que será chamado ao término da música.
 	 */
 	public CarregarMusica(FileHandle arquivo, float posicaoLoop, boolean isLooping, boolean isPlaing, 
 			OnCompletionListener listener, CarregarMusicaListner listenerCarregarMusica)
@@ -48,7 +48,7 @@ public class CarregarMusica implements Runnable
 	
 	@Override
 	public void run()
-	{
+	{		
 		Music musica = null;
 		
 		if (_arquivo != null)

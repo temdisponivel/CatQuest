@@ -1,15 +1,11 @@
 package classes.telas;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
-
-import classes.uteis.CarregarMusicaListner;
+import classes.uteis.Camada.Camadas;
 import classes.uteis.ListaGameObject;
-import classes.uteis.Log;
 import catquest.CatQuest;
-import catquest.CatQuest.Camadas;
 
-public class Introducao extends Tela implements CarregarMusicaListner
+public class Introducao extends Tela
 {
 	@Override
 	public void Iniciar() 
@@ -19,20 +15,14 @@ public class Introducao extends Tela implements CarregarMusicaListner
 		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.PERSONAGENS), new ListaGameObject());
 		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.UI), new ListaGameObject());
 		
-		CatQuest.instancia.CriarNovaMusica(Gdx.files.local("rarebsr"));
-		Log.Logar("TESTE LOG", null, true);
+		CatQuest.instancia.CriarNovaMusica(Gdx.files.local("audio\\musica\\James Brown - super bad.mp3"));
+		CatQuest.instancia.RetiraTela();
+		CatQuest.instancia.AdicionaTela(new Menu(), true, true);
 	}
 	
 	@Override
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-	}
-
-	@Override
-	public void AoCarregar(Music musicaCarregada)
-	{
-		// TODO Auto-generated method stub
-		
 	}
 }

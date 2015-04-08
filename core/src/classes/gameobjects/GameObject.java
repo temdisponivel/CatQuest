@@ -5,17 +5,19 @@ import java.util.HashSet;
 import classes.uteis.Camada;
 import classes.telas.Tela;
 import catquest.CatQuest;
+
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Pool.Poolable;
 
 /**
  * Classe base para todos os objetos do que aparecem no jogo.
  * @author Matheus
  *
  */
-public abstract class GameObject
+public abstract class GameObject implements Poolable
 {
 	/**
 	 * Enumerador para os tipos de GameObject. Utilizado para evitar casts dinamicos e lista de colidiveis.
@@ -85,6 +87,12 @@ public abstract class GameObject
 	{
 		this.Encerra();
 		this.Inicia();
+	}
+	
+	@Override
+	public void reset() 
+	{
+		this.Redefine();
 	}
 	
 	/**
@@ -239,6 +247,29 @@ public abstract class GameObject
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Retorna se este {@link GameObject} é colidível.
+	 * @return True caso seja colidível.
+	 */
+	public boolean GetColidivel()
+	{
+		if (_colidiveis != null)
+			return !_colidiveis.isEmpty();
+		else
+			return false;
+	}
+	
+	/**
+	 * Retorna a lista de {@link GameObject} que podem colidir com este.
+	 * @return {@link HashSet} de {@link GameObject.TipoGameObject} de {@link GameObject} que podem colidir com este. Ou nulo caso não exista colidíveis ({@link GameObject#GetColidivel()} == false) .
+	 * @see {@link GameObject#GetColidivel()}.
+	 */
+	@SuppressWarnings("javadoc")
+	public HashSet<GameObject.TipoGameObject> GetColidiveis()
+	{
+		return _colidiveis;
 	}
 	
 	/**

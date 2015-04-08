@@ -1,6 +1,5 @@
 package classes.uteis;
 
-import catquest.CatQuest;
 import com.badlogic.gdx.graphics.Color;
 
 /**
@@ -16,7 +15,19 @@ public class Camada
 	private boolean _colidivel = false;
 	private boolean _atualiza = true, _desenha = true;
 	
-	public Camada(CatQuest.Camadas id)
+	/**
+	 * Enumerador com todas as camadas do jogo
+	 * @author Matheus
+	 *
+	 */
+	public enum Camadas
+	{
+		OBJETOS_ESTATICOS,
+		PERSONAGENS,
+		UI,
+	};
+	
+	public Camada(Camadas id)
 	{
 		_idCamada = new Integer(id.ordinal());
 		

@@ -1,5 +1,7 @@
 package classes.uteis;
 
+import classes.uteis.Controle.TipoControle;
+import classes.uteis.Player.TipoPlayer;
 import catquest.CatQuest;
 
 /**
@@ -18,7 +20,22 @@ public class Configuracoes
 	private boolean _fullscreen;
 	private boolean _mostraFPS;
 	private boolean _audio;
+	private ConjuntoComandos _comandoPlayer1;
+	private ConjuntoComandos _comandoPlayer2;
 	
+	public Configuracoes()
+	{
+		this.SetAudio(true);
+		this.SetFullScreen(false);
+		this.SetWidth(1024);
+		this.SetHeight(768);
+		this.SetMostraFPS(false);
+		this.SetVolumeMusica(50);
+		this.SetVolumeSom(50);
+		_comandoPlayer1 = new ConjuntoComandos(TipoPlayer.UM, TipoControle.TECLADO);
+		_comandoPlayer2 = new ConjuntoComandos(TipoPlayer.DOIS, TipoControle.TECLADO);
+	}
+
 	/**
 	 * 
 	 * @return O volume em que as {@link com.badlogic.gdx.audio.Music musicas} estão sendo tocadas.
@@ -148,6 +165,40 @@ public class Configuracoes
 	public void SetAudio(boolean audio)
 	{
 		this._audio = audio;
+	}
+	
+	/**
+	 * @return O {@link ConjuntoComandos} do player1.
+	 */
+	public ConjuntoComandos GetComandoPlayer1()
+	{
+		return _comandoPlayer1;
+	}
+
+	/**
+	 * Define um novo {@link ConjuntoComandos} para o player1.
+	 * @param comando Novo {@link ConjuntoComandos} do player1.
+	 */
+	public void SetComandoPlayer1(ConjuntoComandos comando)
+	{
+		this._comandoPlayer1 = comando;
+	}
+
+	/**
+	 * @return O {@link ConjuntoComandos} do player2.
+	 */
+	public ConjuntoComandos GetComandoPlayer2()
+	{
+		return _comandoPlayer2;
+	}
+
+	/**
+	 * Define um novo {@link ConjuntoComandos} para o player2.
+	 * @param comando Novo {@link ConjuntoComandos} do player2.
+	 */
+	public void SetComandoPlayer2(ConjuntoComandos comando)
+	{
+		this._comandoPlayer2 = comando;
 	}
 	
 	/**

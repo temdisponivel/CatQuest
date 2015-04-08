@@ -1,0 +1,87 @@
+
+Data: Wed Apr 08 00:02:05 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+java.util.Vector.toArray(Unknown Source)
+catquest.CatQuest.AdicionaTela(CatQuest.java:405)
+classes.telas.Introducao.Iniciar(Introducao.java:22)
+catquest.CatQuest.IniciaJogo(CatQuest.java:226)
+catquest.CatQuest.create(CatQuest.java:84)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 08 00:03:08 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+java.util.Vector.toArray(Unknown Source)
+catquest.CatQuest.AdicionaTela(CatQuest.java:405)
+classes.telas.Introducao.Iniciar(Introducao.java:22)
+catquest.CatQuest.IniciaJogo(CatQuest.java:226)
+catquest.CatQuest.create(CatQuest.java:84)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 08 00:05:05 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+java.util.Vector.toArray(Unknown Source)
+catquest.CatQuest.AdicionaTela(CatQuest.java:405)
+classes.telas.Introducao.Iniciar(Introducao.java:22)
+catquest.CatQuest.IniciaJogo(CatQuest.java:226)
+catquest.CatQuest.create(CatQuest.java:84)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 08 00:46:39 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.EncerraJogo(CatQuest.java:267)
+classes.uteis.Log.Logar(Log.java:52)
+catquest.CatQuest.CriarNovoSom(CatQuest.java:530)
+classes.telas.Menu.Atualiza(Menu.java:27)
+catquest.CatQuest.Atualiza(CatQuest.java:125)
+catquest.CatQuest.render(CatQuest.java:104)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 08 00:46:43 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.EncerraJogo(CatQuest.java:267)
+classes.uteis.Log.Logar(Log.java:52)
+catquest.CatQuest.CriarNovoSom(CatQuest.java:530)
+classes.telas.Menu.Atualiza(Menu.java:27)
+catquest.CatQuest.Atualiza(CatQuest.java:125)
+catquest.CatQuest.render(CatQuest.java:104)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 08 00:48:24 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.EncerraJogo(CatQuest.java:267)
+classes.uteis.Log.Logar(Log.java:52)
+catquest.CatQuest.CriarNovoSom(CatQuest.java:530)
+classes.telas.Menu.Atualiza(Menu.java:27)
+catquest.CatQuest.Atualiza(CatQuest.java:125)
+catquest.CatQuest.render(CatQuest.java:104)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 08 00:49:14 BRT 2015 | Mensagem: Não foi possível encontrar o arquivo: audio/som/notify
+StackTrace: 
+catquest.CatQuest.CriarNovoSom(CatQuest.java:531)
+classes.telas.Menu.Atualiza(Menu.java:27)
+catquest.CatQuest.Atualiza(CatQuest.java:125)
+catquest.CatQuest.render(CatQuest.java:104)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Arquivo não encontrado.
+
+Data: Wed Apr 08 00:49:14 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.Atualiza(CatQuest.java:125)
+catquest.CatQuest.render(CatQuest.java:104)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null

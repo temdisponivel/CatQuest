@@ -1,1 +1,1 @@
-{_volumeMusica:100,_volumeSom:100,_width:1024,_height:768,_fullscreen:false,_mostraFPS:true,_audio:true}
+{_volumeMusica:50,_volumeSom:50,_width:1024,_height:768,_fullscreen:false,_mostraFPS:true,_audio:true,_comandoPlayer1:{_player:UM,_tipoControle:TECLADO,PAUSE:131,ACAO:33,DIREITA:32,ESQUERDA:29,CIMA:51,BAIXO:47,ATAQUE_ESQUERDA:38,ATAQUE_DIREITA:40,ATAQUE_CIMA:37,ATAQUE_BAIXO:39},_comandoPlayer2:{_player:DOIS,_tipoControle:TECLADO,PAUSE:131,ACAO:14,DIREITA:22,ESQUERDA:21,CIMA:19,BAIXO:20,ATAQUE_ESQUERDA:11,ATAQUE_DIREITA:13,ATAQUE_CIMA:15,ATAQUE_BAIXO:9}}

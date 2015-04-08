@@ -17,9 +17,25 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class Tela implements OnCompletionListener
 {
+	/**
+	 * Enumerador para identificação de telas.
+	 * @author Matheus
+	 *
+	 */
+	public enum Telas
+	{
+		TITULO,
+		MENU,
+		INTRODUCAO,
+		GAMEPLAY,
+		FIMDOJOGO,		
+	}
+	
 	protected HashMap<Camada, ListaGameObject> _listasGameObject = null;
 	protected boolean _desenha = true, _atualiza = true;
-	private ListaGameObject _gameObjectsColisoes = null;
+	protected ListaGameObject _gameObjectsColisoes = null;
+	protected Telas _tipo;
+	
 	
 	/**
 	 * Função que inicia as propriedades da tela.
@@ -224,6 +240,15 @@ public class Tela implements OnCompletionListener
 		this.Encerrar();
 		this.Iniciar();
 	}
+	
+	/**
+	 * 
+	 * @return O {@link Telas Tipo} da tela.
+	 */
+	public Telas GetTipo()
+	{
+		return _tipo;
+	}
 
 	@Override
 	public void onCompletion(Music music)
@@ -232,8 +257,8 @@ public class Tela implements OnCompletionListener
 	}
 	
 	@Override
-	public boolean equals(Object obj)
+	public int hashCode()
 	{
-		return obj.getClass() == this.getClass(); 
+		return _tipo.ordinal();
 	}
 }

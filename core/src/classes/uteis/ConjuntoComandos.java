@@ -1,3 +1,4 @@
+//TODO: validar teclado numero
 package classes.uteis;
 
 import classes.uteis.Controle.TipoControle;
@@ -14,6 +15,7 @@ public class ConjuntoComandos
 	private TipoControle _tipoControle;
 	public int PAUSE = 0;
 	public int ACAO = 0;
+	public int HABILIDADE = 0;
 	public int DIREITA = 0;
 	public int ESQUERDA = 0;
 	public int CIMA = 0;
@@ -56,6 +58,7 @@ public class ConjuntoComandos
 			ATAQUE_DIREITA = Keys.L;
 			ATAQUE_CIMA = Keys.I;
 			ATAQUE_BAIXO = Keys.K;
+			HABILIDADE = Keys.SPACE;
 		}
 		else
 		{
@@ -67,8 +70,9 @@ public class ConjuntoComandos
 			BAIXO = Keys.DOWN;
 			ATAQUE_ESQUERDA = Keys.NUM_4;
 			ATAQUE_DIREITA = Keys.NUM_6;
-			ATAQUE_CIMA = Keys.NUM_8;
-			ATAQUE_BAIXO = Keys.NUM_2;
+			ATAQUE_CIMA = Keys.NUMPAD_8;
+			ATAQUE_BAIXO = Keys.NUM_5;
+			HABILIDADE = Keys.ENTER;
 		}
 	}
 	

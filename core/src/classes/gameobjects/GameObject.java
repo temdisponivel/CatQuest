@@ -24,7 +24,7 @@ public abstract class GameObject implements Poolable
 	 * @author Matheus
 	 *
 	 */
-	public enum TipoGameObject
+	public enum GameObjects
 	{
 		INIMIGO,
 		HEROI,
@@ -32,7 +32,7 @@ public abstract class GameObject implements Poolable
 	};
 	
 	protected TextureRegion _sprite = null;
-	protected TipoGameObject _tipo;
+	protected GameObjects _tipo;
 	protected Vector2 _posicaoTela = null;
 	protected Rectangle _caixaColisao = null;
 	protected Animation _animacao = null;
@@ -40,7 +40,7 @@ public abstract class GameObject implements Poolable
 	protected Integer _id = null;
 	protected Tela _telaInserido = null;
 	protected boolean _atualiza = true, _desenha = true;
-	protected HashSet<GameObject.TipoGameObject> _colidiveis = null;
+	protected HashSet<GameObject.GameObjects> _colidiveis = null;
 	
 	public GameObject()
 	{
@@ -230,10 +230,10 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna o {@link TipoGameObject} do game object.
+	 * Retorna o {@link GameObjects} do game object.
 	 * @return O tipo do game object.
 	 */
-	public final TipoGameObject GetTipo()
+	public final GameObjects GetTipo()
 	{
 		return _tipo;
 	}
@@ -281,7 +281,7 @@ public abstract class GameObject implements Poolable
 	 * @see {@link GameObject#GetColidivel()}.
 	 */
 	@SuppressWarnings("javadoc")
-	public HashSet<GameObject.TipoGameObject> GetColidiveis()
+	public HashSet<GameObject.GameObjects> GetColidiveis()
 	{
 		return _colidiveis;
 	}
@@ -298,6 +298,12 @@ public abstract class GameObject implements Poolable
 		
 		if (_colidiveis != null)
 			_colidiveis.clear();
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return _tipo.ordinal();
 	}
 }
 

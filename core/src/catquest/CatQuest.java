@@ -16,6 +16,7 @@ import classes.uteis.Player;
 import classes.uteis.Player.TipoPlayer;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
+import classes.telas.Tela.Telas;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
@@ -116,7 +117,13 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * Função que roda a lógica de atualização do jogo. AI, colições, mudança de posições, etc; são gerenciadas aqui.
 	 */
 	private void Atualiza()
-	{		
+	{
+		if (this.GetPlayer(TipoPlayer.UM).GetControle().GetPause() || (_modoJogo == ModoJogo.COOP && this.GetPlayer(TipoPlayer.DOIS).GetControle().GetPause()))
+		{
+			if (_pilhaTelas.lastElement().GetTipo() == Telas.GAMEPLAY)
+				this.AdicionaTela(new Menu(), false, true);
+		}
+		
 		for (int i = _telas.length - 1; i >= 0; i--)
 		{
 			if (_telas[i].GetSeAtualiza())

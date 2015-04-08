@@ -9,7 +9,7 @@ public class Titulo extends Tela
 	public void Iniciar()
 	{
 		// TODO Auto-generated method stub
-		
+		_tipo = Telas.TITULO;
 	}
 
 	@Override

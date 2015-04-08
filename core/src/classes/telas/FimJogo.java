@@ -9,7 +9,7 @@ public class FimJogo extends Tela
 	public void Iniciar()
 	{
 		// TODO Auto-generated method stub
-		
+		_tipo = Telas.FIMDOJOGO;
 	}
 
 	@Override

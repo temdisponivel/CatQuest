@@ -71,7 +71,7 @@ public class Controle implements ControllerListener
 				}
 			}
 		}
-		
+
 		_conjunto = new ConjuntoComandos(tipoPlayer, this.GetTipoControle());
 	}
 	
@@ -107,6 +107,87 @@ public class Controle implements ControllerListener
 		}
 		
 		return direcao;
+	}
+	
+	/**
+	 * Retorna a direção de ataque informada pelo usuário através do teclado ou controle.
+	 * @return {@link Direcoes} Que o usuário informou via teclado ou controle. {@link Direcoes#CENTRO} quando nada informado.
+	 */
+	public int GetDirecaoAtaque()
+	{
+		int direcao = Direcoes.CENTRO;
+		
+		if (_controle == null)
+		{
+			if (Gdx.input.isKeyPressed(_conjunto.ATAQUE_ESQUERDA))
+				direcao += Direcoes.ESQUERDA;
+			else if (Gdx.input.isKeyPressed(_conjunto.ATAQUE_DIREITA))
+				direcao += Direcoes.DIREITA;
+			if (Gdx.input.isKeyPressed(_conjunto.ATAQUE_CIMA))
+				direcao += Direcoes.CIMA;
+			else if (Gdx.input.isKeyPressed(_conjunto.ATAQUE_BAIXO))
+				direcao += Direcoes.BAIXO;
+		}
+		else
+		{
+			if (_controle.getAxis(_conjunto.ATAQUE_ESQUERDA) <= -1/3)
+				direcao += Direcoes.ESQUERDA;
+			else if (_controle.getAxis(_conjunto.ATAQUE_DIREITA) >= 1/3)
+				direcao += Direcoes.DIREITA;
+			if (_controle.getAxis(_conjunto.ATAQUE_CIMA) >= 1/3)
+				direcao += Direcoes.CIMA;
+			else if (_controle.getAxis(_conjunto.ATAQUE_BAIXO)  <= -1/3)
+				direcao += Direcoes.BAIXO;
+		}
+		
+		return direcao;
+	}
+	
+	/**
+	 * 
+	 * @return True se o botão de ação foi ativado.
+	 */
+	public boolean GetAcao()
+	{
+		if (this.GetTipoControle() == TipoControle.TECLADO)
+		{
+			return Gdx.input.isKeyPressed(_conjunto.ACAO);
+		}
+		else
+		{
+			return _controle.getButton(_conjunto.ACAO);
+		}
+	}
+	
+	/**
+	 * @return True se o botão de habilidade foi ativado. 
+	 */
+	public boolean GetHabilidade()
+	{
+		if (this.GetTipoControle() == TipoControle.TECLADO)
+		{
+			return Gdx.input.isKeyPressed(_conjunto.HABILIDADE);
+		}
+		else
+		{
+			return _controle.getButton(_conjunto.HABILIDADE);
+		}
+	}
+	
+	/**
+	 * 
+	 * @return True caso o botão de pause seja ativado.
+	 */
+	public boolean GetPause()
+	{
+		if (this.GetTipoControle() == TipoControle.TECLADO)
+		{
+			return Gdx.input.isKeyPressed(_conjunto.PAUSE);
+		}
+		else
+		{
+			return _controle.getButton(_conjunto.PAUSE);
+		}
 	}
 
 	@Override

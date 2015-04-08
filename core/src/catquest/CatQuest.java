@@ -1,4 +1,4 @@
-//TODO: EDITAR TODO O CÓDIGO PARA QUE FIQUE EM UM SÓ IDIOMA, PADRONIZADO E COM FINAL NOS PARAMETROS ETC. FAZER CONTROLES< TERMINAR SOM
+//TODO: EDITAR TODO O CÓDIGO PARA QUE FIQUE EM UM SÓ IDIOMA, PADRONIZADO E COM FINAL NOS PARAMETROS ETC. FAZER UI's. FAZER MAPAS
 
 package catquest;
 
@@ -116,10 +116,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * Função que roda a lógica de atualização do jogo. AI, colições, mudança de posições, etc; são gerenciadas aqui.
 	 */
 	private void Atualiza()
-	{
-		/* ------------------ ATUALIZA ------------------- */
-		this.TrataEntradaUsuario();
-		
+	{		
 		for (int i = _telas.length - 1; i >= 0; i--)
 		{
 			if (_telas[i].GetSeAtualiza())
@@ -162,13 +159,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		_batch.end();
 		
 		/* ----------------- FIM DESENHA  --------------------*/
-	}
-	
-	/**
-	 * Trata toda a interação com o usuário.
-	 */
-	private void TrataEntradaUsuario()
-	{
 	}
 
 	@Override
@@ -637,5 +627,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public Player GetPlayer(TipoPlayer tipo)
 	{
 		return _players.get(tipo.ordinal());
+	}
+	
+	/**
+	 * Retorna a fonte do jogo.
+	 * @return {@link BitmapFont} com a fonte do jogo.
+	 */
+	public BitmapFont GetFonte()
+	{
+		return _fonte;
 	}
 }

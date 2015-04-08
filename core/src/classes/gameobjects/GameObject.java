@@ -5,10 +5,10 @@ import java.util.HashSet;
 import classes.uteis.Camada;
 import classes.telas.Tela;
 import catquest.CatQuest;
-
 import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Pool.Poolable;
 
@@ -31,9 +31,10 @@ public abstract class GameObject implements Poolable
 		CENARIO,
 	};
 	
-	protected Sprite _sprite = null;
+	protected TextureRegion _sprite = null;
 	protected TipoGameObject _tipo;
 	protected Vector2 _posicaoTela = null;
+	protected Rectangle _caixaColisao = null;
 	protected Animation _animacao = null;
 	protected Camada _camada = null;
 	protected Integer _id = null;
@@ -44,6 +45,8 @@ public abstract class GameObject implements Poolable
 	public GameObject()
 	{
 		_id = CatQuest.instancia.GetNovoId();
+		_posicaoTela = new Vector2();
+		_caixaColisao = new Rectangle();
 	}
 	
 	/**
@@ -55,7 +58,13 @@ public abstract class GameObject implements Poolable
 		if (!_atualiza)
 			return;
 		
-		_sprite = (Sprite) _animacao.getKeyFrame(CatQuest.instancia.GetStateTime());
+		if (_animacao != null)
+		{
+			_sprite = _animacao.getKeyFrame(CatQuest.instancia.GetStateTime());
+			_caixaColisao.setPosition(_posicaoTela);
+			_caixaColisao.setHeight(_sprite.getRegionHeight());
+			_caixaColisao.setWidth(_sprite.getRegionWidth());
+		}
 	}
 	
 	/**
@@ -64,7 +73,7 @@ public abstract class GameObject implements Poolable
 	 */
 	public void Desenha(SpriteBatch bash)
 	{
-		if (_desenha)
+		if (_desenha && _sprite != null)
 			bash.draw(_sprite, _posicaoTela.x, _posicaoTela.y);
 	}
 	
@@ -141,10 +150,10 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna a {@link Sprite} atual do game object.
-	 * @return {@link Sprite} atual do object.
+	 * Retorna a {@link TextureRegion} atual do game object.
+	 * @return {@link TextureRegion} atual do object.
 	 */
-	public final Sprite GetSprite()
+	public final TextureRegion GetSprite()
 	{
 		return _sprite;
 	}
@@ -239,7 +248,7 @@ public abstract class GameObject implements Poolable
 		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()))
 			return false;
 		
-		if (this._sprite.getBoundingRectangle().overlaps(colidiu.GetSprite().getBoundingRectangle()))
+		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))
 		{
 			this.AoColidir(colidiu);
 			colidiu.AoColidir(this);
@@ -247,6 +256,11 @@ public abstract class GameObject implements Poolable
 		}
 		
 		return false;
+	}
+	
+	public Rectangle GetCaixaColisao()
+	{
+		return new Rectangle(_posicaoTela.x, _posicaoTela.y, _sprite.getRegionWidth(), _sprite.getRegionHeight());
 	}
 	
 	/**
@@ -278,8 +292,12 @@ public abstract class GameObject implements Poolable
 	public void Encerra()
 	{
 		this.SetAtivo(false);
-		_telaInserido.Remover(this);
-		_colidiveis.clear();
+		
+		if (_telaInserido != null)
+			_telaInserido.Remover(this);
+		
+		if (_colidiveis != null)
+			_colidiveis.clear();
 	}
 }
 

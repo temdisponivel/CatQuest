@@ -5,7 +5,6 @@ package catquest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Stack;
-
 import classes.uteis.Camada;
 import classes.uteis.Camada.*;
 import classes.uteis.CarregarMusica;
@@ -16,8 +15,6 @@ import classes.uteis.Player;
 import classes.uteis.Player.TipoPlayer;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
-import classes.telas.Tela.Telas;
-
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -32,7 +29,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
-import com.badlogic.gdx.utils.StringBuilder;
 
 /**
  * Classe que contém todas as informações padrões do jogo. Quase todos os métodos e propriedades são estáticos.
@@ -55,7 +51,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	static public CatQuest instancia;
 	private int _idObjeto = 0;
 	private Stack<Tela> _pilhaTelas = null;
-	private Tela[] _telas = null;
 	private SpriteBatch _batch = null;
 	private Camada[] _camadas = null;
 	private OrthographicCamera _camera = null;
@@ -117,17 +112,11 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * Função que roda a lógica de atualização do jogo. AI, colições, mudança de posições, etc; são gerenciadas aqui.
 	 */
 	private void Atualiza()
-	{
-		if (this.GetPlayer(TipoPlayer.UM).GetControle().GetPause() || (_modoJogo == ModoJogo.COOP && this.GetPlayer(TipoPlayer.DOIS).GetControle().GetPause()))
+	{		
+		for (Tela tela : _pilhaTelas)
 		{
-			if (_pilhaTelas.lastElement().GetTipo() == Telas.GAMEPLAY)
-				this.AdicionaTela(new Menu(), false, true);
-		}
-		
-		for (int i = _telas.length - 1; i >= 0; i--)
-		{
-			if (_telas[i].GetSeAtualiza())
-				_telas[i].Atualiza(Gdx.graphics.getDeltaTime());
+			if (tela.GetSeAtualiza())
+				tela.Atualiza(Gdx.graphics.getDeltaTime());
 		}
 		
 		_stateTime += Gdx.graphics.getDeltaTime();
@@ -154,14 +143,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	    _batch.setColor(Color.WHITE);
 	    
 	    _batch.begin();
-	    for (int i = _telas.length - 1; i >= 0; i--)
+	    for (Tela tela : _pilhaTelas)
 		{
-	    	if (_telas[i].GetSeDesenha())
-	    		_telas[i].Desenha(_batch);
+	    	if (tela.GetSeDesenha())
+	    		tela.Desenha(_batch);
 		}
 	    
 	    if (_configuracoes.GetMostraFPS())
-			_fonte.draw(_batch, new StringBuilder(3).append(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()-50, this.GetAlturaTela()-25);
+			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()-50, this.GetAlturaTela()-25);
 			
 		_batch.end();
 		
@@ -210,11 +199,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA COM O TAMANHO DAS CONFIGURAÇÕES
 		_camera = new OrthographicCamera();
 		_camera.setToOrtho(false, _configuracoes.GetWidth(), _configuracoes.GetHeight());
-
-		//CRIA UM NOVO VETOR DE TELAS - INICIALMENTE COM 1 POSICAO E PREENCHE COM AS TELAS DA PILHA
-		//UM VETOR E UMA PILHA PARA QUE NÃO TENHAMOS QUE DAR POP E PUSH TODA HORA. O VETOR É ATUALIZA SEMPRE QUE UMA NOVA TELA
-		//É CRIADA OU REMOVIDA
-		//_telas = new Tela[1];
 		
 		//SE FOR PRA COMEÇAR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
 		if (intro)
@@ -234,10 +218,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			_batch.dispose();
 			
 			//ENCERRA TODAS AS TELAS, LIMPA O VETOR E REINICIA O JOGO
-			for (int i = _telas.length - 1; i >= 0; i--)
+			for (Tela tela : _pilhaTelas)
 			{
-				_telas[i].Encerrar();
-				_telas = null;
+				tela.Encerrar();
+				tela = null;
 			}
 			
 			_pilhaTelas.clear();
@@ -259,14 +243,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		_desenha = false;
 		
 		//ENCERRA TODAS AS TELAS, LIMPA O VETOR E ENCERRA O JOGO
-		if (_telas != null)
+		if (_pilhaTelas != null)
 		{
-			for (int i = _telas.length - 1; i >= 0; i--)
+			for (Tela tela : _pilhaTelas)
 			{
-				_telas[i].Encerrar();
+				tela.Encerrar();
 			}
 			
-			_telas = null;
+			_pilhaTelas = null;
 		}
 		
 		Gdx.app.exit();
@@ -402,9 +386,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (_pilhaTelas == null)
 			_pilhaTelas = new Stack<Tela>();
 		
-		if (_telas == null)
-			_telas = new Tela[0];
-		
 		if (!_pilhaTelas.isEmpty())
 		{
 			_pilhaTelas.lastElement().SetSeAtualiza(atualizaAntiga);
@@ -412,8 +393,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 		
 		_pilhaTelas.add(tela);
-		
-		_telas = _pilhaTelas.toArray(_telas);
 		
 		tela.Iniciar();
 	}
@@ -427,7 +406,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		_pilhaTelas.pop();
 		_pilhaTelas.lastElement().SetAtiva(true);
-		_pilhaTelas.toArray(_telas);
 	}
 	
 	/**

@@ -1,8 +1,9 @@
 //TODO: validar teclado numero
-package classes.uteis;
+package classes.uteis.controle;
 
-import classes.uteis.Controle.TipoControle;
 import classes.uteis.Player.TipoPlayer;
+import classes.uteis.controle.Controle.TipoControle;
+
 import com.badlogic.gdx.Input.Keys;
 
 /**

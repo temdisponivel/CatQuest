@@ -1,10 +1,12 @@
 package classes.gameobjects;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 
 import classes.uteis.Camada;
 import classes.telas.Tela;
 import catquest.CatQuest;
+
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -41,6 +43,9 @@ public abstract class GameObject implements Poolable
 	protected Tela _telaInserido = null;
 	protected boolean _atualiza = true, _desenha = true;
 	protected HashSet<GameObject.GameObjects> _colidiveis = null;
+	protected LinkedList<GameObject> _filhos = null;
+	protected boolean _colidiPai = false;
+	protected GameObject _pai = null;
 	
 	public GameObject()
 	{
@@ -65,16 +70,27 @@ public abstract class GameObject implements Poolable
 			_caixaColisao.setHeight(_sprite.getRegionHeight());
 			_caixaColisao.setWidth(_sprite.getRegionWidth());
 		}
+		
+		for (GameObject filho : _filhos)
+		{
+			filho.Atualiza(deltaTime);
+			filho.SetPosicaoRelativa(_posicaoTela);
+		}
 	}
 	
 	/**
 	 * Função que desenha a sprite atual - atualizada a todo frame pela {@link #Atualiza(float)} baseada na {@link Animation}.
 	 * @param bash {@link SpriteBatch} utilizada para desenhar objetos na tela.
 	 */
-	public void Desenha(SpriteBatch bash)
+	public void Desenha(SpriteBatch batch)
 	{
 		if (_desenha && _sprite != null)
-			bash.draw(_sprite, _posicaoTela.x, _posicaoTela.y);
+			batch.draw(_sprite, _posicaoTela.x, _posicaoTela.y);
+		
+		for (GameObject filho : _filhos)
+		{
+			filho.Desenha(batch);
+		}
 	}
 	
 	/**
@@ -245,7 +261,12 @@ public abstract class GameObject implements Poolable
 	 */
 	public boolean ValidaColisao(GameObject colidiu)
 	{
-		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()))
+		for (GameObject filho : _filhos)
+		{
+			filho.ValidaColisao(colidiu);
+		}
+		
+		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()) || (!_colidiPai && colidiu == _pai))
 			return false;
 		
 		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))
@@ -284,6 +305,109 @@ public abstract class GameObject implements Poolable
 	public HashSet<GameObject.GameObjects> GetColidiveis()
 	{
 		return _colidiveis;
+	}
+	
+	/**
+	 * Função que adiciona um filho a este {@link GameObject}. Todos os filhos são atualizados e desenhados logo após o pai.
+	 * Ao adicionar um filho, a camada do filho passa a ser a camada do pai; ele só será atualizado e desenhado a partir do pai;
+	 * Portante, se o pai não é atualizado, o filho também não. Se o pai não é desenhado, o filho também não.
+	 * Entretanto, as colisões são realizadas independentes do pai. A colisão com o pai é desativada por padrão, mas pode ser mudada em {@link GameObject#SetColidiPai(boolean)}.
+	 * @param filho {@link GameObject} filho.
+	 */
+	public void AdicionaFilho(GameObject filho)
+	{
+		if (_filhos == null)
+			_filhos = new LinkedList<GameObject>();
+		
+		if (_filhos == null)
+			return;
+		
+		filho.SetPai(this);
+		filho.SetCamada(_camada);
+		filho.SetPosicaoRelativa(_posicaoTela);
+		
+		if (_telaInserido != null && _telaInserido.ContemGameObject(filho))
+			_telaInserido.Remover(filho);
+			
+		_filhos.add(filho);
+	}
+	
+	/**
+	 * Adiciona uma série de filhos a este gameobject. O mesmo que {@link GameObject#adicionaFilho(GameObject)}.
+	 * @param filhos Filhos a serem adicionados.
+	 * @see {@link GameObject#adicionaFilho(GameObject)}
+	 */
+	public void AdicionaFilhos(GameObject... filhos)
+	{
+		for (int i = 0; i < filhos.length; i++)
+			AdicionaFilho(filhos[i]);
+	}
+	
+	/**
+	 * Define um pai para este {@link GameObject}. Deve ser utilizado quando este gameobject é adicionado como filho de outro. 
+	 * @param pai {@link GameObject} que será referenciado como pai.
+	 */
+	public void SetPai(GameObject pai)
+	{
+		_pai = pai;
+	}
+	
+	/**
+	 * Define a posição atual deste {@link GameObject} em relação a do objeto parametrizado.
+	 * Ou seja, toma como ponto ZERO o vetor parametrizado.
+	 * @param posicaoRelativa Vetor a relacionar como ponto ZERO.
+	 */
+	public void SetPosicaoRelativa(Vector2 posicaoRelativa)
+	{
+		_posicaoTela.sub(posicaoRelativa);
+	}
+	
+	/**
+	 * Define quando este {@link GameObject} deve validar colisão com seu pai.
+	 * @param colidiPai True se é pra validar colisão.
+	 */
+	public void SetColidiPai(boolean colidiPai)
+	{
+		_colidiPai = colidiPai;
+	}
+	
+	/**
+	 * @return True se a colisão deste {@link GameObject} é calculada também com o pai. Ou seja, se ele colidi com o pai.
+	 */
+	public boolean GetColidiPai()
+	{
+		return _colidiPai;
+	}
+	
+	/**
+	 * @return True se este {@link GameObject} tem algum filho.
+	 */
+	public boolean GetSePai()
+	{
+		if (_filhos != null)
+			return !_filhos.isEmpty();
+		else
+			return false;
+	}
+	
+	/**
+	 * @return {@link LinkedList<T>} dos filhos deste objeto. Pode ser nulo caso não tenha filhos. Validar via {@link GameObject#GetSePai()}.
+	 */
+	public LinkedList<GameObject> GetFilhos()
+	{
+		return _filhos;
+	}
+	
+	/**
+	 * Retira um filho deste {@link GameObject}.
+	 * @param filho {@link GameObject} filho a ser removido.
+	 */
+	public void RemoveFilho(GameObject filho)
+	{
+		if (!this.GetSePai())
+			return;
+		
+		_filhos.remove(filho);
 	}
 	
 	/**

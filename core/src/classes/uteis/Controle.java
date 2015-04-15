@@ -1,10 +1,11 @@
 //TODO: TERMINAR DE IMPLEMENTAR CONTROLES. JOGADOR DEVE ESCOLHER COM QUAL VAI JOGAR. IMPLEMENTAR GETMOUSE, GETTECLA E ETC.
 
-package classes.uteis.controle;
+package classes.uteis;
 
 import catquest.CatQuest;
 import classes.telas.Menu;
 import classes.uteis.Player.TipoPlayer;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.ControllerListener;

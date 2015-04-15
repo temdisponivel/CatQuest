@@ -1,5 +1,6 @@
 package classes.uteis;
 
+import classes.uteis.controle.Controle;
 import catquest.CatQuest;
 
 /**

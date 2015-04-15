@@ -1,7 +1,8 @@
 package classes.uteis;
 
-import classes.uteis.Controle.TipoControle;
 import classes.uteis.Player.TipoPlayer;
+import classes.uteis.controle.ConjuntoComandos;
+import classes.uteis.controle.Controle.TipoControle;
 import catquest.CatQuest;
 
 /**

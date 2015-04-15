@@ -13,7 +13,6 @@ import classes.uteis.Configuracoes;
 import classes.uteis.Log;
 import classes.uteis.Player;
 import classes.uteis.Player.TipoPlayer;
-import classes.uteis.UI;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
 import com.badlogic.gdx.ApplicationListener;
@@ -195,9 +194,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		
 		//CRIA SPRITEBATCH PARA DESENHAR COISAS NA TELA
 		_batch = new SpriteBatch();
-		
-		//inicia o helper de UI
-		new UI();
 		
 		//CRIA CAMERA ORTOGRAFICA PARA QUE NÃO TENHA DIFERENÇA ENTRE PROFUNDIDADE.
 		//CRIA COM O TAMANHO DAS CONFIGURAÇÕES

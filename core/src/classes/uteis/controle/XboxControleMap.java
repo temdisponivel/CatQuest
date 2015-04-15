@@ -1,4 +1,4 @@
-package classes.uteis;
+package classes.uteis.controle;
 
 import com.badlogic.gdx.controllers.PovDirection;
 

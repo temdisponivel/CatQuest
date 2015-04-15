@@ -47,7 +47,7 @@ public class Log
 		
 		if (encerra)
 		{
-			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getCause() : "Erro irreversível."));
+			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() : "Erro irreversível."));
 			_stringBuilder.append("\r\n");
 			CatQuest.instancia.EncerraJogo();
 		}

@@ -1,0 +1,33 @@
+
+Data: Wed Apr 15 04:28:54 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.SpriteBatch.begin(SpriteBatch.java:160)
+com.badlogic.gdx.scenes.scene2d.Stage.draw(Stage.java:127)
+classes.telas.Menu.Desenha(Menu.java:43)
+catquest.CatQuest.Desenha(CatQuest.java:152)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 15 04:36:08 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.SpriteBatch.begin(SpriteBatch.java:160)
+com.badlogic.gdx.scenes.scene2d.Stage.draw(Stage.java:127)
+classes.telas.Menu.Desenha(Menu.java:40)
+catquest.CatQuest.Desenha(CatQuest.java:155)
+catquest.CatQuest.render(CatQuest.java:109)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Wed Apr 15 04:37:11 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.SpriteBatch.begin(SpriteBatch.java:160)
+com.badlogic.gdx.scenes.scene2d.Stage.draw(Stage.java:127)
+classes.telas.Menu.Desenha(Menu.java:40)
+catquest.CatQuest.Desenha(CatQuest.java:155)
+catquest.CatQuest.render(CatQuest.java:109)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: SpriteBatch.end must be called before begin.

@@ -4824,3 +4824,36 @@ Data: Thu Apr 16 14:01:41 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
 Data: Thu Apr 16 14:22:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
 
 Data: Thu Apr 16 15:01:28 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:36 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:36 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:36 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:36 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:36 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:28:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 15:48:27 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.uteis.UI.Imagem.<init>(Imagem.java:24)
+classes.telas.Menu.Iniciar(Menu.java:32)
+catquest.CatQuest.AdicionaTela(CatQuest.java:391)
+classes.telas.Introducao.Iniciar(Introducao.java:12)
+catquest.CatQuest.AdicionaTela(CatQuest.java:391)
+catquest.CatQuest.IniciaJogo(CatQuest.java:218)
+catquest.CatQuest.create(CatQuest.java:85)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null

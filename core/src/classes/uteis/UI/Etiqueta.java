@@ -4,10 +4,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
-import classes.uteis.Camada.Camadas;
+import classes.uteis.Camada;
 
 /**
  * Classe para criação de etiqutas.
@@ -32,7 +31,7 @@ public class Etiqueta extends GameObject
 		this.Inicia();
 		_texto = texto;
 		_posicaoTela = posicao;
-		_camada = CatQuest.instancia.GetCamada(Camadas.UI);
+		_camada = Camada.UI;
 		_cor = Color.BLACK;
 	}
 	

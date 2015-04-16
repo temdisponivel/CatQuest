@@ -9,10 +9,9 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.Input.Buttons;
-
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
-import classes.uteis.Camada.Camadas;
+import classes.uteis.Camada;
 import classes.uteis.UI.Botao.EscutadorBotao.BotoesMouse;
 
 /**
@@ -67,7 +66,7 @@ public class Botao extends GameObject
 		_caixaColisao = tamanho;
 		_caixaColisao.setPosition(_posicaoTela);
 		_escutador = escutador;
-		_camada = CatQuest.instancia.GetCamada(Camadas.UI);
+		_camada = Camada.UI;
 		
 		this.Inicia();
 	}

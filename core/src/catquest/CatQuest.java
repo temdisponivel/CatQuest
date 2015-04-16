@@ -5,9 +5,6 @@ package catquest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Stack;
-
-import classes.uteis.Camada;
-import classes.uteis.Camada.*;
 import classes.uteis.CarregarMusica;
 import classes.uteis.CarregarMusicaListner;
 import classes.uteis.Configuracoes;
@@ -57,7 +54,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private int _idObjeto = 0;
 	private Stack<Tela> _pilhaTelas = null;
 	private SpriteBatch _batch = null;
-	private Camada[] _camadas = null;
 	private OrthographicCamera _camera = null;
 	private float _stateTime = 0;
 	private Configuracoes _configuracoes = null;
@@ -193,9 +189,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CONTRÓI OS PLAYERS
 		this.ControiPlayers();
 		
-		//CONTRÓI AS CAMADAS DO JOGO
-		this.ControiCamadas();
-		
 		//ATUALIZA E DESENHA COMO TRUE PARA GAMELOOP COMPLETO
 		_atualiza = true;
 		_desenha = true;
@@ -277,17 +270,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Função para construção de todas as camadas do jogo e suas propriedades.
-	 */
-	private void ControiCamadas()
-	{
-		_camadas = new Camada[3];
-		_camadas[Camadas.OBJETOS_ESTATICOS.ordinal()] = new Camada(Camadas.OBJETOS_ESTATICOS);
-		_camadas[Camadas.PERSONAGENS.ordinal()] = new Camada(Camadas.PERSONAGENS);
-		_camadas[Camadas.UI.ordinal()] = new Camada(Camadas.UI);
-	}
-	
-	/**
 	 * Função para construção dos players.
 	 */
 	private void ControiPlayers()
@@ -362,16 +344,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		_configuracoes = config;
 		this.GravarConfig();
-	}
-	
-	/**
-	 * Retorna uma referencia para a instacia da camada desejada.
-	 * @param camada {@link Camada} a retornar referencia.
-	 * @return Referencia para a camada.
-	 */
-	public Camada GetCamada(Camadas camada)
-	{
-		return _camadas[camada.ordinal()];
 	}
 	
 	/**
@@ -467,15 +439,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public OrthographicCamera GetCamera()
 	{
 		return _camera;
-	}
-	
-	/**
-	 * Retornas todas as {@link Camada} do jogo.
-	 * @return Um vetor de {@link Camada}
-	 */
-	public final Camada[] GetCamadas()
-	{
-		return _camadas;
 	}
 	
 	/**
@@ -676,8 +639,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	
 	/**
 	 * Função que retorna a {@link TextureRegion} desejada.
-	 * @param caminho Caminho do arquivo físico da textura, sem a extenção do arquivo.
+	 * @param caminho 
+	 * 		Caminho do arquivo físico da textura, sem a extenção do arquivo e sem a pasta raiz. Exemplo: arquivo\\imagens\\imagem.png (a partir da pasta raiz da plataforma) - parametrizar como: imagens\\imagem
 	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
+	 * @see {@link TextureAtlas#findRegion(String)}
 	 */
 	public TextureRegion GetTextura(String caminho)
 	{

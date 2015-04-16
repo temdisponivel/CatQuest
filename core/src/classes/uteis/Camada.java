@@ -15,6 +15,10 @@ public class Camada
 	private boolean _colidivel = false;
 	private boolean _atualiza = true, _desenha = true;
 	
+	public static Camada ObjetosEstaticos = new Camada(Camadas.OBJETOS_ESTATICOS);
+	public static Camada Personagens = new Camada(Camadas.PERSONAGENS);
+	public static Camada UI = new Camada(Camadas.UI);
+	
 	/**
 	 * Enumerador com todas as camadas do jogo
 	 * @author Matheus

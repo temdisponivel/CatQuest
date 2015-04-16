@@ -7,6 +7,7 @@ import classes.uteis.Camada;
 import classes.telas.Tela;
 import catquest.CatQuest;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -48,12 +49,14 @@ public abstract class GameObject implements Poolable
 	protected LinkedList<GameObject> _filhos = null;
 	protected boolean _colidiPai = false;
 	protected GameObject _pai = null;
+	protected Color _cor = null;
 	
 	public GameObject()
 	{
 		_id = CatQuest.instancia.GetNovoId();
 		_posicaoTela = new Vector2();
 		_caixaColisao = new Rectangle();
+		_cor = Color.WHITE;
 	}
 	
 	/**
@@ -68,6 +71,7 @@ public abstract class GameObject implements Poolable
 		if (_animacao != null)
 		{
 			_sprite.setRegion(_animacao.getKeyFrame(CatQuest.instancia.GetStateTime()));
+			_sprite.setColor(_cor);
 			_caixaColisao.setHeight(_sprite.getRegionHeight());
 			_caixaColisao.setWidth(_sprite.getRegionWidth());
 		}
@@ -463,6 +467,23 @@ public abstract class GameObject implements Poolable
 	public float GetAltura()
 	{
 		return _caixaColisao.height;
+	}
+	
+	/**
+	 * @return {@link Color Cor} com que as sprites deste objeto estão sendo desenhadas. {@link Color#WHITE} por padrão.
+	 */
+	public Color GetColor()
+	{
+		return _cor;
+	}
+	
+	/**
+	 * Define uma nova {@link Color cor} para desenhar as sprites deste objeto.
+	 * @param cor Nova cor.
+	 */
+	public void SetColor(Color cor)
+	{
+		_cor = cor;
 	}
 	
 	/**

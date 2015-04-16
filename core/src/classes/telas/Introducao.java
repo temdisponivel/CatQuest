@@ -1,7 +1,5 @@
 package classes.telas;
 
-import classes.uteis.Camada.Camadas;
-import classes.uteis.ListaGameObject;
 import catquest.CatQuest;
 
 public class Introducao extends Tela

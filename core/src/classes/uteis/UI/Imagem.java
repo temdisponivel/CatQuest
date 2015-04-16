@@ -1,6 +1,7 @@
 package classes.uteis.UI;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
 import classes.gameobjects.GameObject;
@@ -22,7 +23,19 @@ public class Imagem extends GameObject
 	{
 		super();
 		_camada = Camada.UI;
-		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local(caminho)).getTexture());
+		_sprite = new Sprite();
+		_sprite.setRegion(CatQuest.instancia.GetTextura(Gdx.files.local(caminho)));
+	}
+	
+	/**
+	 * Cria uma nova imagem.
+	 * @param caminho {@link FileHandle Caminho} físico do arquivo. Será usado {@link CatQuest#GetTextura(String)} para carregar.
+	 */
+	public Imagem(FileHandle caminho)
+	{
+		super();
+		_camada = Camada.UI;
+		_sprite = new Sprite(CatQuest.instancia.GetTextura(caminho).getTexture());
 	}
 
 	@Override

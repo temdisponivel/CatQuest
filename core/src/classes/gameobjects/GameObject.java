@@ -2,16 +2,13 @@ package classes.gameobjects;
 
 import java.util.HashSet;
 import java.util.LinkedList;
-
 import classes.uteis.Camada;
 import classes.telas.Tela;
 import catquest.CatQuest;
-
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Pool.Poolable;
@@ -69,11 +66,14 @@ public abstract class GameObject implements Poolable
 			return;
 		
 		if (_animacao != null)
+			_sprite.setRegion(_animacao.getKeyFrame(CatQuest.instancia.GetTempoJogo()));
+		
+		if (_sprite != null)
 		{
-			_sprite.setRegion(_animacao.getKeyFrame(CatQuest.instancia.GetStateTime()));
 			_sprite.setColor(_cor);
-			_caixaColisao.setHeight(_sprite.getRegionHeight());
-			_caixaColisao.setWidth(_sprite.getRegionWidth());
+			_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
+			_caixaColisao.setHeight(_sprite.getHeight());
+			_caixaColisao.setWidth(_sprite.getWidth());
 		}
 		
 		_caixaColisao.setPosition(_posicaoTela);
@@ -95,7 +95,7 @@ public abstract class GameObject implements Poolable
 	public void Desenha(SpriteBatch batch)
 	{
 		if (_desenha && _sprite != null)
-			batch.draw(_sprite, _posicaoTela.x, _posicaoTela.y);
+			_sprite.draw(batch);
 		
 		if (this.GetSePai() && _desenha)
 		{
@@ -207,10 +207,10 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna a {@link TextureRegion} atual do game object.
-	 * @return {@link TextureRegion} atual do object.
+	 * Retorna a {@link Sprite} atual do game object.
+	 * @return {@link Sprite} atual do object.
 	 */
-	public final TextureRegion GetSprite()
+	public final Sprite GetSprite()
 	{
 		return _sprite;
 	}

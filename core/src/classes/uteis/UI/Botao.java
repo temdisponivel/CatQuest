@@ -184,14 +184,4 @@ public class Botao extends GameObject
 			}
 		}
 	}
-	
-	/**
-	 * Recria o botão com um tamanho e posição desejado.
-	 * @param posicao {@link Vector2}
-	 * @param tamanho
-	 */
-	public void Recria(Vector2 posicao, Rectangle tamanho)
-	{
-		
-	}
 }

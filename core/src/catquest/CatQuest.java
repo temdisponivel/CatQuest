@@ -55,7 +55,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private Stack<Tela> _pilhaTelas = null;
 	private SpriteBatch _batch = null;
 	private OrthographicCamera _camera = null;
-	private float _stateTime = 0;
+	private float _tempoJogo = 0;
 	private Configuracoes _configuracoes = null;
 	private ModoJogo _modoJogo = ModoJogo.SINGLE;
 	private boolean _atualiza = true, _desenha = true;
@@ -123,10 +123,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		for (Tela tela : _pilhaTelas)
 		{
 			if (tela.GetSeAtualiza())
-				tela.Atualiza(Gdx.graphics.getDeltaTime());
+				tela.Atualiza(Gdx.graphics.getDeltaTime()*1000);
 		}
 		
-		_stateTime += Gdx.graphics.getDeltaTime();
+		_tempoJogo += Gdx.graphics.getDeltaTime()*1000;
 		
 		//ATUALIZA CAMERA E SETA AS MATRIZES DA CAMERA NO BATCH
 		_camera.update();
@@ -406,6 +406,16 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	private void GerenciaTelas()
 	{
+		if (_removeTela)
+		{
+			_pilhaTelas.pop();
+			
+			if (!_pilhaTelas.isEmpty())
+				_pilhaTelas.lastElement().SetAtiva(true);
+			
+			_removeTela = false;
+		}
+		
 		if (_trocaTela)
 		{
 			if (_proximaTela != null)
@@ -413,13 +423,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 				_pilhaTelas.add(_proximaTela);
 				_trocaTela = false;
 			}
-		}
-		
-		if (_removeTela)
-		{
-			_pilhaTelas.pop();
-			_pilhaTelas.lastElement().SetAtiva(true);
-			_removeTela = false;
 		}
 	}
 	
@@ -561,9 +564,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * Retorna o state time. A soma de todos os {@link com.badlogic.gdx.Graphics#getDeltaTime()} desde o inicio do jogo.
 	 * @return Retorna um float com a soma dos deltatimes do jogo.
 	 */
-	public final float GetStateTime()
+	public final float GetTempoJogo()
 	{
-		return _stateTime;
+		return _tempoJogo;
 	}
 	
 	/**
@@ -660,6 +663,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		float altura =  _fonte.getBounds(texto).height + bordas;
 		
 		return new Rectangle(0, 0, largura, altura);
+	}
+	
+	/**
+	 * @return Escala para redimencionar as sprites.
+	 */
+	public float GetEscala()
+	{
+		return GetLarguraTela() / GetAlturaTela();
 	}
 	
 	/**

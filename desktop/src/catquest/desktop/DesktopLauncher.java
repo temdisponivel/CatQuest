@@ -15,6 +15,8 @@ public class DesktopLauncher {
 	public static void main (String[] arg) 
 	{
 		Settings settings = new Settings();
+		settings.maxHeight = 2048;
+		settings.maxWidth = 2048;
         TexturePacker.process(settings, "imagens", "pack", "CatQuest");
         
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();

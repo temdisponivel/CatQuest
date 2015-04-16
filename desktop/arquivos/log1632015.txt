@@ -4857,3 +4857,26 @@ catquest.CatQuest.create(CatQuest.java:85)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 16:07:22 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.uteis.UI.Imagem.<init>(Imagem.java:26)
+classes.telas.Introducao.Iniciar(Introducao.java:14)
+catquest.CatQuest.AdicionaTela(CatQuest.java:391)
+catquest.CatQuest.IniciaJogo(CatQuest.java:218)
+catquest.CatQuest.create(CatQuest.java:85)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 16:53:02 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+classes.uteis.UI.Imagem.<init>(Imagem.java:27)
+classes.telas.Introducao.Iniciar(Introducao.java:14)
+catquest.CatQuest.AdicionaTela(CatQuest.java:391)
+catquest.CatQuest.IniciaJogo(CatQuest.java:218)
+catquest.CatQuest.create(CatQuest.java:85)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null

@@ -49,7 +49,7 @@ public class Etiqueta extends GameObject
 	}
 
 	@Override
-	public <T extends GameObject> void AoColidir(T colidiu) {}
+	public void AoColidir(GameObject colidiu) {}
 
 	@Override
 	public void Inicia()
@@ -62,7 +62,11 @@ public class Etiqueta extends GameObject
 	public void Atualiza(float deltaTime) 
 	{
 		super.Atualiza(deltaTime);
-	};
+		
+		//atualiza o tamanho do texto
+		_caixaColisao.width = _fonte.getBounds(_texto).width;
+		_caixaColisao.height = _fonte.getBounds(_texto).height;
+	}
 	
 	@Override
 	public void Desenha(SpriteBatch batch)

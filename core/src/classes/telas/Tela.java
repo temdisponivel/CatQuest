@@ -37,6 +37,9 @@ public class Tela implements OnCompletionListener
 	protected Telas _tipo;
 	protected Color _corFundo = null;
 	protected LinkedList<Integer> _camadasTela = null;
+	protected boolean _inseriGameObject = false, _removeGameObject = false;
+	protected LinkedList<GameObject> _gameObjectsIncluir = null;
+	protected LinkedList<GameObject> _gameObjectsExcluir = null;
 	
 	
 	/**
@@ -47,6 +50,8 @@ public class Tela implements OnCompletionListener
 		_listasGameObject = new HashMap<Camada, ListaGameObject>();
 		_gameObjectsColisoes = new ListaGameObject();
 		_camadasTela = new LinkedList<Integer>();
+		_gameObjectsIncluir = new LinkedList<GameObject>();
+		_gameObjectsExcluir = new LinkedList<GameObject>();
 		_corFundo = Color.BLACK;
 	}
 	
@@ -56,6 +61,8 @@ public class Tela implements OnCompletionListener
 	 */
 	public void Atualiza(final float deltaTime)
 	{
+		this.GerenciaGameObject();
+		
 		/* ------------ atualiza -------------------- */
 		
 		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
@@ -126,35 +133,62 @@ public class Tela implements OnCompletionListener
 	}
 	
 	/**
+	 * Função que gerencia os {@link GameObject} que devem ser inseridos ou removidos.
+	 */
+	private void GerenciaGameObject()
+	{
+		if (_inseriGameObject)
+		{
+			_inseriGameObject = false;
+			
+			for (GameObject gameObject : _gameObjectsIncluir)
+			{
+				if (!_camadasTela.contains(gameObject.GetCamada().GetIdCamada()))
+				{
+					_listasGameObject.put(gameObject.GetCamada(), new ListaGameObject());
+					_camadasTela.add(gameObject.GetCamada().GetIdCamada());
+				}
+				
+				_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
+				gameObject.SetTela(this);
+			}
+			
+			_gameObjectsIncluir.clear();
+		}
+		
+		if (_removeGameObject)
+		{
+			_removeGameObject = false;
+			
+			for (GameObject remover : _gameObjectsIncluir)
+			{
+				ListaGameObject listaTemp;
+				if ((listaTemp = _listasGameObject.get(remover.GetCamada())) != null)
+					listaTemp.Remover(remover);
+			}
+			
+			_gameObjectsExcluir.clear();
+		}
+	}
+	
+	/**
 	 * Função que insere um novo gameobject na tela.
 	 * @param gameObject {@link GameObject} a ser inserido.
 	 */
 	public void InserirGameObject(GameObject gameObject)
 	{
-		if (!_camadasTela.contains(gameObject.GetCamada().GetIdCamada()))
-		{
-			_listasGameObject.put(gameObject.GetCamada(), new ListaGameObject());
-			_camadasTela.add(gameObject.GetCamada().GetIdCamada());
-		}
-		
-		_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
-		gameObject.SetTela(this);
+		_inseriGameObject = true;
+		_gameObjectsIncluir.add(gameObject);
 	}
 	
 	/**
 	 * Função que remove um {@link GameObject} da tela.
 	 * @param remover {@link GameObject} a ser removido.
-	 * @return O objeto removido.
 	 */
-	public GameObject Remover(GameObject remover)
+	public void Remover(GameObject remover)
 	{
-		ListaGameObject listaTemp;
-		if ((listaTemp = _listasGameObject.get(remover.GetCamada())) != null)
-			listaTemp.Remover(remover);
-		else
-			remover = null;
-		
-		return remover;
+		_removeGameObject = true;
+		_gameObjectsExcluir.add(remover);		
 	}
 	
 	/**

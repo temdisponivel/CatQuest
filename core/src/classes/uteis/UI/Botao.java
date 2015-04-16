@@ -52,7 +52,7 @@ public class Botao extends GameObject
 	private Sprite _spriteClicado = null;
 	private Sprite _spriteNormal = null;
 	private EscutadorBotao _escutador = null;
-	private boolean _apertado = false;
+	protected boolean _apertado = false;
 	private BotoesMouse _botaoApertado = BotoesMouse.Esquerdo;
 	
 	/**
@@ -73,7 +73,7 @@ public class Botao extends GameObject
 	}
 
 	@Override
-	public <T extends GameObject> void AoColidir(T colidiu){};
+	public void AoColidir(GameObject colidiu){};
 
 	@Override
 	public void Inicia()
@@ -184,5 +184,15 @@ public class Botao extends GameObject
 				_sprite = _spriteNormal;
 			}
 		}
+	}
+	
+	/**
+	 * Recria o botão com um tamanho e posição desejado.
+	 * @param posicao {@link Vector2}
+	 * @param tamanho
+	 */
+	public void Recria(Vector2 posicao, Rectangle tamanho)
+	{
+		
 	}
 }

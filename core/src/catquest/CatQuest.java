@@ -30,6 +30,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
@@ -681,6 +682,19 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public TextureRegion GetTextura(String caminho)
 	{
 		return _textureAtlas.findRegion(caminho);
+	}
+	
+	/**
+	 * @param texto Texto para calcular o tamanho.
+	 * @param bordas Tamanho da borda entre o texto e o fim do retangulo.
+	 * @return {@link Rectangle Retangulo} com o tamanho do texto mais as bordas.
+	 */
+	public Rectangle GetTamanhoTexto(String texto, int bordas)
+	{
+		float largura = _fonte.getBounds(texto).width + bordas;
+		float altura =  _fonte.getBounds(texto).height + bordas;
+		
+		return new Rectangle(0, 0, largura, altura);
 	}
 	
 	/**

@@ -37,6 +37,7 @@ public abstract class GameObject implements Poolable
 	protected Sprite _sprite = null;
 	protected GameObjects _tipo;
 	protected Vector2 _posicaoTela = null;
+	protected Vector2 _posicaoTelaAux = null;
 	protected Rectangle _caixaColisao = null;
 	protected Animation _animacao = null;
 	protected Camada _camada = null;
@@ -104,9 +105,8 @@ public abstract class GameObject implements Poolable
 	/**
 	 * Função chamada sempre que este objeto colidi com um objeto da lista objetos colidiveis.
 	 * @param colidiu {@link GameObject} que colidiu com este.
-	 * @param <T> Qualquer classe que herde de GameObject.
 	 */
-	public abstract <T extends GameObject> void AoColidir(T colidiu);
+	public abstract void AoColidir(GameObject colidiu);
 	
 	/**
 	 * Função com toda a rotina de iniciação das propriedades do objeto. Com excessão do ID, porque o ID já é definido no contrutor desta classe.
@@ -165,12 +165,41 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
+	 * Caso este objeto tenha um pai, retorna a posição absoluta - sem relação com o pai;
+	 * @return {@link Vector2}
+	 */
+	public final Vector2 GetPosicaoAbsoluta()
+	{
+		return _posicaoTelaAux;
+	}
+	
+	/**
 	 * Seta a nova posição do game object.
 	 * @param posicao {@link Vector2} com a nova posição do game object. 
 	 */
 	public void SetPosicao(Vector2 posicao)
 	{
+		_posicaoTelaAux = _posicaoTela.cpy(); 
 		_posicaoTela = posicao;
+	}
+	
+	/**
+	 * Seta a nova posição do game object.
+	 * @param x Novo x - canto inferior esquerdo.
+	 * @param y Novo y - canto inferior esquerdo.
+	 */
+	public void SetPosicao(float x, float y)
+	{
+		if (_posicaoTela != null)
+		{
+			_posicaoTela.x = x;
+			_posicaoTela.y = y;
+			_posicaoTelaAux = _posicaoTela.cpy(); 
+		}
+		else
+		{
+			this.SetPosicao(new Vector2(x, y));
+		}
 	}
 	
 	/**
@@ -321,14 +350,12 @@ public abstract class GameObject implements Poolable
 	 * Portante, se o pai não é atualizado, o filho também não. Se o pai não é desenhado, o filho também não.
 	 * Entretanto, as colisões são realizadas independentes do pai. A colisão com o pai é desativada por padrão, mas pode ser mudada em {@link GameObject#SetColidiPai(boolean)}.
 	 * @param filho {@link GameObject} filho.
+	 * @return {@link GameObject Filho} adicionado.
 	 */
-	public void AdicionaFilho(GameObject filho)
+	public GameObject AdicionaFilho(GameObject filho)
 	{
 		if (_filhos == null)
 			_filhos = new LinkedList<GameObject>();
-		
-		if (_filhos == null)
-			return;
 		
 		filho.SetPai(this);
 		filho.SetCamada(_camada);
@@ -338,6 +365,8 @@ public abstract class GameObject implements Poolable
 			_telaInserido.Remover(filho);
 			
 		_filhos.add(filho);
+		
+		return filho;
 	}
 	
 	/**
@@ -358,16 +387,18 @@ public abstract class GameObject implements Poolable
 	public void SetPai(GameObject pai)
 	{
 		_pai = pai;
+		_posicaoTelaAux = _posicaoTela.cpy();
 	}
 	
 	/**
 	 * Define a posição atual deste {@link GameObject} em relação a do objeto parametrizado.
 	 * Ou seja, toma como ponto ZERO o vetor parametrizado.
-	 * @param posicaoRelativa Vetor a relacionar como ponto ZERO.
+	 * @param posicaoRelativa {@link Vector2 vetor} a relacionar como ponto ZERO.
 	 */
 	public void SetPosicaoRelativa(Vector2 posicaoRelativa)
 	{
-		_posicaoTela.sub(posicaoRelativa);
+		_posicaoTela.x = posicaoRelativa.x + _posicaoTelaAux.x;
+		_posicaoTela.y = posicaoRelativa.y - _posicaoTelaAux.y;
 	}
 	
 	/**
@@ -419,11 +450,30 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
+	 * @return Largura atual do {@link GameObject objeto}.
+	 */
+	public float GetLargura()
+	{
+		return _caixaColisao.width;
+	}
+	
+	/**
+	 * @return Altura atual do {@link GameObject objeto}.
+	 */
+	public float GetAltura()
+	{
+		return _caixaColisao.height;
+	}
+	
+	/**
 	 * Libera os recursos deste game object.
 	 */
 	public void Encerra()
 	{
 		this.SetAtivo(false);
+		
+		if (_telaInserido != null)
+			_telaInserido.Remover(this);
 		
 		if (_colidiveis != null)
 			_colidiveis.clear();

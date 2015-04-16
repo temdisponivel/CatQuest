@@ -15,7 +15,7 @@ public class Heroi extends GameObject
 	}
 	
 	@Override
-	public <T extends GameObject> void AoColidir(T colidiu)
+	public void AoColidir(GameObject colidiu)
 	{
 		// TODO Auto-generated method stub
 		

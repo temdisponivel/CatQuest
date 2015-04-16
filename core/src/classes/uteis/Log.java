@@ -11,11 +11,16 @@ public class Log
 {
 	static StringBuilder _stringBuilder = null;
 	public final static FileHandle log = Gdx.files.local("arquivos\\log" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + Calendar.getInstance().get(Calendar.MONTH) + Calendar.getInstance().get(Calendar.YEAR)+".txt");
+	public static Log instancia = null;
 	
 	
 	public Log()
 	{
-		_stringBuilder = new StringBuilder();
+		if (instancia == null)
+		{
+			instancia = this;
+			_stringBuilder = new StringBuilder();
+		}
 	}
 	
 	/**
@@ -23,7 +28,7 @@ public class Log
 	 * @param texto Texto a ser logado.
 	 * @param e Exception ocorrida. Pode ser null.
 	 */
-	static public void Logar(String texto, Exception e, boolean encerra)
+	public void Logar(String texto, Exception e, boolean encerra)
 	{
 		if (_stringBuilder == null)
 			_stringBuilder = new StringBuilder();
@@ -53,14 +58,16 @@ public class Log
 		}
 		
 		log.writeString(_stringBuilder.toString(), true);
+		System.out.println(_stringBuilder.toString());
 	}
 	
 	/**
 	 * Escrever texto no arquivo de log.
 	 * @param texto Texto a ser escrito.
 	 */
-	static public void Logar(String texto)
+	public void Logar(String texto)
 	{
-		Log.Logar(texto, null, false);
+		Log.instancia.Logar(texto, null, false);
+		System.out.println(texto);
 	}
 }

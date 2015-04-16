@@ -5,6 +5,7 @@ package catquest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Stack;
+
 import classes.uteis.Camada;
 import classes.uteis.Camada.*;
 import classes.uteis.CarregarMusica;
@@ -13,9 +14,9 @@ import classes.uteis.Configuracoes;
 import classes.uteis.Log;
 import classes.uteis.Player;
 import classes.uteis.Player.TipoPlayer;
-import classes.uteis.UI;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
+
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -27,6 +28,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
@@ -61,6 +64,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private boolean _atualiza = true, _desenha = true;
 	private BitmapFont _fonte = null;
 	private Array<Player> _players = null;
+	private Color _corJogo = null;
+	private TextureAtlas _textureAtlas = null;
 	
 	/**
 	 * Contrutor do singleton.
@@ -82,7 +87,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 		catch (Exception e)
 		{
-			Log.Logar("Erro ao iniciar o jogo.", e, true);
+			Log.instancia.Logar("Erro ao iniciar o jogo.", e, true);
 		}
 	}
 	
@@ -105,7 +110,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 		catch (Exception e)
 		{
-			Log.Logar("Erro no loop principal", e, true);
+			Log.instancia.Logar("Erro no loop principal", e, true);
 		}
 	}
 	
@@ -137,7 +142,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		/* ---------------- DESENHA -----------------------*/
 		
 		//LIMPA TELA
-		Gdx.gl.glClearColor(0, 0, 0f, 1);
+		Gdx.gl.glClearColor(_pilhaTelas.lastElement().GetCorFundo().r, _pilhaTelas.lastElement().GetCorFundo().g, _pilhaTelas.lastElement().GetCorFundo().b, 1f);
 	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 	    //DESENHA
@@ -196,8 +201,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA SPRITEBATCH PARA DESENHAR COISAS NA TELA
 		_batch = new SpriteBatch();
 		
-		//inicia o helper de UI
-		new UI();
+		//CRIA A COR PADRAO PARA OS OBJETOS DO JOGO
+		_corJogo = new Color(1, 0.8f, 0.8f, 1); //ROSINHA: RGB: 255, 204, 204, 255. Conversão via 1/255*quantidadeRGB
+		
+		//INICIA SINGLETON do LOG
+		new Log();
+		
+		//Controi o texture atlas
+		_textureAtlas = new TextureAtlas(Gdx.files.local("pack\\CatQuest.atlas"));
 		
 		//CRIA CAMERA ORTOGRAFICA PARA QUE NÃO TENHA DIFERENÇA ENTRE PROFUNDIDADE.
 		//CRIA COM O TAMANHO DAS CONFIGURAÇÕES
@@ -234,7 +245,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 		catch (Exception e)
 		{
-			Log.Logar("Erro ao reiniciar o jogo.", e, true);
+			Log.instancia.Logar("Erro ao reiniciar o jogo.", e, true);
 		}
 	}
 	
@@ -364,7 +375,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public Integer GetNovoId()
 	{
-		return new Integer(_idObjeto);
+		return new Integer(_idObjeto++);
 	}
 	
 	/**
@@ -459,7 +470,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, 0, false, true, this, null).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
 	/**
@@ -473,7 +484,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, 0, false, true, this, listener).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
 	/**
@@ -490,7 +501,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, this, listener).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
 	/**
@@ -508,7 +519,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, listenerFimMusica != null ? listenerFimMusica : this, listener).run();
 		else
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 	}
 	
 	/**
@@ -523,7 +534,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			return Gdx.audio.newSound(arquivo);
 		else
 		{
-			Log.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 			return null;
 		}
 	}
@@ -625,5 +636,33 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public BitmapFont GetFonte()
 	{
 		return _fonte;
+	}
+	
+	/**
+	 * @return {@link Color Cor} padrão para textos e objetos do jogo.
+	 */
+	public Color GetCor()
+	{
+		return _corJogo;
+	}
+	
+	/**
+	 * Função que retorna a {@link TextureRegion} desejada.
+	 * @param caminho Caminho do arquivo físico da textura, sem a extenção do arquivo.
+	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
+	 */
+	public TextureRegion GetTextura(String caminho)
+	{
+		return _textureAtlas.findRegion(caminho);
+	}
+	
+	/**
+	 * Função que retorna a {@link TextureRegion} desejada.
+	 * @param caminho {@link FileHandle Caminho} do arquivo físico da textura.
+	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
+	 */
+	public TextureRegion GetTextura(FileHandle caminho)
+	{
+		return this.GetTextura(caminho.path());
 	}
 }

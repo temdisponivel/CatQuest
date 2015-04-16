@@ -3,20 +3,19 @@
 package catquest.desktop;
 
 import catquest.CatQuest;
+
 import com.badlogic.gdx.Files.FileType;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.badlogic.gdx.tools.texturepacker.TexturePacker;
+import com.badlogic.gdx.tools.texturepacker.TexturePacker.Settings;
 
 public class DesktopLauncher {
 	
 	public static void main (String[] arg) 
 	{
-		/*
 		Settings settings = new Settings();
-        settings.maxWidth = 8192;
-        settings.maxHeight = 8192;
-        TexturePacker.process(settings, "imagens\\pack\\pack2", "imagens\\pack\\pack2\\pack3", "game");
-        */
+        TexturePacker.process(settings, "imagens", "pack", "CatQuest");
         
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.resizable = false;

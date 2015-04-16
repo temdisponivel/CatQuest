@@ -8,6 +8,7 @@ import classes.telas.Tela;
 import catquest.CatQuest;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
@@ -33,7 +34,7 @@ public abstract class GameObject implements Poolable
 		CENARIO,
 	};
 	
-	protected TextureRegion _sprite = null;
+	protected Sprite _sprite = null;
 	protected GameObjects _tipo;
 	protected Vector2 _posicaoTela = null;
 	protected Rectangle _caixaColisao = null;
@@ -65,16 +66,20 @@ public abstract class GameObject implements Poolable
 		
 		if (_animacao != null)
 		{
-			_sprite = _animacao.getKeyFrame(CatQuest.instancia.GetStateTime());
-			_caixaColisao.setPosition(_posicaoTela);
+			_sprite.setRegion(_animacao.getKeyFrame(CatQuest.instancia.GetStateTime()));
 			_caixaColisao.setHeight(_sprite.getRegionHeight());
 			_caixaColisao.setWidth(_sprite.getRegionWidth());
 		}
 		
-		for (GameObject filho : _filhos)
+		_caixaColisao.setPosition(_posicaoTela);
+		
+		if (this.GetSePai())
 		{
-			filho.Atualiza(deltaTime);
-			filho.SetPosicaoRelativa(_posicaoTela);
+			for (GameObject filho : _filhos)
+			{
+				filho.Atualiza(deltaTime);
+				filho.SetPosicaoRelativa(_posicaoTela);
+			}
 		}
 	}
 	
@@ -87,9 +92,12 @@ public abstract class GameObject implements Poolable
 		if (_desenha && _sprite != null)
 			batch.draw(_sprite, _posicaoTela.x, _posicaoTela.y);
 		
-		for (GameObject filho : _filhos)
+		if (this.GetSePai() && _desenha)
 		{
-			filho.Desenha(batch);
+			for (GameObject filho : _filhos)
+			{
+				filho.Desenha(batch);
+			}
 		}
 	}
 	
@@ -416,9 +424,6 @@ public abstract class GameObject implements Poolable
 	public void Encerra()
 	{
 		this.SetAtivo(false);
-		
-		if (_telaInserido != null)
-			_telaInserido.Remover(this);
 		
 		if (_colidiveis != null)
 			_colidiveis.clear();

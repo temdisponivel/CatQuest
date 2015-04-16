@@ -1,13 +1,13 @@
 package classes.telas;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map.Entry;
-
 import classes.gameobjects.GameObject;
 import classes.uteis.*;
-
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
@@ -35,6 +35,8 @@ public class Tela implements OnCompletionListener
 	protected boolean _desenha = true, _atualiza = true;
 	protected ListaGameObject _gameObjectsColisoes = null;
 	protected Telas _tipo;
+	protected Color _corFundo = null;
+	protected LinkedList<Integer> _camadasTela = null;
 	
 	
 	/**
@@ -44,6 +46,8 @@ public class Tela implements OnCompletionListener
 	{
 		_listasGameObject = new HashMap<Camada, ListaGameObject>();
 		_gameObjectsColisoes = new ListaGameObject();
+		_camadasTela = new LinkedList<Integer>();
+		_corFundo = Color.BLACK;
 	}
 	
 	/**
@@ -127,8 +131,11 @@ public class Tela implements OnCompletionListener
 	 */
 	public void InserirGameObject(GameObject gameObject)
 	{
-		if (gameObject.GetCamada().hashCode() > _listasGameObject.size())
+		if (!_camadasTela.contains(gameObject.GetCamada().GetIdCamada()))
+		{
 			_listasGameObject.put(gameObject.GetCamada(), new ListaGameObject());
+			_camadasTela.add(gameObject.GetCamada().GetIdCamada());
+		}
 		
 		_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
 		gameObject.SetTela(this);
@@ -239,6 +246,14 @@ public class Tela implements OnCompletionListener
 	{
 		this.Encerrar();
 		this.Iniciar();
+	}
+	
+	/**
+	 * @return {@link Color Cor} do fundo. Cor que é utilizada para limpar a tela a todo frame que esta tela está no topo.
+	 */
+	public Color GetCorFundo()
+	{
+		return _corFundo;
 	}
 	
 	/**

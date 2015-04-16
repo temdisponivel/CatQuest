@@ -1,0 +1,480 @@
+
+Data: Thu Apr 16 01:07:58 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.telas.Tela.InserirGameObject(Tela.java:130)
+classes.telas.Menu.Iniciar(Menu.java:20)
+catquest.CatQuest.AdicionaTela(CatQuest.java:401)
+classes.telas.Introducao.Iniciar(Introducao.java:19)
+catquest.CatQuest.AdicionaTela(CatQuest.java:401)
+catquest.CatQuest.IniciaJogo(CatQuest.java:209)
+catquest.CatQuest.create(CatQuest.java:81)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 01:09:37 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.Atualiza(GameObject.java:74)
+classes.uteis.UI.Botao.Atualiza(Botao.java:92)
+classes.telas.Tela.Atualiza(Tela.java:73)
+classes.telas.Menu.Atualiza(Menu.java:26)
+catquest.CatQuest.Atualiza(CatQuest.java:120)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 01:11:22 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.Desenha(GameObject.java:93)
+classes.telas.Tela.Desenha(Tela.java:119)
+classes.telas.Menu.Desenha(Menu.java:32)
+catquest.CatQuest.Desenha(CatQuest.java:150)
+catquest.CatQuest.render(CatQuest.java:104)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 01:20:21 BRT 2015 | Mensagem: FUNCIONA!!!!
+
+Data: Thu Apr 16 01:20:21 BRT 2015 | Mensagem: FUNCIONA!!!!
+
+Data: Thu Apr 16 01:20:21 BRT 2015 | Mensagem: FUNCIONA!!!!
+
+Data: Thu Apr 16 01:21:03 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:21:03 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:21:03 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:21:04 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:21:04 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:21:04 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:21:04 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:21:04 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:21:04 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:21:05 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:21:05 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 01:21:05 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 01:21:05 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 01:21:05 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:58 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:29:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:14 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:36:15 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:37:30 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:39:05 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:39:10 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:43:41 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:43:51 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 01:45:09 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:45:10 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 01:54:55 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 02:13:40 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 02:15:22 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 02:15:22 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 02:15:22 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 02:15:23 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 02:15:23 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 02:15:23 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 02:15:24 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 02:24:21 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 02:40:09 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 02:58:27 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+com.badlogic.gdx.files.FileHandle.read(FileHandle.java:136)
+com.badlogic.gdx.graphics.g2d.TextureAtlas$TextureAtlasData.<init>(TextureAtlas.java:103)
+com.badlogic.gdx.graphics.g2d.TextureAtlas.<init>(TextureAtlas.java:231)
+com.badlogic.gdx.graphics.g2d.TextureAtlas.<init>(TextureAtlas.java:226)
+com.badlogic.gdx.graphics.g2d.TextureAtlas.<init>(TextureAtlas.java:216)
+catquest.CatQuest.IniciaJogo(CatQuest.java:211)
+catquest.CatQuest.create(CatQuest.java:86)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: File not found: pack\CatQuest.pack (Local)
+
+Data: Thu Apr 16 02:59:16 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.uteis.UI.Botao.Inicia(Botao.java:83)
+classes.uteis.UI.Botao.<init>(Botao.java:74)
+classes.telas.Menu.Iniciar(Menu.java:22)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+classes.telas.Introducao.Iniciar(Introducao.java:19)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+catquest.CatQuest.IniciaJogo(CatQuest.java:220)
+catquest.CatQuest.create(CatQuest.java:86)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 03:03:13 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.uteis.UI.Botao.Inicia(Botao.java:83)
+classes.uteis.UI.Botao.<init>(Botao.java:74)
+classes.telas.Menu.Iniciar(Menu.java:22)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+classes.telas.Introducao.Iniciar(Introducao.java:19)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+catquest.CatQuest.IniciaJogo(CatQuest.java:220)
+catquest.CatQuest.create(CatQuest.java:86)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 03:07:20 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.uteis.UI.Botao.Inicia(Botao.java:83)
+classes.uteis.UI.Botao.<init>(Botao.java:74)
+classes.telas.Menu.Iniciar(Menu.java:22)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+classes.telas.Introducao.Iniciar(Introducao.java:19)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+catquest.CatQuest.IniciaJogo(CatQuest.java:220)
+catquest.CatQuest.create(CatQuest.java:86)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 03:21:06 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.Atualiza(GameObject.java:69)
+classes.uteis.UI.Botao.Atualiza(Botao.java:95)
+classes.telas.Tela.Atualiza(Tela.java:76)
+classes.telas.Menu.Atualiza(Menu.java:29)
+catquest.CatQuest.Atualiza(CatQuest.java:125)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 03:35:48 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 03:35:50 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 03:35:51 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 03:35:53 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 03:35:55 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 03:42:17 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.telas.Tela.InserirGameObject(Tela.java:133)
+classes.telas.Menu.Iniciar(Menu.java:25)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+classes.telas.Introducao.Iniciar(Introducao.java:19)
+catquest.CatQuest.AdicionaTela(CatQuest.java:412)
+catquest.CatQuest.IniciaJogo(CatQuest.java:220)
+catquest.CatQuest.create(CatQuest.java:86)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 03:44:20 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 03:44:20 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:00:01 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:00:01 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:00:01 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:00:01 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:16:48 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.SpriteBatch.switchTexture(SpriteBatch.java:1049)
+com.badlogic.gdx.graphics.g2d.SpriteBatch.draw(SpriteBatch.java:594)
+com.badlogic.gdx.graphics.g2d.SpriteBatch.draw(SpriteBatch.java:583)
+classes.gameobjects.GameObject.Desenha(GameObject.java:94)
+classes.uteis.UI.Etiqueta.Desenha(Etiqueta.java:49)
+classes.telas.Tela.Desenha(Tela.java:123)
+classes.telas.Menu.Desenha(Menu.java:38)
+catquest.CatQuest.Desenha(CatQuest.java:155)
+catquest.CatQuest.render(CatQuest.java:109)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 04:22:37 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.UI.Etiqueta.Desenha(Etiqueta.java:70)
+classes.telas.Tela.Desenha(Tela.java:123)
+classes.telas.Menu.Desenha(Menu.java:38)
+catquest.CatQuest.Desenha(CatQuest.java:155)
+catquest.CatQuest.render(CatQuest.java:109)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null

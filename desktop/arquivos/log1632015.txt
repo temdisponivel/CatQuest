@@ -478,3 +478,187 @@ catquest.CatQuest.render(CatQuest.java:109)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 04:33:02 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:03 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:03 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:04 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:04 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:04 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:04 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 04:33:05 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 04:33:05 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 04:33:06 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 04:33:06 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 04:33:06 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 04:33:06 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 04:33:07 BRT 2015 | Mensagem: FUNCIONA!!!!Direito
+
+Data: Thu Apr 16 04:33:07 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:08 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:09 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:10 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:12 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:19 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:20 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:33:24 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:34:04 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:34:05 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:34:25 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:34:26 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:34:26 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:35:07 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:35:27 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:36:31 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:36:32 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:36:46 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:36:46 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:36:47 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:36:49 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:36:51 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:39:48 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:39:59 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:40:00 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:40:01 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:40:02 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:42:05 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:42:05 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+java.util.Vector$Itr.checkForComodification(Unknown Source)
+java.util.Vector$Itr.next(Unknown Source)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 04:42:13 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:43:48 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:52:03 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:52:03 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.Desenha(CatQuest.java:149)
+catquest.CatQuest.render(CatQuest.java:111)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 04:53:10 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:53:38 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.Desenha(CatQuest.java:149)
+catquest.CatQuest.render(CatQuest.java:111)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 04:54:39 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:56:04 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:56:04 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.Desenha(CatQuest.java:149)
+catquest.CatQuest.render(CatQuest.java:111)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: null
+
+Data: Thu Apr 16 04:57:02 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 04:59:29 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:00:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:00:40 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:00:41 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:00:42 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:00:43 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:01:17 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:01:18 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:01:19 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:01:20 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:01:23 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:01:33 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:01:35 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:02:37 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:02:39 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:02:56 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:02:57 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:02:58 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:02:58 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:02:58 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:02:58 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:02:59 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:03:12 BRT 2015 | Mensagem: FUNCIONA!!!!Esquerdo
+
+Data: Thu Apr 16 05:03:13 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:03:13 BRT 2015 | Mensagem: FUNCIONA!!!!Central
+
+Data: Thu Apr 16 05:03:14 BRT 2015 | Mensagem: FUNCIONA!!!!Central

@@ -10,12 +10,7 @@ public class Introducao extends Tela
 	public void Iniciar() 
 	{
 		super.Iniciar();
-		_tipo = Telas.INTRODUCAO;
-		
-		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.OBJETOS_ESTATICOS), new ListaGameObject());
-		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.PERSONAGENS), new ListaGameObject());
-		_listasGameObject.put(CatQuest.instancia.GetCamada(Camadas.UI), new ListaGameObject());
-		
+		_tipo = Telas.INTRODUCAO;		
 		CatQuest.instancia.AdicionaTela(new Menu(), false, false);
 	}
 	

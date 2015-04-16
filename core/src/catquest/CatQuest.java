@@ -66,6 +66,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private Array<Player> _players = null;
 	private Color _corJogo = null;
 	private TextureAtlas _textureAtlas = null;
+	private boolean _trocaTela = false, _removeTela = false;
+	private Tela _proximaTela = null;
 	
 	/**
 	 * Contrutor do singleton.
@@ -118,7 +120,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * Função que roda a lógica de atualização do jogo. AI, colições, mudança de posições, etc; são gerenciadas aqui.
 	 */
 	private void Atualiza()
-	{		
+	{
+		this.GerenciaTelas();
+		
 		for (Tela tela : _pilhaTelas)
 		{
 			if (tela.GetSeAtualiza())
@@ -407,7 +411,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			_pilhaTelas.lastElement().SetSeDesenha(desenhaAntiga);
 		}
 		
-		_pilhaTelas.add(tela);
+		//_pilhaTelas.add(tela);
+		_proximaTela = tela;
+		_trocaTela = true;
 		
 		tela.Iniciar();
 	}
@@ -419,8 +425,29 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	@SuppressWarnings("javadoc")
 	public void RetiraTela()
 	{
-		_pilhaTelas.pop();
-		_pilhaTelas.lastElement().SetAtiva(true);
+		_removeTela = true;
+	}
+	
+	/**
+	 * Adiciona uma tela ou remove caso haja alterações na pilha ainda não feitas.
+	 */
+	private void GerenciaTelas()
+	{
+		if (_trocaTela)
+		{
+			if (_proximaTela != null)
+			{
+				_pilhaTelas.add(_proximaTela);
+				_trocaTela = false;
+			}
+		}
+		
+		if (_removeTela)
+		{
+			_pilhaTelas.pop();
+			_pilhaTelas.lastElement().SetAtiva(true);
+			_removeTela = false;
+		}
 	}
 	
 	/**

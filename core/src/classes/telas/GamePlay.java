@@ -1,13 +1,17 @@
 package classes.telas;
 
+import catquest.CatQuest;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GamePlay extends Tela
-{
-
+{	
 	@Override
 	public void Iniciar()
 	{
+		super.Iniciar();
 		// TODO Auto-generated method stub
 		_tipo = Telas.GAMEPLAY;
 	}
@@ -15,7 +19,10 @@ public class GamePlay extends Tela
 	@Override
 	public void Atualiza(float deltaTime)
 	{
-		// TODO Auto-generated method stub
+		if (Gdx.input.isButtonPressed(Buttons.LEFT))
+		{
+			CatQuest.instancia.RetiraTela();
+		}
 		
 	}
 

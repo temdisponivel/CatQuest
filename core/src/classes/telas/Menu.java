@@ -1,5 +1,6 @@
 package classes.telas;
 
+import catquest.CatQuest;
 import classes.uteis.Log;
 import classes.uteis.UI.Botao;
 import classes.uteis.UI.Botao.EscutadorBotao;
@@ -42,6 +43,7 @@ public class Menu extends Tela implements EscutadorBotao
 	public void Click(Botao botaoClicado, BotoesMouse botaoMouse)
 	{
 		Log.instancia.Logar("FUNCIONA!!!!" + botaoMouse.toString());
+		CatQuest.instancia.AdicionaTela(new GamePlay(), true, true);
 	}
 }
 

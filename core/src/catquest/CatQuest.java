@@ -1,4 +1,4 @@
-//TODO: EDITAR TODO O CÓDIGO PARA QUE FIQUE EM UM SÓ IDIOMA, PADRONIZADO E COM FINAL NOS PARAMETROS ETC. FAZER UI's. FAZER MAPAS
+//TODO: EDITAR TODO O Cï¿½DIGO PARA QUE FIQUE EM UM Sï¿½ IDIOMA, PADRONIZADO E COM FINAL NOS PARAMETROS ETC. FAZER UI's. FAZER MAPAS
 
 package catquest;
 
@@ -33,7 +33,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 
 /**
- * Classe que contém todas as informações padrões do jogo. Quase todos os métodos e propriedades são estáticos.
+ * Classe que contï¿½m todas as informaï¿½ï¿½es padrï¿½es do jogo. Quase todos os mï¿½todos e propriedades sï¿½o estï¿½ticos.
  * @author Matheus
  *
  */
@@ -114,7 +114,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Função que roda a lógica de atualização do jogo. AI, colições, mudança de posições, etc; são gerenciadas aqui.
+	 * Funï¿½ï¿½o que roda a lï¿½gica de atualizaï¿½ï¿½o do jogo. AI, coliï¿½ï¿½es, mudanï¿½a de posiï¿½ï¿½es, etc; sï¿½o gerenciadas aqui.
 	 */
 	private void Atualiza()
 	{
@@ -136,7 +136,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Função que roda a lógica de desenho do jogo.
+	 * Funï¿½ï¿½o que roda a lï¿½gica de desenho do jogo.
 	 */
 	private void Desenha()
 	{
@@ -174,19 +174,19 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public void dispose() {}
 	
 	/**
-	 * Inicia o jogo. Roda toda a rotina de iniciar as propriedades, chamas as primeiras funções, carregar telas, etc.
-	 * @throws IOException Quando não for possível criar arquivo de log.
+	 * Inicia o jogo. Roda toda a rotina de iniciar as propriedades, chamas as primeiras funï¿½ï¿½es, carregar telas, etc.
+	 * @throws IOException Quando nï¿½o for possï¿½vel criar arquivo de log.
 	 */
 	private void IniciaJogo(boolean intro) throws IOException
 	{
 		if (!Log.log.exists())
 			Log.log.file().createNewFile();
 		
-		//CARREGA CONFIGURAÇÕES E APLICA
+		//CARREGA CONFIGURAï¿½ï¿½ES E APLICA
 		this.CarregarConfig();
 		this.AplicarConfiguracoes();
 		
-		//CONTRÓI OS PLAYERS
+		//CONTRï¿½I OS PLAYERS
 		this.ControiPlayers();
 		
 		//ATUALIZA E DESENHA COMO TRUE PARA GAMELOOP COMPLETO
@@ -194,29 +194,29 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		_desenha = true;
 		
 		//CARREGA FONTE
-		_fonte = new BitmapFont(Gdx.files.local("fonte\\catquest.fnt"));
+		_fonte = new BitmapFont(Gdx.files.local("fonte/catquest.fnt"));
 		
 		//CRIA SPRITEBATCH PARA DESENHAR COISAS NA TELA
 		_batch = new SpriteBatch();
 		
 		//CRIA A COR PADRAO PARA OS OBJETOS DO JOGO
-		_corJogo = new Color(1, 0.8f, 0.8f, 1); //ROSINHA: RGB: 255, 204, 204, 255. Conversão via 1/255*quantidadeRGB
+		_corJogo = new Color(1, 0.8f, 0.8f, 1); //ROSINHA: RGB: 255, 204, 204, 255. Conversï¿½o via 1/255*quantidadeRGB
 		
 		//INICIA SINGLETON do LOG
 		new Log();
 		
 		//Controi o texture atlas
-		_textureAtlas = new TextureAtlas(Gdx.files.local("pack\\CatQuest.atlas"));
+		_textureAtlas = new TextureAtlas(Gdx.files.local("pack/CatQuest.atlas"));
 		
-		//CRIA CAMERA ORTOGRAFICA PARA QUE NÃO TENHA DIFERENÇA ENTRE PROFUNDIDADE.
-		//CRIA COM O TAMANHO DAS CONFIGURAÇÕES
+		//CRIA CAMERA ORTOGRAFICA PARA QUE Nï¿½O TENHA DIFERENï¿½A ENTRE PROFUNDIDADE.
+		//CRIA COM O TAMANHO DAS CONFIGURAï¿½ï¿½ES
 		_camera = new OrthographicCamera();
 		_camera.setToOrtho(false, _configuracoes.GetWidth(), _configuracoes.GetHeight());
 		
-		//SE FOR PRA COMEÇAR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
+		//SE FOR PRA COMEï¿½AR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
 		if (intro)
 			this.AdicionaTela(new Introducao(), false, false);
-		//SE NÃO, COMEÇA DO MENU (USADO QUANDO REINICIAR O JOGO).
+		//SE Nï¿½O, COMEï¿½A DO MENU (USADO QUANDO REINICIAR O JOGO).
 		else
 			this.AdicionaTela(new Titulo(), false, false);
 	}
@@ -248,7 +248,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Função que fecha o jogo.
+	 * Funï¿½ï¿½o que fecha o jogo.
 	 */
 	public void EncerraJogo()
 	{
@@ -270,7 +270,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Função para construção dos players.
+	 * Funï¿½ï¿½o para construï¿½ï¿½o dos players.
 	 */
 	private void ControiPlayers()
 	{
@@ -282,7 +282,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Grava as informações de configurações no arquivo padrão.
+	 * Grava as informaï¿½ï¿½es de configuraï¿½ï¿½es no arquivo padrï¿½o.
 	 */
 	public void GravarConfig()
 	{
@@ -293,7 +293,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Carrega as configurações do usuário.
+	 * Carrega as configuraï¿½ï¿½es do usuï¿½rio.
 	 */
 	public void CarregarConfig()
 	{
@@ -312,7 +312,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Define as configurações atuais do jogo. Caso as configurações ainda não tenham sido definidas, chama {@link CatQuest#CarregarConfig()} e depois define.
+	 * Define as configuraï¿½ï¿½es atuais do jogo. Caso as configuraï¿½ï¿½es ainda nï¿½o tenham sido definidas, chama {@link CatQuest#CarregarConfig()} e depois define.
 	 */
 	public void AplicarConfiguracoes()
 	{
@@ -325,8 +325,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Retorna as {@link Configuracoes} do jogo. Repare que caso altere as configurações, deve chamar {@link #GravarConfig()}.
-	 * @return Configurações do jogo.
+	 * Retorna as {@link Configuracoes} do jogo. Repare que caso altere as configuraï¿½ï¿½es, deve chamar {@link #GravarConfig()}.
+	 * @return Configuraï¿½ï¿½es do jogo.
 	 */
 	public Configuracoes GetConfig()
 	{
@@ -337,8 +337,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Define novas configurações para o jogo e salva em arquivo em seguida.
-	 * @param config Novas configurações para o jogo.
+	 * Define novas configuraï¿½ï¿½es para o jogo e salva em arquivo em seguida.
+	 * @param config Novas configuraï¿½ï¿½es para o jogo.
 	 */
 	public void SetConfig(Configuracoes config)
 	{
@@ -347,7 +347,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Retorna um novo ID único para {@link GameObject}.
+	 * Retorna um novo ID ï¿½nico para {@link GameObject}.
 	 * @return Um novo ID para GameObject
 	 */
 	public Integer GetNovoId()
@@ -365,10 +365,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Adiciona uma tela a pilha de telas do jogo. A nova tela será a última a ser atualizada/desenhada.
+	 * Adiciona uma tela a pilha de telas do jogo. A nova tela serï¿½ a ï¿½ltima a ser atualizada/desenhada.
 	 * @param tela {@link Tela} a ser adicionada na pilha.
-	 * @param atualizaAntiga Se true, a tela atualmente no topo da pilha continuará sendo atualizada.
-	 * @param desenhaAntiga Se true, a tela atualmente no topo da pilha continuará sendo desenhada.
+	 * @param atualizaAntiga Se true, a tela atualmente no topo da pilha continuarï¿½ sendo atualizada.
+	 * @param desenhaAntiga Se true, a tela atualmente no topo da pilha continuarï¿½ sendo desenhada.
 	 * @see {@link Tela#Atualiza(float)}
 	 * @see {@link Tela#Desenha(SpriteBatch)}
 	 */
@@ -392,7 +392,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Retirar a última tela da pilha. A tela que está abaixo será definida como ativa.
+	 * Retirar a ï¿½ltima tela da pilha. A tela que estï¿½ abaixo serï¿½ definida como ativa.
 	 * @see {@link Tela#SetAtiva(boolean)}
 	 */
 	@SuppressWarnings("javadoc")
@@ -402,7 +402,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Adiciona uma tela ou remove caso haja alterações na pilha ainda não feitas.
+	 * Adiciona uma tela ou remove caso haja alteraï¿½ï¿½es na pilha ainda nï¿½o feitas.
 	 */
 	private void GerenciaTelas()
 	{
@@ -427,7 +427,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Retorna a {@link Tela} atual do jogo. A última tela da pilha.
+	 * Retorna a {@link Tela} atual do jogo. A ï¿½ltima tela da pilha.
 	 * @return A tela atual.
 	 */
 	public Tela GetTelaAtual()
@@ -445,7 +445,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Definir uma nova posição a {@link OrthographicCamera} do jogo.
+	 * Definir uma nova posiï¿½ï¿½o a {@link OrthographicCamera} do jogo.
 	 * @param posicao {@link Vector2} com o x e y do canto superior esquerda da camera.
 	 */
 	public void SetPosicaoCamera(Vector2 posicao)
@@ -455,72 +455,72 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Cria uma nova {@link Music} com as configurações do jogo. Carrega a música iniciando tocando, sem loop, a partir de 0 segundo.
-	 * Quando a música chegar ao fim, ela será liberada da memória.
-	 * @param arquivo Arquivo da música.
+	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo. Carrega a mï¿½sica iniciando tocando, sem loop, a partir de 0 segundo.
+	 * Quando a mï¿½sica chegar ao fim, ela serï¿½ liberada da memï¿½ria.
+	 * @param arquivo Arquivo da mï¿½sica.
 	 */
 	public void CriarNovaMusica(FileHandle arquivo)
 	{
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, 0, false, true, this, null).run();
 		else
-			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
 	}
 	
 	/**
-	 * Cria uma nova {@link Music} com as configurações do jogo. Carrega a música iniciando tocando, sem loop, a partir de 0 segundo.
-	 * Quando a música chegar ao fim, ela será liberada da memória. Portanto, não mexer na referencia.
-	 * @param arquivo Arquivo da música.
-	 * @param listener Listener que será chamado ao completar o carregamento da música na memória. Pode ser null.
+	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo. Carrega a mï¿½sica iniciando tocando, sem loop, a partir de 0 segundo.
+	 * Quando a mï¿½sica chegar ao fim, ela serï¿½ liberada da memï¿½ria. Portanto, nï¿½o mexer na referencia.
+	 * @param arquivo Arquivo da mï¿½sica.
+	 * @param listener Listener que serï¿½ chamado ao completar o carregamento da mï¿½sica na memï¿½ria. Pode ser null.
 	 */
 	public void CriarNovaMusica(FileHandle arquivo, CarregarMusicaListner listener)
 	{
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, 0, false, true, this, listener).run();
 		else
-			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
 	}
 	
 	/**
-	 * Cria uma nova {@link Music} com as configurações do jogo.
-	 * Quando a música chegar ao fim, ela será liberada da memória. Portanto, não mexer na referencia.
-	 * @param arquivo {@link FileHandle} contendo o arquivo da música.
-	 * @param posicaoLoop Posição que a música deve começar a tocar.
-	 * @param isLooping Se a música deve ficar em loop.
-	 * @param isPlaing Se a música já deve ser tocada após criar.
-	 * @param listener Listener que será chamado ao completar o carregamento da música na memória. Pode ser null. Pode ser null.
+	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo.
+	 * Quando a mï¿½sica chegar ao fim, ela serï¿½ liberada da memï¿½ria. Portanto, nï¿½o mexer na referencia.
+	 * @param arquivo {@link FileHandle} contendo o arquivo da mï¿½sica.
+	 * @param posicaoLoop Posiï¿½ï¿½o que a mï¿½sica deve comeï¿½ar a tocar.
+	 * @param isLooping Se a mï¿½sica deve ficar em loop.
+	 * @param isPlaing Se a mï¿½sica jï¿½ deve ser tocada apï¿½s criar.
+	 * @param listener Listener que serï¿½ chamado ao completar o carregamento da mï¿½sica na memï¿½ria. Pode ser null. Pode ser null.
 	 */
 	public void CriarNovaMusica(FileHandle arquivo, float posicaoLoop, boolean isLooping, boolean isPlaing, CarregarMusicaListner listener)
 	{
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, this, listener).run();
 		else
-			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
 	}
 	
 	/**
-	 * Cria uma nova {@link Music} com as configurações do jogo.
-	 * Quando a música chegar ao fim, será chamado o listener {@link OnCompletionListener}. Caso seja nulo, a música será liberada da memória.
-	 * @param arquivo {@link FileHandle} contendo o arquivo da música.
-	 * @param posicaoLoop Posição que a música deve começar a tocar.
-	 * @param isLooping Se a música deve ficar em loop.
-	 * @param isPlaing Se a música já deve ser tocada após criar.
-	 * @param listener Listener que será chamado ao completar o carregamento da música na memória. Pode ser null.
-	 * @param listenerFimMusica Listener que será chamado ao término da música. Pode ser null.
+	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo.
+	 * Quando a mï¿½sica chegar ao fim, serï¿½ chamado o listener {@link OnCompletionListener}. Caso seja nulo, a mï¿½sica serï¿½ liberada da memï¿½ria.
+	 * @param arquivo {@link FileHandle} contendo o arquivo da mï¿½sica.
+	 * @param posicaoLoop Posiï¿½ï¿½o que a mï¿½sica deve comeï¿½ar a tocar.
+	 * @param isLooping Se a mï¿½sica deve ficar em loop.
+	 * @param isPlaing Se a mï¿½sica jï¿½ deve ser tocada apï¿½s criar.
+	 * @param listener Listener que serï¿½ chamado ao completar o carregamento da mï¿½sica na memï¿½ria. Pode ser null.
+	 * @param listenerFimMusica Listener que serï¿½ chamado ao tï¿½rmino da mï¿½sica. Pode ser null.
 	 */
 	public void CriarNovaMusica(FileHandle arquivo, float posicaoLoop, boolean isLooping, boolean isPlaing, OnCompletionListener listenerFimMusica, CarregarMusicaListner listener)
 	{
 		if (arquivo.exists())
 			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, listenerFimMusica != null ? listenerFimMusica : this, listener).run();
 		else
-			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
 	}
 	
 	/**
-	 * Cria um novo {@link Sound som}. Quando não for mais utilizar, chamar {@link Sound#dispose()}.
+	 * Cria um novo {@link Sound som}. Quando nï¿½o for mais utilizar, chamar {@link Sound#dispose()}.
 	 * Ao tocar os sons, sempre utilize o volume: {@link Configuracoes#GetVolumeSom()}/100.
 	 * @param arquivo Arquivo de som.
-	 * @return Novo som ou nulo caso não encontre o arquivo (caso isso ocorra, o jogo será encerrado em seguida).
+	 * @return Novo som ou nulo caso nï¿½o encontre o arquivo (caso isso ocorra, o jogo serï¿½ encerrado em seguida).
 	 */
 	public Sound CriarNovoSom(FileHandle arquivo)
 	{
@@ -528,7 +528,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			return Gdx.audio.newSound(arquivo);
 		else
 		{
-			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
+			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
 			return null;
 		}
 	}
@@ -552,8 +552,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Retorna se está em full screen.
-	 * @return True se está em full screen.
+	 * Retorna se estï¿½ em full screen.
+	 * @return True se estï¿½ em full screen.
 	 */
 	public boolean GetFullScreen()
 	{
@@ -570,8 +570,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Define se o jogo deve rodar a rotina de atualização.
-	 * @param atualiza True para rodar a rotina de atualização.
+	 * Define se o jogo deve rodar a rotina de atualizaï¿½ï¿½o.
+	 * @param atualiza True para rodar a rotina de atualizaï¿½ï¿½o.
 	 */
 	public void SetSeAtualiza(boolean atualiza)
 	{
@@ -597,7 +597,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Seta um novo modo para o jogo. O jogo é reiniciado após setar.
+	 * Seta um novo modo para o jogo. O jogo ï¿½ reiniciado apï¿½s setar.
 	 * @param modo Novo modo de jogo.
 	 */
 	public void SetModoJogo(ModoJogo modo)
@@ -633,7 +633,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * @return {@link Color Cor} padrão para textos e objetos do jogo.
+	 * @return {@link Color Cor} padrï¿½o para textos e objetos do jogo.
 	 */
 	public Color GetCor()
 	{
@@ -641,9 +641,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Função que retorna a {@link TextureRegion} desejada.
+	 * Funï¿½ï¿½o que retorna a {@link TextureRegion} desejada.
 	 * @param caminho 
-	 * 		Caminho do arquivo físico da textura, sem a extenção do arquivo e sem a pasta raiz. Exemplo: arquivo\\imagens\\imagem.png (a partir da pasta raiz da plataforma) - parametrizar como: imagens\\imagem
+	 * 		Caminho do arquivo fï¿½sico da textura, sem a extenï¿½ï¿½o do arquivo e sem a pasta raiz. Exemplo: arquivo\\imagens\\imagem.png (a partir da pasta raiz da plataforma) - parametrizar como: imagens\\imagem
 	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
 	 * @see {@link TextureAtlas#findRegion(String)}
 	 */
@@ -674,8 +674,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Função que retorna a {@link TextureRegion} desejada.
-	 * @param caminho {@link FileHandle Caminho} do arquivo físico da textura.
+	 * Funï¿½ï¿½o que retorna a {@link TextureRegion} desejada.
+	 * @param caminho {@link FileHandle Caminho} do arquivo fï¿½sico da textura.
 	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
 	 */
 	public TextureRegion GetTextura(FileHandle caminho)

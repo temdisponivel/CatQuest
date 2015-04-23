@@ -23,9 +23,9 @@ public class DesktopLauncher {
 		config.resizable = false;
 		config.forceExit = true;  
 		config.vSyncEnabled = false;
-		config.addIcon("imagens\\icones\\128.png", FileType.Local);
-		config.addIcon("imagens\\icones\\32.png", FileType.Local);
-		config.addIcon("imagens\\icones\\16.png", FileType.Local);
+		config.addIcon("imagens/icones/128.png", FileType.Local);
+		config.addIcon("imagens/icones/32.png", FileType.Local);
+		config.addIcon("imagens/icones/16.png", FileType.Local);
 		new LwjglApplication(new CatQuest(), config);
 	}
 }

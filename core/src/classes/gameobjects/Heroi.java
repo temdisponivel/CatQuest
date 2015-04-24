@@ -4,7 +4,7 @@ package classes.gameobjects;
 
 import classes.uteis.Player;
 
-public class Heroi extends GameObject
+public class Heroi extends Personagem
 {
 	Player _player = null;
 

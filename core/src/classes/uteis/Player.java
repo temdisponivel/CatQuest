@@ -27,11 +27,6 @@ public class Player
 	public Player(TipoPlayer tipo)
 	{
 		_tipo = tipo;
-		
-		if (this.GetTipo() == TipoPlayer.UM)
-			_controle.SetConjunto(CatQuest.instancia.GetConfig().GetComandoPlayer1());
-		else
-			_controle.SetConjunto(CatQuest.instancia.GetConfig().GetComandoPlayer2());
 	}
 	
 	/**
@@ -40,6 +35,11 @@ public class Player
 	public void IniciaControle()
 	{
 		_controle = new Controle(this.GetTipo());
+		
+		if (this.GetTipo() == TipoPlayer.UM)
+			_controle.SetConjunto(CatQuest.instancia.GetConfig().GetComandoPlayer1());
+		else
+			_controle.SetConjunto(CatQuest.instancia.GetConfig().GetComandoPlayer2());
 	}
 	
 	/**

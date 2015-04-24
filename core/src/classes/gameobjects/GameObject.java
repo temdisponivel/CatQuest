@@ -27,13 +27,12 @@ public abstract class GameObject implements Poolable
 	 */
 	public enum GameObjects
 	{
-		INIMIGO,
-		HEROI,
-		CENARIO,
+		Peronagem,
+		Cenario,
 	};
 	
 	protected Sprite _sprite = null;
-	protected GameObjects _tipo;
+	static protected GameObjects _tipo;
 	protected Vector2 _posicaoTela = null;
 	protected Vector2 _posicaoTelaAux = null;
 	protected Rectangle _caixaColisao = null;
@@ -57,8 +56,8 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Função chamada a todo frame. Não esquecer de chamar nas classes filhas, ao final da função reescrita.
-	 * @param deltaTime Dirença do tempo entre os dois últimos loops.
+	 * Funï¿½ï¿½o chamada a todo frame. Nï¿½o esquecer de chamar nas classes filhas, ao final da funï¿½ï¿½o reescrita.
+	 * @param deltaTime Direnï¿½a do tempo entre os dois ï¿½ltimos loops.
 	 */
 	public void Atualiza(float deltaTime)
 	{
@@ -89,7 +88,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Função que desenha a sprite atual - atualizada a todo frame pela {@link #Atualiza(float)} baseada na {@link Animation}.
+	 * Funï¿½ï¿½o que desenha a sprite atual - atualizada a todo frame pela {@link #Atualiza(float)} baseada na {@link Animation}.
 	 * @param bash {@link SpriteBatch} utilizada para desenhar objetos na tela.
 	 */
 	public void Desenha(SpriteBatch batch)
@@ -107,13 +106,13 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Função chamada sempre que este objeto colidi com um objeto da lista objetos colidiveis.
+	 * Funï¿½ï¿½o chamada sempre que este objeto colidi com um objeto da lista objetos colidiveis.
 	 * @param colidiu {@link GameObject} que colidiu com este.
 	 */
 	public abstract void AoColidir(GameObject colidiu);
 	
 	/**
-	 * Função com toda a rotina de iniciação das propriedades do objeto. Com excessão do ID, porque o ID já é definido no contrutor desta classe.
+	 * Funï¿½ï¿½o com toda a rotina de iniciaï¿½ï¿½o das propriedades do objeto. Com excessï¿½o do ID, porque o ID jï¿½ ï¿½ definido no contrutor desta classe.
 	 */
 	public abstract void Inicia();
 	
@@ -160,7 +159,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna a posição deste game object na tela;
+	 * Retorna a posiï¿½ï¿½o deste game object na tela;
 	 * @return {@link Vector2}
 	 */
 	public final Vector2 GetPosicao()
@@ -169,7 +168,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Caso este objeto tenha um pai, retorna a posição absoluta - sem relação com o pai;
+	 * Caso este objeto tenha um pai, retorna a posiï¿½ï¿½o absoluta - sem relaï¿½ï¿½o com o pai;
 	 * @return {@link Vector2}
 	 */
 	public final Vector2 GetPosicaoAbsoluta()
@@ -178,8 +177,8 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Seta a nova posição do game object.
-	 * @param posicao {@link Vector2} com a nova posição do game object. 
+	 * Seta a nova posiï¿½ï¿½o do game object.
+	 * @param posicao {@link Vector2} com a nova posiï¿½ï¿½o do game object. 
 	 */
 	public void SetPosicao(Vector2 posicao)
 	{
@@ -188,7 +187,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Seta a nova posição do game object.
+	 * Seta a nova posiï¿½ï¿½o do game object.
 	 * @param x Novo x - canto inferior esquerdo.
 	 * @param y Novo y - canto inferior esquerdo.
 	 */
@@ -216,7 +215,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna a {@link Tela} que este game object está inserido.
+	 * Retorna a {@link Tela} que este game object estï¿½ inserido.
 	 * @return Referencia para {@link Tela} deste game object.
 	 */
 	public final Tela GetTela()
@@ -234,7 +233,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna se objeto será atualizado ou não. Se não (false), não roda a rotina de {@link #Atualiza(float)}. 
+	 * Retorna se objeto serï¿½ atualizado ou nï¿½o. Se nï¿½o (false), nï¿½o roda a rotina de {@link #Atualiza(float)}. 
 	 * @return True caso atualize.
 	 */
 	public final boolean GetSeAtualiza()
@@ -243,7 +242,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna se objeto será desenhado ou não. Se não (false), não roda a rotina de {@link #Desenha(SpriteBatch)}.  
+	 * Retorna se objeto serï¿½ desenhado ou nï¿½o. Se nï¿½o (false), nï¿½o roda a rotina de {@link #Desenha(SpriteBatch)}.  
 	 * @return True caso desenhe.
 	 */
 	public final boolean GetSeDesenha()
@@ -252,7 +251,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Define se o game object será atualiza. Se false, não roda a rotina de {@link #Atualiza(float)}. 
+	 * Define se o game object serï¿½ atualiza. Se false, nï¿½o roda a rotina de {@link #Atualiza(float)}. 
 	 * @param atualiza True para rodar a rotina de {@link #Atualiza(float)}. 
 	 */
 	public void SetSeAtualiza(boolean atualiza)
@@ -261,7 +260,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Define se o game object será desenhado. Se false, não roda a rotina de {@link #Desenha(SpriteBatch)}. 
+	 * Define se o game object serï¿½ desenhado. Se false, nï¿½o roda a rotina de {@link #Desenha(SpriteBatch)}. 
 	 * @param desenha True para rodar a rotina de {@link #Desenha(SpriteBatch)}. 
 	 */
 	public void SetSeDesenha(boolean desenha)
@@ -271,7 +270,7 @@ public abstract class GameObject implements Poolable
 	
 	/**
 	 * 
-	 * @return False caso não esteja rodando a rotina de {@link #Atualiza(float)} <b>e</b> {@link #Desenha(SpriteBatch)}. True caso esteja rodando qualquer uma - ou ambas - as duas.
+	 * @return False caso nï¿½o esteja rodando a rotina de {@link #Atualiza(float)} <b>e</b> {@link #Desenha(SpriteBatch)}. True caso esteja rodando qualquer uma - ou ambas - as duas.
 	 */
 	public boolean GetSeAtivo()
 	{
@@ -296,8 +295,8 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Função que valida colisão entre este {@link GameObject} e outro. Caso positivo, chama a função {@link GameObject#AoColidir(GameObject)} dos dois game objects.
-	 * @param colidiu {@link GameObject} a validar colisão.
+	 * Funï¿½ï¿½o que valida colisï¿½o entre este {@link GameObject} e outro. Caso positivo, chama a funï¿½ï¿½o {@link GameObject#AoColidir(GameObject)} dos dois game objects.
+	 * @param colidiu {@link GameObject} a validar colisï¿½o.
 	 * @return True caso tenha colidido.
 	 */
 	public boolean ValidaColisao(GameObject colidiu)
@@ -326,8 +325,8 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Retorna se este {@link GameObject} é colidível.
-	 * @return True caso seja colidível.
+	 * Retorna se este {@link GameObject} ï¿½ colidï¿½vel.
+	 * @return True caso seja colidï¿½vel.
 	 */
 	public boolean GetColidivel()
 	{
@@ -339,7 +338,7 @@ public abstract class GameObject implements Poolable
 	
 	/**
 	 * Retorna a lista de {@link GameObject} que podem colidir com este.
-	 * @return {@link HashSet} de {@link GameObject.TipoGameObject} de {@link GameObject} que podem colidir com este. Ou nulo caso não exista colidíveis ({@link GameObject#GetColidivel()} == false) .
+	 * @return {@link HashSet} de {@link GameObject.TipoGameObject} de {@link GameObject} que podem colidir com este. Ou nulo caso nï¿½o exista colidï¿½veis ({@link GameObject#GetColidivel()} == false) .
 	 * @see {@link GameObject#GetColidivel()}.
 	 */
 	@SuppressWarnings("javadoc")
@@ -349,10 +348,10 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Função que adiciona um filho a este {@link GameObject}. Todos os filhos são atualizados e desenhados logo após o pai.
-	 * Ao adicionar um filho, a camada do filho passa a ser a camada do pai; ele só será atualizado e desenhado a partir do pai;
-	 * Portante, se o pai não é atualizado, o filho também não. Se o pai não é desenhado, o filho também não.
-	 * Entretanto, as colisões são realizadas independentes do pai. A colisão com o pai é desativada por padrão, mas pode ser mudada em {@link GameObject#SetColidiPai(boolean)}.
+	 * Funï¿½ï¿½o que adiciona um filho a este {@link GameObject}. Todos os filhos sï¿½o atualizados e desenhados logo apï¿½s o pai.
+	 * Ao adicionar um filho, a camada do filho passa a ser a camada do pai; ele sï¿½ serï¿½ atualizado e desenhado a partir do pai;
+	 * Portante, se o pai nï¿½o ï¿½ atualizado, o filho tambï¿½m nï¿½o. Se o pai nï¿½o ï¿½ desenhado, o filho tambï¿½m nï¿½o.
+	 * Entretanto, as colisï¿½es sï¿½o realizadas independentes do pai. A colisï¿½o com o pai ï¿½ desativada por padrï¿½o, mas pode ser mudada em {@link GameObject#SetColidiPai(boolean)}.
 	 * @param filho {@link GameObject} filho.
 	 * @return {@link GameObject Filho} adicionado.
 	 */
@@ -374,7 +373,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Adiciona uma série de filhos a este gameobject. O mesmo que {@link GameObject#adicionaFilho(GameObject)}.
+	 * Adiciona uma sï¿½rie de filhos a este gameobject. O mesmo que {@link GameObject#adicionaFilho(GameObject)}.
 	 * @param filhos Filhos a serem adicionados.
 	 * @see {@link GameObject#adicionaFilho(GameObject)}
 	 */
@@ -385,8 +384,8 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Define um pai para este {@link GameObject}. Deve ser utilizado quando este gameobject é adicionado como filho de outro. 
-	 * @param pai {@link GameObject} que será referenciado como pai.
+	 * Define um pai para este {@link GameObject}. Deve ser utilizado quando este gameobject ï¿½ adicionado como filho de outro. 
+	 * @param pai {@link GameObject} que serï¿½ referenciado como pai.
 	 */
 	public void SetPai(GameObject pai)
 	{
@@ -395,7 +394,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Define a posição atual deste {@link GameObject} em relação a do objeto parametrizado.
+	 * Define a posiï¿½ï¿½o atual deste {@link GameObject} em relaï¿½ï¿½o a do objeto parametrizado.
 	 * Ou seja, toma como ponto ZERO o vetor parametrizado.
 	 * @param posicaoRelativa {@link Vector2 vetor} a relacionar como ponto ZERO.
 	 */
@@ -406,8 +405,8 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * Define quando este {@link GameObject} deve validar colisão com seu pai.
-	 * @param colidiPai True se é pra validar colisão.
+	 * Define quando este {@link GameObject} deve validar colisï¿½o com seu pai.
+	 * @param colidiPai True se ï¿½ pra validar colisï¿½o.
 	 */
 	public void SetColidiPai(boolean colidiPai)
 	{
@@ -415,7 +414,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * @return True se a colisão deste {@link GameObject} é calculada também com o pai. Ou seja, se ele colidi com o pai.
+	 * @return True se a colisï¿½o deste {@link GameObject} ï¿½ calculada tambï¿½m com o pai. Ou seja, se ele colidi com o pai.
 	 */
 	public boolean GetColidiPai()
 	{
@@ -434,7 +433,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * @return {@link LinkedList<T>} dos filhos deste objeto. Pode ser nulo caso não tenha filhos. Validar via {@link GameObject#GetSePai()}.
+	 * @return {@link LinkedList<T>} dos filhos deste objeto. Pode ser nulo caso nï¿½o tenha filhos. Validar via {@link GameObject#GetSePai()}.
 	 */
 	public LinkedList<GameObject> GetFilhos()
 	{
@@ -470,7 +469,7 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
-	 * @return {@link Color Cor} com que as sprites deste objeto estão sendo desenhadas. {@link Color#WHITE} por padrão.
+	 * @return {@link Color Cor} com que as sprites deste objeto estï¿½o sendo desenhadas. {@link Color#WHITE} por padrï¿½o.
 	 */
 	public Color GetColor()
 	{

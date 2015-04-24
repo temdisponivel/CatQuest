@@ -11,7 +11,7 @@ public class Introducao extends Tela
 		super.Iniciar();
 		_tipo = Telas.INTRODUCAO;
 		
-		Imagem i = new Imagem("sprites\\intro");
+		Imagem i = new Imagem("sprites//intro");
 		i.GetSprite().setSize(CatQuest.instancia.GetLarguraTela(), CatQuest.instancia.GetAlturaTela());
 				
 		this.InserirGameObject(i);

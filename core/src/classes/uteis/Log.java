@@ -10,7 +10,7 @@ import java.util.Date;
 public class Log
 {
 	static StringBuilder _stringBuilder = null;
-	public final static FileHandle log = Gdx.files.local("arquivos\\log" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + Calendar.getInstance().get(Calendar.MONTH) + Calendar.getInstance().get(Calendar.YEAR)+".txt");
+	public final static FileHandle log = Gdx.files.local("arquivos/log" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + Calendar.getInstance().get(Calendar.MONTH) + Calendar.getInstance().get(Calendar.YEAR)+".txt");
 	public static Log instancia = null;
 	
 	
@@ -34,26 +34,26 @@ public class Log
 			_stringBuilder = new StringBuilder();
 		
 		_stringBuilder.delete(0, _stringBuilder.length());
-		_stringBuilder.append("\r\n");
+		_stringBuilder.append("/r/n");
 		_stringBuilder.append("Data: ").append(new Date().toString()).append(" | Mensagem: ").append(texto);
-		_stringBuilder.append("\r\n");
+		_stringBuilder.append("/r/n");
 		
 		if (e != null)
 		{
 			_stringBuilder.append("StackTrace: ");
-			_stringBuilder.append("\r\n");
+			_stringBuilder.append("/r/n");
 			
 			for (StackTraceElement elemento : e.getStackTrace())
 			{
 				_stringBuilder.append(elemento.toString());
-				_stringBuilder.append("\r\n");
+				_stringBuilder.append("/r/n");
 			}
 		}
 		
 		if (encerra)
 		{
-			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() : "Erro irreversível."));
-			_stringBuilder.append("\r\n");
+			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() : "Erro irreversï¿½vel."));
+			_stringBuilder.append("/r/n");
 			CatQuest.instancia.EncerraJogo();
 		}
 		

@@ -13,14 +13,14 @@ import com.badlogic.gdx.controllers.PovDirection;
 import com.badlogic.gdx.math.Vector3;
 
 /**
- * Classe que gerencia os controles do jogo. Aqui ficam os botões apertados, mouse, etc.
+ * Classe que gerencia os controles do jogo. Aqui ficam os botï¿½es apertados, mouse, etc.
  * @author Matheus
  *
  */
 public class Controle implements ControllerListener
 {
 	/**
-	 * Direções possíveis de movimentação dos controles.
+	 * Direï¿½ï¿½es possï¿½veis de movimentaï¿½ï¿½o dos controles.
 	 * @author Matheus
 	 *
 	 */
@@ -52,7 +52,7 @@ public class Controle implements ControllerListener
 	private ConjuntoComandos _conjunto = null;
 	
 	/**
-	 * Contrói um novo controle baseado no {@link TipoPlayer} que vai utilizar.
+	 * Contrï¿½i um novo controle baseado no {@link TipoPlayer} que vai utilizar.
 	 * @param tipoPlayer {@link TipoPlayer} que vai utilizar o controle.
 	 */
 	public Controle(TipoPlayer tipoPlayer)
@@ -63,7 +63,7 @@ public class Controle implements ControllerListener
 		{
 			if (controle.getName().toLowerCase().contains("xbox") && controle.getName().toLowerCase().contains("360"))
 			{
-				if (controle != CatQuest.instancia.GetPlayer(tipoPlayer == TipoPlayer.UM ? tipoPlayer : TipoPlayer.DOIS).GetControle())
+				if (controle != CatQuest.instancia.GetPlayer(tipoPlayer == TipoPlayer.UM ? TipoPlayer.DOIS : tipoPlayer).GetControle())
 				{
 					_controle = controle;
 					break;
@@ -75,8 +75,8 @@ public class Controle implements ControllerListener
 	}
 	
 	/**
-	 * Retorna a direção informada pelo usuário através do teclado ou controle.
-	 * @return {@link Direcoes} Que o usuário informou via teclado ou controle. {@link Direcoes#CENTRO} quando nada informado.
+	 * Retorna a direï¿½ï¿½o informada pelo usuï¿½rio atravï¿½s do teclado ou controle.
+	 * @return {@link Direcoes} Que o usuï¿½rio informou via teclado ou controle. {@link Direcoes#CENTRO} quando nada informado.
 	 */
 	public int GetDirecao()
 	{
@@ -109,8 +109,8 @@ public class Controle implements ControllerListener
 	}
 	
 	/**
-	 * Retorna a direção de ataque informada pelo usuário através do teclado ou controle.
-	 * @return {@link Direcoes} Que o usuário informou via teclado ou controle. {@link Direcoes#CENTRO} quando nada informado.
+	 * Retorna a direï¿½ï¿½o de ataque informada pelo usuï¿½rio atravï¿½s do teclado ou controle.
+	 * @return {@link Direcoes} Que o usuï¿½rio informou via teclado ou controle. {@link Direcoes#CENTRO} quando nada informado.
 	 */
 	public int GetDirecaoAtaque()
 	{
@@ -144,7 +144,7 @@ public class Controle implements ControllerListener
 	
 	/**
 	 * 
-	 * @return True se o botão de ação foi ativado.
+	 * @return True se o botï¿½o de aï¿½ï¿½o foi ativado.
 	 */
 	public boolean GetAcao()
 	{
@@ -159,7 +159,7 @@ public class Controle implements ControllerListener
 	}
 	
 	/**
-	 * @return True se o botão de habilidade foi ativado. 
+	 * @return True se o botï¿½o de habilidade foi ativado. 
 	 */
 	public boolean GetHabilidade()
 	{
@@ -175,7 +175,7 @@ public class Controle implements ControllerListener
 	
 	/**
 	 * 
-	 * @return True caso o botão de pause seja ativado.
+	 * @return True caso o botï¿½o de pause seja ativado.
 	 */
 	public boolean GetPause()
 	{
@@ -192,7 +192,7 @@ public class Controle implements ControllerListener
 	@Override
 	public void connected(Controller controller)
 	{
-		//valida se o controle é de xbox 360
+		//valida se o controle ï¿½ de xbox 360
 		if (!(controller.getName().toLowerCase().contains("xbox") && controller.getName().toLowerCase().contains("360")))
 			return;
 		
@@ -257,7 +257,7 @@ public class Controle implements ControllerListener
 	}
 	
 	/**
-	 * @return O {@link TipoControle} que o player está jogando.
+	 * @return O {@link TipoControle} que o player estï¿½ jogando.
 	 */
 	public TipoControle GetTipoControle()
 	{

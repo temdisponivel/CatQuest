@@ -279,6 +279,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			
 		_players.add(new Player(Player.TipoPlayer.UM));
 		_players.add(new Player(Player.TipoPlayer.DOIS));
+		
+		//inicia o controle dos players
+		for (Player player : _players)
+			player.IniciaControle();
 	}
 	
 	/**
@@ -289,7 +293,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		Json json = new Json();
 		json.setUsePrototypes(false);
 		String config = json.toJson(_configuracoes);
-		Gdx.files.local("arquivos\\config.data").writeString(config, false);
+		Gdx.files.local("arquivos/config.data").writeString(config, false);
 	}
 	
 	/**
@@ -300,10 +304,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (_configuracoes == null)
 			_configuracoes = new Configuracoes();
 		
-		if (Gdx.files.local("arquivos\\config.data").exists())
+		if (Gdx.files.local("arquivos/config.data").exists())
 		{
 			Json json = new Json();
-			String config = Gdx.files.local("arquivos\\config.data").readString();
+			String config = Gdx.files.local("arquivos/config.data").readString();
 			_configuracoes = json.fromJson(Configuracoes.class, config);
 		}
 		
@@ -643,7 +647,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	/**
 	 * Fun��o que retorna a {@link TextureRegion} desejada.
 	 * @param caminho 
-	 * 		Caminho do arquivo f�sico da textura, sem a exten��o do arquivo e sem a pasta raiz. Exemplo: arquivo\\imagens\\imagem.png (a partir da pasta raiz da plataforma) - parametrizar como: imagens\\imagem
+	 * 		Caminho do arquivo f�sico da textura, sem a exten��o do arquivo e sem a pasta raiz. Exemplo: arquivo//imagens//imagem.png (a partir da pasta raiz da plataforma) - parametrizar como: imagens//imagem
 	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
 	 * @see {@link TextureAtlas#findRegion(String)}
 	 */

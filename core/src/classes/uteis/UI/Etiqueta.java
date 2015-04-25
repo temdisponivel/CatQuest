@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
@@ -33,6 +34,7 @@ public class Etiqueta extends GameObject
 		_posicaoTela = posicao;
 		_camada = Camada.UI;
 		_cor = Color.BLACK;
+		_tipo = GameObjects.Ui;
 	}
 	
 	/**

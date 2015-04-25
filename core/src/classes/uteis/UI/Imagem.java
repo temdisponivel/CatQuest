@@ -23,6 +23,7 @@ public class Imagem extends GameObject
 	{
 		super();
 		_camada = Camada.UI;
+		_tipo = GameObjects.Ui;
 		_sprite = new Sprite();
 		_sprite.setRegion(CatQuest.instancia.GetTextura(Gdx.files.local(caminho)));
 	}

@@ -27,8 +27,10 @@ public abstract class GameObject implements Poolable
 	 */
 	public enum GameObjects
 	{
-		Peronagem,
+		Heroi,
+		Inimigo,
 		Cenario,
+		Ui,
 	};
 	
 	protected Sprite _sprite = null;

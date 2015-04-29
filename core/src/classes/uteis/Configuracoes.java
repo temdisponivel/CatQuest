@@ -1,5 +1,8 @@
 package classes.uteis;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.utils.Json;
+
 import classes.uteis.Player.TipoPlayer;
 import classes.uteis.controle.ConjuntoComandos;
 import classes.uteis.controle.Controle.TipoControle;
@@ -12,7 +15,7 @@ import catquest.CatQuest;
  * @author Matheus
  *
  */
-public class Configuracoes
+public class Configuracoes implements Serializador
 {
 	private float _volumeMusica;
 	private float _volumeSom;
@@ -235,5 +238,37 @@ public class Configuracoes
 		}
 		
 		return erro;
+	}
+
+	@Override
+	public void Carrega()
+	{
+		if (Gdx.files.local("arquivos/config.data").exists())
+		{
+			Json json = new Json();
+			String config = Gdx.files.local("arquivos/config.data").readString();
+			
+			//carrega do arquivo
+			Configuracoes temp = json.fromJson(Configuracoes.class, config);
+			
+			this.SetAudio(temp.GetAudio());
+			this.SetFullScreen(temp.GetFullscreen());
+			this.SetWidth(temp.GetWidth());
+			this.SetHeight(temp.GetHeight());
+			this.SetMostraFPS(temp.GetMostraFPS());
+			this.SetVolumeMusica(temp.GetVolumeMusica());
+			this.SetVolumeSom(temp.GetVolumeSom());
+			_comandoPlayer1 = temp.GetComandoPlayer1();
+			_comandoPlayer2 = temp.GetComandoPlayer2();
+		}
+	}
+
+	@Override
+	public void Salva()
+	{
+		Json json = new Json();
+		json.setUsePrototypes(false);
+		String config = json.toJson(this);
+		Gdx.files.local("arquivos/config.data").writeString(config, false);
 	}
 }

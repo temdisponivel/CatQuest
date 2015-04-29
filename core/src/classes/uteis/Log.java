@@ -34,26 +34,26 @@ public class Log
 			_stringBuilder = new StringBuilder();
 		
 		_stringBuilder.delete(0, _stringBuilder.length());
-		_stringBuilder.append("/r/n");
+		_stringBuilder.append("/n");
 		_stringBuilder.append("Data: ").append(new Date().toString()).append(" | Mensagem: ").append(texto);
-		_stringBuilder.append("/r/n");
+		_stringBuilder.append("/n");
 		
 		if (e != null)
 		{
 			_stringBuilder.append("StackTrace: ");
-			_stringBuilder.append("/r/n");
+			_stringBuilder.append("/n");
 			
 			for (StackTraceElement elemento : e.getStackTrace())
 			{
 				_stringBuilder.append(elemento.toString());
-				_stringBuilder.append("/r/n");
+				_stringBuilder.append("/n");
 			}
 		}
 		
 		if (encerra)
 		{
 			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() : "Erro irrevers�vel."));
-			_stringBuilder.append("/r/n");
+			_stringBuilder.append("/n");
 			CatQuest.instancia.EncerraJogo();
 		}
 		

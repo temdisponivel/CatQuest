@@ -1,5 +1,3 @@
-//TODO: pensar num sistema de carregar as propriedades e habilidades via arquivo
-
 package classes.gameobjects;
 
 /**
@@ -16,7 +14,7 @@ public abstract class Classe extends GameObject
 	 */
 	public enum Classes
 	{
-		Bárbaro,
+		Barbaro,
 		Lutador,
 		Gatuno,
 		Mago,
@@ -45,6 +43,7 @@ public abstract class Classe extends GameObject
 	protected float _coeficienteCritico = 0;
 	protected Estado _estado = Estado.Parado;
 	protected boolean _colidido = false;
+	protected String _descricaoClasse = "";
 	
 	
 	/**
@@ -88,6 +87,38 @@ public abstract class Classe extends GameObject
 	}
 	
 	/**
+	 * @return {@link String Descrição} em nível humano da classe. 
+	 */
+	public String GetDescricao()
+	{
+		return _descricaoClasse;
+	}
+	
+	/**
+	 * @return Chanse de acertar um dano crítico - em percentagem.
+	 */
+	public float GetChanseCritico()
+	{
+		return _chanseCritico;
+	}
+	
+	/**
+	 * @return Quantas vezes o dano crítico é mais forte que o comum.
+	 */
+	public float GetCoeficienteCritico()
+	{
+		return _coeficienteCritico;
+	}
+	
+	/**
+	 * @return {@link Classes Classe} do personagem.
+	 */
+	public Classes GetClasse()
+	{
+		return _classe;
+	}
+		
+	/**
 	 * Inflinge dano ao {@link Ator ator}.
 	 * @param dano Pontos de dano a inflingir. Repare que destes pontos serão subtraídos a defesa do ator.
 	 */
@@ -103,38 +134,5 @@ public abstract class Classe extends GameObject
 	public <T extends Classe> void InfligeDano(T inflige)
 	{
 		inflige.RecebeDano(_ataque);
-	}
-	
-	@Override
-	public void AoColidir(GameObject colidiu)
-	{
-		_colidido = true;
-		
-		//se somos um heroi
-		if (this instanceof Heroi)
-		{
-			//se colidimos com um inimigo
-			if (colidiu instanceof Inimigo)
-			{
-				//se estamos atacando
-				if (_estado == Estado.Atacando)
-				{
-					this.InfligeDano((Inimigo) colidiu); //inflige dano ao inimigo
-				}
-			}
-		}
-		//se somos um inimigo
-		else if (this instanceof Inimigo)
-		{
-			//se colidimos com um heroi
-			if (colidiu instanceof Heroi)
-			{
-				//se o inimigo não está atacando
-				if (((Heroi) colidiu).GetEstado() != Estado.Atacando)
-				{
-					this.InfligeDano((Heroi) colidiu); //inflige dano ao inimigo
-				}	
-			}
-		}
 	}
 }

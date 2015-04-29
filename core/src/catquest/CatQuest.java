@@ -13,7 +13,6 @@ import classes.uteis.Player;
 import classes.uteis.Player.TipoPlayer;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
-
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -30,7 +29,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.Json;
 
 /**
  * Classe que cont�m todas as informa��es padr�es do jogo. Quase todos os m�todos e propriedades s�o est�ticos.
@@ -290,10 +288,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public void GravarConfig()
 	{
-		Json json = new Json();
-		json.setUsePrototypes(false);
-		String config = json.toJson(_configuracoes);
-		Gdx.files.local("arquivos/config.data").writeString(config, false);
+		if (_configuracoes != null)
+			_configuracoes.Salva();
+		else
+			CarregarConfig();
 	}
 	
 	/**
@@ -301,17 +299,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public void CarregarConfig()
 	{
-		if (_configuracoes == null)
-			_configuracoes = new Configuracoes();
-		
-		if (Gdx.files.local("arquivos/config.data").exists())
-		{
-			Json json = new Json();
-			String config = Gdx.files.local("arquivos/config.data").readString();
-			_configuracoes = json.fromJson(Configuracoes.class, config);
-		}
-		
-		this.GravarConfig();
+		_configuracoes = new Configuracoes();
+		_configuracoes.Carrega();
+		_configuracoes.Salva();
 		this.AplicarConfiguracoes();
 	}
 	

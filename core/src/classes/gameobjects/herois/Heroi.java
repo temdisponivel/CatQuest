@@ -17,7 +17,6 @@ public abstract class Heroi extends Personagem implements Serializador
 {
 	static public ArrayList<Heroi> herois = null;
 	protected String _descricaoHeroi = "";
-	protected String _nome = "";
 	protected Player _player = null;
 	
 	/**
@@ -25,10 +24,14 @@ public abstract class Heroi extends Personagem implements Serializador
 	 */
 	public Heroi()
 	{
+		super();
+		
 		if (herois == null)
 			herois = new ArrayList<Heroi>();
 		
 		herois.add(this);
+		
+		_tipo = GameObjects.Heroi;
 	}
 	
 	@Override

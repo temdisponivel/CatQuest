@@ -9,14 +9,8 @@ public class Barbaro extends Heroi
 	}
 
 	@Override
-	public boolean Carrega()
+	public String toString()
 	{
-		return false;
+		return "Bárbaro";
 	}
-
-	@Override
-	public void Salva()
-	{
-	}
-
 }

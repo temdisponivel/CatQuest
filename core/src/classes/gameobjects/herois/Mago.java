@@ -7,16 +7,10 @@ public class Mago extends Heroi
 	{
 		super();
 	}
-
+	
 	@Override
-	public boolean Carrega()
+	public String toString()
 	{
-		return false;
+		return "Mago";
 	}
-
-	@Override
-	public void Salva()
-	{		
-	}
-
 }

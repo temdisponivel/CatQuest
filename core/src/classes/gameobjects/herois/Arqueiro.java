@@ -7,16 +7,10 @@ public class Arqueiro extends Heroi
 	{
 		super();
 	}
-
+	
 	@Override
-	public boolean Carrega()
+	public String toString()
 	{
-		return false;
+		return "Arqueiro";
 	}
-
-	@Override
-	public void Salva()
-	{		
-	}
-
 }

@@ -1,5 +1,6 @@
 package classes.telas;
 
+import classes.gameobjects.herois.Arqueiro;
 import classes.uteis.UI.Imagem;
 import catquest.CatQuest;
 
@@ -13,6 +14,7 @@ public class Introducao extends Tela
 		
 		Imagem i = new Imagem("sprites//intro");
 		i.GetSprite().setSize(CatQuest.instancia.GetLarguraTela(), CatQuest.instancia.GetAlturaTela());
+		new Arqueiro();
 				
 		this.InserirGameObject(i);
 	}

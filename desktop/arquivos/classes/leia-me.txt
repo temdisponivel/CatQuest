@@ -1,9 +1,0 @@
-Alterar os arquivos desta pasta alteram as propriedades das classes no jogo.
-
-Indice de classes para colocar no campo _classe:
-Barbaro
-Lutador
-Gatuno
-Mago
-Arqueiro
-Bardo

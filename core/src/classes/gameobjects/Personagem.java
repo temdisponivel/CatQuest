@@ -1,11 +1,16 @@
 package classes.gameobjects;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.utils.Json;
+import classes.uteis.Serializador;
+
 /**
  * Classe que representa as classes do jogo. Tem propriedades como agilidade, defesa, ataque, vida, chanse de dano crítico, etc.
  * @author matheus
  *
  */
-public abstract class Personagem extends GameObject
+public abstract class Personagem extends GameObject implements Serializador
 {
 	
 	/**
@@ -28,8 +33,14 @@ public abstract class Personagem extends GameObject
 	protected float _coeficienteCritico = 0;
 	protected Estado _estado = Estado.Parado;
 	protected boolean _colidido = false;
+	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/" + this.toString());
 	
-	
+	public Personagem()
+	{
+		super();
+		this.Carrega();
+	}
+		
 	/**
 	 * @return Agilidade com que o {@link Ator ator} se move e interage no ambiente.
 	 */
@@ -102,5 +113,40 @@ public abstract class Personagem extends GameObject
 	public <T extends Personagem> void InfligeDano(T inflige)
 	{
 		inflige.RecebeDano(_ataque);
+	}
+	
+	@Override
+	public boolean Carrega()
+	{
+		//se o arquivo nao existe, cria para que possa ser alterado e retorna falso
+		if (!_arquivo.exists())
+		{
+			this.Salva();
+			return false;
+		}
+		
+		Json json = new Json();
+		String personagem = _arquivo.readString();
+		
+		//carrega do arquivo
+		Personagem personagemTemp = (Personagem) json.fromJson(this.getClass(), personagem);
+		
+		_agilidade = personagemTemp.GetAgilidade();
+		_defesa = personagemTemp.GetDefesa();
+		_ataque = personagemTemp.GetAtaque();
+		_vida = personagemTemp.GetVida();
+		_chanseCritico = personagemTemp.GetChanseCritico();
+		_coeficienteCritico = personagemTemp.GetCoeficienteCritico();
+		
+		return true;
+	}
+	
+	@Override
+	public void Salva()
+	{
+		Json json = new Json();
+		json.setUsePrototypes(false);
+		String personagem = json.toJson(this);
+		_arquivo.writeString(personagem, false);
 	}
 }

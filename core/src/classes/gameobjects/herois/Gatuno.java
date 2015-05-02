@@ -7,16 +7,10 @@ public class Gatuno extends Heroi
 	{
 		super();
 	}
-
+	
 	@Override
-	public boolean Carrega()
+	public String toString()
 	{
-		return false;
+		return "Gatuno";
 	}
-
-	@Override
-	public void Salva()
-	{		
-	}
-
 }

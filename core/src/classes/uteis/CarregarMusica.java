@@ -1,7 +1,5 @@
 package classes.uteis;
 
-import catquest.CatQuest;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
@@ -58,7 +56,7 @@ public class CarregarMusica implements Runnable
 			if (musica == null)
 				return;
 			
-			musica.setVolume(CatQuest.instancia.GetConfig().GetVolumeMusica()/100);
+			musica.setVolume(Configuracoes.instancia.GetVolumeMusica()/100);
 			musica.setLooping(_isLooping);
 			musica.setOnCompletionListener(_listenerOnTermino);
 			

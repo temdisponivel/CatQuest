@@ -1,7 +1,7 @@
 package classes.telas;
 
 import catquest.CatQuest;
-import classes.uteis.Player.TipoPlayer;
+import classes.uteis.Player;
 
 import com.badlogic.gdx.graphics.Color;
 
@@ -30,7 +30,7 @@ public class Menu extends Tela
 	{
 		super.Atualiza(deltaTime);
 		
-		if (CatQuest.instancia.GetPlayer(TipoPlayer.UM).GetControle().GetPause())
+		if (Player.playerPrimario.GetControle().GetPause())
 		{
 			CatQuest.instancia.RetiraTela();
 		}

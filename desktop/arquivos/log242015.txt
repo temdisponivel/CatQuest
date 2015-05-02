@@ -1,0 +1,25 @@
+/nData: Sat May 02 00:27:25 BRT 2015 | Mensagem: Erro ao iniciar o jogo./nStackTrace: /ncom.badlogic.gdx.utils.Json.readValue(Json.java:983)/ncom.badlogic.gdx.utils.Json.readFields(Json.java:780)/ncom.badlogic.gdx.utils.Json.readValue(Json.java:902)/ncom.badlogic.gdx.utils.Json.readFields(Json.java:780)/ncom.badlogic.gdx.utils.Json.readValue(Json.java:902)/ncom.badlogic.gdx.utils.Json.fromJson(Json.java:714)/nclasses.uteis.Configuracoes.Carrega(Configuracoes.java:259)/nclasses.uteis.Configuracoes.<init>(Configuracoes.java:46)/ncatquest.CatQuest.IniciaJogo(CatQuest.java:180)/ncatquest.CatQuest.create(CatQuest.java:79)/ncom.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)/ncom.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)/nO JOGO FOI ENCERRADO POR CAUSA DE: Unable to convert value to required type: _player: UM (classes.uteis.Player$TipoPlayer)
+Serialization trace:
+_player (classes.uteis.controle.ConjuntoComandos)
+_comandoPlayer1 (classes.uteis.Configuracoes)/n\r\nData: Sat May 02 00:28:34 BRT 2015 | Mensagem: Erro ao iniciar o jogo.\r\nStackTrace: \r\ncom.badlogic.gdx.utils.Json.readValue(Json.java:983)\r\ncom.badlogic.gdx.utils.Json.readFields(Json.java:780)\r\ncom.badlogic.gdx.utils.Json.readValue(Json.java:902)\r\ncom.badlogic.gdx.utils.Json.readFields(Json.java:780)\r\ncom.badlogic.gdx.utils.Json.readValue(Json.java:902)\r\ncom.badlogic.gdx.utils.Json.fromJson(Json.java:714)\r\nclasses.uteis.Configuracoes.Carrega(Configuracoes.java:259)\r\nclasses.uteis.Configuracoes.<init>(Configuracoes.java:46)\r\ncatquest.CatQuest.IniciaJogo(CatQuest.java:180)\r\ncatquest.CatQuest.create(CatQuest.java:79)\r\ncom.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)\r\ncom.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)\r\nO JOGO FOI ENCERRADO POR CAUSA DE: Unable to convert value to required type: _player: UM (classes.uteis.Player$TipoPlayer)
+Serialization trace:
+_player (classes.uteis.controle.ConjuntoComandos)
+_comandoPlayer1 (classes.uteis.Configuracoes)\r\n
+Data: Sat May 02 00:29:05 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+com.badlogic.gdx.utils.Json.readValue(Json.java:983)
+com.badlogic.gdx.utils.Json.readFields(Json.java:780)
+com.badlogic.gdx.utils.Json.readValue(Json.java:902)
+com.badlogic.gdx.utils.Json.readFields(Json.java:780)
+com.badlogic.gdx.utils.Json.readValue(Json.java:902)
+com.badlogic.gdx.utils.Json.fromJson(Json.java:714)
+classes.uteis.Configuracoes.Carrega(Configuracoes.java:259)
+classes.uteis.Configuracoes.<init>(Configuracoes.java:46)
+catquest.CatQuest.IniciaJogo(CatQuest.java:180)
+catquest.CatQuest.create(CatQuest.java:79)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Unable to convert value to required type: _player: UM (classes.uteis.Player$TipoPlayer)
+Serialization trace:
+_player (classes.uteis.controle.ConjuntoComandos)
+_comandoPlayer1 (classes.uteis.Configuracoes)

@@ -1,14 +1,12 @@
 package classes.gameobjects.inimigos;
 
-import classes.gameobjects.Classe;
-import classes.gameobjects.Classe.Classes;
+import classes.gameobjects.Personagem;
 
-public abstract class Inimigo extends Classe
+public abstract class Inimigo extends Personagem
 {
 
-	public Inimigo(Classes tipo)
+	public Inimigo()
 	{
-		
 	}
 
 }

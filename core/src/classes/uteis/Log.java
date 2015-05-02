@@ -4,22 +4,27 @@ import catquest.CatQuest;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Log
 {
-	static StringBuilder _stringBuilder = null;
-	public final static FileHandle log = Gdx.files.local("arquivos/log" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + Calendar.getInstance().get(Calendar.MONTH) + Calendar.getInstance().get(Calendar.YEAR)+".txt");
 	public static Log instancia = null;
+	private StringBuilder _stringBuilder = null;
+	private FileHandle _log = null;
 	
-	
-	public Log()
+	public Log() throws IOException
 	{
 		if (instancia == null)
 		{
 			instancia = this;
 			_stringBuilder = new StringBuilder();
+			_log = Gdx.files.local("arquivos/log" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + Calendar.getInstance().get(Calendar.MONTH) + Calendar.getInstance().get(Calendar.YEAR)+".txt");
+			
+			if (!_log.exists())
+				_log.file().createNewFile();
 		}
 	}
 	
@@ -34,30 +39,30 @@ public class Log
 			_stringBuilder = new StringBuilder();
 		
 		_stringBuilder.delete(0, _stringBuilder.length());
-		_stringBuilder.append("/n");
+		_stringBuilder.append("\r\n");
 		_stringBuilder.append("Data: ").append(new Date().toString()).append(" | Mensagem: ").append(texto);
-		_stringBuilder.append("/n");
+		_stringBuilder.append("\r\n");
 		
 		if (e != null)
 		{
 			_stringBuilder.append("StackTrace: ");
-			_stringBuilder.append("/n");
+			_stringBuilder.append("\r\n");
 			
 			for (StackTraceElement elemento : e.getStackTrace())
 			{
 				_stringBuilder.append(elemento.toString());
-				_stringBuilder.append("/n");
+				_stringBuilder.append("\r\n");
 			}
 		}
 		
 		if (encerra)
 		{
-			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() : "Erro irrevers�vel."));
-			_stringBuilder.append("/n");
+			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() : "Erro irreversivel."));
+			_stringBuilder.append("\r\n");
 			CatQuest.instancia.EncerraJogo();
 		}
 		
-		log.writeString(_stringBuilder.toString(), true);
+		_log.writeString(_stringBuilder.toString(), true);
 		System.out.println(_stringBuilder.toString());
 	}
 	

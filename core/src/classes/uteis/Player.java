@@ -1,7 +1,6 @@
 package classes.uteis;
 
 import classes.uteis.controle.Controle;
-import catquest.CatQuest;
 
 /**
  * Classe que representa um player do jogo.
@@ -17,29 +16,47 @@ public class Player
 	 */
 	public enum TipoPlayer
 	{
-		UM,
-		DOIS,
+		Primario,
+		Secundario,
 	}
 	
-	Controle _controle;
-	TipoPlayer _tipo;
+	static public Player playerPrimario = null;
+	static public Player playerSecundario = null;
 	
+	private Controle _controle;
+	private TipoPlayer _tipo;
+	
+	/**
+	 * Contrói os players do jogo.
+	 */
+	public static void ControiPlayers()
+	{
+		playerPrimario = new Player(TipoPlayer.Primario);
+		playerSecundario = new Player(TipoPlayer.Secundario);
+	}
+	
+	/**
+	 * Contrói um player específico.
+	 * @param tipo
+	 */
 	public Player(TipoPlayer tipo)
 	{
 		_tipo = tipo;
+		
+		this.IniciaControle();
 	}
-	
+
 	/**
 	 * Inicia o controle do player.
 	 */
 	public void IniciaControle()
 	{
-		_controle = new Controle(this.GetTipo());
+		_controle = new Controle(_tipo);
 		
-		if (this.GetTipo() == TipoPlayer.UM)
-			_controle.SetConjunto(CatQuest.instancia.GetConfig().GetComandoPlayer1());
+		if (this.GetTipo() == TipoPlayer.Primario)
+			_controle.SetConjunto(Configuracoes.instancia.GetComandoPlayerPrimario());
 		else
-			_controle.SetConjunto(CatQuest.instancia.GetConfig().GetComandoPlayer2());
+			_controle.SetConjunto(Configuracoes.instancia.GetComandoPlayerSecundario());
 	}
 	
 	/**

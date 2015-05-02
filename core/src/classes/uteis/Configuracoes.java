@@ -17,6 +17,7 @@ import catquest.CatQuest;
  */
 public class Configuracoes implements Serializador
 {
+	public static Configuracoes instancia = null;
 	private float _volumeMusica;
 	private float _volumeSom;
 	private int _width;
@@ -29,6 +30,14 @@ public class Configuracoes implements Serializador
 	
 	public Configuracoes()
 	{
+		if (instancia == null)
+		{
+			instancia = this;
+			
+			if (this.Carrega())
+				return;
+		}
+		
 		this.SetAudio(true);
 		this.SetFullScreen(false);
 		this.SetWidth(1024);
@@ -36,8 +45,8 @@ public class Configuracoes implements Serializador
 		this.SetMostraFPS(false);
 		this.SetVolumeMusica(50);
 		this.SetVolumeSom(50);
-		_comandoPlayer1 = new ConjuntoComandos(TipoPlayer.UM, TipoControle.TECLADO);
-		_comandoPlayer2 = new ConjuntoComandos(TipoPlayer.DOIS, TipoControle.TECLADO);
+		_comandoPlayer1 = new ConjuntoComandos(TipoPlayer.Primario, TipoControle.TECLADO);
+		_comandoPlayer2 = new ConjuntoComandos(TipoPlayer.Secundario, TipoControle.TECLADO);
 	}
 
 	/**
@@ -174,7 +183,7 @@ public class Configuracoes implements Serializador
 	/**
 	 * @return O {@link ConjuntoComandos} do player1.
 	 */
-	public ConjuntoComandos GetComandoPlayer1()
+	public ConjuntoComandos GetComandoPlayerPrimario()
 	{
 		return _comandoPlayer1;
 	}
@@ -191,7 +200,7 @@ public class Configuracoes implements Serializador
 	/**
 	 * @return O {@link ConjuntoComandos} do player2.
 	 */
-	public ConjuntoComandos GetComandoPlayer2()
+	public ConjuntoComandos GetComandoPlayerSecundario()
 	{
 		return _comandoPlayer2;
 	}
@@ -231,7 +240,7 @@ public class Configuracoes implements Serializador
 			erro = true;
 		}
 		
-		if (_volumeSom < 0 || _volumeMusica > 100)
+		if (_volumeSom < 0 || _volumeSom > 100)
 		{
 			this.SetVolumeSom(50); 
 			erro = true;
@@ -241,7 +250,7 @@ public class Configuracoes implements Serializador
 	}
 
 	@Override
-	public void Carrega()
+	public boolean Carrega()
 	{
 		if (Gdx.files.local("arquivos/config.data").exists())
 		{
@@ -249,18 +258,11 @@ public class Configuracoes implements Serializador
 			String config = Gdx.files.local("arquivos/config.data").readString();
 			
 			//carrega do arquivo
-			Configuracoes temp = json.fromJson(Configuracoes.class, config);
-			
-			this.SetAudio(temp.GetAudio());
-			this.SetFullScreen(temp.GetFullscreen());
-			this.SetWidth(temp.GetWidth());
-			this.SetHeight(temp.GetHeight());
-			this.SetMostraFPS(temp.GetMostraFPS());
-			this.SetVolumeMusica(temp.GetVolumeMusica());
-			this.SetVolumeSom(temp.GetVolumeSom());
-			_comandoPlayer1 = temp.GetComandoPlayer1();
-			_comandoPlayer2 = temp.GetComandoPlayer2();
+			Configuracoes.instancia = json.fromJson(Configuracoes.class, config);
+			return true;
 		}
+		
+		return false;
 	}
 
 	@Override

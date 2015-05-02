@@ -1,7 +1,7 @@
 package classes.telas;
 
 import catquest.CatQuest;
-import classes.uteis.Player.TipoPlayer;
+import classes.uteis.Player;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -17,7 +17,7 @@ public class GamePlay extends Tela
 	@Override
 	public void Atualiza(float deltaTime)
 	{
-		if (CatQuest.instancia.GetPlayer(TipoPlayer.UM).GetControle().GetPause())
+		if (Player.playerPrimario.GetControle().GetPause())
 		{
 			CatQuest.instancia.AdicionaTela(new Menu(), false, true);
 		}

@@ -10,7 +10,6 @@ import classes.uteis.CarregarMusicaListner;
 import classes.uteis.Configuracoes;
 import classes.uteis.Log;
 import classes.uteis.Player;
-import classes.uteis.Player.TipoPlayer;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
 import com.badlogic.gdx.ApplicationListener;
@@ -28,7 +27,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.Array;
 
 /**
  * Classe que contï¿½m todas as informaï¿½ï¿½es padrï¿½es do jogo. Quase todos os mï¿½todos e propriedades sï¿½o estï¿½ticos.
@@ -54,11 +52,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private SpriteBatch _batch = null;
 	private OrthographicCamera _camera = null;
 	private float _tempoJogo = 0;
-	private Configuracoes _configuracoes = null;
 	private ModoJogo _modoJogo = ModoJogo.SINGLE;
 	private boolean _atualiza = true, _desenha = true;
 	private BitmapFont _fonte = null;
-	private Array<Player> _players = null;
 	private Color _corJogo = null;
 	private TextureAtlas _textureAtlas = null;
 	private boolean _trocaTela = false, _removeTela = false;
@@ -154,7 +150,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	    		tela.Desenha(_batch);
 		}
 	    
-	    if (_configuracoes.GetMostraFPS())
+	    if (Configuracoes.instancia.GetMostraFPS())
 			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()-50, this.GetAlturaTela()-25);
 			
 		_batch.end();
@@ -177,15 +173,15 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	private void IniciaJogo(boolean intro) throws IOException
 	{
-		if (!Log.log.exists())
-			Log.log.file().createNewFile();
+		//INICIA SINGLETON do LOG
+		new Log();
 		
 		//CARREGA CONFIGURAï¿½ï¿½ES E APLICA
-		this.CarregarConfig();
+		new Configuracoes();
 		this.AplicarConfiguracoes();
 		
 		//CONTRï¿½I OS PLAYERS
-		this.ControiPlayers();
+		Player.ControiPlayers();
 		
 		//ATUALIZA E DESENHA COMO TRUE PARA GAMELOOP COMPLETO
 		_atualiza = true;
@@ -200,16 +196,13 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA A COR PADRAO PARA OS OBJETOS DO JOGO
 		_corJogo = new Color(1, 0.8f, 0.8f, 1); //ROSINHA: RGB: 255, 204, 204, 255. Conversï¿½o via 1/255*quantidadeRGB
 		
-		//INICIA SINGLETON do LOG
-		new Log();
-		
 		//Controi o texture atlas
 		_textureAtlas = new TextureAtlas(Gdx.files.local("pack/CatQuest.atlas"));
 		
 		//CRIA CAMERA ORTOGRAFICA PARA QUE Nï¿½O TENHA DIFERENï¿½A ENTRE PROFUNDIDADE.
 		//CRIA COM O TAMANHO DAS CONFIGURAï¿½ï¿½ES
 		_camera = new OrthographicCamera();
-		_camera.setToOrtho(false, _configuracoes.GetWidth(), _configuracoes.GetHeight());
+		_camera.setToOrtho(false, Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
 		
 		//SE FOR PRA COMEï¿½AR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
 		if (intro)
@@ -268,76 +261,11 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Funï¿½ï¿½o para construï¿½ï¿½o dos players.
-	 */
-	private void ControiPlayers()
-	{
-		if (_players == null)
-			_players = new Array<Player>();
-			
-		_players.add(new Player(Player.TipoPlayer.UM));
-		_players.add(new Player(Player.TipoPlayer.DOIS));
-		
-		//inicia o controle dos players
-		for (Player player : _players)
-			player.IniciaControle();
-	}
-	
-	/**
-	 * Grava as informaï¿½ï¿½es de configuraï¿½ï¿½es no arquivo padrï¿½o.
-	 */
-	public void GravarConfig()
-	{
-		if (_configuracoes != null)
-			_configuracoes.Salva();
-		else
-			CarregarConfig();
-	}
-	
-	/**
-	 * Carrega as configuraï¿½ï¿½es do usuï¿½rio.
-	 */
-	public void CarregarConfig()
-	{
-		_configuracoes = new Configuracoes();
-		_configuracoes.Carrega();
-		_configuracoes.Salva();
-		this.AplicarConfiguracoes();
-	}
-	
-	/**
 	 * Define as configuraï¿½ï¿½es atuais do jogo. Caso as configuraï¿½ï¿½es ainda nï¿½o tenham sido definidas, chama {@link CatQuest#CarregarConfig()} e depois define.
 	 */
 	public void AplicarConfiguracoes()
-	{
-		if (_configuracoes == null)
-			this.CarregarConfig();
-		
-		Gdx.graphics.setDisplayMode(_configuracoes.GetWidth(), _configuracoes.GetHeight(), _configuracoes.GetFullscreen());
-		
-		this.GravarConfig();
-	}
-	
-	/**
-	 * Retorna as {@link Configuracoes} do jogo. Repare que caso altere as configuraï¿½ï¿½es, deve chamar {@link #GravarConfig()}.
-	 * @return Configuraï¿½ï¿½es do jogo.
-	 */
-	public Configuracoes GetConfig()
-	{
-		if (_configuracoes == null)
-			this.CarregarConfig();
-		
-		return _configuracoes;
-	}
-	
-	/**
-	 * Define novas configuraï¿½ï¿½es para o jogo e salva em arquivo em seguida.
-	 * @param config Novas configuraï¿½ï¿½es para o jogo.
-	 */
-	public void SetConfig(Configuracoes config)
-	{
-		_configuracoes = config;
-		this.GravarConfig();
+	{		
+		Gdx.graphics.setDisplayMode(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), Configuracoes.instancia.GetFullscreen());
 	}
 	
 	/**
@@ -522,7 +450,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			return Gdx.audio.newSound(arquivo);
 		else
 		{
-			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
+			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
 			return null;
 		}
 	}
@@ -606,15 +534,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public void onCompletion(Music music)
 	{
 		music.dispose();
-	}
-	
-	/**
-	 * Retorna a instancia do player desejado.
-	 * @return {@link Player} que representa o player.
-	 */
-	public Player GetPlayer(TipoPlayer tipo)
-	{
-		return _players.get(tipo.ordinal());
 	}
 	
 	/**

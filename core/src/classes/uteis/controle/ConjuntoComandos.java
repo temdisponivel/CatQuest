@@ -28,7 +28,7 @@ public class ConjuntoComandos
 	
 	public ConjuntoComandos() 
 	{
-		this(TipoPlayer.UM, TipoControle.TECLADO);
+		this(TipoPlayer.Primario, TipoControle.TECLADO);
 	};
 	
 	public ConjuntoComandos(TipoPlayer playerComandos, TipoControle tipo)
@@ -47,7 +47,7 @@ public class ConjuntoComandos
 	 */
 	public void SetConjuntoTeclado()
 	{
-		if (_player == TipoPlayer.UM)
+		if (_player == TipoPlayer.Primario)
 		{
 			PAUSE = Keys.ESCAPE;
 			ACAO = Keys.E;

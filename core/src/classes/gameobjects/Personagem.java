@@ -5,25 +5,11 @@ package classes.gameobjects;
  * @author matheus
  *
  */
-public abstract class Classe extends GameObject
+public abstract class Personagem extends GameObject
 {
-	/**
-	 * Enumerador para os tipos de {link {@link Classe classes} possíveis.
-	 * @author matheus
-	 *
-	 */
-	public enum Classes
-	{
-		Barbaro,
-		Lutador,
-		Gatuno,
-		Mago,
-		Arqueiro,
-		Bardo,
-	}
 	
 	/**
-	 * Enumerador para o estado do {@link GameObject game object} que herda desta {@link Classe classe}.
+	 * Enumerador para o estado do {@link GameObject game object} que herda desta {@link Personagem classe}.
 	 * @author matheus
 	 *
 	 */
@@ -39,11 +25,9 @@ public abstract class Classe extends GameObject
 	protected float _ataque = 0;
 	protected float _vida = 0;
 	protected float _chanseCritico = 0;
-	protected Classes _classe = null;
 	protected float _coeficienteCritico = 0;
 	protected Estado _estado = Estado.Parado;
 	protected boolean _colidido = false;
-	protected String _descricaoClasse = "";
 	
 	
 	/**
@@ -87,14 +71,6 @@ public abstract class Classe extends GameObject
 	}
 	
 	/**
-	 * @return {@link String Descrição} em nível humano da classe. 
-	 */
-	public String GetDescricao()
-	{
-		return _descricaoClasse;
-	}
-	
-	/**
 	 * @return Chanse de acertar um dano crítico - em percentagem.
 	 */
 	public float GetChanseCritico()
@@ -109,14 +85,6 @@ public abstract class Classe extends GameObject
 	{
 		return _coeficienteCritico;
 	}
-	
-	/**
-	 * @return {@link Classes Classe} do personagem.
-	 */
-	public Classes GetClasse()
-	{
-		return _classe;
-	}
 		
 	/**
 	 * Inflinge dano ao {@link Ator ator}.
@@ -129,9 +97,9 @@ public abstract class Classe extends GameObject
 	
 	/**
 	 * Inflige um dano a um {@link GameObject game object}.
-	 * @param inflige {@link Classe Objeto} a infligir o dano.
+	 * @param inflige {@link Personagem Objeto} a infligir o dano.
 	 */
-	public <T extends Classe> void InfligeDano(T inflige)
+	public <T extends Personagem> void InfligeDano(T inflige)
 	{
 		inflige.RecebeDano(_ataque);
 	}

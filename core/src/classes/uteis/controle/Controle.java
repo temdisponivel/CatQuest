@@ -2,6 +2,8 @@
 
 package classes.uteis.controle;
 
+import java.util.ArrayList;
+
 import catquest.CatQuest;
 import classes.telas.Menu;
 import classes.uteis.Player.TipoPlayer;
@@ -50,28 +52,36 @@ public class Controle implements ControllerListener
 	
 	private Controller _controle = null;
 	private ConjuntoComandos _conjunto = null;
+	private ArrayList<Controller> _controlesEmUso = null;
 	
 	/**
 	 * Contrï¿½i um novo controle baseado no {@link TipoPlayer} que vai utilizar.
 	 * @param tipoPlayer {@link TipoPlayer} que vai utilizar o controle.
 	 */
-	public Controle(TipoPlayer tipoPlayer)
+	public Controle(TipoPlayer tipo)
 	{
 		Controllers.addListener(this);
 		
+		//PERCORRE TODOS OS CONTROLES
 		for (Controller controle : Controllers.getControllers())
 		{
+			//VALIDA SE É UM CONTROLE DE XBOX
 			if (controle.getName().toLowerCase().contains("xbox") && controle.getName().toLowerCase().contains("360"))
 			{
-				if (controle != CatQuest.instancia.GetPlayer(tipoPlayer == TipoPlayer.UM ? TipoPlayer.DOIS : tipoPlayer).GetControle())
-				{
-					_controle = controle;
-					break;
-				}
+				if (_controlesEmUso == null)
+					_controlesEmUso = new ArrayList<Controller>();
+				
+				//SE O CONTROLE JÁ ESTÁ EM USO, TENTA O PROXIMO
+				if (_controlesEmUso.contains(controle))
+					continue;
+				
+				//SE NAO ESTÁ EM USO, VAI ENTRAR EM USO AGORA
+				_controlesEmUso.add(controle);
+				_controle = controle;
 			}
 		}
 
-		_conjunto = new ConjuntoComandos(tipoPlayer, this.GetTipoControle());
+		_conjunto = new ConjuntoComandos(tipo, this.GetTipoControle());
 	}
 	
 	/**

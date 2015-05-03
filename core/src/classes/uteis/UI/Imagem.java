@@ -43,5 +43,8 @@ public class Imagem extends GameObject
 	public void AoColidir(GameObject colidiu){}
 
 	@Override
-	public void Inicia() {}
+	public void Inicia() 
+	{
+		super.Inicia();
+	}
 }

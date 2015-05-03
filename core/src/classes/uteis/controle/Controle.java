@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 import catquest.CatQuest;
 import classes.telas.Menu;
+import classes.uteis.Configuracoes;
 import classes.uteis.Player.TipoPlayer;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.ControllerListener;
@@ -52,7 +54,7 @@ public class Controle implements ControllerListener
 	
 	private Controller _controle = null;
 	private ConjuntoComandos _conjunto = null;
-	private ArrayList<Controller> _controlesEmUso = null;
+	static private ArrayList<Controller> _controlesEmUso = null;
 	
 	/**
 	 * Contr�i um novo controle baseado no {@link TipoPlayer} que vai utilizar.
@@ -81,7 +83,10 @@ public class Controle implements ControllerListener
 			}
 		}
 
-		_conjunto = new ConjuntoComandos(tipo, this.GetTipoControle());
+		if (tipo == TipoPlayer.Primario)
+			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerPrimario());
+		else
+			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerSecundario());
 	}
 	
 	/**
@@ -191,7 +196,7 @@ public class Controle implements ControllerListener
 	{
 		if (this.GetTipoControle() == TipoControle.TECLADO)
 		{
-			return Gdx.input.isKeyPressed(_conjunto.PAUSE);
+			return Gdx.input.isKeyJustPressed(_conjunto.PAUSE);
 		}
 		else
 		{

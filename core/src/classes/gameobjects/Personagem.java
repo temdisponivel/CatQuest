@@ -63,11 +63,20 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected boolean _colidido = false;
 	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/" + this.toString());
 	
+	/**
+	 * Cria um novo personagem.
+	 */
 	public Personagem()
 	{
 		super();
-		this.Carrega();
 		personagens.put(this.GetId(), this);
+	}
+	
+	@Override
+	public void Inicia()
+	{
+		super.Inicia();
+		this.Carrega();
 	}
 		
 	/**

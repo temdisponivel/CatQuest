@@ -52,11 +52,6 @@ public class Player
 	public void IniciaControle()
 	{
 		_controle = new Controle(_tipo);
-		
-		if (this.GetTipo() == TipoPlayer.Primario)
-			_controle.SetConjunto(Configuracoes.instancia.GetComandoPlayerPrimario());
-		else
-			_controle.SetConjunto(Configuracoes.instancia.GetComandoPlayerSecundario());
 	}
 	
 	/**

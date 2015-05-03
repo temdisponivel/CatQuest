@@ -142,6 +142,7 @@ public class Tela implements OnCompletionListener
 				
 				_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
 				gameObject.SetTela(this);
+				gameObject.Inicia();
 			}
 			
 			_gameObjectsIncluir.clear();

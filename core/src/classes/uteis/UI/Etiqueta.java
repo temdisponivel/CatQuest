@@ -29,7 +29,6 @@ public class Etiqueta extends GameObject
 	public Etiqueta(String texto, Vector2 posicao)
 	{
 		super();
-		this.Inicia();
 		_texto = texto;
 		_posicaoTela = posicao;
 		_camada = Camada.UI;
@@ -55,6 +54,7 @@ public class Etiqueta extends GameObject
 	@Override
 	public void Inicia()
 	{
+		super.Inicia();
 		_fonte = CatQuest.instancia.GetFonte(); 
 		_corOriginal = _fonte.getColor();
 	}

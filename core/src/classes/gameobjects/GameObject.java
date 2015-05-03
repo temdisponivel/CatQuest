@@ -63,8 +63,9 @@ public abstract class GameObject
 	public GameObject()
 	{
 		_id = CatQuest.instancia.GetNovoId();
+		_posicaoTela = new Vector2();
+		_caixaColisao = new Rectangle();
 		gameobjects.put(this.GetId(), this);
-		this.Inicia();
 	}
 	
 	/**
@@ -128,10 +129,6 @@ public abstract class GameObject
 	 */
 	public void Inicia()
 	{
-		_posicaoTela = new Vector2();
-		_caixaColisao = new Rectangle();
-		_sons = new HashMap<Integer, Sound>();
-		_animacoes = new HashMap<Integer, Animation>();
 		_cor = Color.WHITE;
 	}
 	
@@ -168,9 +165,14 @@ public abstract class GameObject
 	 */
 	public void SetCamada(Camada novaCamada)
 	{
-		this.GetTela().Remover(this);
-		_camada = novaCamada;
-		this.GetTela().InserirGameObject(this);
+		if (this.GetTela() != null)
+		{
+			this.GetTela().Remover(this);
+			_camada = novaCamada;
+			this.GetTela().InserirGameObject(this);
+		}
+		else
+			_camada = novaCamada;
 	}
 	
 	/**
@@ -367,6 +369,8 @@ public abstract class GameObject
 	 * Ao adicionar um filho, a camada do filho passa a ser a camada do pai; ele sï¿½ serï¿½ atualizado e desenhado a partir do pai;
 	 * Portante, se o pai nï¿½o ï¿½ atualizado, o filho tambï¿½m nï¿½o. Se o pai nï¿½o ï¿½ desenhado, o filho tambï¿½m nï¿½o.
 	 * Entretanto, as colisï¿½es sï¿½o realizadas independentes do pai. A colisï¿½o com o pai ï¿½ desativada por padrï¿½o, mas pode ser mudada em {@link GameObject#SetColidiPai(boolean)}.
+	 * O novo filho não é {@link #Inicia() iniciado} aqui. 
+	 * Portanto, caso ainda não tenha iniciado - o que ocorre ao {@link Tela#InserirGameObject(GameObject) adicionar a uma tela} - inicie antes dessa função.
 	 * @param filho {@link GameObject} filho.
 	 * @return {@link GameObject Filho} adicionado.
 	 */
@@ -509,6 +513,9 @@ public abstract class GameObject
 	{
 		Sound som = null;
 		
+		if (_sons == null)
+			return -1;
+		
 		if (!_sons.containsKey(chave))
 			return -1;
 		
@@ -523,6 +530,9 @@ public abstract class GameObject
 	 */
 	protected <T extends Enum<?>> void IncluirSom(final T chave, FileHandle som)
 	{
+		if (_sons == null)
+			_sons = new HashMap<Integer, Sound>();
+		
 		CarregarSom.instancia.Carrega(som, new CarregarSomListner()
 		{
 			@Override
@@ -539,6 +549,9 @@ public abstract class GameObject
 	 */
 	protected <T extends Enum<?>> void DefineAnimacao(T chave)
 	{
+		if (_animacoes == null)
+			return;
+		
 		if (!_animacoes.containsKey(chave.ordinal()))
 			return;
 		
@@ -552,6 +565,9 @@ public abstract class GameObject
 	 */
 	protected <T extends Enum<?>> void IncluirAnimacao(T chave, Animation animacao)
 	{
+		if (_animacoes == null)
+			_animacoes = new HashMap<Integer, Animation>();
+		
 		_animacoes.put(chave.ordinal(), animacao);
 	}
 	

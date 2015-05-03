@@ -24,6 +24,7 @@ public class BotaoTexto extends Botao
 	{
 		super(posicao, new Rectangle(0, 0, CatQuest.instancia.GetFonte().getBounds(texto).width + 10, CatQuest.instancia.GetFonte().getBounds(texto).height + 10), escutador);
 		_etiqueta = new Etiqueta(texto, new Vector2(5, -30));
+		_etiqueta.Inicia();
 		this.AdicionaFilho(_etiqueta);
 	}
 	
@@ -37,11 +38,9 @@ public class BotaoTexto extends Botao
 	public BotaoTexto(String texto, Rectangle tamanho, Vector2 posicao, EscutadorBotao escutador)
 	{
 		super(posicao, tamanho, escutador);
-		
 		Rectangle tamanhoTexto = CatQuest.instancia.GetTamanhoTexto(texto, 10);
-		
 		_etiqueta = new Etiqueta(texto, new Vector2((tamanho.width / 2 - ((tamanhoTexto.width / 2) - 5)), -((tamanho.height / 2) - (-tamanhoTexto.height / 2))));
-		
+		_etiqueta.Inicia();
 		this.AdicionaFilho(_etiqueta);
 	}
 	

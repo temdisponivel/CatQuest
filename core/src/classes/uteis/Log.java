@@ -21,7 +21,7 @@ public class Log
 		{
 			instancia = this;
 			_stringBuilder = new StringBuilder();
-			_log = Gdx.files.local("arquivos/log" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + Calendar.getInstance().get(Calendar.MONTH) + Calendar.getInstance().get(Calendar.YEAR)+".txt");
+			_log = Gdx.files.local("arquivos/log" + Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + Calendar.getInstance().get(Calendar.MONTH) + 1 + Calendar.getInstance().get(Calendar.YEAR)+".txt");
 			
 			if (!_log.exists())
 				_log.file().createNewFile();
@@ -57,7 +57,7 @@ public class Log
 		
 		if (encerra)
 		{
-			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() : "Erro irreversivel."));
+			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() == null ? texto : e.getMessage() : "Erro irreversivel."));
 			_stringBuilder.append("\r\n");
 			CatQuest.instancia.EncerraJogo();
 		}

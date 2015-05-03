@@ -68,8 +68,6 @@ public class Botao extends GameObject
 		_escutador = escutador;
 		_camada = Camada.UI;
 		_tipo = GameObjects.Ui;
-		
-		this.Inicia();
 	}
 
 	@Override
@@ -78,6 +76,8 @@ public class Botao extends GameObject
 	@Override
 	public void Inicia()
 	{
+		super.Inicia();
+		
 		//cria um mapa de pixels com o tamanho do botão mais uma borda
 		Pixmap botao = new Pixmap((int) _caixaColisao.width + 3, (int) _caixaColisao.height + 3, Format.RGB888);
 		

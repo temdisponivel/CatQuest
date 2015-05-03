@@ -1,5 +1,10 @@
 package classes.gameobjects.herois;
 
+/**
+ * Classe do herói Mago.
+ * @author matheus
+ *
+ */
 public class Mago extends Heroi
 {
 

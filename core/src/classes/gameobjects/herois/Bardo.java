@@ -1,5 +1,10 @@
 package classes.gameobjects.herois;
 
+/**
+ * Classe do herói Bardo.
+ * @author matheus
+ *
+ */
 public class Bardo extends Heroi
 {
 

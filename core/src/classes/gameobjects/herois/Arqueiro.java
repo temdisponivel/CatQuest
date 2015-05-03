@@ -1,5 +1,10 @@
 package classes.gameobjects.herois;
 
+/**
+ * Classe do herói Arqueiro.
+ * @author matheus
+ *
+ */
 public class Arqueiro extends Heroi
 {
 	public Arqueiro()

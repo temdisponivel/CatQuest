@@ -296,7 +296,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * @see {@link Tela#Atualiza(float)}
 	 * @see {@link Tela#Desenha(SpriteBatch)}
 	 */
-	@SuppressWarnings("javadoc")
 	public void AdicionaTela(Tela tela, boolean atualizaAntiga, boolean desenhaAntiga)
 	{
 		if (_pilhaTelas == null)
@@ -319,7 +318,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * Retirar a �ltima tela da pilha. A tela que est� abaixo ser� definida como ativa.
 	 * @see {@link Tela#SetAtiva(boolean)}
 	 */
-	@SuppressWarnings("javadoc")
 	public void RetiraTela()
 	{
 		_removeTela = true;

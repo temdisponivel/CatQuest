@@ -1,5 +1,10 @@
 package classes.gameobjects.herois;
 
+/**
+ * Classe do herói Gatuno.
+ * @author matheus
+ *
+ */
 public class Gatuno extends Heroi
 {
 

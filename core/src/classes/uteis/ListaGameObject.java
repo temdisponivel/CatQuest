@@ -14,6 +14,9 @@ public class ListaGameObject extends HashMap<Integer, GameObject>
 	private static final long serialVersionUID = 7807392367834454439L;
 	private static boolean _ativa = true;
 	
+	/**
+	 * Cria uma nova lista vazia.
+	 */
 	public ListaGameObject(){};
 	
 	/**

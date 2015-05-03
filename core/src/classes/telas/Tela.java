@@ -9,6 +9,8 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 
 /**
  * Classe base para todas as telas. Tela é o que guarda e gerencia todos os gameobjects que estão sendo manipulados pelo jogo.
@@ -252,6 +254,18 @@ public class Tela implements OnCompletionListener
 	public boolean GetSeAtiva()
 	{
 		return _desenha || _atualiza;
+	}
+	
+	/**
+	 * Valida se um campo na tela está livre para movimentação de um {@link GameObject objeto}.
+	 * @param posicao {@link Vector2 Posição} do campo.
+	 * @param campo  {@link Rectangle Tamanho} para validar se está livre. Por exemplo: valida se o campo de: (posicao(0, 0)) até (rectangle(150, 150) está livre.
+	 * @param objeto {@link GameObject Objeto} para utilizado para validar campo livre. Deve ser o objeto que ocupara este lugar caso esteja livre.
+	 * @return True caso livre. False caso contrário.
+	 */
+	public boolean GetCampoLivre(GameObject objeto, Vector2 posicao, Rectangle campo)
+	{
+		return true;
 	}
 	
 	/**

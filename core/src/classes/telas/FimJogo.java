@@ -32,5 +32,4 @@ public class FimJogo extends Tela
 		// TODO Auto-generated method stub
 		
 	}
-
 }

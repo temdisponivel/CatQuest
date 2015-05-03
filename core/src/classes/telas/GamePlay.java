@@ -2,7 +2,6 @@ package classes.telas;
 
 import catquest.CatQuest;
 import classes.uteis.Player;
-
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GamePlay extends Tela
@@ -36,5 +35,4 @@ public class GamePlay extends Tela
 		// TODO Auto-generated method stub
 		
 	}
-
 }

@@ -2,7 +2,9 @@ package classes.gameobjects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Json;
+
 import classes.uteis.Serializador;
 
 /**
@@ -12,6 +14,15 @@ import classes.uteis.Serializador;
  */
 public abstract class Personagem extends GameObject implements Serializador
 {
+	/**
+	 * Enumarador para os sons do personagem.
+	 * @author matheus
+	 *
+	 */
+	protected enum SomPersonagem
+	{
+		Movimenta,
+	}
 	
 	/**
 	 * Enumerador para o estado do {@link GameObject game object} que herda desta {@link Personagem classe}.
@@ -95,6 +106,16 @@ public abstract class Personagem extends GameObject implements Serializador
 	public float GetCoeficienteCritico()
 	{
 		return _coeficienteCritico;
+	}
+	
+	/**
+	 * Movimenta o {@link Personagem personagem} para o destino desejado.
+	 * @param destino {@link Vector2 Destino} do personagem.
+	 */
+	public void Movimenta(Vector2 destino)
+	{
+		this.TocaSom(SomPersonagem.Movimenta);
+		this.SetPosicao(this.GetPosicao().lerp(destino, 1));
 	}
 		
 	/**

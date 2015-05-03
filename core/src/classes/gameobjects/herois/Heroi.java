@@ -15,6 +15,19 @@ import classes.uteis.Serializador;
  */
 public abstract class Heroi extends Personagem implements Serializador
 {
+	/**
+	 * Enumerador para os sons dos herois.
+	 * @author matheus
+	 *
+	 */
+	protected enum SomHeroi
+	{
+		Movimenta,
+		Ativo,
+		Passivo,
+		Dano,
+	}
+	
 	static public ArrayList<Heroi> herois = null;
 	protected String _descricaoHeroi = "";
 	protected Player _player = null;

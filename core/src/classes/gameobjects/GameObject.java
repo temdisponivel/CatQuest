@@ -1,10 +1,18 @@
 package classes.gameobjects;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+
 import classes.uteis.Camada;
+import classes.uteis.CarregarSom;
+import classes.uteis.CarregarSomListner;
+import classes.uteis.Configuracoes;
 import classes.telas.Tela;
 import catquest.CatQuest;
+
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -34,7 +42,7 @@ public abstract class GameObject implements Poolable
 	};
 	
 	protected Sprite _sprite = null;
-	static protected GameObjects _tipo;
+	protected GameObjects _tipo;
 	protected Vector2 _posicaoTela = null;
 	protected Vector2 _posicaoTelaAux = null;
 	protected Rectangle _caixaColisao = null;
@@ -48,12 +56,14 @@ public abstract class GameObject implements Poolable
 	protected boolean _colidiPai = false;
 	protected GameObject _pai = null;
 	protected Color _cor = null;
+	protected HashMap<Integer, Sound> _sons = null;
 	
 	public GameObject()
 	{
 		_id = CatQuest.instancia.GetNovoId();
 		_posicaoTela = new Vector2();
 		_caixaColisao = new Rectangle();
+		_sons = new HashMap<Integer, Sound>();
 		_cor = Color.WHITE;
 	}
 	
@@ -488,6 +498,39 @@ public abstract class GameObject implements Poolable
 	}
 	
 	/**
+	 * Toma um som do {@link GameObject objeto}.
+	 * @param chave Chave utilizada para inserir o som na {@link #_sons lista de sons} através de {@link #IncluirSom(EnumSom, FileHandle)}.
+	 * @return -1 caso o som não exista. {@link Sound#play(float) ID} caso contrário.
+	 */
+	protected <T extends Enum<?>> long TocaSom(T chave)
+	{
+		Sound som = null;
+		
+		if (!_sons.containsKey(chave))
+			return -1;
+		
+		som = _sons.get(chave);
+		return som.play(Configuracoes.instancia.GetVolumeSom());
+	}
+	
+	/**
+	 * Inclui os {@link Sounds sons} na {@link #_sons lista de sons}. 
+	 * @param som {@link FileHandle Arquivos} do som para adicionar.
+	 * @param chave {@link EnumSom Chave} para vincular o som na lista de sons. Utilizar uma enum que implemente {@link EnumSom} para indexar.
+	 */
+	protected <T extends Enum<?>> void IncluirSom(final T chave, FileHandle som)
+	{
+		CarregarSom.instancia.Carrega(som, new CarregarSomListner()
+		{
+			@Override
+			public void AoCarregar(Sound somCarregada)
+			{
+				_sons.put(chave.ordinal(), somCarregada);
+			}
+		});
+	}
+	
+	/**
 	 * Libera os recursos deste game object.
 	 */
 	public void Encerra()
@@ -507,4 +550,3 @@ public abstract class GameObject implements Poolable
 		return _tipo.ordinal();
 	}
 }
-

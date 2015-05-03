@@ -65,7 +65,7 @@ public class Configuracoes implements Serializador
 	public void SetVolumeMusica(float volumeMusica)
 	{
 		if (volumeMusica >= 0 && volumeMusica <= 100)
-			this._volumeMusica = volumeMusica;
+			this._volumeMusica = volumeMusica/100;
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class Configuracoes implements Serializador
 	public void SetVolumeSom(float volumeSom)
 	{
 		if (volumeSom >= 0 && volumeSom <= 100)
-			this._volumeSom = volumeSom;
+			this._volumeSom = volumeSom/100;
 	}
 	
 	/**
@@ -259,9 +259,9 @@ public class Configuracoes implements Serializador
 			
 			//carrega do arquivo
 			Configuracoes.instancia = json.fromJson(Configuracoes.class, config);
+			Configuracoes.instancia.ValidaValores();
 			return true;
 		}
-		
 		return false;
 	}
 

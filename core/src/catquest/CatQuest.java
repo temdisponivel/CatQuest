@@ -2,11 +2,10 @@
 
 package catquest;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Stack;
 import classes.uteis.CarregarMusica;
-import classes.uteis.CarregarMusicaListner;
+import classes.uteis.CarregarSom;
 import classes.uteis.Configuracoes;
 import classes.uteis.Log;
 import classes.uteis.Player;
@@ -16,7 +15,6 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -179,6 +177,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CARREGA CONFIGURAï¿½ï¿½ES E APLICA
 		new Configuracoes();
 		this.AplicarConfiguracoes();
+		
+		//Inicia os singletons dos carregadores de música e som
+		new CarregarMusica();
+		new CarregarSom();
 		
 		//CONTRï¿½I OS PLAYERS
 		Player.ControiPlayers();
@@ -374,85 +376,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		if (posicao != null)
 			_camera.translate(posicao);
-	}
-	
-	/**
-	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo. Carrega a mï¿½sica iniciando tocando, sem loop, a partir de 0 segundo.
-	 * Quando a mï¿½sica chegar ao fim, ela serï¿½ liberada da memï¿½ria.
-	 * @param arquivo Arquivo da mï¿½sica.
-	 */
-	public void CriarNovaMusica(FileHandle arquivo)
-	{
-		if (arquivo.exists())
-			new CarregarMusica(arquivo, 0, false, true, this, null).run();
-		else
-			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
-	}
-	
-	/**
-	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo. Carrega a mï¿½sica iniciando tocando, sem loop, a partir de 0 segundo.
-	 * Quando a mï¿½sica chegar ao fim, ela serï¿½ liberada da memï¿½ria. Portanto, nï¿½o mexer na referencia.
-	 * @param arquivo Arquivo da mï¿½sica.
-	 * @param listener Listener que serï¿½ chamado ao completar o carregamento da mï¿½sica na memï¿½ria. Pode ser null.
-	 */
-	public void CriarNovaMusica(FileHandle arquivo, CarregarMusicaListner listener)
-	{
-		if (arquivo.exists())
-			new CarregarMusica(arquivo, 0, false, true, this, listener).run();
-		else
-			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
-	}
-	
-	/**
-	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo.
-	 * Quando a mï¿½sica chegar ao fim, ela serï¿½ liberada da memï¿½ria. Portanto, nï¿½o mexer na referencia.
-	 * @param arquivo {@link FileHandle} contendo o arquivo da mï¿½sica.
-	 * @param posicaoLoop Posiï¿½ï¿½o que a mï¿½sica deve comeï¿½ar a tocar.
-	 * @param isLooping Se a mï¿½sica deve ficar em loop.
-	 * @param isPlaing Se a mï¿½sica jï¿½ deve ser tocada apï¿½s criar.
-	 * @param listener Listener que serï¿½ chamado ao completar o carregamento da mï¿½sica na memï¿½ria. Pode ser null. Pode ser null.
-	 */
-	public void CriarNovaMusica(FileHandle arquivo, float posicaoLoop, boolean isLooping, boolean isPlaing, CarregarMusicaListner listener)
-	{
-		if (arquivo.exists())
-			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, this, listener).run();
-		else
-			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
-	}
-	
-	/**
-	 * Cria uma nova {@link Music} com as configuraï¿½ï¿½es do jogo.
-	 * Quando a mï¿½sica chegar ao fim, serï¿½ chamado o listener {@link OnCompletionListener}. Caso seja nulo, a mï¿½sica serï¿½ liberada da memï¿½ria.
-	 * @param arquivo {@link FileHandle} contendo o arquivo da mï¿½sica.
-	 * @param posicaoLoop Posiï¿½ï¿½o que a mï¿½sica deve comeï¿½ar a tocar.
-	 * @param isLooping Se a mï¿½sica deve ficar em loop.
-	 * @param isPlaing Se a mï¿½sica jï¿½ deve ser tocada apï¿½s criar.
-	 * @param listener Listener que serï¿½ chamado ao completar o carregamento da mï¿½sica na memï¿½ria. Pode ser null.
-	 * @param listenerFimMusica Listener que serï¿½ chamado ao tï¿½rmino da mï¿½sica. Pode ser null.
-	 */
-	public void CriarNovaMusica(FileHandle arquivo, float posicaoLoop, boolean isLooping, boolean isPlaing, OnCompletionListener listenerFimMusica, CarregarMusicaListner listener)
-	{
-		if (arquivo.exists())
-			new CarregarMusica(arquivo, posicaoLoop, isLooping, isPlaing, listenerFimMusica != null ? listenerFimMusica : this, listener).run();
-		else
-			Log.instancia.Logar("Nï¿½o foi possï¿½vel encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo nï¿½o encontrado."), true);
-	}
-	
-	/**
-	 * Cria um novo {@link Sound som}. Quando nï¿½o for mais utilizar, chamar {@link Sound#dispose()}.
-	 * Ao tocar os sons, sempre utilize o volume: {@link Configuracoes#GetVolumeSom()}/100.
-	 * @param arquivo Arquivo de som.
-	 * @return Novo som ou nulo caso nï¿½o encontre o arquivo (caso isso ocorra, o jogo serï¿½ encerrado em seguida).
-	 */
-	public Sound CriarNovoSom(FileHandle arquivo)
-	{
-		if (arquivo.exists())
-			return Gdx.audio.newSound(arquivo);
-		else
-		{
-			Log.instancia.Logar("Não foi possível encontrar o arquivo: " + arquivo.path(), new FileNotFoundException("Arquivo não encontrado."), true);
-			return null;
-		}
 	}
 	
 	/**

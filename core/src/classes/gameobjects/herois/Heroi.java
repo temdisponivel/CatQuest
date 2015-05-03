@@ -1,7 +1,6 @@
 package classes.gameobjects.herois;
 
-import java.util.ArrayList;
-
+import java.util.HashMap;
 import classes.gameobjects.Personagem;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.inimigos.Inimigo;
@@ -28,7 +27,7 @@ public abstract class Heroi extends Personagem implements Serializador
 		Dano,
 	}
 	
-	static public ArrayList<Heroi> herois = null;
+	static public HashMap<Integer, Heroi> herois = new HashMap<Integer, Heroi>();
 	protected String _descricaoHeroi = "";
 	protected Player _player = null;
 	
@@ -39,11 +38,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	{
 		super();
 		
-		if (herois == null)
-			herois = new ArrayList<Heroi>();
-		
-		herois.add(this);
-		
+		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
 	}
 	

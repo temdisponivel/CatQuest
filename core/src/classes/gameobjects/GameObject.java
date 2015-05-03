@@ -3,14 +3,12 @@ package classes.gameobjects;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
-
 import classes.uteis.Camada;
 import classes.uteis.CarregarSom;
 import classes.uteis.CarregarSomListner;
 import classes.uteis.Configuracoes;
 import classes.telas.Tela;
 import catquest.CatQuest;
-
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -19,14 +17,13 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.Pool.Poolable;
 
 /**
  * Classe base para todos os objetos do que aparecem no jogo.
  * @author Matheus
  *
  */
-public abstract class GameObject implements Poolable
+public abstract class GameObject
 {
 	/**
 	 * Enumerador para os tipos de GameObject. Utilizado para evitar casts dinamicos e lista de colidiveis.
@@ -41,6 +38,7 @@ public abstract class GameObject implements Poolable
 		Ui,
 	};
 	
+	static public HashMap<Integer, GameObject> gameobjects = new HashMap<Integer, GameObject>();
 	protected Sprite _sprite = null;
 	protected GameObjects _tipo;
 	protected Vector2 _posicaoTela = null;
@@ -58,6 +56,9 @@ public abstract class GameObject implements Poolable
 	protected Color _cor = null;
 	protected HashMap<Integer, Sound> _sons = null;
 	
+	/**
+	 * Cria o gameobject e inicia as propriedades primárias dele.
+	 */
 	public GameObject()
 	{
 		_id = CatQuest.instancia.GetNovoId();
@@ -65,6 +66,8 @@ public abstract class GameObject implements Poolable
 		_caixaColisao = new Rectangle();
 		_sons = new HashMap<Integer, Sound>();
 		_cor = Color.WHITE;
+		gameobjects.put(this.GetId(), this);
+		this.Inicia();
 	}
 	
 	/**
@@ -137,12 +140,6 @@ public abstract class GameObject implements Poolable
 		this.Inicia();
 	}
 	
-	@Override
-	public void reset() 
-	{
-		this.Redefine();
-	}
-	
 	/**
 	 * Retorna o id do game object.
 	 * @return ID do game object.
@@ -167,7 +164,9 @@ public abstract class GameObject implements Poolable
 	 */
 	public void SetCamada(Camada novaCamada)
 	{
+		this.GetTela().Remover(this);
 		_camada = novaCamada;
+		this.GetTela().InserirGameObject(this);
 	}
 	
 	/**

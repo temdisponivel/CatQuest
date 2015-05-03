@@ -1,5 +1,6 @@
 package classes.gameobjects;
 
+import java.util.HashMap;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.Vector2;
@@ -22,6 +23,8 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected enum SomPersonagem
 	{
 		Movimenta,
+		Morte,
+		Dano,
 	}
 	
 	/**
@@ -36,6 +39,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		Parado,
 	}
 	
+	static public HashMap<Integer, Personagem> personagens = new HashMap<Integer, Personagem>();
 	protected float _agilidade = 0;
 	protected float _defesa = 0;
 	protected float _ataque = 0;
@@ -50,6 +54,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		super();
 		this.Carrega();
+		personagens.put(this.GetId(), this);
 	}
 		
 	/**
@@ -124,6 +129,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 */
 	public void RecebeDano(float dano)
 	{
+		this.TocaSom(SomPersonagem.Dano);
 		_vida -= Math.abs(dano - _defesa);
 	}
 	
@@ -131,7 +137,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * Inflige um dano a um {@link GameObject game object}.
 	 * @param inflige {@link Personagem Objeto} a infligir o dano.
 	 */
-	public <T extends Personagem> void InfligeDano(T inflige)
+	public void InfligeDano(Personagem inflige)
 	{
 		inflige.RecebeDano(_ataque);
 	}

@@ -1,3 +1,5 @@
+//TODO: validar desempenho com esse monte de for each do java
+
 package classes.telas;
 
 import java.util.HashMap;
@@ -38,11 +40,9 @@ public class Tela implements OnCompletionListener
 	protected ListaGameObject _gameObjectsColisoes = null;
 	protected Telas _tipo;
 	protected Color _corFundo = null;
-	protected LinkedList<Integer> _camadasTela = null;
 	protected boolean _inseriGameObject = false, _removeGameObject = false;
 	protected LinkedList<GameObject> _gameObjectsIncluir = null;
 	protected LinkedList<GameObject> _gameObjectsExcluir = null;
-	
 	
 	/**
 	 * Função que inicia as propriedades da tela.
@@ -51,7 +51,6 @@ public class Tela implements OnCompletionListener
 	{
 		_listasGameObject = new HashMap<Camada, ListaGameObject>();
 		_gameObjectsColisoes = new ListaGameObject();
-		_camadasTela = new LinkedList<Integer>();
 		_gameObjectsIncluir = new LinkedList<GameObject>();
 		_gameObjectsExcluir = new LinkedList<GameObject>();
 		_corFundo = Color.BLACK;
@@ -73,16 +72,7 @@ public class Tela implements OnCompletionListener
 				continue;
 			
 			for (Entry<Integer, GameObject> entrada2 : entrada.getValue().entrySet())
-			{
-				//caso o meu gameobject esteja adicionado a uma camada que não é a dela
-				//ou seja, caso este gameobject tenha atualizado a camada, removemos da cadamada errada e readicionamos na nova
-				//só atualizamos ele no proximo loop
-				if (entrada2.getValue().GetCamada() != entrada.getKey())
-				{
-					entrada.getValue().Remover(entrada2.getValue());
-					this.InserirGameObject(entrada2.getValue());
-				}
-					
+			{					
 				entrada2.getValue().Atualiza(deltaTime);
 			}
 		}
@@ -145,10 +135,9 @@ public class Tela implements OnCompletionListener
 			
 			for (GameObject gameObject : _gameObjectsIncluir)
 			{
-				if (!_camadasTela.contains(gameObject.GetCamada().GetIdCamada()))
+				if (!_listasGameObject.containsKey(gameObject.GetCamada()))
 				{
 					_listasGameObject.put(gameObject.GetCamada(), new ListaGameObject());
-					_camadasTela.add(gameObject.GetCamada().GetIdCamada());
 				}
 				
 				_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);

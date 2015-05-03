@@ -28,6 +28,19 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 	
 	/**
+	 * Enumerador para as {@link Animation animações} dos {@link Personagem personagens}.
+	 * @author matheus
+	 *
+	 */
+	protected enum AnimacaoPersonagem
+	{
+		Parado,
+		Movimento,
+		Morto,
+		Dano,
+	}
+	
+	/**
 	 * Enumerador para o estado do {@link GameObject game object} que herda desta {@link Personagem classe}.
 	 * @author matheus
 	 *
@@ -131,6 +144,9 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		this.TocaSom(SomPersonagem.Dano);
 		_vida -= Math.abs(dano - _defesa);
+		
+		if (_vida <= 0)
+			this.Morre();
 	}
 	
 	/**
@@ -141,6 +157,11 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		inflige.RecebeDano(_ataque);
 	}
+	
+	/**
+	 * Função para quando o personagem morrer. Ou seja, quando seu {@link #_vida =< 0}.
+	 */
+	abstract public void Morre();
 	
 	@Override
 	public boolean Carrega()

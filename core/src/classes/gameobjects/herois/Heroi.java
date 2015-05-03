@@ -15,16 +15,32 @@ import classes.uteis.Serializador;
 public abstract class Heroi extends Personagem implements Serializador
 {
 	/**
-	 * Enumerador para os sons dos herois.
+	 * Enumerador para os {@link Sound sons} dos {@link Heroi heróis}.
 	 * @author matheus
 	 *
 	 */
 	protected enum SomHeroi
 	{
 		Movimenta,
+		Morte,
+		Dano,
 		Ativo,
 		Passivo,
+	}
+	
+	/**
+	 * Enumerador para as {@link Animation animações} dos {@link Heroi heróis}.
+	 * @author matheus
+	 *
+	 */
+	protected enum AnimacaoHeroi
+	{
+		Parado,
+		Movimento,
+		Morto,
 		Dano,
+		Ativo,
+		Passivo,
 	}
 	
 	static public HashMap<Integer, Heroi> herois = new HashMap<Integer, Heroi>();
@@ -48,9 +64,19 @@ public abstract class Heroi extends Personagem implements Serializador
 		_tipo = GameObjects.Heroi;
 	}
 	
+	/**
+	 * Define um player para este {@link Heroi herói}.
+	 * @param player {@link Player} para controlar este herói.
+	 */
 	public void SetPlayer(Player player)
 	{
 		_player = player;
+	}
+	
+	@Override
+	public void Morre()
+	{
+		// TODO Auto-generated method stub	
 	}
 	
 	@Override

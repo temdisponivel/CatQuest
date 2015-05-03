@@ -44,6 +44,7 @@ public abstract class GameObject
 	protected Vector2 _posicaoTela = null;
 	protected Vector2 _posicaoTelaAux = null;
 	protected Rectangle _caixaColisao = null;
+	protected HashMap<Integer, Animation> _animacoes = null;
 	protected Animation _animacao = null;
 	protected Camada _camada = null;
 	protected Integer _id = null;
@@ -62,10 +63,6 @@ public abstract class GameObject
 	public GameObject()
 	{
 		_id = CatQuest.instancia.GetNovoId();
-		_posicaoTela = new Vector2();
-		_caixaColisao = new Rectangle();
-		_sons = new HashMap<Integer, Sound>();
-		_cor = Color.WHITE;
 		gameobjects.put(this.GetId(), this);
 		this.Inicia();
 	}
@@ -129,7 +126,14 @@ public abstract class GameObject
 	/**
 	 * Funï¿½ï¿½o com toda a rotina de iniciaï¿½ï¿½o das propriedades do objeto. Com excessï¿½o do ID, porque o ID jï¿½ ï¿½ definido no contrutor desta classe.
 	 */
-	public abstract void Inicia();
+	public void Inicia()
+	{
+		_posicaoTela = new Vector2();
+		_caixaColisao = new Rectangle();
+		_sons = new HashMap<Integer, Sound>();
+		_animacoes = new HashMap<Integer, Animation>();
+		_cor = Color.WHITE;
+	}
 	
 	/**
 	 * Redefine todas as propriedades do objeto.
@@ -527,6 +531,28 @@ public abstract class GameObject
 				_sons.put(chave.ordinal(), somCarregada);
 			}
 		});
+	}
+	
+	/**
+	 * Define uma {@link Animation animação} como a atual. A que será utilizada até a próxima alteração. Caso não haja animação vinculada a chave, nada acontece.
+	 * @param chave {@link T Chave} vinculada a animação. A mesma utilizada para {@link #IncluirAnimacao adicionar a animação}.
+	 */
+	protected <T extends Enum<?>> void DefineAnimacao(T chave)
+	{
+		if (!_animacoes.containsKey(chave.ordinal()))
+			return;
+		
+		_animacao = _animacoes.get(chave.ordinal());
+	}
+	
+	/**
+	 * Inclui uma nova animação ao {@link GameObject game object}.
+	 * @param chave {@link T Chave} a ser vinculada a nova animação.
+	 * @param animacao {@link Animation Animação} a ser incluída.
+	 */
+	protected <T extends Enum<?>> void IncluirAnimacao(T chave, Animation animacao)
+	{
+		_animacoes.put(chave.ordinal(), animacao);
 	}
 	
 	/**

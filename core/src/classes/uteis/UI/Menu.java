@@ -9,7 +9,7 @@ import classes.uteis.Camada;
 /**
  * Um menu que pode suporta diversos botões e os posiciona um relação ao outro, com um espaçamento de 5px em cada botão, de cada lado. O menu é orientada verticalmente.
  * Note que não serve apenas para botões, mas para qualquer {@link GameObject game object}. Porém, devido a forma de posicionamento, faz mais sentido utilizar para criar menus.
- * Para adicionar objetos, utilize o {@link GameObject#AdicionaFilho(GameObject)}. Note que os objetos adicionados por este método ficaram abaixo de todos.
+ * Para adicionar objetos, utilize o {@link GameObject#AdicionaFilho(GameObject)}. Note que os objetos adicionados por este método ficaram acima de todos.
  * @author matheus
  *
  */
@@ -30,7 +30,7 @@ public class Menu extends GameObject
 	}
 	
 	/**
-	 * Cria um novo menu com objetos incluídos. O último objeto será o inferior.
+	 * Cria um novo menu com objetos incluídos. O último objeto será o superior.
 	 * @param botoes {@link GameObject Botões} (ou qualquer game object) para adicionar.
 	 * @param posicao {@link Vector2 Posição} do menu. 0, 0 no canto inferior esquerdo.
 	 */
@@ -38,7 +38,7 @@ public class Menu extends GameObject
 	{
 		this(posicao);
 		
-		for (int i = botoes.length; i >= 0 ; i--)
+		for (int i = 0; i < botoes.length ; i++)
 		{
 			this.AdicionaFilho(botoes[i]);
 		}
@@ -58,6 +58,9 @@ public class Menu extends GameObject
 		filho.SetPosicao(_espacamento, (_espacamento + filho.GetAltura()) * (_filhos == null ? 0 : _filhos.size()));
 		
 		super.AdicionaFilho(filho);
+		
+		_caixaColisao.height += filho.GetAltura();
+		_caixaColisao.width += filho.GetLargura();
 		
 		return filho;
 	}

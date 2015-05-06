@@ -22,7 +22,7 @@ public class BotaoTexto extends Botao
 	 */
 	public BotaoTexto(String texto, Vector2 posicao, EscutadorBotao escutador)
 	{
-		super(posicao, new Rectangle(0, 0, CatQuest.instancia.GetFonte().getBounds(texto).width + 10, CatQuest.instancia.GetFonte().getBounds(texto).height + 10), escutador);
+		super(new Rectangle(0, 0, CatQuest.instancia.GetTamanhoTexto(texto, 10).width, CatQuest.instancia.GetTamanhoTexto(texto, 10).height), posicao, escutador);
 		_etiqueta = new Etiqueta(texto, new Vector2(5, -30));
 		_etiqueta.Inicia();
 		this.AdicionaFilho(_etiqueta);
@@ -37,9 +37,9 @@ public class BotaoTexto extends Botao
 	 */
 	public BotaoTexto(String texto, Rectangle tamanho, Vector2 posicao, EscutadorBotao escutador)
 	{
-		super(posicao, tamanho, escutador);
+		super(tamanho, posicao, escutador);
 		Rectangle tamanhoTexto = CatQuest.instancia.GetTamanhoTexto(texto, 10);
-		_etiqueta = new Etiqueta(texto, new Vector2((tamanho.width / 2 - ((tamanhoTexto.width / 2) - 5)), -((tamanho.height / 2) - (-tamanhoTexto.height / 2))));
+		_etiqueta = new Etiqueta(texto, new Vector2((tamanho.width / 2 - ((tamanhoTexto.width / 2) - 5)), (tamanho.height / 2) - (-tamanhoTexto.height / 2)));
 		_etiqueta.Inicia();
 		this.AdicionaFilho(_etiqueta);
 	}
@@ -52,13 +52,13 @@ public class BotaoTexto extends Botao
 		if (_apertado && !_textoBaixo)
 		{
 			_etiqueta.GetPosicaoAbsoluta().x += 3;
-			_etiqueta.GetPosicaoAbsoluta().y += 3;
+			_etiqueta.GetPosicaoAbsoluta().y -= 3;
 			_textoBaixo = true;
 		}
 		else if (_textoBaixo && !_apertado)
 		{
 			_etiqueta.GetPosicaoAbsoluta().x -= 3;
-			_etiqueta.GetPosicaoAbsoluta().y -= 3;
+			_etiqueta.GetPosicaoAbsoluta().y += 3;
 			_textoBaixo = false;
 		}
 	}

@@ -432,7 +432,7 @@ public abstract class GameObject
 	public void SetPosicaoRelativa(Vector2 posicaoRelativa)
 	{
 		_posicaoTela.x = posicaoRelativa.x + _posicaoTelaAux.x;
-		_posicaoTela.y = posicaoRelativa.y - _posicaoTelaAux.y;
+		_posicaoTela.y = posicaoRelativa.y + _posicaoTelaAux.y;
 	}
 	
 	/**

@@ -54,7 +54,7 @@ public class Tela implements OnCompletionListener
 		_gameObjectsColisoes = new ListaGameObject();
 		_gameObjectsIncluir = new LinkedList<GameObject>();
 		_gameObjectsExcluir = new LinkedList<GameObject>();
-		_corFundo = Color.BLACK;
+		_corFundo = Color.WHITE;
 	}
 	
 	/**

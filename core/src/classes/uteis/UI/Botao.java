@@ -59,7 +59,7 @@ public class Botao extends GameObject
 	 * @param posicao {@link Vector2 Posição} do botão na tela.
 	 * @param tamanho {@link Rectangle Tamanho} do botão.
 	 */
-	public Botao(Vector2 posicao, Rectangle tamanho, EscutadorBotao escutador)
+	public Botao(Rectangle tamanho, Vector2 posicao, EscutadorBotao escutador)
 	{
 		super();
 		_posicaoTela = posicao;

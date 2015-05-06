@@ -54,7 +54,7 @@ public class Controle implements ControllerListener
 	
 	private Controller _controle = null;
 	private ConjuntoComandos _conjunto = null;
-	static private ArrayList<Controller> _controlesEmUso = null;
+	static public ArrayList<Controle> _controlesEmUso = null;
 	
 	/**
 	 * Contrï¿½i um novo controle baseado no {@link TipoPlayer} que vai utilizar.
@@ -71,15 +71,15 @@ public class Controle implements ControllerListener
 			if (controle.getName().toLowerCase().contains("xbox") && controle.getName().toLowerCase().contains("360"))
 			{
 				if (_controlesEmUso == null)
-					_controlesEmUso = new ArrayList<Controller>();
+					_controlesEmUso = new ArrayList<Controle>();
 				
 				//SE O CONTROLE JÁ ESTÁ EM USO, TENTA O PROXIMO
 				if (_controlesEmUso.contains(controle))
 					continue;
 				
 				//SE NAO ESTÁ EM USO, VAI ENTRAR EM USO AGORA
-				_controlesEmUso.add(controle);
 				_controle = controle;
+				_controlesEmUso.add(this);
 			}
 		}
 
@@ -202,6 +202,20 @@ public class Controle implements ControllerListener
 		{
 			return _controle.getButton(_conjunto.PAUSE);
 		}
+	}
+	
+	/**
+	 * @return True caso qualquer controle tenha apertado a tecla de pause.
+	 */
+	static public boolean GetQualquerPause()
+	{
+		for (int i = 0; i < _controlesEmUso.size(); i++)
+		{
+			if (_controlesEmUso.get(i).GetPause())
+				return true;
+		}
+		
+		return false;
 	}
 
 	@Override

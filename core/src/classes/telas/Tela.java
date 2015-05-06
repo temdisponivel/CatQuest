@@ -30,6 +30,7 @@ public class Tela implements OnCompletionListener
 	{
 		TITULO,
 		MENU,
+		CONFIGURACOES,
 		INTRODUCAO,
 		GAMEPLAY,
 		FIMDOJOGO,		

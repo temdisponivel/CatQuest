@@ -31,3 +31,29 @@ catquest.CatQuest.render(CatQuest.java:97)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Wed May 06 02:02:52 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.UI.Menu.AdicionaFilho(Menu.java:49)
+classes.telas.Titulo.Iniciar(Titulo.java:25)
+catquest.CatQuest.AdicionaTela(CatQuest.java:314)
+classes.telas.Introducao.Atualiza(Introducao.java:30)
+catquest.CatQuest.Atualiza(CatQuest.java:118)
+catquest.CatQuest.render(CatQuest.java:97)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Wed May 06 02:25:58 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+java.util.LinkedList.checkElementIndex(Unknown Source)
+java.util.LinkedList.get(Unknown Source)
+classes.uteis.UI.Menu.SetHabilitado(Menu.java:74)
+classes.telas.Titulo.Iniciar(Titulo.java:31)
+catquest.CatQuest.AdicionaTela(CatQuest.java:314)
+classes.telas.Introducao.Atualiza(Introducao.java:30)
+catquest.CatQuest.Atualiza(CatQuest.java:118)
+catquest.CatQuest.render(CatQuest.java:97)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Index: 3, Size: 3

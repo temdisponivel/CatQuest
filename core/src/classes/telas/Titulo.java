@@ -22,11 +22,8 @@ public class Titulo extends Tela implements EscutadorBotao
 		_tipo = Telas.MENU;
 		
 		menu = new Menu(new Vector2(CatQuest.instancia.GetLarguraTela() - 280, 150));
-		
 		menu.AdicionaFilho(jogar = new BotaoTexto("JOGAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		
 		menu.AdicionaFilho(configurar = new BotaoTexto("CONFIGURAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		
 		menu.AdicionaFilho(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
 		
 		this.InserirGameObject(menu);
@@ -36,7 +33,7 @@ public class Titulo extends Tela implements EscutadorBotao
 
 	@Override
 	public void Atualiza(float deltaTime)
-	{		
+	{
 		super.Atualiza(deltaTime);
 	}
 

@@ -208,6 +208,7 @@ public abstract class GameObject
 	{
 		_posicaoTela = posicao;
 		_posicaoTelaAux = _posicaoTela.cpy(); 
+		_caixaColisao.setPosition(_posicaoTela);
 	}
 	
 	/**
@@ -222,6 +223,7 @@ public abstract class GameObject
 			_posicaoTela.x = x;
 			_posicaoTela.y = y;
 			_posicaoTelaAux = _posicaoTela.cpy(); 
+			_caixaColisao.setPosition(_posicaoTela);
 		}
 		else
 		{

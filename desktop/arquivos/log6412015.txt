@@ -57,3 +57,25 @@ catquest.CatQuest.render(CatQuest.java:97)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: Index: 3, Size: 3
+
+Data: Wed May 06 03:18:34 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.controle.Controle.GetQualquerPause(Controle.java:212)
+classes.telas.Configuracoes.Atualiza(Configuracoes.java:48)
+catquest.CatQuest.Atualiza(CatQuest.java:118)
+catquest.CatQuest.render(CatQuest.java:97)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Wed May 06 03:20:30 BRT 2015 | Mensagem: Erro ao iniciar o jogo.
+StackTrace: 
+classes.uteis.controle.Controle.<init>(Controle.java:90)
+classes.uteis.Player.IniciaControle(Player.java:54)
+classes.uteis.Player.<init>(Player.java:46)
+classes.uteis.Player.ControiPlayers(Player.java:34)
+catquest.CatQuest.IniciaJogo(CatQuest.java:186)
+catquest.CatQuest.create(CatQuest.java:77)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:137)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro ao iniciar o jogo.

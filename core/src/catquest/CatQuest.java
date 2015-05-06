@@ -57,6 +57,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private TextureAtlas _textureAtlas = null;
 	private boolean _trocaTela = false, _removeTela = false;
 	private Tela _proximaTela = null;
+	private boolean _encerrar = false;
 	
 	/**
 	 * Contrutor do singleton.
@@ -93,6 +94,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		try
 		{
+			if (_encerrar)
+				this.Encerrar();
+			
 			if (_atualiza)
 				this.Atualiza();
 	
@@ -244,6 +248,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 * Fun��o que fecha o jogo.
 	 */
 	public void EncerraJogo()
+	{
+		_encerrar = true;
+	}
+	
+	/**
+	 * Fun��o que fecha o jogo.
+	 */
+	private void Encerrar()
 	{
 		_atualiza = false;
 		_desenha = false;

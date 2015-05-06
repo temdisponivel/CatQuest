@@ -79,7 +79,6 @@ public class Controle implements ControllerListener
 				
 				//SE NAO ESTÁ EM USO, VAI ENTRAR EM USO AGORA
 				_controle = controle;
-				_controlesEmUso.add(this);
 			}
 		}
 
@@ -87,6 +86,11 @@ public class Controle implements ControllerListener
 			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerPrimario());
 		else
 			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerSecundario());
+		
+		if (_controlesEmUso == null)
+			_controlesEmUso = new ArrayList<Controle>();
+		
+		_controlesEmUso.add(this);
 	}
 	
 	/**

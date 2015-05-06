@@ -1,3 +1,5 @@
+//TODO: arrumar os filhos que aparecem, por um frame ou dois, em um local indevido
+
 package classes.gameobjects;
 
 import java.util.HashMap;
@@ -595,6 +597,17 @@ public abstract class GameObject
 		
 		if (_colidiveis != null)
 			_colidiveis.clear();
+		
+		if (this.GetSePai())
+		{
+			GameObject filho = null;
+			
+			for (int i = 0; i < _filhos.size(); i++)
+			{
+				filho = _filhos.get(i);
+				filho.Encerra();
+			}
+		}
 	}
 	
 	@Override

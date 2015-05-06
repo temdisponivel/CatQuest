@@ -68,6 +68,7 @@ public class Botao extends GameObject
 		_escutador = escutador;
 		_camada = Camada.UI;
 		_tipo = GameObjects.Ui;
+		this.Inicia();
 	}
 
 	@Override

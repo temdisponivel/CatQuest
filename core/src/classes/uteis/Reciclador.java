@@ -1,7 +1,6 @@
 package classes.uteis;
 
 import java.util.HashMap;
-import java.util.Map.Entry;
 import java.util.Stack;
 import classes.gameobjects.GameObject;
 
@@ -12,7 +11,7 @@ import classes.gameobjects.GameObject;
  *
  * @param <T> Qualquer tipo de dado que herde de {@link GameObject} e {@link Reciclavel}.
  */
-public class Reciclador<T extends GameObject & Reciclavel>
+public class Reciclador<T extends Reciclavel>
 {
 	private HashMap<Class<? extends T>, Stack<T>> _objetos = null;
 	private HashMap<Class<? extends T>, Stack<T>> _objetosLivres = null;
@@ -73,18 +72,11 @@ public class Reciclador<T extends GameObject & Reciclavel>
 	}
 	
 	/**
-	 * Limpa todos os {@link Reciclavel recicláveis} do {@link Reciclador reciclador}. {@link GameObject#Encerra() Encerra} todos os {@link GameObject gameobjects}.
+	 * Limpa todos os {@link Reciclavel recicláveis} do {@link Reciclador reciclador}.
 	 */
 	public void Limpa()
 	{
-		for (Entry<Class<? extends T>, Stack<T>> entrada : _objetosLivres.entrySet())
-		{
-			for (T valor : entrada.getValue())
-			{
-				valor.Encerra();
-			}
-			
-			entrada.getValue().clear();
-		}
+		_objetos.clear();
+		_objetosLivres.clear();
 	}
 }

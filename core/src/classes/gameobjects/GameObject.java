@@ -92,8 +92,12 @@ public abstract class GameObject
 		
 		if (this.GetSePai())
 		{
-			for (GameObject filho : _filhos)
+			GameObject filho = null;
+			
+			for (int i = 0; i < _filhos.size(); i++)
 			{
+				filho = _filhos.get(i);
+				
 				filho.Atualiza(deltaTime);
 				filho.SetPosicaoRelativa(_posicaoTela);
 			}
@@ -111,8 +115,11 @@ public abstract class GameObject
 		
 		if (this.GetSePai() && _desenha)
 		{
-			for (GameObject filho : _filhos)
+			GameObject filho = null;
+			
+			for (int i = 0; i < _filhos.size(); i++)
 			{
+				filho = _filhos.get(i);
 				filho.Desenha(batch);
 			}
 		}
@@ -199,8 +206,8 @@ public abstract class GameObject
 	 */
 	public void SetPosicao(Vector2 posicao)
 	{
-		_posicaoTelaAux = _posicaoTela.cpy(); 
 		_posicaoTela = posicao;
+		_posicaoTelaAux = _posicaoTela.cpy(); 
 	}
 	
 	/**
@@ -318,8 +325,11 @@ public abstract class GameObject
 	 */
 	public boolean ValidaColisao(GameObject colidiu)
 	{
-		for (GameObject filho : _filhos)
+		GameObject filho = null;
+		
+		for (int i = 0; i < _filhos.size(); i++)
 		{
+			filho = _filhos.get(i);
 			filho.ValidaColisao(colidiu);
 		}
 		

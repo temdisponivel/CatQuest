@@ -8,10 +8,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import classes.uteis.UI.Menu;
 
 public class Titulo extends Tela implements EscutadorBotao
 {
 	Botao jogar, configurar, sair;
+	Menu menu;
 	
 	@Override
 	public void Iniciar()
@@ -19,21 +21,22 @@ public class Titulo extends Tela implements EscutadorBotao
 		super.Iniciar();
 		_tipo = Telas.MENU;
 		
-		this.InserirGameObject(jogar = new BotaoTexto("JOGAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		jogar.GetPosicao().add(CatQuest.instancia.GetLarguraTela() - jogar.GetLargura() - 10, (3 * jogar.GetAltura() + 75));
+		menu = new Menu(new Vector2(CatQuest.instancia.GetLarguraTela() - 280, 150));
 		
-		this.InserirGameObject(configurar = new BotaoTexto("CONFIGURAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		configurar.GetPosicao().add(CatQuest.instancia.GetLarguraTela() - configurar.GetLargura() - 10, (2 * configurar.GetAltura() + 50));
+		menu.AdicionaFilho(jogar = new BotaoTexto("JOGAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
 		
-		this.InserirGameObject(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		sair.GetPosicao().add(CatQuest.instancia.GetLarguraTela() - sair.GetLargura() - 10, (1 * sair.GetAltura() + 25));
+		menu.AdicionaFilho(configurar = new BotaoTexto("CONFIGURAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
+		
+		menu.AdicionaFilho(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
+		
+		this.InserirGameObject(menu);
 		
 		_corFundo = Color.WHITE;
 	}
 
 	@Override
 	public void Atualiza(float deltaTime)
-	{
+	{		
 		super.Atualiza(deltaTime);
 	}
 

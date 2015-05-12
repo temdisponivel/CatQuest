@@ -121,9 +121,11 @@ public class Tela implements OnCompletionListener
 				}
 				
 				_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
-				_matrizMapa[Math.abs((int) (gameObject.GetPosicao().x % _precisaoMapaX))][Math.abs((int) (gameObject.GetPosicao().y % _precisaoMapaY))].add(gameObject);
 				gameObject.SetTela(this);
 				gameObject.Inicia();
+				
+				if (_matrizMapa != null)
+					_matrizMapa[Math.abs((int) (gameObject.GetPosicao().x % _precisaoMapaX))][Math.abs((int) (gameObject.GetPosicao().y % _precisaoMapaY))].add(gameObject);
 			}
 			
 			_gameObjectsIncluir.clear();

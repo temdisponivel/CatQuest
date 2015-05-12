@@ -1,0 +1,11 @@
+
+Data: Tue May 12 01:25:23 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaGameObject(Tela.java:124)
+classes.telas.Tela.Atualiza(Tela.java:71)
+classes.telas.Introducao.Atualiza(Introducao.java:25)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

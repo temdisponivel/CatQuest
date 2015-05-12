@@ -83,7 +83,7 @@ public class ConjuntoComandos
 	public void SetConjuntoControle()
 	{
 		PAUSE = XboxControleMap.BUTTON_START;
-		ACAO = XboxControleMap.BUTTON_Y;
+		ACAO = XboxControleMap.BUTTON_A;
 		DIREITA = XboxControleMap.AXIS_LEFT_X;
 		ESQUERDA = XboxControleMap.AXIS_LEFT_X;
 		CIMA = XboxControleMap.AXIS_LEFT_Y;
@@ -92,5 +92,6 @@ public class ConjuntoComandos
 		ATAQUE_DIREITA = XboxControleMap.AXIS_RIGHT_X;
 		ATAQUE_CIMA = XboxControleMap.AXIS_RIGHT_Y;
 		ATAQUE_BAIXO = XboxControleMap.AXIS_RIGHT_Y;
+		HABILIDADE = XboxControleMap.AXIS_LEFT_TRIGGER;
 	}
 }

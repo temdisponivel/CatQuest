@@ -1,7 +1,5 @@
 package classes.telas;
 
-import java.util.Stack;
-
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import catquest.CatQuest;
@@ -34,9 +32,9 @@ public class Configuracoes extends Tela implements EscutadorBotao
 		_categoriaConfig = new Menu(new Vector2(), _controles, _audio, _grafico);
 		_categoriaConfig.SetPosicao(10, (CatQuest.instancia.GetAlturaTela() / 2) - (_categoriaConfig.GetAltura() / 2));
 		
-		_menus = new Stack<Menu>();
+		//_menus = new Stack<Menu>();
 		
-		_menus.add(_categoriaConfig);
+		//_menus.add(_categoriaConfig);
 		
 		this.InserirGameObject(_categoriaConfig);
 	}
@@ -80,10 +78,11 @@ public class Configuracoes extends Tela implements EscutadorBotao
 	public void Encerrar()
 	{
 		super.Encerrar();
-		
+		/*
 		for (int i = 0; i < _menus.size(); i++)
 		{
 			_menus.get(i).Encerra();
 		}
+		*/
 	}
 }

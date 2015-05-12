@@ -1,27 +1,20 @@
-//TODO: TERMINAR DE IMPLEMENTAR CONTROLES. JOGADOR DEVE ESCOLHER COM QUAL VAI JOGAR. IMPLEMENTAR GETMOUSE, GETTECLA E ETC.
+//TODO: TERMINAR DE IMPLEMENTAR CONTROLES. IMPLEMENTAR GETMOUSE. FAZER PAUSAR QUANDO DESCONECTAR CONTROLE
 
 package classes.uteis.controle;
 
 import java.util.ArrayList;
-
-import catquest.CatQuest;
-import classes.telas.Menu;
 import classes.uteis.Configuracoes;
 import classes.uteis.Player.TipoPlayer;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.controllers.Controller;
-import com.badlogic.gdx.controllers.ControllerListener;
 import com.badlogic.gdx.controllers.Controllers;
-import com.badlogic.gdx.controllers.PovDirection;
-import com.badlogic.gdx.math.Vector3;
 
 /**
  * Classe que gerencia os controles do jogo. Aqui ficam os botï¿½es apertados, mouse, etc.
  * @author Matheus
  *
  */
-public class Controle implements ControllerListener
+public class Controle
 {
 	/**
 	 * Direï¿½ï¿½es possï¿½veis de movimentaï¿½ï¿½o dos controles.
@@ -52,18 +45,18 @@ public class Controle implements ControllerListener
 		CONTROLE,
 	}
 	
+	static public ArrayList<Controle> _controlesEmUso = null;
 	private Controller _controle = null;
 	private ConjuntoComandos _conjunto = null;
-	static public ArrayList<Controle> _controlesEmUso = null;
+	private float _sensibilidade = 1/3f;
+	private TipoPlayer _tipoPlayer = TipoPlayer.Primario;
 	
 	/**
 	 * Contrï¿½i um novo controle baseado no {@link TipoPlayer} que vai utilizar.
 	 * @param tipoPlayer {@link TipoPlayer} que vai utilizar o controle.
 	 */
 	public Controle(TipoPlayer tipo)
-	{
-		Controllers.addListener(this);
-		
+	{		
 		//PERCORRE TODOS OS CONTROLES
 		for (Controller controle : Controllers.getControllers())
 		{
@@ -81,11 +74,10 @@ public class Controle implements ControllerListener
 				_controle = controle;
 			}
 		}
-
-		if (tipo == TipoPlayer.Primario)
-			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerPrimario());
-		else
-			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerSecundario());
+		
+		_tipoPlayer = tipo;
+		
+		this.GerenciaConjunto();
 		
 		if (_controlesEmUso == null)
 			_controlesEmUso = new ArrayList<Controle>();
@@ -93,6 +85,19 @@ public class Controle implements ControllerListener
 		_controlesEmUso.add(this);
 	}
 	
+	/**
+	 * Gerencia os conjuntos de comandos segundo o tipo do player e o tipo de controle.
+	 */
+	public void GerenciaConjunto()
+	{
+		if (_controle != null)
+			this.SetConjunto(new ConjuntoComandos(_tipoPlayer, TipoControle.CONTROLE));
+		else if (_tipoPlayer == TipoPlayer.Primario)
+			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerPrimario());
+		else
+			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerSecundario());
+	}
+
 	/**
 	 * Retorna a direï¿½ï¿½o informada pelo usuï¿½rio atravï¿½s do teclado ou controle.
 	 * @return {@link Direcoes} Que o usuï¿½rio informou via teclado ou controle. {@link Direcoes#CENTRO} quando nada informado.
@@ -114,13 +119,17 @@ public class Controle implements ControllerListener
 		}
 		else
 		{
-			if (_controle.getAxis(_conjunto.ESQUERDA) <= -1/3)
+			if (!this.ValidaControle())
+				return Direcoes.CENTRO;
+				
+			if (_controle.getAxis(_conjunto.ESQUERDA) <= -_sensibilidade)
 				direcao += Direcoes.ESQUERDA;
-			else if (_controle.getAxis(_conjunto.DIREITA) >= 1/3)
+			else if (_controle.getAxis(_conjunto.DIREITA) >= _sensibilidade)
 				direcao += Direcoes.DIREITA;
-			if (_controle.getAxis(_conjunto.CIMA) >= 1/3)
+
+			if (_controle.getAxis(_conjunto.CIMA) <= -_sensibilidade)
 				direcao += Direcoes.CIMA;
-			else if (_controle.getAxis(_conjunto.BAIXO)  <= -1/3)
+			else if (_controle.getAxis(_conjunto.BAIXO)  >= _sensibilidade)
 				direcao += Direcoes.BAIXO;
 		}
 		
@@ -148,13 +157,19 @@ public class Controle implements ControllerListener
 		}
 		else
 		{
-			if (_controle.getAxis(_conjunto.ATAQUE_ESQUERDA) <= -1/3)
+			if (!this.ValidaControle())
+				return Direcoes.CENTRO;
+			 
+			if (_controle.getAxis(_conjunto.ATAQUE_ESQUERDA) > -_sensibilidade && _controle.getAxis(_conjunto.ATAQUE_ESQUERDA) < _sensibilidade)
+				return Direcoes.CENTRO;
+			
+			if (_controle.getAxis(_conjunto.ATAQUE_ESQUERDA) <= -_sensibilidade)
 				direcao += Direcoes.ESQUERDA;
-			else if (_controle.getAxis(_conjunto.ATAQUE_DIREITA) >= 1/3)
+			else if (_controle.getAxis(_conjunto.ATAQUE_DIREITA) >= _sensibilidade)
 				direcao += Direcoes.DIREITA;
-			if (_controle.getAxis(_conjunto.ATAQUE_CIMA) >= 1/3)
+			if (_controle.getAxis(_conjunto.ATAQUE_CIMA) >= 1/3f)
 				direcao += Direcoes.CIMA;
-			else if (_controle.getAxis(_conjunto.ATAQUE_BAIXO)  <= -1/3)
+			else if (_controle.getAxis(_conjunto.ATAQUE_BAIXO)  <= -_sensibilidade)
 				direcao += Direcoes.BAIXO;
 		}
 		
@@ -173,6 +188,9 @@ public class Controle implements ControllerListener
 		}
 		else
 		{
+			if (!this.ValidaControle())
+				return false;
+			
 			return _controle.getButton(_conjunto.ACAO);
 		}
 	}
@@ -188,7 +206,10 @@ public class Controle implements ControllerListener
 		}
 		else
 		{
-			return _controle.getButton(_conjunto.HABILIDADE);
+			if (!this.ValidaControle())
+				return false;
+			
+			return _controle.getAxis(_conjunto.HABILIDADE) <= -_sensibilidade;
 		}
 	}
 	
@@ -221,73 +242,6 @@ public class Controle implements ControllerListener
 		
 		return false;
 	}
-
-	@Override
-	public void connected(Controller controller)
-	{
-		//valida se o controle ï¿½ de xbox 360
-		if (!(controller.getName().toLowerCase().contains("xbox") && controller.getName().toLowerCase().contains("360")))
-			return;
-		
-		if (_controle == null)
-		{
-			_controle = controller;
-			_controle.addListener(this);
-		}
-	}
-
-	@Override
-	public void disconnected(Controller controller)
-	{
-		if (_controle == controller)
-		{
-			_controle = null;
-			_conjunto.SetConjuntoTeclado();
-			CatQuest.instancia.AdicionaTela(new Menu(), false, true);
-		}
-	}
-
-	@Override
-	public boolean buttonDown(Controller controller, int buttonCode)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean buttonUp(Controller controller, int buttonCode)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean axisMoved(Controller controller, int axisCode, float value)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean povMoved(Controller controller, int povCode, PovDirection value)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean xSliderMoved(Controller controller, int sliderCode, boolean value)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean ySliderMoved(Controller controller, int sliderCode, boolean value)
-	{
-		return false;
-	}
-
-	@Override
-	public boolean accelerometerMoved(Controller controller, int accelerometerCode, Vector3 value)
-	{
-		return false;
-	}
 	
 	/**
 	 * @return O {@link TipoControle} que o player estï¿½ jogando.
@@ -316,5 +270,21 @@ public class Controle implements ControllerListener
 	public void SetConjunto(ConjuntoComandos conjunto)
 	{
 		_conjunto = conjunto;
+	}
+	
+	/**
+	 * Valida se o controle ainda está conectado. Caso não, troca os comandos para teclado.
+	 * @return True caso estaja.
+	 */
+	private boolean ValidaControle()
+	{
+		if (!Controllers.getControllers().contains(_controle, true))
+		{
+			_controle = null;
+			this.GerenciaConjunto();
+			return false;
+		}
+
+		return true;
 	}
 }

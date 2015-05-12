@@ -5,8 +5,10 @@ package classes.telas;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map.Entry;
+
 import classes.gameobjects.GameObject;
 import classes.uteis.*;
+
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
 import com.badlogic.gdx.graphics.Color;
@@ -44,6 +46,9 @@ public class Tela implements OnCompletionListener
 	protected boolean _inseriGameObject = false, _removeGameObject = false;
 	protected LinkedList<GameObject> _gameObjectsIncluir = null;
 	protected LinkedList<GameObject> _gameObjectsExcluir = null;
+	protected LinkedList<GameObject>[][] _matrizMapa = null;
+	protected float _precisaoMapaY = 32f;
+	protected float _precisaoMapaX = 32f;
 	
 	/**
 	 * Função que inicia as propriedades da tela.
@@ -75,32 +80,6 @@ public class Tela implements OnCompletionListener
 			for (Entry<Integer, GameObject> entrada2 : entrada.getValue().entrySet())
 			{					
 				entrada2.getValue().Atualiza(deltaTime);
-			}
-		}
-		
-		/* ------------------------ COLISOES ------------------------------------*/
-		
-		//cria uma lista com todos os gameobjects colidiveis de todas as camadas
-		for (Entry<Camada, ListaGameObject> entrada : _listasGameObject.entrySet())
-		{
-			//se nao for pra atualizar, se a lista nao estiver ativa, se a camada nao for de colidiveis
-			if (!_atualiza || !entrada.getValue().GetAtiva() || !entrada.getKey().GetColidivel())
-				continue;
-			
-			_gameObjectsColisoes.putAll(entrada.getValue());
-		}
-		
-		//percorre a lista de todos os gameobjects
-		int i = 0, ii = 0;
-		for (Entry<Integer, GameObject> entrada : _gameObjectsColisoes.entrySet())
-		{
-			ii = 0;
-			for (Entry<Integer, GameObject> entrada2 : _gameObjectsColisoes.entrySet())
-			{
-				if (ii++ <= i++)
-					continue;
-				
-				entrada.getValue().ValidaColisao(entrada2.getValue());
 			}
 		}
 	}
@@ -142,6 +121,7 @@ public class Tela implements OnCompletionListener
 				}
 				
 				_listasGameObject.get(gameObject.GetCamada()).Adicionar(gameObject);
+				_matrizMapa[Math.abs((int) (gameObject.GetPosicao().x % _precisaoMapaX))][Math.abs((int) (gameObject.GetPosicao().y % _precisaoMapaY))].add(gameObject);
 				gameObject.SetTela(this);
 				gameObject.Inicia();
 			}
@@ -157,7 +137,10 @@ public class Tela implements OnCompletionListener
 			{
 				ListaGameObject listaTemp;
 				if ((listaTemp = _listasGameObject.get(remover.GetCamada())) != null)
+				{
 					listaTemp.Remover(remover);
+					_matrizMapa[Math.abs((int) (remover.GetPosicao().x % _precisaoMapaX))][Math.abs((int) (remover.GetPosicao().y % _precisaoMapaY))].remove(remover);
+				}
 			}
 			
 			_gameObjectsExcluir.clear();
@@ -249,14 +232,63 @@ public class Tela implements OnCompletionListener
 	
 	/**
 	 * Valida se um campo na tela está livre para movimentação de um {@link GameObject objeto}.
-	 * @param posicao {@link Vector2 Posição} do campo.
-	 * @param campo  {@link Rectangle Tamanho} para validar se está livre. Por exemplo: valida se o campo de: (posicao(0, 0)) até (rectangle(150, 150) está livre.
+	 * @param campo  {@link Rectangle Tamanho} para validar se está livre. X e Y do Rectangle é utilizado como zero zero - canto inferior esquerdo.
 	 * @param objeto {@link GameObject Objeto} para utilizado para validar campo livre. Deve ser o objeto que ocupara este lugar caso esteja livre.
 	 * @return True caso livre. False caso contrário.
 	 */
-	public boolean GetCampoLivre(GameObject objeto, Vector2 posicao, Rectangle campo)
+	public boolean GetCampoLivre(GameObject objeto, Rectangle campo)
 	{
+		if (_matrizMapa == null)
+			return true;
+		
+		LinkedList<GameObject> lista = _matrizMapa[Math.abs((int) (campo.x % _precisaoMapaX))][Math.abs((int) (campo.y % _precisaoMapaY))];
+		
+		for (int i = 0; i < lista.size(); i++)
+		{
+			if (lista.get(i).ValidaColisao(objeto))
+				return false;
+		}
+		
 		return true;
+	}
+	
+	/**
+	 * @param campo {@link Rectangle Tamanho} do campo para pegar os {@link GameObject game objects} que estão dentro.  X e Y do Rectangle é utilizado como zero zero - canto inferior esquerdo.
+	 * @return {@link LinkedList<GameObject> Lista} com os objetos que estão nesta região. Ou nulo caso não haja objetos.
+	 */
+	public LinkedList<GameObject> GetObjetosRegiao(Rectangle campo)
+	{
+		if (_matrizMapa == null)
+			return null;
+		
+		LinkedList<GameObject> objetos = new LinkedList<GameObject>();
+		int quantidadeX = (int) Math.abs((campo.width / _precisaoMapaX));
+		int quantidadeY = (int) Math.abs((campo.height / _precisaoMapaY));
+		
+		for (int x = 0; x < quantidadeX; x++)
+		{
+			for (int y = 0; y < quantidadeY; y++)
+			{
+				objetos.addAll(_matrizMapa[Math.abs((int) (campo.x % _precisaoMapaX) + x)][Math.abs((int) (campo.y % _precisaoMapaY) + y)]);
+			}
+		}
+		
+		return objetos;
+	}
+	
+	/**
+	 * Atualiza a representação do {@link GameObject objeto} na matriz representativa do mapa.
+	 * @param objeto Objeto a atualizar a posição. Este game object já deve estar com sua posição atulizada.
+	 * @param antigaPosicao {@link Vector2 Posição} antiga do game object.
+	 * @param novaPosicao {@link Vector2 Posição} onde game object ficará agora.
+	 */
+	public void AtualizaPosicaoMatriz(Vector2 antigaPosicao, Vector2 novaPosicao, GameObject objeto)
+	{
+		if (_matrizMapa == null) 
+			return;
+		
+		_matrizMapa[Math.abs((int) (antigaPosicao.x % _precisaoMapaX))][Math.abs((int) (antigaPosicao.y % _precisaoMapaY))].remove(objeto);
+		_matrizMapa[Math.abs((int) (novaPosicao.x % _precisaoMapaX))][Math.abs((int) (novaPosicao.y % _precisaoMapaY))].add(objeto);
 	}
 	
 	/**

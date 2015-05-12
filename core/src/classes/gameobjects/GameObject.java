@@ -208,9 +208,30 @@ public abstract class GameObject
 	 */
 	public void SetPosicao(Vector2 posicao)
 	{
+		if (_telaInserido != null)
+		{
+			_telaInserido.AtualizaPosicaoMatriz(_posicaoTela, posicao, this);
+		}
+		
 		_posicaoTela = posicao;
 		_posicaoTelaAux = _posicaoTela.cpy(); 
 		_caixaColisao.setPosition(_posicaoTela);
+		
+		if (this.GetColidivel())
+		{
+			if (_telaInserido != null)
+			{
+				LinkedList<GameObject> objetos = _telaInserido.GetObjetosRegiao(_caixaColisao);
+				GameObject objeto = null;
+				
+				for (int i = 0; i < objetos.size(); i++)
+				{
+					objeto = objetos.get(i);
+					
+					this.ValidaColisao(objeto);
+				}
+			}
+		}
 	}
 	
 	/**
@@ -220,17 +241,7 @@ public abstract class GameObject
 	 */
 	public void SetPosicao(float x, float y)
 	{
-		if (_posicaoTela != null)
-		{
-			_posicaoTela.x = x;
-			_posicaoTela.y = y;
-			_posicaoTelaAux = _posicaoTela.cpy(); 
-			_caixaColisao.setPosition(_posicaoTela);
-		}
-		else
-		{
-			this.SetPosicao(new Vector2(x, y));
-		}
+		this.SetPosicao(new Vector2(x, y));
 	}
 	
 	/**

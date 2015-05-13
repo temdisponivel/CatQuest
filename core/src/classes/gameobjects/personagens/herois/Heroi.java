@@ -1,10 +1,8 @@
 package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
-
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
-import classes.gameobjects.personagens.Personagem.Estado;
 import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.Player;
 import classes.uteis.Serializador;
@@ -46,7 +44,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 	
 	static public HashMap<Integer, Heroi> herois = new HashMap<Integer, Heroi>();
-	protected String _descricaoHeroi = "";
 	protected Player _player = null;
 	
 	/**
@@ -64,6 +61,12 @@ public abstract class Heroi extends Personagem implements Serializador
 	public void Inicia()
 	{
 		_tipo = GameObjects.Heroi;
+	}
+	
+	@Override
+	public void Atualiza(float deltaTime)
+	{
+		super.Atualiza(deltaTime);
 	}
 	
 	/**
@@ -84,9 +87,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	@Override
 	public void RecebeDano(float dano)
 	{
-		if (_estado == Estado.Atacando)
-			return;
-		
 		super.RecebeDano(dano);
 	}
 	
@@ -100,4 +100,14 @@ public abstract class Heroi extends Personagem implements Serializador
 			this.InfligeDano((Inimigo) colidiu);
 		}
 	}
+	
+	/**
+	 * Função chamada quando o herói deve executar sua ação.
+	 */
+	protected abstract void Acao();
+	
+	/**
+	 * Função chamada quando o herói deve executar sua habilidade ativa.
+	 */
+	protected abstract void HabilidadeAtiva();
 }

@@ -18,4 +18,18 @@ public class Mago extends Heroi
 	{
 		return "Mago";
 	}
+
+	@Override
+	protected void Acao()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void HabilidadeAtiva()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

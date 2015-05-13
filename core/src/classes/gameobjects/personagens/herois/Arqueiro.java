@@ -17,4 +17,18 @@ public class Arqueiro extends Heroi
 	{
 		return "Arqueiro";
 	}
+
+	@Override
+	protected void Acao()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void HabilidadeAtiva()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

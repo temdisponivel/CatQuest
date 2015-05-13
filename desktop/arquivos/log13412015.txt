@@ -196,3 +196,34 @@ catquest.CatQuest.render(CatQuest.java:101)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Wed May 13 04:00:36 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.CriaMatriz(Tela.java:393)
+classes.telas.Tela.CarregaMapa(Tela.java:361)
+classes.telas.Tela.Iniciar(Tela.java:90)
+classes.telas.GamePlay.Iniciar(GamePlay.java:18)
+catquest.CatQuest.AdicionaTela(CatQuest.java:326)
+classes.telas.Titulo.Click(Titulo.java:59)
+classes.uteis.UI.Botao.Atualiza(Botao.java:135)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:105)
+classes.uteis.UI.Menu.Atualiza(Menu.java:50)
+classes.telas.Tela.Atualiza(Tela.java:110)
+classes.telas.Titulo.Atualiza(Titulo.java:38)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: [[Ljava.lang.Object; cannot be cast to [[Ljava.util.LinkedList;
+
+Data: Wed May 13 04:08:26 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaGameObject(Tela.java:156)
+classes.telas.Tela.Atualiza(Tela.java:99)
+classes.telas.GamePlay.Atualiza(GamePlay.java:25)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: 0

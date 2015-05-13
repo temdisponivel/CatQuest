@@ -574,7 +574,7 @@ public abstract class GameObject
 	 * Define uma {@link Animation animação} como a atual. A que será utilizada até a próxima alteração. Caso não haja animação vinculada a chave, nada acontece.
 	 * @param chave {@link T Chave} vinculada a animação. A mesma utilizada para {@link #IncluirAnimacao adicionar a animação}.
 	 */
-	protected <T extends Enum<?>> void DefineAnimacao(T chave)
+	protected <T extends Enum<?>> void SetAnimacao(T chave)
 	{
 		if (_animacoes == null)
 			return;

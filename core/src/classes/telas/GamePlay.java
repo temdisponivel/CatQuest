@@ -1,11 +1,11 @@
 package classes.telas;
 
 import catquest.CatQuest;
-import classes.uteis.Player;
+import classes.uteis.controle.Controle;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 
 public class GamePlay extends Tela
 {	
@@ -26,10 +26,12 @@ public class GamePlay extends Tela
 	{
 		super.Atualiza(deltaTime);
 		
-		if (Player.playerPrimario.GetControle().GetPause())
+		if (Controle.GetQualquerPause())
 		{
 			CatQuest.instancia.AdicionaTela(new Menu(), false, true);
 		}
+		
+		this.GetObjetosRegiao(new Rectangle(0, 0, 500, 500));
 	}
 
 	@Override

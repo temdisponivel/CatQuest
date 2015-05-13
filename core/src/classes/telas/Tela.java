@@ -4,10 +4,12 @@ package classes.telas;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map.Entry;
+
 import classes.gameobjects.GameObject;
 import classes.gameobjects.cenario.ObjetoCenario;
 import classes.uteis.*;
 import classes.uteis.UI.Imagem;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.loaders.resolvers.LocalFileHandleResolver;
 import com.badlogic.gdx.audio.Music;
@@ -57,6 +59,8 @@ public class Tela implements OnCompletionListener
 	protected LinkedList<GameObject>[][] _matrizMapa = null;
 	protected float _precisaoMapaY = 32f;
 	protected float _precisaoMapaX = 32f;
+	protected float _alturaMapa = 0;
+	protected float _larguraMapa = 0;
 	protected FileHandle _arquivoMapa = null;
 	
 	/**
@@ -349,7 +353,12 @@ public class Tela implements OnCompletionListener
 		MapLayers camadas = mapa.getLayers();
 		MapObjects objetos = null;
 		
-		this.InserirGameObject(new Imagem(Gdx.files.local(mapa.getProperties().get("Textura").toString())));
+		Imagem fundo = null;
+		this.InserirGameObject(fundo = new Imagem(Gdx.files.local(mapa.getProperties().get("Textura").toString())));
+		
+		_alturaMapa = fundo.GetAltura();
+		_larguraMapa = fundo.GetLargura();
+		this.CriaMatriz();
 		
 		//para cada camada do mapa
 		for (int i = 0; i < camadas.getCount(); i++)
@@ -373,6 +382,23 @@ public class Tela implements OnCompletionListener
 		}
 		
 		mapa.dispose();
+	}
+	
+	/**
+	 * Cria a matriz de representação do mapa.
+	 */
+	@SuppressWarnings("unchecked")
+	protected void CriaMatriz()
+	{
+		_matrizMapa = new LinkedList[(int)(_larguraMapa / _precisaoMapaX)][(int)(_alturaMapa / _precisaoMapaY)];
+		
+		for (int i = 0; i < _matrizMapa.length; i++)
+		{
+			for (int j = 0; j < _matrizMapa[i].length; j++)
+			{
+				_matrizMapa[i][j] = new LinkedList<GameObject>();
+			}
+		}
 	}
 	
 	/**

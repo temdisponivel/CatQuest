@@ -18,4 +18,18 @@ public class Barbaro extends Heroi
 	{
 		return "Bárbaro";
 	}
+
+	@Override
+	protected void Acao()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void HabilidadeAtiva()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

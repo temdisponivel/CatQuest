@@ -1,4 +1,4 @@
-package classes.gameobjects.herois;
+package classes.gameobjects.personagens.herois;
 
 /**
  * Classe do herói Arqueiro.

@@ -1,7 +1,8 @@
-package classes.gameobjects.inimigos;
+package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
-import classes.gameobjects.Personagem;
+
+import classes.gameobjects.personagens.Personagem;
 import classes.uteis.Reciclador;
 import classes.uteis.Reciclavel;
 

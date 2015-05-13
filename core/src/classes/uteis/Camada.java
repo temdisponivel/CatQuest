@@ -26,9 +26,9 @@ public class Camada
 	 */
 	public enum Camadas
 	{
+		UI,
 		OBJETOS_ESTATICOS,
 		PERSONAGENS,
-		UI,
 	};
 	
 	public Camada(Camadas id)

@@ -21,11 +21,7 @@ public class Imagem extends GameObject
 	 */
 	public Imagem(String caminho)
 	{
-		super();
-		_camada = Camada.UI;
-		_tipo = GameObjects.Ui;
-		_sprite = new Sprite();
-		_sprite.setRegion(CatQuest.instancia.GetTextura(Gdx.files.local(caminho)));
+		this(Gdx.files.local(caminho));		
 	}
 	
 	/**
@@ -36,7 +32,9 @@ public class Imagem extends GameObject
 	{
 		super();
 		_camada = Camada.UI;
-		_sprite = new Sprite(CatQuest.instancia.GetTextura(caminho).getTexture());
+		_tipo = GameObjects.Ui;
+		_sprite = new Sprite();
+		_sprite = new Sprite(CatQuest.instancia.GetTextura(caminho));
 	}
 
 	@Override

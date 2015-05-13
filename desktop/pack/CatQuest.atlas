@@ -31,10 +31,24 @@ size: 2048,2048
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+sprites/bloqueio
+  rotate: false
+  xy: 1673, 839
+  size: 334, 79
+  orig: 334, 79
+  offset: 0, 0
+  index: -1
 sprites/intro
   rotate: false
-  xy: 2, 2
+  xy: 2, 920
   size: 1920, 1080
   orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+sprites/mapa_fundo
+  rotate: false
+  xy: 2, 2
+  size: 1669, 916
+  orig: 1669, 916
   offset: 0, 0
   index: -1

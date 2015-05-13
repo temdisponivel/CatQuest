@@ -12,7 +12,7 @@
   <properties>
    <property name="Textura" value=""/>
   </properties>
-  <object id="2" x="127.273" y="775.758" width="78.7879" height="257.576">
+  <object id="2" x="228.599" y="925.619" width="78.7879" height="257.576" rotation="41.3337">
    <properties>
     <property name="Textura" value="sprites//bloqueio"/>
    </properties>

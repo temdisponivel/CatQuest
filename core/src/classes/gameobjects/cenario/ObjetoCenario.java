@@ -3,10 +3,8 @@ package classes.gameobjects.cenario;
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
 public class ObjetoCenario extends GameObject
@@ -14,14 +12,14 @@ public class ObjetoCenario extends GameObject
 	/**
 	 * Cria um novo objeto de cenário.
 	 * @param posicao {@link Vectoe2 Posição} do objeto na tela.
-	 * @param textura  {@link TextureRegion Textura} Textura do objeto.
+	 * @param textura Caminho da textura do objeto.
 	 */
-	public ObjetoCenario(Vector2 posicao, TextureRegion textura, float rotacao)
+	public ObjetoCenario(Vector2 posicao, String textura, float rotacao)
 	{
 		_tipo = GameObjects.Cenario;
 		_camada = Camada.ObjetosEstaticos;
-		_sprite = new Sprite();
-		_sprite.setRegion(textura);
+		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local(textura)));
+		_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
 		_sprite.setRotation(rotacao);
 	}
 	
@@ -34,9 +32,9 @@ public class ObjetoCenario extends GameObject
 	{
 		_tipo = GameObjects.Cenario;
 		_camada = Camada.ObjetosEstaticos;
-		_sprite = new Sprite();
-		_sprite.setRegion(CatQuest.instancia.GetTextura(Gdx.files.local(textura)));
+		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local(textura)));
 		this.SetPosicao(posicao);
+		_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
 	}
 	
 	@Override

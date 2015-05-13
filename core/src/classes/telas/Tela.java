@@ -1,12 +1,9 @@
 //TODO: validar desempenho com esse monte de for each do java
 
 package classes.telas;
-
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map.Entry;
-import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.cenario.ObjetoCenario;
 import classes.uteis.*;
@@ -23,7 +20,6 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -368,7 +364,11 @@ public class Tela implements OnCompletionListener
 				MapProperties prop = obj.getProperties();
 				
 				//cria o objeto e adiciona no mapa
-				this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), prop.get("Textura").toString()));
+				if (!prop.containsKey("rotation"))
+					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), prop.get("Textura").toString()));
+				else
+					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 
+							prop.get("Textura").toString(), prop.get("rotation", Float.class)));
 			}
 		}
 		

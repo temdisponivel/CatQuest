@@ -34,6 +34,7 @@ public abstract class GameObject
 	 */
 	public enum GameObjects
 	{
+		Tile,
 		Heroi,
 		Inimigo,
 		Cenario,
@@ -67,6 +68,7 @@ public abstract class GameObject
 		_id = CatQuest.instancia.GetNovoId();
 		_posicaoTela = new Vector2();
 		_caixaColisao = new Rectangle();
+		_colidiveis = new HashSet<GameObject.GameObjects>();
 		gameobjects.put(this.GetId(), this);
 	}
 	

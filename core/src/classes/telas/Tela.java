@@ -153,7 +153,21 @@ public class Tela implements OnCompletionListener
 				gameObject.Inicia();
 				
 				if (_matrizMapa != null)
-					_matrizMapa[Math.abs((int) (gameObject.GetPosicao().x % _precisaoMapaX))][Math.abs((int) (gameObject.GetPosicao().y % _precisaoMapaY))].add(gameObject);
+				{
+					float posicaoX = gameObject.GetPosicao().x;
+					float posicaoY = gameObject.GetPosicao().y;
+					
+					int quantidadeX = (int) Math.abs((gameObject.GetLargura() / _precisaoMapaX));
+					int quantidadeY = (int) Math.abs((gameObject.GetAltura() / _precisaoMapaY));
+					
+					for (int x = 0; x < quantidadeX; x++)
+					{
+						for (int y = 0; y < quantidadeY; y++)
+						{
+							_matrizMapa[Math.abs((int) (posicaoX % _precisaoMapaX) + x)][Math.abs((int) (posicaoY % _precisaoMapaY) + y)].add(gameObject);
+						}
+					}
+				}
 			}
 			
 			_gameObjectsIncluir.clear();
@@ -166,10 +180,22 @@ public class Tela implements OnCompletionListener
 			for (GameObject remover : _gameObjectsIncluir)
 			{
 				ListaGameObject listaTemp;
+				
 				if ((listaTemp = _listasGameObject.get(remover.GetCamada())) != null)
 				{
 					listaTemp.Remover(remover);
-					_matrizMapa[Math.abs((int) (remover.GetPosicao().x % _precisaoMapaX))][Math.abs((int) (remover.GetPosicao().y % _precisaoMapaY))].remove(remover);
+					
+					float altura, largura;
+					int quantidadeX = (int) Math.abs(((largura = remover.GetLargura()) / _precisaoMapaX));
+					int quantidadeY = (int) Math.abs(((altura = remover.GetAltura()) / _precisaoMapaY));
+					
+					for (int x = 0; x < quantidadeX; x++)
+					{
+						for (int y = 0; y < quantidadeY; y++)
+						{
+							_matrizMapa[Math.abs((int) (largura % _precisaoMapaX) + x)][Math.abs((int) (altura % _precisaoMapaY) + y)].remove(remover);
+						}
+					}
 				}
 			}
 			
@@ -308,7 +334,7 @@ public class Tela implements OnCompletionListener
 	
 	/**
 	 * Atualiza a representação do {@link GameObject objeto} na matriz representativa do mapa.
-	 * @param objeto Objeto a atualizar a posição. Este game object já deve estar com sua posição atulizada.
+	 * @param objeto Objeto a atualizar a posição.
 	 * @param antigaPosicao {@link Vector2 Posição} antiga do game object.
 	 * @param novaPosicao {@link Vector2 Posição} onde game object ficará agora.
 	 */
@@ -317,8 +343,17 @@ public class Tela implements OnCompletionListener
 		if (_matrizMapa == null) 
 			return;
 		
-		_matrizMapa[Math.abs((int) (antigaPosicao.x % _precisaoMapaX))][Math.abs((int) (antigaPosicao.y % _precisaoMapaY))].remove(objeto);
-		_matrizMapa[Math.abs((int) (novaPosicao.x % _precisaoMapaX))][Math.abs((int) (novaPosicao.y % _precisaoMapaY))].add(objeto);
+		int quantidadeX = (int) Math.abs((objeto.GetLargura() / _precisaoMapaX));
+		int quantidadeY = (int) Math.abs((objeto.GetAltura() / _precisaoMapaY));
+		
+		for (int x = 0; x < quantidadeX; x++)
+		{
+			for (int y = 0; y < quantidadeY; y++)
+			{
+				_matrizMapa[Math.abs((int) (antigaPosicao.x % _precisaoMapaX) + x)][Math.abs((int) (antigaPosicao.y % _precisaoMapaY) + y)].remove(objeto);
+				_matrizMapa[Math.abs((int) (novaPosicao.x % _precisaoMapaX) + x)][Math.abs((int) (novaPosicao.y % _precisaoMapaY) + y)].add(objeto);
+			}
+		}
 	}
 	
 	/**
@@ -356,8 +391,11 @@ public class Tela implements OnCompletionListener
 		Imagem fundo = null;
 		this.InserirGameObject(fundo = new Imagem(Gdx.files.local(mapa.getProperties().get("Textura").toString())));
 		
+		this.GerenciaGameObject();
+		
 		_alturaMapa = fundo.GetAltura();
 		_larguraMapa = fundo.GetLargura();
+		
 		this.CriaMatriz();
 		
 		//para cada camada do mapa

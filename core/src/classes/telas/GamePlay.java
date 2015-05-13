@@ -1,6 +1,9 @@
 package classes.telas;
 
+import java.util.LinkedList;
+
 import catquest.CatQuest;
+import classes.gameobjects.GameObject;
 import classes.uteis.controle.Controle;
 
 import com.badlogic.gdx.Gdx;
@@ -29,9 +32,14 @@ public class GamePlay extends Tela
 		if (Controle.GetQualquerPause())
 		{
 			CatQuest.instancia.AdicionaTela(new Menu(), false, true);
+			
+			LinkedList<GameObject> objetos = this.GetObjetosRegiao(new Rectangle(0, 0, 500, 500));
+			
+			for (int i = 0; i < objetos.size(); i++)
+			{
+				objetos.get(i).SetSeDesenha(false);
+			}
 		}
-		
-		this.GetObjetosRegiao(new Rectangle(0, 0, 500, 500));
 	}
 
 	@Override

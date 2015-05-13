@@ -16,11 +16,14 @@ public class ObjetoCenario extends GameObject
 	 */
 	public ObjetoCenario(Vector2 posicao, String textura, float rotacao)
 	{
+		super();
 		_tipo = GameObjects.Cenario;
 		_camada = Camada.ObjetosEstaticos;
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local(textura)));
+		this.SetPosicao(posicao);
 		_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
 		_sprite.setRotation(rotacao);
+		_caixaColisao.set(_sprite.getBoundingRectangle());
 	}
 	
 	/**
@@ -30,11 +33,7 @@ public class ObjetoCenario extends GameObject
 	 */
 	public ObjetoCenario(Vector2 posicao, String textura)
 	{
-		_tipo = GameObjects.Cenario;
-		_camada = Camada.ObjetosEstaticos;
-		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local(textura)));
-		this.SetPosicao(posicao);
-		_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
+		this(posicao, textura, 0);
 	}
 	
 	@Override

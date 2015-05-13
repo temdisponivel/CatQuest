@@ -2,18 +2,10 @@ package classes.telas;
 
 import catquest.CatQuest;
 import classes.uteis.Player;
-
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GamePlay extends Tela
 {	
-	public GamePlay()
-	{
-		super(Gdx.files.local("arquivos//teste.tmx"));
-	}
-	
 	@Override
 	public void Iniciar()
 	{
@@ -24,8 +16,6 @@ public class GamePlay extends Tela
 	@Override
 	public void Atualiza(float deltaTime)
 	{
-		super.Atualiza(deltaTime);
-		
 		if (Player.playerPrimario.GetControle().GetPause())
 		{
 			CatQuest.instancia.AdicionaTela(new Menu(), false, true);
@@ -33,9 +23,10 @@ public class GamePlay extends Tela
 	}
 
 	@Override
-	public void Desenha(SpriteBatch spriteBatch)
+	public void Desenha(SpriteBatch spriteBash)
 	{
-		super.Desenha(spriteBatch);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override

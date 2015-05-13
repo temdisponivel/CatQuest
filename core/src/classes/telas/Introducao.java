@@ -1,6 +1,6 @@
 package classes.telas;
 
-import classes.gameobjects.personagens.herois.Arqueiro;
+import classes.gameobjects.herois.Arqueiro;
 import classes.uteis.UI.Imagem;
 import catquest.CatQuest;
 

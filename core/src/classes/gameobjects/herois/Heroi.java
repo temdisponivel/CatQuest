@@ -1,11 +1,9 @@
-package classes.gameobjects.personagens.herois;
+package classes.gameobjects.herois;
 
 import java.util.HashMap;
-
+import classes.gameobjects.Personagem;
 import classes.gameobjects.GameObject;
-import classes.gameobjects.personagens.Personagem;
-import classes.gameobjects.personagens.Personagem.Estado;
-import classes.gameobjects.personagens.inimigos.Inimigo;
+import classes.gameobjects.inimigos.Inimigo;
 import classes.uteis.Player;
 import classes.uteis.Serializador;
 

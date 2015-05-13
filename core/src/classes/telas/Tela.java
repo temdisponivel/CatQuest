@@ -3,28 +3,16 @@
 package classes.telas;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map.Entry;
-import catquest.CatQuest;
+
 import classes.gameobjects.GameObject;
-import classes.gameobjects.cenario.ObjetoCenario;
 import classes.uteis.*;
-import classes.uteis.UI.Imagem;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.loaders.resolvers.LocalFileHandleResolver;
+
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.maps.MapLayers;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.MapObjects;
-import com.badlogic.gdx.maps.MapProperties;
-import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -61,21 +49,6 @@ public class Tela implements OnCompletionListener
 	protected LinkedList<GameObject>[][] _matrizMapa = null;
 	protected float _precisaoMapaY = 32f;
 	protected float _precisaoMapaX = 32f;
-	protected FileHandle _arquivoMapa = null;
-	
-	/**
-	 * Cria uma nova tela.
-	 */
-	public Tela(){};
-	
-	/**
-	 * Cria uma tela com um arquivo de mapa e carrega o mapa.
-	 * @param arquivo {@link FileHandle Arquivo} do mapa.
-	 */
-	public Tela(FileHandle arquivo)
-	{
-		_arquivoMapa = arquivo;
-	}
 	
 	/**
 	 * Função que inicia as propriedades da tela.
@@ -87,7 +60,6 @@ public class Tela implements OnCompletionListener
 		_gameObjectsIncluir = new LinkedList<GameObject>();
 		_gameObjectsExcluir = new LinkedList<GameObject>();
 		_corFundo = Color.WHITE;
-		this.CarregaMapa();
 	}
 	
 	/**
@@ -338,41 +310,6 @@ public class Tela implements OnCompletionListener
 		
 		_listasGameObject.clear();
 		_listasGameObject.clear();
-	}
-	
-	//TODO: terminar implementação
-	/**
-	 * Carrega um mapa .TMX e coloca os objetos nas suas posições.
-	 */
-	public void CarregaMapa()
-	{
-		if (_arquivoMapa == null)
-			return;
-		
-		TiledMap mapa = new TmxMapLoader(new LocalFileHandleResolver()).load(_arquivoMapa.toString());
-		MapLayers camadas = mapa.getLayers();
-		MapObjects objetos = null;
-		
-		this.InserirGameObject(new Imagem(Gdx.files.local(mapa.getProperties().get("Textura").toString())));
-		
-		//para cada camada do mapa
-		for (int i = 0; i < camadas.getCount(); i++)
-		{
-			//pega a lista de objetos
-			objetos = camadas.get(i).getObjects();
-			
-			//para cada lista de objetos
-			for (int j = 0; j < objetos.getCount(); j++)
-			{
-				MapObject obj = objetos.get(j);
-				MapProperties prop = obj.getProperties();
-				
-				//cria o objeto e adiciona no mapa
-				this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), prop.get("Textura").toString()));
-			}
-		}
-		
-		mapa.dispose();
 	}
 	
 	/**

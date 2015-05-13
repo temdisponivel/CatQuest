@@ -1,4 +1,4 @@
-package classes.gameobjects.personagens.herois;
+package classes.gameobjects.herois;
 
 /**
  * Classe do herói Gatuno.

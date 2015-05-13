@@ -22,12 +22,15 @@ public class Titulo extends Tela implements EscutadorBotao
 		super.Iniciar();
 		_tipo = Telas.MENU;
 		
-		menu = new Menu(new Vector2(CatQuest.instancia.GetLarguraTela() - 280, 60));
-		menu.AdicionaFilho(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		menu.AdicionaFilho(configurar = new BotaoTexto("CONFIGURAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		menu.AdicionaFilho(jogar = new BotaoTexto("JOGAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
-		
-		this.InserirGameObject(menu);
+		for (int i = 0; i < 2000; i++)
+		{
+			menu = new Menu(new Vector2(CatQuest.instancia.GetLarguraTela() - 280, 60));
+			menu.AdicionaFilho(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
+			menu.AdicionaFilho(configurar = new BotaoTexto("CONFIGURAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
+			menu.AdicionaFilho(jogar = new BotaoTexto("JOGAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
+			
+			this.InserirGameObject(menu);
+		}
 		
 		_corFundo = Color.WHITE;
 	}

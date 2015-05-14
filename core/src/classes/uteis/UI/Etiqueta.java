@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
@@ -49,7 +48,10 @@ public class Etiqueta extends GameObject
 	}
 
 	@Override
-	public void AoColidir(GameObject colidiu) {}
+	public Colisoes AoColidir(GameObject colidiu)
+	{
+		return Colisoes.Passavel;
+	}
 
 	@Override
 	public void Inicia()

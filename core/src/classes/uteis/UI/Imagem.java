@@ -3,7 +3,6 @@ package classes.uteis.UI;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
 import catquest.CatQuest;
@@ -38,7 +37,10 @@ public class Imagem extends GameObject
 	}
 
 	@Override
-	public void AoColidir(GameObject colidiu){}
+	public Colisoes AoColidir(GameObject colidiu)
+	{
+		return Colisoes.Passavel;
+	}
 
 	@Override
 	public void Inicia() 

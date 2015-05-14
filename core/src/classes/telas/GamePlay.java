@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
+import classes.gameobjects.personagens.inimigos.Cachorro;
 import classes.uteis.controle.Controle;
 
 import com.badlogic.gdx.Gdx;
@@ -22,6 +23,7 @@ public class GamePlay extends Tela
 	{
 		super.Iniciar();
 		_tipo = Telas.GAMEPLAY;
+		this.InserirGameObject(new Cachorro());
 	}
 
 	@Override

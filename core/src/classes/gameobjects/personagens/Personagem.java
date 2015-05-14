@@ -1,7 +1,6 @@
 package classes.gameobjects.personagens;
 
 import java.util.HashMap;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.Vector2;
@@ -78,7 +77,8 @@ public abstract class Personagem extends GameObject implements Serializador
 	public void Inicia()
 	{
 		super.Inicia();
-		this.Carrega();
+		//TODO: validar o carregamento via arquivo
+		//this.Carrega();
 	}
 		
 	/**
@@ -144,7 +144,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	public void Movimenta(Vector2 destino)
 	{
 		this.TocaSom(SomPersonagem.Movimenta);
-		this.SetPosicao(this.GetPosicao().lerp(destino, 1));
+		this.SetPosicao(this.GetPosicao().lerp(destino, _agilidade));
 	}
 		
 	/**
@@ -188,7 +188,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		String personagem = _arquivo.readString();
 		
 		//carrega do arquivo
-		Personagem personagemTemp = (Personagem) json.fromJson(this.getClass(), personagem);
+		Personagem personagemTemp = json.fromJson(Personagem.class, personagem);
 		
 		_agilidade = personagemTemp.GetAgilidade();
 		_defesa = personagemTemp.GetDefesa();
@@ -205,7 +205,9 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		Json json = new Json();
 		json.setUsePrototypes(false);
-		String personagem = json.toJson(this);
+		String personagem;
+		personagem = json.toJson((Personagem)this);
 		_arquivo.writeString(personagem, false);
 	}
+	
 }

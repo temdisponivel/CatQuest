@@ -72,7 +72,10 @@ public class Botao extends GameObject
 	}
 
 	@Override
-	public void AoColidir(GameObject colidiu){};
+	public Colisoes AoColidir(GameObject colidiu)
+	{
+		return Colisoes.Passavel;
+	}
 
 	@Override
 	public void Inicia()

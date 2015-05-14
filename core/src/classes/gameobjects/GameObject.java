@@ -5,12 +5,14 @@ package classes.gameobjects;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+
 import classes.uteis.Camada;
 import classes.uteis.CarregarSom;
 import classes.uteis.CarregarSomListner;
 import classes.uteis.Configuracoes;
 import classes.telas.Tela;
 import catquest.CatQuest;
+
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -41,6 +43,18 @@ public abstract class GameObject
 		Ui,
 	};
 	
+	/**
+	 * Enumerador para resultado de colisões.
+	 * @author matheus
+	 *
+	 */
+	public enum Colisoes
+	{
+		Livre,
+		Passavel,
+		NaoPassavel,
+	}
+	
 	static public HashMap<Integer, GameObject> gameobjects = new HashMap<Integer, GameObject>();
 	protected Sprite _sprite = null;
 	protected GameObjects _tipo;
@@ -69,6 +83,7 @@ public abstract class GameObject
 		_posicaoTela = new Vector2();
 		_caixaColisao = new Rectangle();
 		_colidiveis = new HashSet<GameObject.GameObjects>();
+		_filhos = new LinkedList<GameObject>();
 		gameobjects.put(this.GetId(), this);
 	}
 	
@@ -132,8 +147,9 @@ public abstract class GameObject
 	/**
 	 * Funï¿½ï¿½o chamada sempre que este objeto colidi com um objeto da lista objetos colidiveis.
 	 * @param colidiu {@link GameObject} que colidiu com este.
+	 * @return 
 	 */
-	public abstract void AoColidir(GameObject colidiu);
+	public abstract Colisoes AoColidir(GameObject colidiu);	
 	
 	/**
 	 * Funï¿½ï¿½o com toda a rotina de iniciaï¿½ï¿½o das propriedades do objeto. Com excessï¿½o do ID, porque o ID jï¿½ ï¿½ definido no contrutor desta classe.
@@ -338,9 +354,10 @@ public abstract class GameObject
 	/**
 	 * Funï¿½ï¿½o que valida colisï¿½o entre este {@link GameObject} e outro. Caso positivo, chama a funï¿½ï¿½o {@link GameObject#AoColidir(GameObject)} dos dois game objects.
 	 * @param colidiu {@link GameObject} a validar colisï¿½o.
+	 * @return 
 	 * @return True caso tenha colidido.
 	 */
-	public boolean ValidaColisao(GameObject colidiu)
+	public Colisoes ValidaColisao(GameObject colidiu)
 	{
 		GameObject filho = null;
 		
@@ -351,16 +368,15 @@ public abstract class GameObject
 		}
 		
 		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()) || (!_colidiPai && colidiu == _pai))
-			return false;
+			return Colisoes.Passavel;
 		
 		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))
 		{
 			this.AoColidir(colidiu);
-			colidiu.AoColidir(this);
-			return true;
+			return colidiu.AoColidir(this);
 		}
 		
-		return false;
+		return Colisoes.Passavel;
 	}
 	
 	public Rectangle GetCaixaColisao()

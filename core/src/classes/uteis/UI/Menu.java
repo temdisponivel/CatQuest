@@ -2,7 +2,6 @@ package classes.uteis.UI;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
-
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
 
@@ -91,7 +90,8 @@ public class Menu extends GameObject
 	}
 
 	@Override
-	public void AoColidir(GameObject colidiu)
+	public Colisoes AoColidir(GameObject colidiu)
 	{
+		return Colisoes.Passavel;
 	}
 }

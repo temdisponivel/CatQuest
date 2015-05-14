@@ -91,7 +91,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 	
 	@Override
-	public void AoColidir(GameObject colidiu)
+	public Colisoes AoColidir(GameObject colidiu)
 	{
 		_colidido = true;
 		
@@ -99,6 +99,8 @@ public abstract class Heroi extends Personagem implements Serializador
 		{
 			this.InfligeDano((Inimigo) colidiu);
 		}
+		
+		return Colisoes.Passavel;
 	}
 	
 	/**

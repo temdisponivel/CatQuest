@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.Map.Entry;
 
 import classes.gameobjects.GameObject;
+import classes.gameobjects.GameObject.Colisoes;
 import classes.gameobjects.cenario.ObjetoCenario;
 import classes.uteis.*;
 import classes.uteis.UI.Imagem;
@@ -160,11 +161,15 @@ public class Tela implements OnCompletionListener
 					int quantidadeX = (int) Math.abs((gameObject.GetLargura() / _precisaoMapaX));
 					int quantidadeY = (int) Math.abs((gameObject.GetAltura() / _precisaoMapaY));
 					
-					for (int x = 0; x < quantidadeX; x++)
+					for (int x = 0, i = 0; x < quantidadeX; x++)
 					{
-						for (int y = 0; y < quantidadeY; y++)
+						for (int y = 0, j = 0; y < quantidadeY; y++)
 						{
-							_matrizMapa[Math.abs((int) (posicaoX % _precisaoMapaX) + x)][Math.abs((int) (posicaoY % _precisaoMapaY) + y)].add(gameObject);
+							i = Math.abs((int) (posicaoX / _precisaoMapaX) + x);
+							j = Math.abs((int) (posicaoY / _precisaoMapaY) + y);
+							
+							if (i < _matrizMapa.length && j < _matrizMapa[i].length)
+								_matrizMapa[i][j].add(gameObject);
 						}
 					}
 				}
@@ -297,15 +302,18 @@ public class Tela implements OnCompletionListener
 		if (_matrizMapa == null)
 			return true;
 		
-		LinkedList<GameObject> lista = _matrizMapa[Math.abs((int) (campo.x % _precisaoMapaX))][Math.abs((int) (campo.y % _precisaoMapaY))];
+		LinkedList<GameObject> lista = this.GetObjetosRegiao(campo);
+		boolean retorno = true;
+		
+		if (lista == null)
+			return false;
 		
 		for (int i = 0; i < lista.size(); i++)
 		{
-			if (lista.get(i).ValidaColisao(objeto))
-				return false;
+			retorno &= lista.get(i).ValidaColisao(objeto) == Colisoes.NaoPassavel;
 		}
 		
-		return true;
+		return retorno;
 	}
 	
 	/**
@@ -317,15 +325,18 @@ public class Tela implements OnCompletionListener
 		if (_matrizMapa == null)
 			return null;
 		
-		LinkedList<GameObject> objetos = new LinkedList<GameObject>();
-		int quantidadeX = (int) Math.abs((campo.width / _precisaoMapaX));
-		int quantidadeY = (int) Math.abs((campo.height / _precisaoMapaY));
+		if (campo.x < 0 || campo.y < 0)
+			return null;
 		
-		for (int x = 0; x < quantidadeX; x++)
+		LinkedList<GameObject> objetos = new LinkedList<GameObject>();
+		int quantidadeX = (int) (campo.width / _precisaoMapaX);
+		int quantidadeY = (int) (campo.height / _precisaoMapaY);
+		
+		for (int x = 0; x <= quantidadeX; x++)
 		{
-			for (int y = 0; y < quantidadeY; y++)
+			for (int y = 0; y <= quantidadeY; y++)
 			{
-				objetos.addAll(_matrizMapa[Math.abs((int) (campo.x % _precisaoMapaX) + x)][Math.abs((int) (campo.y % _precisaoMapaY) + y)]);
+				objetos.addAll(_matrizMapa[Math.abs((int) (campo.x / _precisaoMapaX) + x)][Math.abs((int) (campo.y / _precisaoMapaY) + y)]);
 			}
 		}
 		
@@ -393,8 +404,8 @@ public class Tela implements OnCompletionListener
 		
 		this.GerenciaGameObject();
 		
-		_alturaMapa = fundo.GetAltura();
-		_larguraMapa = fundo.GetLargura();
+		_alturaMapa = fundo.GetAltura() + 32;
+		_larguraMapa = fundo.GetLargura() + 32;
 		
 		this.CriaMatriz();
 		
@@ -411,7 +422,10 @@ public class Tela implements OnCompletionListener
 				MapProperties prop = obj.getProperties();
 				
 				//cria o objeto e adiciona no mapa
-				if (!prop.containsKey("rotation"))
+				if (!prop.containsKey("Textura"))
+					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 
+							new Rectangle(0, 0, prop.get("width", Float.class), prop.get("heigth", Float.class))));
+				else if (!prop.containsKey("rotation"))
 					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), prop.get("Textura").toString()));
 				else
 					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 

@@ -332,11 +332,17 @@ public class Tela implements OnCompletionListener
 		int quantidadeX = (int) (campo.width / _precisaoMapaX);
 		int quantidadeY = (int) (campo.height / _precisaoMapaY);
 		
-		for (int x = 0; x <= quantidadeX; x++)
+		for (int x = 0, i = 0; x <= quantidadeX; x++)
 		{
-			for (int y = 0; y <= quantidadeY; y++)
+			for (int y = 0, j = 0; y <= quantidadeY; y++)
 			{
-				objetos.addAll(_matrizMapa[Math.abs((int) (campo.x / _precisaoMapaX) + x)][Math.abs((int) (campo.y / _precisaoMapaY) + y)]);
+				i = Math.abs((int) (campo.x / _precisaoMapaX) + x);
+				j = Math.abs((int) (campo.y / _precisaoMapaY) + y);
+				
+				if (i < _matrizMapa.length && j < _matrizMapa[i].length)
+					objetos.addAll(_matrizMapa[Math.abs((int) (campo.x / _precisaoMapaX) + x)][Math.abs((int) (campo.y / _precisaoMapaY) + y)]);
+				else
+					return null;
 			}
 		}
 		

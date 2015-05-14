@@ -75,4 +75,14 @@ public class Log
 		Log.instancia.Logar(texto, null, false);
 		System.out.println(texto);
 	}
+	
+	/**
+	 * Escrever vários textos no arquivo de log.
+	 * @param texto Textos a serem escritos.
+	 */
+	public void Logar(String... textos)
+	{
+		for (int i = 0; i < textos.length; i++)
+			this.Logar(textos[i]);
+	}
 }

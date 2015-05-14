@@ -153,7 +153,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		}
 	    
 	    if (Configuracoes.instancia.GetMostraFPS())
+	    {
 			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()-50, this.GetAlturaTela()-25);
+			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getDeltaTime()), this.GetLarguraTela()-300, this.GetAlturaTela()-25);
+	    }
 			
 		_batch.end();
 		

@@ -1,11 +1,14 @@
 package classes.gameobjects.personagens;
 
 import java.util.HashMap;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Json;
+
 import classes.gameobjects.GameObject;
+import classes.uteis.Log;
 import classes.uteis.Serializador;
 
 /**
@@ -140,11 +143,17 @@ public abstract class Personagem extends GameObject implements Serializador
 	/**
 	 * Movimenta o {@link Personagem personagem} para o destino desejado.
 	 * @param destino {@link Vector2 Destino} do personagem.
+	 * @param deltaTime Delta time do frame para multriplar como alpha.
+	 * @return True caso tenha alcaçado o destino neste frame.
+	 * @see {@link Vector2#lerp(Vector2, float)}
 	 */
-	public void Movimenta(Vector2 destino)
+	public boolean Movimenta(Vector2 destino, float deltaTime)
 	{
+		boolean retorno = false;
 		this.TocaSom(SomPersonagem.Movimenta);
-		this.SetPosicao(this.GetPosicao().lerp(destino, _agilidade));
+		Log.instancia.Logar(destino.toString(), String.valueOf(deltaTime));
+		this.SetPosicao(this.GetPosicao().lerp(destino, (retorno = 1 * deltaTime > 1) ? 1 : 1 * deltaTime));
+		return retorno;
 	}
 		
 	/**

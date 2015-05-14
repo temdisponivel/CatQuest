@@ -85,7 +85,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	
 	static public HashMap<Integer, Inimigo> inimigos = new HashMap<Integer, Inimigo>();
 	static private Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>(); 
-	protected Stack<Vector2> _caminho = null;
+	protected LinkedList<Vector2> _caminho = null;
 	
 	/**
 	 * Cria um novo inimigo.
@@ -94,7 +94,23 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	{
 		super();
 		inimigos.put(this.GetId(), this);
-		_caminho = new Stack<Vector2>();
+		_caminho = new LinkedList<Vector2>();
+	}
+	
+	@Override
+	public void Atualiza(float deltaTime)
+	{
+		super.Atualiza(deltaTime);
+		
+		if (!_caminho.isEmpty())
+		{
+			if (this.Movimenta(_caminho.element(), deltaTime))
+				_caminho.removeFirst();
+		}
+		else
+		{
+			this.GetCaminho(new Vector2(1000, 369));
+		}
 	}
 	
 	@Override
@@ -112,10 +128,10 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	/**
 	 * Função que retorna um caminho até o destino. Calculado com A*.
 	 * @param destino {@link Vector2 Destino} do objeto.
-	 * @return {@link Stack<Vector2 Caminho} da posição atual até o destino. Ou nulo caso não haja caminho. 
+	 * @return {@link LinkedList<Vector2> Fila} da posição atual até o destino. Ou nulo caso não haja caminho. 
 	 * Este caminho também é defino em {@link #_caminho}, mas quando não há caminho {@link #_caminho} fica limpa.
 	 */
-	protected Stack<Vector2> GetCaminho(Vector2 destino)
+	protected LinkedList<Vector2> GetCaminho(Vector2 destino)
 	{		
 		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
@@ -143,12 +159,14 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 			listaFechada.add(atual);
 			
 			//se achamos
-			if (aux.setPosition(atual.posicao).contains(destino))
+			if (aux.setPosition(atual.posicao).contains(destino) || atual.posicao.dst(destino) < _agilidade)
 			{
+				_caminho.addFirst(destino);
+				
 				//cria a pilha do caminho a percorrer e encerra o loop
 				while (atual != null)
 				{
-					_caminho.push(atual.posicao);
+					_caminho.addFirst(atual.posicao);
 					atual = atual.parente;
 				}
 				
@@ -225,7 +243,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		Vector2 auxPosicao = new Vector2();
 		
 		//DIREITA
-		auxPosicao.x = atual.posicao.x + _caixaColisao.width + _agilidade;
+		auxPosicao.x = atual.posicao.x + _agilidade;
 		auxPosicao.y = atual.posicao.y;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
@@ -238,7 +256,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		
 		//CIMA
 		auxPosicao.x = atual.posicao.x;
-		auxPosicao.y = atual.posicao.y + _caixaColisao.height + _agilidade;
+		auxPosicao.y = atual.posicao.y + _agilidade;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
 		{
@@ -249,7 +267,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		
 		//ESQUERDA
-		auxPosicao.x = atual.posicao.x - _caixaColisao.width - _agilidade;
+		auxPosicao.x = atual.posicao.x - _agilidade;
 		auxPosicao.y = atual.posicao.y;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
@@ -262,7 +280,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		
 		//BAIXO
 		auxPosicao.x = atual.posicao.x;
-		auxPosicao.y = atual.posicao.y - _caixaColisao.height - _agilidade;
+		auxPosicao.y = atual.posicao.y - _agilidade;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
 		{
@@ -273,8 +291,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		
 		//NORDESTE
-		auxPosicao.x = atual.posicao.x + _caixaColisao.width + _agilidade;
-		auxPosicao.y = atual.posicao.y + _caixaColisao.height + _agilidade;
+		auxPosicao.x = atual.posicao.x + _agilidade;
+		auxPosicao.y = atual.posicao.y + _agilidade;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
 		{
@@ -285,8 +303,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		
 		//NOROESTE
-		auxPosicao.x = atual.posicao.x - _caixaColisao.width - _agilidade;
-		auxPosicao.y = atual.posicao.y + _caixaColisao.height + _agilidade;
+		auxPosicao.x = atual.posicao.x - _agilidade;
+		auxPosicao.y = atual.posicao.y + _agilidade;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
 		{
@@ -297,8 +315,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		
 		//SUDOESTE
-		auxPosicao.x = atual.posicao.x - _caixaColisao.width - _agilidade;
-		auxPosicao.y = atual.posicao.y - _caixaColisao.height - _agilidade;
+		auxPosicao.x = atual.posicao.x - _agilidade;
+		auxPosicao.y = atual.posicao.y - _agilidade;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
 		{
@@ -309,8 +327,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		
 		//SUDESTE
-		auxPosicao.x = atual.posicao.x + _caixaColisao.width + _agilidade;
-		auxPosicao.y = atual.posicao.y - _caixaColisao.height - _agilidade;
+		auxPosicao.x = atual.posicao.x + _agilidade;
+		auxPosicao.y = atual.posicao.y - _agilidade;
 		auxCampo.setPosition(auxPosicao);
 		if (_telaInserido.GetCampoLivre(this, auxCampo))
 		{

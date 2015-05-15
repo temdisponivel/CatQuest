@@ -56,7 +56,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	{
 		super();
 		inimigos.put(this.GetId(), this);
-		_colidiveis.add(GameObjects.Heroi);
+		_colidiveis.put(GameObjects.Heroi, Colisoes.Passavel);
 	}
 	
 	@Override

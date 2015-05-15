@@ -42,6 +42,9 @@ public class Camada
 			_atualiza = false;
 			break;
 		case PERSONAGENS:
+			_colidivel = true;
+			_atualiza = true;
+			_desenha = true;
 		case UI: 
 			_colidivel = true;
 			_atualiza = true;

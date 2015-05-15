@@ -267,25 +267,40 @@ public class Tela implements OnCompletionListener
 	}
 	
 	/**
-	 * Valida se um campo na tela está livre para movimentação de um {@link GameObject objeto}.
+	 * Valida se um campo na tela está livre para movimentação de um {@link GameObject objeto}. Caso ocorra alguma colisão, não é chamado o {@link GameObject#AoColidir(GameObject)}.
 	 * @param campo  {@link Rectangle Tamanho} para validar se está livre. X e Y do Rectangle é utilizado como zero zero - canto inferior esquerdo.
 	 * @param objeto {@link GameObject Objeto} para utilizado para validar campo livre. Deve ser o objeto que ocupara este lugar caso esteja livre.
-	 * @return True caso livre. False caso contrário.
+	 * @param simulacao Se true, a colisão com os objetos do campo é {@link GameObject#SimulaColisao(Vector2, GameObject) simulada} utilizando o ponto x e y do campo.
+	 * @return {@link Colisoes}. Se o campo é livre, passável ou não passável.
 	 */
-	public boolean GetCampoLivre(GameObject objeto, Rectangle campo)
+	public Colisoes GetValorCampo(GameObject objeto, Rectangle campo, boolean simulacao)
 	{
 		if (_matrizMapa == null)
-			return true;
+			return Colisoes.Livre;
 		
 		LinkedList<GameObject> lista = this.GetObjetosRegiao(campo);
-		boolean retorno = true;
 		
 		if (lista == null)
-			return false;
+			return Colisoes.NaoPassavel;
 		
+		
+		Colisoes temp;
+		Colisoes retorno = Colisoes.Livre;
 		for (int i = 0; i < lista.size(); i++)
 		{
-			retorno &= lista.get(i).ValidaColisao(objeto) == Colisoes.NaoPassavel;
+			if (simulacao)
+			{
+				if ((temp = lista.get(i).SimulaColisao(new Vector2(campo.x, campo.y), objeto)) == Colisoes.NaoPassavel)
+					return Colisoes.NaoPassavel;
+			}
+			else
+			{
+				if ((temp = lista.get(i).ValidaColisao(objeto, false)) == Colisoes.NaoPassavel)
+					return Colisoes.NaoPassavel;
+			}
+			
+			if (temp.ordinal() > retorno.ordinal())
+				retorno = temp;
 		}
 		
 		return retorno;
@@ -300,7 +315,7 @@ public class Tela implements OnCompletionListener
 		if (_matrizMapa == null)
 			return null;
 		
-		if (campo.x < 0 || campo.y < 0)
+		if ((campo.x < 0 || campo.y < 0) || (campo.x + campo.width > _larguraMapa || campo.y + campo.height > _alturaMapa))
 			return null;
 		
 		LinkedList<GameObject> objetos = new LinkedList<GameObject>();
@@ -462,7 +477,7 @@ public class Tela implements OnCompletionListener
 					prop.put("rotation", 0f);
 				
 				if (!prop.containsKey("Textura"))
-					prop.put("Textura", "");
+					prop.put("Textura", "sprites//bloqueio");
 				
 				if (obj instanceof RectangleMapObject)
 					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 

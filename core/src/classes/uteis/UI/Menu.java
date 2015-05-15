@@ -90,8 +90,7 @@ public class Menu extends GameObject
 	}
 
 	@Override
-	public Colisoes AoColidir(GameObject colidiu)
+	public void AoColidir(GameObject colidiu)
 	{
-		return Colisoes.Passavel;
 	}
 }

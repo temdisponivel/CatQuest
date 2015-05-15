@@ -3,16 +3,13 @@
 package classes.gameobjects;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
-
 import classes.uteis.Camada;
 import classes.uteis.CarregarSom;
 import classes.uteis.CarregarSomListner;
 import classes.uteis.Configuracoes;
 import classes.telas.Tela;
 import catquest.CatQuest;
-
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -67,7 +64,7 @@ public abstract class GameObject
 	protected Integer _id = null;
 	protected Tela _telaInserido = null;
 	protected boolean _atualiza = true, _desenha = true;
-	protected HashSet<GameObject.GameObjects> _colidiveis = null;
+	protected HashMap<GameObject.GameObjects, Colisoes> _colidiveis = null;
 	protected LinkedList<GameObject> _filhos = null;
 	protected boolean _colidiPai = false;
 	protected GameObject _pai = null;
@@ -82,7 +79,7 @@ public abstract class GameObject
 		_id = CatQuest.instancia.GetNovoId();
 		_posicaoTela = new Vector2();
 		_caixaColisao = new Rectangle();
-		_colidiveis = new HashSet<GameObject.GameObjects>();
+		_colidiveis = new HashMap<GameObject.GameObjects, Colisoes>();
 		_filhos = new LinkedList<GameObject>();
 		gameobjects.put(this.GetId(), this);
 	}
@@ -149,7 +146,7 @@ public abstract class GameObject
 	 * @param colidiu {@link GameObject} que colidiu com este.
 	 * @return 
 	 */
-	public abstract Colisoes AoColidir(GameObject colidiu);	
+	public abstract void AoColidir(GameObject colidiu);	
 	
 	/**
 	 * Funï¿½ï¿½o com toda a rotina de iniciaï¿½ï¿½o das propriedades do objeto. Com excessï¿½o do ID, porque o ID jï¿½ ï¿½ definido no contrutor desta classe.
@@ -255,11 +252,13 @@ public abstract class GameObject
 				LinkedList<GameObject> objetos = _telaInserido.GetObjetosRegiao(_caixaColisao);
 				GameObject objeto = null;
 				
+				if (objetos == null) return;
+				
 				for (int i = 0; i < objetos.size(); i++)
 				{
 					objeto = objetos.get(i);
 					
-					this.ValidaColisao(objeto);
+					this.ValidaColisao(objeto, true);
 				}
 			}
 		}
@@ -367,29 +366,69 @@ public abstract class GameObject
 	/**
 	 * Funï¿½ï¿½o que valida colisï¿½o entre este {@link GameObject} e outro. Caso positivo, chama a funï¿½ï¿½o {@link GameObject#AoColidir(GameObject)} dos dois game objects.
 	 * @param colidiu {@link GameObject} a validar colisï¿½o.
-	 * @return 
+	 * @param colidi Se, caso haja colisão, deve chamar {@link GameObject#AoColidir(GameObject)} dos objetos. 
 	 * @return True caso tenha colidido.
 	 */
-	public Colisoes ValidaColisao(GameObject colidiu)
+	public Colisoes ValidaColisao(GameObject colidiu, boolean colidi)
 	{
 		GameObject filho = null;
+		
+		Colisoes outro = Colisoes.Livre;
+		Colisoes este = Colisoes.Livre;
+		Colisoes retorno = Colisoes.Livre;
+		Colisoes temp;
 		
 		for (int i = 0; i < _filhos.size(); i++)
 		{
 			filho = _filhos.get(i);
-			filho.ValidaColisao(colidiu);
+			temp = filho.ValidaColisao(colidiu, colidi);
+			
+			if (temp.ordinal() > retorno.ordinal())
+				retorno = temp;
+				
 		}
 		
-		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()) || !_camada.GetColidivel() || (!_colidiPai && colidiu == _pai))
-			return Colisoes.Passavel;
+		if (colidiu == null || !_colidiveis.containsKey(colidiu.GetTipo()) || !_camada.GetColidivel() || (!_colidiPai && colidiu == _pai))
+			return retorno;
 		
 		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))
 		{
-			this.AoColidir(colidiu);
-			return colidiu.AoColidir(this);
+			if (colidi)
+			{
+				colidiu.AoColidir(this);
+				this.AoColidir(colidiu);
+			}
+			
+			if (colidiu.GetColidiveis().containsKey(_tipo))
+				outro = colidiu.GetColidiveis().get(_tipo);
+			
+			return outro.ordinal() > (este = _colidiveis.get(colidiu.GetTipo())).ordinal() ? outro : este;
 		}
 		
-		return Colisoes.Passavel;
+		return retorno;
+	}
+	
+	/**
+	 * Valida se, caso este {@link GameObject objeto} estiver na {@link Vector2 posição} parametrizada, colidiria com o {@link GameObject objeto} parametrizado.
+	 * Caso a colisão ocorra, não é chamado o {@link #AoColidir(GameObject)}.
+	 * @param posicao {@link Vector2 Posição} para considerar como atual.
+	 * @param validar {@link GameObject Objeto} para validar colisao.
+	 * @return O valor hipotético da colisão.
+	 * @see #ValidaColisao(GameObject, boolean)
+	 */
+	public Colisoes SimulaColisao(Vector2 posicao, GameObject validar)
+	{
+		float x = _caixaColisao.x;
+		float y = _caixaColisao.x;
+		_caixaColisao.x = posicao.x;
+		_caixaColisao.y = posicao.y;
+		
+		Colisoes retorno = this.ValidaColisao(validar, false);
+		
+		_caixaColisao.x = x;
+		_caixaColisao.y = y;
+		
+		return retorno;
 	}
 	
 	public Rectangle GetCaixaColisao()
@@ -411,11 +450,12 @@ public abstract class GameObject
 	
 	/**
 	 * Retorna a lista de {@link GameObject} que podem colidir com este.
-	 * @return {@link HashSet} de {@link GameObject.TipoGameObject} de {@link GameObject} que podem colidir com este. Ou nulo caso nï¿½o exista colidï¿½veis ({@link GameObject#GetColidivel()} == false) .
+	 * @return {@link HashMap} de {@link GameObject.TipoGameObject} de {@link GameObject} que podem colidir com este. Ou nulo caso nï¿½o exista colidï¿½veis ({@link GameObject#GetColidivel()} == false).
 	 * @see {@link GameObject#GetColidivel()}.
+	 * @see O valor vinculado a chave do Hash é o resultado caso eles colidão.
 	 */
 	@SuppressWarnings("javadoc")
-	public HashSet<GameObject.GameObjects> GetColidiveis()
+	public HashMap<GameObject.GameObjects, Colisoes> GetColidiveis()
 	{
 		return _colidiveis;
 	}

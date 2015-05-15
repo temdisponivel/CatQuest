@@ -15,7 +15,8 @@ public class ObjetoCenario extends GameObject
 	 * Cria um novo objeto de cenário baseado em imagem.
 	 * @param posicao {@link Vectoe2 Posição} do objeto na tela.
 	 * @param textura Caminho da textura do objeto. Pode ser string branca para carregar sem imagem. Note que, caso não haja imagem, nem tamanho, o objeto será inútil.
-	 * @param tamanho {@link Rectangle Tamanho} da textura. Pode ser nulo para pegar o tamanho da imagem.
+	 * @param tamanho {@link Rectangle Tamanho} da textura. Pode ser nulo para pegar o tamanho da imagem. 
+	 * Se não for nulo e houver textura, o tamanho da textura será definido como este.
 	 */
 	public ObjetoCenario(Vector2 posicao, String textura, Rectangle tamanho, float rotacao)
 	{
@@ -30,14 +31,10 @@ public class ObjetoCenario extends GameObject
 		
 		this.SetPosicao(posicao);
 		
-		_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
-		
 		if (tamanho != null)
 			_sprite.setSize(tamanho.width, tamanho.height);
-		
-		_sprite.setRotation(rotacao);
-		
-		_caixaColisao.set(_sprite.getBoundingRectangle());
+
+		_caixaColisao.setSize(_sprite.getWidth(), _sprite.getHeight());
 		
 		if (textura.equals(""))
 			_sprite = null;

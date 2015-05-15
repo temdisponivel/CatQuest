@@ -2,15 +2,12 @@ package classes.gameobjects.personagens;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Json;
-
 import classes.gameobjects.GameObject;
-import classes.gameobjects.GameObject.Colisoes;
 import classes.uteis.Serializador;
 
 /**

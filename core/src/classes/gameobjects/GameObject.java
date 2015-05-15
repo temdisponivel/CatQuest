@@ -232,6 +232,9 @@ public abstract class GameObject
 		_posicaoTelaAux = _posicaoTela.cpy(); 
 		_caixaColisao.setPosition(_posicaoTela);
 		
+		if (_sprite != null)
+			_sprite.setPosition(posicao.x, posicao.y);
+		
 		if (_telaInserido != null)
 		{
 			_telaInserido.InserirNaMatriz(this, null);

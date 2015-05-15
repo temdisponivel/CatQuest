@@ -1,6 +1,8 @@
 package classes.telas;
 
 import classes.gameobjects.personagens.inimigos.Cachorro;
+import classes.uteis.controle.Controle;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -17,14 +19,16 @@ public class GamePlay extends Tela
 		super.Iniciar();
 		_tipo = Telas.GAMEPLAY;
 		
-		for (int i = 0; i < 1; i++)
-			this.InserirGameObject(new Cachorro());
+		this.InserirGameObject(new Cachorro());
 	}
 
 	@Override
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
+		
+		if (Controle.GetQualquerPause())
+			this.InserirGameObject(new Cachorro());
 	}
 
 	@Override

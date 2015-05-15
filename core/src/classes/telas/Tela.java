@@ -156,23 +156,7 @@ public class Tela implements OnCompletionListener
 				
 				if (_matrizMapa != null)
 				{
-					float posicaoX = gameObject.GetPosicao().x;
-					float posicaoY = gameObject.GetPosicao().y;
-					
-					int quantidadeX = (int) Math.abs((gameObject.GetLargura() / _precisaoMapaX));
-					int quantidadeY = (int) Math.abs((gameObject.GetAltura() / _precisaoMapaY));
-					
-					for (int x = 0, i = 0; x < quantidadeX; x++)
-					{
-						for (int y = 0, j = 0; y < quantidadeY; y++)
-						{
-							i = Math.abs((int) (posicaoX / _precisaoMapaX) + x);
-							j = Math.abs((int) (posicaoY / _precisaoMapaY) + y);
-							
-							if (i < _matrizMapa.length && j < _matrizMapa[i].length)
-								_matrizMapa[i][j].add(gameObject);
-						}
-					}
+					this.InserirNaMatriz(gameObject, null);
 				}
 			}
 			
@@ -183,7 +167,7 @@ public class Tela implements OnCompletionListener
 		{
 			_removeGameObject = false;
 			
-			for (GameObject remover : _gameObjectsIncluir)
+			for (GameObject remover : _gameObjectsExcluir)
 			{
 				ListaGameObject listaTemp;
 				
@@ -191,17 +175,7 @@ public class Tela implements OnCompletionListener
 				{
 					listaTemp.Remover(remover);
 					
-					float altura, largura;
-					int quantidadeX = (int) Math.abs(((largura = remover.GetLargura()) / _precisaoMapaX));
-					int quantidadeY = (int) Math.abs(((altura = remover.GetAltura()) / _precisaoMapaY));
-					
-					for (int x = 0; x < quantidadeX; x++)
-					{
-						for (int y = 0; y < quantidadeY; y++)
-						{
-							_matrizMapa[Math.abs((int) (largura % _precisaoMapaX) + x)][Math.abs((int) (altura % _precisaoMapaY) + y)].remove(remover);
-						}
-					}
+					this.RemoverDaMatriz(remover, null);
 				}
 			}
 			
@@ -317,7 +291,6 @@ public class Tela implements OnCompletionListener
 		return retorno;
 	}
 	
-	//TODO: validar se o hash de objetos fez diferença
 	/**
 	 * @param campo {@link Rectangle Tamanho} do campo para pegar os {@link GameObject game objects} que estão dentro.  X e Y do Rectangle é utilizado como zero zero - canto inferior esquerdo.
 	 * @return {@link LinkedList<GameObject> Lista} com os objetos que estão nesta região. Ou nulo caso não haja objetos.
@@ -342,7 +315,7 @@ public class Tela implements OnCompletionListener
 				j = Math.abs((int) (campo.y / _precisaoMapaY) + y);
 				
 				if (i < _matrizMapa.length && j < _matrizMapa[i].length)
-					objetos.addAll(_matrizMapa[Math.abs((int) (campo.x / _precisaoMapaX) + x)][Math.abs((int) (campo.y / _precisaoMapaY) + y)]);
+					objetos.addAll(_matrizMapa[i][j]);
 				else
 					return null;
 			}
@@ -353,26 +326,81 @@ public class Tela implements OnCompletionListener
 	
 	/**
 	 * Atualiza a representação do {@link GameObject objeto} na matriz representativa do mapa.
-	 * @param objeto Objeto a atualizar a posição.
-	 * @param antigaPosicao {@link Vector2 Posição} antiga do game object.
+	 * @param objeto {@link GameObject Objeto} a atualizar a posição.
 	 * @param novaPosicao {@link Vector2 Posição} onde game object ficará agora.
+	 * @param antigaPosicao {@link Vector2 Posição} antiga do game object.
 	 */
-	public void AtualizaPosicaoMatriz(Vector2 antigaPosicao, Vector2 novaPosicao, GameObject objeto)
+	public void AtualizaPosicaoMatriz(GameObject objeto, Vector2 novaPosicao, Vector2 antigaPosicao)
 	{
 		if (_matrizMapa == null) 
 			return;
 		
+		this.RemoverDaMatriz(objeto, antigaPosicao);
+		this.InserirNaMatriz(objeto, novaPosicao);
+	}
+	
+	/**
+	 * Insere um {@link GameObject objeto} na matriz representativa do mapa.
+	 * @param objeto {@link GameObject GameObject} para inserir.
+	 * @param posicao {@link Vector2 Posição} dele no mapa. Pode ser nulo para {@link GameObject#GetPosicao() pegar} a posição do objeto.
+	 * @return True caso tenha inserido. Falso caso contrário.
+	 */
+	public boolean InserirNaMatriz(GameObject objeto, Vector2 posicao)
+	{
+		if (_matrizMapa == null) 
+			return false;
+		
 		int quantidadeX = (int) Math.abs((objeto.GetLargura() / _precisaoMapaX));
 		int quantidadeY = (int) Math.abs((objeto.GetAltura() / _precisaoMapaY));
 		
-		for (int x = 0; x < quantidadeX; x++)
+		if (posicao == null)
+			posicao = objeto.GetPosicao();
+		
+		for (int x = 0, i = 0; x < quantidadeX; x++)
 		{
-			for (int y = 0; y < quantidadeY; y++)
+			for (int y = 0, j = 0; y < quantidadeY; y++)
 			{
-				_matrizMapa[Math.abs((int) (antigaPosicao.x % _precisaoMapaX) + x)][Math.abs((int) (antigaPosicao.y % _precisaoMapaY) + y)].remove(objeto);
-				_matrizMapa[Math.abs((int) (novaPosicao.x % _precisaoMapaX) + x)][Math.abs((int) (novaPosicao.y % _precisaoMapaY) + y)].add(objeto);
+				i = Math.abs((int) (posicao.x / _precisaoMapaX) + x);
+				j = Math.abs((int) (posicao.y / _precisaoMapaY) + y);
+				
+				if (i < _matrizMapa.length && j < _matrizMapa[i].length)
+					_matrizMapa[i][j].add(objeto);
 			}
 		}
+		
+		return true;
+	}
+	
+	/**
+	 * Remove um {@link GameObject objeto} da matriz representativa do mapa.
+	 * @param objeto {@link GameObject GameObject} para remover.
+	 * @param posicao {@link Vector2 Posição} dele no mapa. Pode ser nulo para {@link GameObject#GetPosicao() pegar} a posição do objeto.
+	 * @return True caso tenha removido. Falso caso contrário.
+	 */
+	public boolean RemoverDaMatriz(GameObject objeto, Vector2 posicao)
+	{
+		if (_matrizMapa == null) 
+			return false;
+		
+		int quantidadeX = (int) Math.abs((objeto.GetLargura() / _precisaoMapaX));
+		int quantidadeY = (int) Math.abs((objeto.GetAltura() / _precisaoMapaY));
+		
+		if (posicao == null)
+			posicao = objeto.GetPosicao();
+		
+		for (int x = 0, i = 0; x < quantidadeX; x++)
+		{
+			for (int y = 0, j = 0; y < quantidadeY; y++)
+			{
+				i = Math.abs((int) (posicao.x / _precisaoMapaX) + x);
+				j = Math.abs((int) (posicao.y / _precisaoMapaY) + y);
+				
+				if (i < _matrizMapa.length && j < _matrizMapa[i].length)
+					_matrizMapa[i][j].remove(objeto);
+			}
+		}
+		
+		return true;
 	}
 	
 	/**
@@ -412,8 +440,8 @@ public class Tela implements OnCompletionListener
 		
 		this.GerenciaGameObject();
 		
-		_alturaMapa = fundo.GetAltura() + 32;
-		_larguraMapa = fundo.GetLargura() + 32;
+		_alturaMapa = fundo.GetAltura();
+		_larguraMapa = fundo.GetLargura();
 		
 		this.CriaMatriz();
 		

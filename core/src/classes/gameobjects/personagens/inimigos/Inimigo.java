@@ -48,7 +48,6 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	
 	static public HashMap<Integer, Inimigo> inimigos = new HashMap<Integer, Inimigo>();
 	static private Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
-	static int i = 0;
 	
 	/**
 	 * Cria um novo inimigo.

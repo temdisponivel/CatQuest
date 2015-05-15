@@ -228,12 +228,17 @@ public abstract class GameObject
 	{
 		if (_telaInserido != null)
 		{
-			_telaInserido.AtualizaPosicaoMatriz(_posicaoTela, posicao, this);
+			_telaInserido.RemoverDaMatriz(this, null);
 		}
 		
 		_posicaoTela = posicao;
 		_posicaoTelaAux = _posicaoTela.cpy(); 
 		_caixaColisao.setPosition(_posicaoTela);
+		
+		if (_telaInserido != null)
+		{
+			_telaInserido.InserirNaMatriz(this, null);
+		}
 		
 		this.ValidaColisaoRegiao();
 	}
@@ -375,7 +380,7 @@ public abstract class GameObject
 			filho.ValidaColisao(colidiu);
 		}
 		
-		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()) || (!_colidiPai && colidiu == _pai))
+		if (colidiu == null || !_colidiveis.contains(colidiu.GetTipo()) || !_camada.GetColidivel() || (!_colidiPai && colidiu == _pai))
 			return Colisoes.Passavel;
 		
 		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))

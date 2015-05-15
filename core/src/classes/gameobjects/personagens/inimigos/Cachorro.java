@@ -2,7 +2,7 @@ package classes.gameobjects.personagens.inimigos;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-
+import com.badlogic.gdx.math.MathUtils;
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
@@ -24,6 +24,8 @@ public class Cachorro extends Inimigo
 		_tipo = GameObjects.Inimigo;
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/inimigo")));
 		_agilidade = 10;
+		
+		this.SetPosicao(MathUtils.random(1000), MathUtils.random(50));
 	}
 	
 	@Override

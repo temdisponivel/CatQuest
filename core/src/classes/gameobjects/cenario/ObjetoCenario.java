@@ -28,12 +28,15 @@ public class ObjetoCenario extends GameObject
 		else
 			_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local(textura)));
 		
+		this.SetPosicao(posicao);
+		
+		_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
+		
 		if (tamanho != null)
 			_sprite.setSize(tamanho.width, tamanho.height);
 		
-		this.SetPosicao(posicao);
-		_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
 		_sprite.setRotation(rotacao);
+		
 		_caixaColisao.set(_sprite.getBoundingRectangle());
 		
 		if (textura.equals(""))

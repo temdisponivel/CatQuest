@@ -2,7 +2,10 @@ package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
+
+import catquest.CatQuest;
 import classes.gameobjects.personagens.Personagem;
 import classes.uteis.Reciclador;
 import classes.uteis.Reciclavel;
@@ -45,7 +48,6 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	
 	static public HashMap<Integer, Inimigo> inimigos = new HashMap<Integer, Inimigo>();
 	static private Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
-	boolean temp = false;
 	static int i = 0;
 	
 	/**
@@ -55,6 +57,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	{
 		super();
 		inimigos.put(this.GetId(), this);
+		_colidiveis.add(GameObjects.Heroi);
 	}
 	
 	@Override
@@ -66,11 +69,9 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		{
 			this.MovimentaCaminho(deltaTime);
 		}
-		
-		if (!temp)
+		else
 		{
-			this.GetCaminho(new Vector2(1000, 369));
-			temp = true;
+			this.GetCaminho(new Vector2(Gdx.input.getX(), CatQuest.instancia.GetAlturaTela()-Gdx.input.getY()));
 		}
 	}
 

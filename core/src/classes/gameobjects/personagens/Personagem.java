@@ -245,7 +245,10 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * Este caminho também é defino em {@link #_caminho}, mas quando não há caminho {@link #_caminho} fica limpa.
 	 */
 	protected LinkedList<Vector2> GetCaminho(Vector2 destino)
-	{		
+	{	
+		if (_telaInserido == null)
+			return null;
+					
 		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
@@ -253,6 +256,10 @@ public abstract class Personagem extends GameObject implements Serializador
 		CelulaCaminho atual = new CelulaCaminho(0, Manhattan(_posicaoTela, destino), null, _posicaoTela);
 		CelulaCaminho temp = null;
 		listaAberta.add(atual);
+		
+		
+		if (!_telaInserido.GetCampoLivre(this, Rectangle.tmp.setPosition(destino).setSize(_caixaColisao.width, _caixaColisao.height)))
+			return null;
 		
 		//enquanto não cheguei no meu destino
 		while (!listaAberta.isEmpty())

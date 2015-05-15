@@ -17,7 +17,7 @@ public class GamePlay extends Tela
 		super.Iniciar();
 		_tipo = Telas.GAMEPLAY;
 		
-		for (int i = 0; i < 50; i++)
+		for (int i = 0; i < 100; i++)
 			this.InserirGameObject(new Cachorro());
 	}
 

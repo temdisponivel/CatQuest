@@ -235,6 +235,14 @@ public abstract class GameObject
 		_posicaoTelaAux = _posicaoTela.cpy(); 
 		_caixaColisao.setPosition(_posicaoTela);
 		
+		this.ValidaColisaoRegiao();
+	}
+	
+	/**
+	 * Valida colisão com os {@link GameObject objetos} que estão na região deste.
+	 */
+	public void ValidaColisaoRegiao()
+	{
 		if (this.GetColidivel())
 		{
 			if (_telaInserido != null)

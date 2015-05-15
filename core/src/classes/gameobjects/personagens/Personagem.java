@@ -1,14 +1,13 @@
 package classes.gameobjects.personagens;
 
 import java.util.HashMap;
-
+import java.util.LinkedList;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Json;
-
 import classes.gameobjects.GameObject;
-import classes.uteis.Log;
 import classes.uteis.Serializador;
 
 /**
@@ -18,6 +17,44 @@ import classes.uteis.Serializador;
  */
 public abstract class Personagem extends GameObject implements Serializador
 {
+	/**
+	 * Classe que representa uma célular para calcular o A* e guardar valores de custo de movimentação.
+	 * @author matheus
+	 *
+	 */
+	static private class CelulaCaminho
+	{
+		int custoTotal = 0;
+		int custoMovimento = 0;
+		int custoHeuristica = 0;
+		CelulaCaminho parente = null;
+		Vector2 posicao = null;
+		static HashMap<Vector2, CelulaCaminho> celulas = new HashMap<Vector2, CelulaCaminho>();
+		
+		/**
+		 * Cria uma nova célula para o a*
+		 * @param custoMovimento Custo de movimento.
+		 * @param custoHeuristica Custo da heuristica.
+		 * @param parente Parente desta célula.
+		 * @param posicao Posição desta célula.
+		 */
+		public CelulaCaminho(int custoMovimento, int custoHeuristica, CelulaCaminho parente, Vector2 posicao)
+		{
+			this.custoMovimento = custoMovimento;
+			this.custoHeuristica = custoHeuristica;
+			this.parente = parente;
+			this.posicao = posicao;
+			this.custoTotal = this.custoHeuristica + this.custoMovimento;
+			celulas.put(posicao, this);
+		}
+		
+		@Override
+		public boolean equals(Object obj)
+		{
+			return obj == this; 
+		}
+	}
+	
 	/**
 	 * Enumarador para os sons do personagem.
 	 * @author matheus
@@ -65,6 +102,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected Estado _estado = Estado.Parado;
 	protected boolean _colidido = false;
 	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/" + this.toString());
+	protected LinkedList<Vector2> _caminho = null;
 	
 	/**
 	 * Cria um novo personagem.
@@ -74,6 +112,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		super();
 		personagens.put(this.GetId(), this);
 		_colidiveis.add(GameObjects.Cenario);
+		_caminho = new LinkedList<Vector2>();
 	}
 	
 	@Override
@@ -140,6 +179,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		return _coeficienteCritico;
 	}
 	
+	
+	//TODO: fazer movimentação segundo deltatime
 	/**
 	 * Movimenta o {@link Personagem personagem} para o destino desejado.
 	 * @param destino {@link Vector2 Destino} do personagem.
@@ -151,9 +192,28 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		boolean retorno = false;
 		this.TocaSom(SomPersonagem.Movimenta);
-		Log.instancia.Logar(destino.toString(), String.valueOf(deltaTime));
-		this.SetPosicao(this.GetPosicao().lerp(destino, (retorno = 1 * deltaTime > 1) ? 1 : 1 * deltaTime));
+		this.SetPosicao(_posicaoTela.lerp(destino, (retorno = (_agilidade * deltaTime) >= 1) ? 1 : _agilidade * deltaTime));
 		return retorno;
+	}
+	
+	/**
+	 * Movimenta o personagem pelo caminho definido em {@link #_caminho}. Caso o caminho esteja vazio ou nulo, não faz nada.
+	 * Ele vai se movimentar da posição atual, até a próxima da pilha de caminho segundo este deltatime.
+	 * @param deltaTime Deltatime do frame para realizar a movimentação.
+	 * @return True se alcançou o próximo ponto do caminho, falso caso contrário e quando não há caminho.
+	 */
+	public boolean MovimentaCaminho(float deltaTime)
+	{
+		if (_caminho == null || _caminho.isEmpty())
+			return false;
+		
+		if (this.Movimenta(_caminho.element(), deltaTime))
+		{
+			_caminho.pop();
+			return true;
+		}
+		
+		return false;
 	}
 		
 	/**
@@ -176,6 +236,222 @@ public abstract class Personagem extends GameObject implements Serializador
 	public void InfligeDano(Personagem inflige)
 	{
 		inflige.RecebeDano(_ataque);
+	}
+	
+	/**
+	 * Função que retorna um caminho até o destino. Calculado com A*.
+	 * @param destino {@link Vector2 Destino} do objeto.
+	 * @return {@link LinkedList<Vector2> Fila} da posição atual até o destino. Ou nulo caso não haja caminho. 
+	 * Este caminho também é defino em {@link #_caminho}, mas quando não há caminho {@link #_caminho} fica limpa.
+	 */
+	protected LinkedList<Vector2> GetCaminho(Vector2 destino)
+	{		
+		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
+		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
+		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
+		Rectangle aux = new Rectangle(_posicaoTela.x, _posicaoTela.y, _caixaColisao.width, _caixaColisao.height);
+		CelulaCaminho atual = new CelulaCaminho(0, Manhattan(_posicaoTela, destino), null, _posicaoTela);
+		CelulaCaminho temp = null;
+		listaAberta.add(atual);
+		
+		//enquanto não cheguei no meu destino
+		while (!listaAberta.isEmpty())
+		{
+			atual = listaAberta.get(0);
+			//percorre todos os da lista aberta e paga o que tem o menor valor total
+			for (int i= 0; i < listaAberta.size(); i++)
+			{
+				temp = listaAberta.get(i);
+				
+				if (temp.custoTotal < atual.custoTotal)
+					atual = temp;
+			}
+			
+			//retira da lista aberta e coloca na lista fechada
+			listaAberta.remove(atual);
+			listaFechada.add(atual);
+			
+			//se achamos
+			if (aux.setPosition(atual.posicao).contains(destino) || atual.posicao.dst(destino) < _agilidade)
+			{
+				_caminho.addFirst(destino);
+				
+				//cria a pilha do caminho a percorrer e encerra o loop
+				while (atual.parente != null)
+				{
+					_caminho.addFirst(atual.posicao);
+					atual = atual.parente;
+				}
+				
+				break;
+			}
+			
+			//pega os 8 adjacentes a posicao atual
+			adjacentes = this.GetAdjacentesAndaveis(atual, destino);
+			
+			//para cada adjacente
+			for (int i = 0; i < adjacentes.size(); i++)
+			{
+				CelulaCaminho adjacente = adjacentes.get(i);
+				
+				//se ja vimos, retorna
+				if (listaFechada.contains(adjacente))
+					continue;
+
+				//se os adjacentes nao estão na lista aberta, adiciona
+				if (!listaAberta.contains(adjacente))
+				{
+					listaAberta.add(adjacente);
+				}
+				//se já contém, valida a distancia entre o adjacente e o pai dele e verifica se há um melhor caminho
+				else
+				{
+					//se estamos lidando com um adjacente em algulo reto
+					if ((atual.posicao.x == adjacente.posicao.x) || (atual.posicao.y == adjacente.posicao.y))
+					{
+						if (atual.custoMovimento + 10 < adjacente.custoMovimento)
+						{
+							adjacente.custoMovimento = atual.custoMovimento + 10;
+							adjacente.custoTotal = adjacente.custoHeuristica + adjacente.custoMovimento;
+							adjacente.parente = atual;
+						}
+					}
+					//se estamos lidando com um adjacente na diagonal
+					else
+					{
+						if (atual.custoMovimento + 14 < adjacente.custoMovimento)
+						{
+							adjacente.custoMovimento = atual.custoMovimento + 14;
+							adjacente.custoTotal = adjacente.custoHeuristica + adjacente.custoMovimento;
+							adjacente.parente = atual;
+						}
+					}
+				}
+			}
+		}
+		
+		return _caminho;
+	}
+	
+	/**
+	 * Retorna um custo heurístico entre a posição e o destino.
+	 * @param posicao {@link Vector2 Posicao} atual.
+	 * @param destino {@link Vector2 Posicao} do destino.
+	 */
+	protected int Manhattan(Vector2 posicao, Vector2 destino)
+	{
+		int x = (int) Math.abs(posicao.x - destino.x);
+		int y = (int) Math.abs(posicao.y - destino.y);
+		return 1 * (x + y);
+	}
+	
+	/**
+	 * @param atual {@link CelulaCaminho Celula} para pegar os adjacentes.
+	 * @return {@link LinkedList<CelulaCaminho> Lista} com os adjacentes andaveis.
+	 */
+	protected LinkedList<CelulaCaminho> GetAdjacentesAndaveis(CelulaCaminho atual, Vector2 destino)
+	{
+		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
+		Rectangle auxCampo = new Rectangle(0, 0, _caixaColisao.width, _caixaColisao.height);;
+		Vector2 auxPosicao = new Vector2();
+		
+		//DIREITA
+		auxPosicao.x = atual.posicao.x + _agilidade;
+		auxPosicao.y = atual.posicao.y;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+		
+		//CIMA
+		auxPosicao.x = atual.posicao.x;
+		auxPosicao.y = atual.posicao.y + _agilidade;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+		
+		//ESQUERDA
+		auxPosicao.x = atual.posicao.x - _agilidade;
+		auxPosicao.y = atual.posicao.y;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+		
+		//BAIXO
+		auxPosicao.x = atual.posicao.x;
+		auxPosicao.y = atual.posicao.y - _agilidade;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+		
+		//NORDESTE
+		auxPosicao.x = atual.posicao.x + _agilidade;
+		auxPosicao.y = atual.posicao.y + _agilidade;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+		
+		//NOROESTE
+		auxPosicao.x = atual.posicao.x - _agilidade;
+		auxPosicao.y = atual.posicao.y + _agilidade;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+		
+		//SUDOESTE
+		auxPosicao.x = atual.posicao.x - _agilidade;
+		auxPosicao.y = atual.posicao.y - _agilidade;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+		
+		//SUDESTE
+		auxPosicao.x = atual.posicao.x + _agilidade;
+		auxPosicao.y = atual.posicao.y - _agilidade;
+		auxCampo.setPosition(auxPosicao);
+		if (_telaInserido.GetCampoLivre(this, auxCampo))
+		{
+			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14, this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
+			else
+				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+		}
+
+		return adjacentes;
 	}
 	
 	/**

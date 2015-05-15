@@ -2,8 +2,6 @@ package classes.gameobjects.personagens.inimigos;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.math.Vector2;
-
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;

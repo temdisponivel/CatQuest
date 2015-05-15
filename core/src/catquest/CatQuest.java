@@ -119,7 +119,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		for (Tela tela : _pilhaTelas)
 		{
 			if (tela.GetSeAtualiza())
-				tela.Atualiza(Gdx.graphics.getDeltaTime()*1000);
+				tela.Atualiza(Gdx.graphics.getDeltaTime()*10);
 		}
 		
 		_tempoJogo += Gdx.graphics.getDeltaTime()*1000;

@@ -317,6 +317,7 @@ public class Tela implements OnCompletionListener
 		return retorno;
 	}
 	
+	//TODO: validar se o hash de objetos fez diferença
 	/**
 	 * @param campo {@link Rectangle Tamanho} do campo para pegar os {@link GameObject game objects} que estão dentro.  X e Y do Rectangle é utilizado como zero zero - canto inferior esquerdo.
 	 * @return {@link LinkedList<GameObject> Lista} com os objetos que estão nesta região. Ou nulo caso não haja objetos.
@@ -331,7 +332,7 @@ public class Tela implements OnCompletionListener
 		
 		LinkedList<GameObject> objetos = new LinkedList<GameObject>();
 		int quantidadeX = (int) (campo.width / _precisaoMapaX);
-		int quantidadeY = (int) (campo.height / _precisaoMapaY);
+		int quantidadeY = (int) (campo.height / _precisaoMapaY);		
 		
 		for (int x = 0, i = 0; x <= quantidadeX; x++)
 		{

@@ -22,6 +22,7 @@ import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Rectangle;
@@ -427,15 +428,19 @@ public class Tela implements OnCompletionListener
 				MapObject obj = objetos.get(j);
 				MapProperties prop = obj.getProperties();
 				
-				//cria o objeto e adiciona no mapa
+				//Se não existe as propriedades necessárias, cria padrão
+				if (!prop.containsKey("rotation"))
+					prop.put("rotation", 0f);
+				
 				if (!prop.containsKey("Textura"))
+					prop.put("Textura", "");
+				
+				if (obj instanceof RectangleMapObject)
 					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 
-							new Rectangle(0, 0, prop.get("width", Float.class), prop.get("heigth", Float.class))));
-				else if (!prop.containsKey("rotation"))
-					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), prop.get("Textura").toString()));
+							prop.get("Textura").toString(), ((RectangleMapObject) obj).getRectangle(), prop.get("rotation", Float.class)));
 				else
 					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 
-							prop.get("Textura").toString(), prop.get("rotation", Float.class)));
+							prop.get("Textura").toString(), null, prop.get("rotation", Float.class)));
 			}
 		}
 		

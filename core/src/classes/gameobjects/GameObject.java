@@ -381,7 +381,7 @@ public abstract class GameObject
 	
 	public Rectangle GetCaixaColisao()
 	{
-		return new Rectangle(_posicaoTela.x, _posicaoTela.y, _sprite.getRegionWidth(), _sprite.getRegionHeight());
+		return _caixaColisao;
 	}
 	
 	/**

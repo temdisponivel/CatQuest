@@ -14880,3 +14880,2187 @@ Data: Thu May 14 06:53:04 BRT 2015 | Mensagem: 17.1995
 Data: Thu May 14 06:53:04 BRT 2015 | Mensagem: [1000.0:369.0]
 
 Data: Thu May 14 06:53:04 BRT 2015 | Mensagem: 17.304869
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: 10.402833
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: [10.0:10.0]
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: 6.37348
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: [20.0:20.0]
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: 17.324028
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: [30.0:30.0]
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: 16.367151
+
+Data: Thu May 14 23:58:46 BRT 2015 | Mensagem: [40.0:40.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.721216
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [50.0:50.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 18.233694
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [60.0:60.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 13.814338
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [70.0:70.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.455057
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [80.0:80.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.202919
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [90.0:90.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.321669
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [100.0:100.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.846083
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [110.0:110.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.594652
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [120.0:120.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.314483
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [130.0:130.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.372608
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [140.0:140.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.057184
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [150.0:150.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.074305
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [160.0:160.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.206345
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [170.0:170.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.663074
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [180.0:180.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.917962
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [190.0:190.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.557344
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [200.0:200.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.285044
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [210.0:210.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.031885
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [220.0:220.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.138948
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [230.0:230.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.845076
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [240.0:240.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.021622
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [250.0:250.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.984657
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [260.0:260.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.991156
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [270.0:270.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.96312
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [280.0:280.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.026735
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [290.0:290.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.404425
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [300.0:300.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.326799
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [310.0:310.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.365423
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [320.0:320.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.546057
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [330.0:330.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.222798
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [340.0:340.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.09721
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [350.0:350.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.273737
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [360.0:360.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.07157
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [370.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.39315
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [380.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.063684
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [390.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.960041
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [400.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.073946
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [410.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.98192
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [420.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.038383
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [430.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.041449
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [440.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.363369
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [450.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.143755
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [460.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.36544
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [470.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.17829
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [480.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.073622
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [490.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.382528
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [500.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.153315
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [510.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 15.236825
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [520.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.436924
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [530.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.103025
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [540.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.034622
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [550.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.38152
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [560.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.09071
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [570.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.32815
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [580.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.354475
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [590.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.299757
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [600.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.309334
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [610.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 17.054104
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [620.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.963787
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [630.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.199518
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: [640.0:370.0]
+
+Data: Thu May 14 23:58:47 BRT 2015 | Mensagem: 16.333282
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [650.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.472504
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [660.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.497835
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [670.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.378782
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [680.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.175213
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [690.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.262465
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [700.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.126974
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [710.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.264519
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [720.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.184807
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [730.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.10371
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [740.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.252527
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [750.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.13144
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [760.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.799576
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [770.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.94942
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [780.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.010332
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [790.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.87142
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [800.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.017157
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [810.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.029148
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [820.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.995262
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [830.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.00176
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [840.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.398624
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [850.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.356546
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [860.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.159473
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [870.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.266571
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [880.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.210447
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [890.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.39623
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [900.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.050016
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [910.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.27066
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [920.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.284683
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [930.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 15.2686405
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [940.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.969604
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [950.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.252527
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [960.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.40923
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [970.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.248781
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [980.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.326765
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [990.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.171124
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:370.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.15708
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.102343
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.354475
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.323343
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.430765
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.368843
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.06437
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.009972
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.091736
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.02742
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.409555
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 16.354836
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.288448
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.218315
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.295633
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.217974
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:48 BRT 2015 | Mensagem: 17.326424
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.16187
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.20294
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.475582
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.130396
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.354132
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.477308
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.36508
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.442741
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.058552
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.321308
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.327791
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.256975
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.139288
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.116026
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.373976
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.07634
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.227913
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.240555
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.156397
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.009632
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.028446
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.130396
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.431808
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.453688
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.448572
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.419476
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.295649
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.529995
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.349344
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.442072
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.219345
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.494057
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.323019
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.265867
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.485863
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.601496
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.355162
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 17.320265
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.34902
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:49 BRT 2015 | Mensagem: 16.943258
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.979183
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.924444
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.085918
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.4821
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.284
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.294607
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.336018
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.427002
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.407862
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.340809
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.365423
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.383896
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.13144
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.591557
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.255966
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.421871
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.229605
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.420843
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.249449
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.43145
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.177948
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.384924
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.418793
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.518343
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.128
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.327108
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.494415
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.306238
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.514942
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.44719
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.337044
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.287079
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.202238
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.414001
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.306923
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.352766
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.286396
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.408203
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 17.31821
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:50 BRT 2015 | Mensagem: 16.47252
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.452318
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.429056
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.120815
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.414688
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.196764
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.2905
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.458136
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.47081
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.323002
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.413677
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.392448
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.311028
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.173841
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 15.687382
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.326422
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.457108
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.376028
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.53477
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.10508
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.455416
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.100971
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.150255
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.317528
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.45644
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.453688
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.327808
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.454372
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.119448
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.98055
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.440361
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.519714
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.20908
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.135868
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.100649
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.38937
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 16.317886
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.180342
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.305557
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.043156
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:51 BRT 2015 | Mensagem: 17.050684
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.308632
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.320282
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.063
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.973024
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.113632
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.049656
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.034603
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.052736
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.190603
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.051367
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.96584
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.991499
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.01955
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.987051
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.007921
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.024685
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.037683
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.102
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.92205
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.008263
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.0045
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.990814
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.007235
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.003815
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.171791
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 15.972698
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.092764
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.965498
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.98842
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.207712
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.235422
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.385607
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.072237
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.406834
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.073948
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.137579
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.382528
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 16.160175
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: 17.180342
+
+Data: Thu May 14 23:58:52 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.213867
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.261782
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.186157
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.341476
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.33123
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.109867
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.690784
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.288107
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.010654
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.43145
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.358597
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.13792
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.950445
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.986368
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.856367
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.091053
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.247072
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.561792
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.013393
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.171791
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.102
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.157436
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.498505
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.384598
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.343185
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.084553
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.191631
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.2645
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.29531
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.112265
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.17966
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.117393
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.420843
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.295633
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.163237
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.349003
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 16.37844
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.180342
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.173159
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.42358
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:53 BRT 2015 | Mensagem: 17.16392
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.025707
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.113289
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.134157
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.21558
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.181028
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.302132
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.186844
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.080105
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.03734
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.299055
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.256292
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 16.159492
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.138948
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.148184
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.201551
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 16.21149
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.049314
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.113289
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.296661
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.07942
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.138948
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.147844
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.288105
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 16.018885
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.147842
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 16.99526
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.33566
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.260738
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.080105
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.214212
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.099604
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.073603
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.143051
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 16.127333
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.060604
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.149895
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.249449
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 16.246387
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.103369
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:54 BRT 2015 | Mensagem: 17.251844
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.96413
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.252184
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.047262
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.288807
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.077368
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.32916
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.282309
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.178972
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.143051
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.17078
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.056158
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.983973
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.045895
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.086605
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.051023
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.114315
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.02092
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.931631
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.104052
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.136211
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.05171
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.13929
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.100288
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.168026
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.022287
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.235764
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.18
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.158787
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.145447
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.138279
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.200527
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.310343
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.189579
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.197105
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.087973
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.241581
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.308992
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.155712
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 17.121157
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:55 BRT 2015 | Mensagem: 16.148201
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.122185
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.178972
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.025368
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 16.385624
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.306923
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.099262
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.18479
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.253897
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.093788
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.239868
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.13108
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.236107
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.139973
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.21695
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 16.21799
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.099262
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.086605
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.241236
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.116713
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.137579
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.20258
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.267921
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 16.177622
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.204975
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.123209
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.218658
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.054447
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.326424
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.024
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.148867
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.089342
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 16.302835
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.357212
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.061287
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.23816
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.133131
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.295633
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.15845
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.200869
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:56 BRT 2015 | Mensagem: 17.134842
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.271002
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.159817
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.136896
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 16.258701
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.13929
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.147842
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.104397
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.065395
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.11671
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.17658
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.213528
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.21558
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.09892
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.025368
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 16.956945
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 16.272043
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.248423
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.134157
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.315817
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.014763
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.032553
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.01784
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.065735
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.34695
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.180683
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.240553
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 16.219702
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.302816
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.081133
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.278528
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 16.976103
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 16.054464
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.257317
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.16529
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.019894
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.188896
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 16.992525
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.138264
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.25458
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:57 BRT 2015 | Mensagem: 17.128683
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.122868
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 15.98228
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.146473
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.248423
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.09892
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 15.999725
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.131765
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.061287
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.120132
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.143396
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.261421
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.221397
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.348316
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.175896
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.087288
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.253897
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.154684
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.227554
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 16.957289
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 16.980892
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.024685
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.248764
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.125948
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 16.740734
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.104052
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.261421
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.206345
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.279211
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 16.326782
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.172132
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.145447
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.233713
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 16.16907
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.004156
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.438976
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.172474
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 16.113306
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.203606
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 17.241581
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:58 BRT 2015 | Mensagem: 16.982603
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.037683
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.007921
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.002104
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.002104
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.253212
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 16.98021
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.242607
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 16.220045
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.150581
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.168026
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.166317
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.00176
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.178633
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 16.971998
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 16.21149
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.100971
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.011
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.06779
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.083527
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.091736
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.252184
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.133816
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.243977
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.013737
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.01955
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.160158
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 16.191648
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.246029
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: [1000.0:369.0]
+
+Data: Thu May 14 23:58:59 BRT 2015 | Mensagem: 17.16529

@@ -408,29 +408,6 @@ public abstract class GameObject
 		return retorno;
 	}
 	
-	/**
-	 * Valida se, caso este {@link GameObject objeto} estiver na {@link Vector2 posição} parametrizada, colidiria com o {@link GameObject objeto} parametrizado.
-	 * Caso a colisão ocorra, não é chamado o {@link #AoColidir(GameObject)}.
-	 * @param posicao {@link Vector2 Posição} para considerar como atual.
-	 * @param validar {@link GameObject Objeto} para validar colisao.
-	 * @return O valor hipotético da colisão.
-	 * @see #ValidaColisao(GameObject, boolean)
-	 */
-	public Colisoes SimulaColisao(Vector2 posicao, GameObject validar)
-	{
-		float x = _caixaColisao.x;
-		float y = _caixaColisao.x;
-		_caixaColisao.x = posicao.x;
-		_caixaColisao.y = posicao.y;
-		
-		Colisoes retorno = this.ValidaColisao(validar, false);
-		
-		_caixaColisao.x = x;
-		_caixaColisao.y = y;
-		
-		return retorno;
-	}
-	
 	public Rectangle GetCaixaColisao()
 	{
 		return _caixaColisao;

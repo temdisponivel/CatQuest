@@ -1,0 +1,610 @@
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 0.3155958
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.2619724
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6953908
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6007291
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7154723
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6841353
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.603637
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7478704
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.613695
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6082897
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7019249
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7123252
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6308689
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7083225
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6323056
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6154397
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7830393
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.646298
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.530802
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6974776
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7142069
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6275165
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.719475
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7238543
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6123607
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7597415
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6250191
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6152687
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 2.1658254
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.244525
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.5362415
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6997355
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6998723
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6011053
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.7814654
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.6312454
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.640106
+
+Data: Sat May 16 00:35:36 BRT 2015 | Mensagem: 1.700625
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7171146
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5304599
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7351437
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7172515
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6131134
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.614003
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7071936
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6421927
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7023013
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6972041
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5292966
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.8072946
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6839299
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5801685
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7110937
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7210832
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.4996016
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7379493
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7191672
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6219741
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7110937
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.626832
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6494112
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7845101
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6332638
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.613695
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.617424
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.739044
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6176976
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7234435
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7002487
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5235835
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7631285
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.629603
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6184163
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7285751
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7276174
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6807483
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5582733
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7075014
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6152346
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7276859
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7055172
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5977186
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7168753
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6154057
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6295347
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.72317
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7151303
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5293993
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7983999
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6320662
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 2.1319566
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.2020007
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7119147
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.5079832
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7273436
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.7154384
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.6092135
+
+Data: Sat May 16 00:35:37 BRT 2015 | Mensagem: 1.71082
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6458875
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6577245
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7242306
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7109908
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.519615
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7103069
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7197489
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6179031
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7268989
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.604595
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6600848
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7218016
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7102724
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6187924
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.5988133
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7012752
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6149266
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7240936
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.735178
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.5193071
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7284728
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7007277
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6217349
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.73032
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6118135
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6404139
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7391465
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6258059
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6657639
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7283016
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6186557
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6337426
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7324069
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.71472
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.5172201
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.8398976
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.5980949
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6364795
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6209818
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7086304
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6109926
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7153356
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7049699
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6040133
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7298752
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7093487
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.5280993
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7982973
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6068187
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6577245
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7195094
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6165688
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6589218
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.706338
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7112646
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.5947423
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6475639
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6687062
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.6112661
+
+Data: Sat May 16 00:35:38 BRT 2015 | Mensagem: 1.7655573
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.694604
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.5157492
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7180383
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7119489
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6275504
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7265229
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6163634
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6516349
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7421229
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6100003
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6251214
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7162936
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7160883
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.618211
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6199214
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7049015
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6195792
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7147884
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7323384
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.5411677
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7158487
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.739694
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.5351126
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7572099
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6927564
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6233426
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6322715
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7250515
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6190661
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7167383
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7178333
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.5418863
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7292252
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7150619
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.5446575
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7495466
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7164989
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.5134228
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7210149
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7362044
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6315875
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6434929
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7213911
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.620332
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6304584
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.708596
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6212215
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7258726
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.702883
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6174583
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6168425
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7174568
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6099662
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7258383
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7100332
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6243689
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6159532
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7229304
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.6214952
+
+Data: Sat May 16 00:35:39 BRT 2015 | Mensagem: 1.7207754
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7035329
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6161582
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6319978
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7272068
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6288506
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6249162
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7248803
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6601877
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7080146
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7041829
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.521565
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7144805
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7100332
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6113001
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.649856
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7089384
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6176635
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7096223
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7108881
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.5516024
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7471519
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7167383
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.601208
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6356927
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7077409
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6243689
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7368543
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7047644
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6179031
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6349399
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7032936
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6170818
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7157121
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7123936
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.5201964
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.715541
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7213911
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6288162
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6359322
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.71147
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6319635
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7306623
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7095199
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.5134572
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7151988
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7434573
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6258397
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6355557
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7252228
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6201609
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.705312
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6962459
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.601208
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6975118
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7025752
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6149609
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.63104
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7183805
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.6144134
+
+Data: Sat May 16 00:35:40 BRT 2015 | Mensagem: 1.7250859
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6340506
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6303215
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7249149
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7120856
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6219056
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6144819
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7076385
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6556034
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7193041
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7406517
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6067502
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6702456
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6453402
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.5847527
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.732236
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.722178
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6447586
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6062372
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7089725
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6354531
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6259426
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7131462
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6151319
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7204331
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7168753
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6141056
+
+Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6195792

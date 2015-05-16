@@ -497,6 +497,24 @@ public class Tela implements OnCompletionListener
 		music.dispose();
 	}
 	
+	/**
+	 * A precisão com que a matriz representativa do mapa está utilizando no eixo X.
+	 * @return Valor da precisão.
+	 */
+	public float GetPrecisarMapaX()
+	{
+		return _precisaoMapaX;
+	}
+	
+	/**
+	 * A precisão com que a matriz representativa do mapa está utilizando no eixo Y.
+	 * @return Valor da precisão.
+	 */
+	public float GetPrecisarMapaY()
+	{
+		return _precisaoMapaY;
+	}
+	
 	@Override
 	public int hashCode()
 	{

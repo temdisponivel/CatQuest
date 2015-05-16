@@ -1,10 +1,7 @@
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
-
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.math.Vector2;
-
 import catquest.CatQuest;
 import classes.gameobjects.personagens.Personagem;
 import classes.uteis.Reciclador;
@@ -70,7 +67,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		else
 		{
-			this.GetCaminho(new Vector2(Gdx.input.getX(), CatQuest.instancia.GetAlturaTela()-Gdx.input.getY()));
+			_destino.set(Gdx.input.getX(), CatQuest.instancia.GetAlturaTela()-Gdx.input.getY());
+			this.GetCaminho();
 		}
 	}
 

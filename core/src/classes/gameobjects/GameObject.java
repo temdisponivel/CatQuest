@@ -100,8 +100,8 @@ public abstract class GameObject
 		{
 			_sprite.setColor(_cor);
 			_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
-			_caixaColisao.setHeight(_sprite.getHeight());
-			_caixaColisao.setWidth(_sprite.getWidth());
+			_sprite.setRotation(_posicaoTela.angle());
+			_caixaColisao.set(_sprite.getBoundingRectangle());
 		}
 		
 		_caixaColisao.setPosition(_posicaoTela);
@@ -632,6 +632,22 @@ public abstract class GameObject
 			return;
 		
 		_animacao = _animacoes.get(chave.ordinal());
+	}
+	
+	/**
+	 * Rotaciona a {@link Vector2 posição} e sprite deste objeto pelo angulo informado.
+	 * @param angulo Angulo em radiano.
+	 * @see {@link Vector2#rotate(float)}
+	 * @see {@link Sprite#setRotation(float)
+	 */
+	public void Rotaciona(float angulo)
+	{
+		_posicaoTela.rotate(angulo);
+		
+		if (_sprite != null)
+			_sprite.rotate(angulo);
+		
+		_caixaColisao.set(_sprite.getBoundingRectangle());
 	}
 	
 	/**

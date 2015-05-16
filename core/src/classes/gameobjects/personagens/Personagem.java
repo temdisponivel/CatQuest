@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Json;
@@ -103,6 +104,8 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected boolean _colidido = false;
 	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/" + this.toString());
 	protected LinkedList<Vector2> _caminho = null;
+	protected Vector2 _destino = null;
+	private float _coeficienteLerp = 0;
 	
 	/**
 	 * Cria um novo personagem.
@@ -113,6 +116,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		personagens.put(this.GetId(), this);
 		_colidiveis.put(GameObjects.Cenario, Colisoes.NaoPassavel);
 		_caminho = new LinkedList<Vector2>();
+		_destino = new Vector2();
 	}
 	
 	@Override
@@ -190,10 +194,23 @@ public abstract class Personagem extends GameObject implements Serializador
 	 */
 	public boolean Movimenta(Vector2 destino, float deltaTime)
 	{
-		boolean retorno = false;
 		this.TocaSom(SomPersonagem.Movimenta);
-		this.SetPosicao(_posicaoTela.lerp(destino, (retorno = (_agilidade * deltaTime) >= 1) ? 1 : _agilidade * deltaTime));
-		return retorno;
+		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade * _coeficienteLerp));
+		this.Rotaciona(_posicaoTela.angle(destino));
+		
+		if (_agilidade * _coeficienteLerp == 1)
+		{
+			_coeficienteLerp = 0;
+			return true;
+		}
+		
+		//como o lerp tem por padrão o smooth, ou seja, sempre anda uma parte do caminho
+		//e conforme o caminho diminui, ele anda menos do caminho e portanto nunca chega,
+		//devemos utilizar um coeficiente multiplicador para compensar isso
+		//se chegamos no destino
+		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + deltaTime, 0f, 1/_agilidade);
+		
+		return false;
 	}
 	
 	/**
@@ -239,12 +256,11 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 	
 	/**
-	 * Função que retorna um caminho até o destino. Calculado com A*.
-	 * @param destino {@link Vector2 Destino} do objeto.
+	 * Função que retorna um caminho até o {@link #_destino destino}. Calculado com A*.
 	 * @return {@link LinkedList<Vector2> Fila} da posição atual até o destino. Ou nulo caso não haja caminho. 
 	 * Este caminho também é defino em {@link #_caminho}, mas quando não há caminho {@link #_caminho} fica limpa.
 	 */
-	protected LinkedList<Vector2> GetCaminho(Vector2 destino)
+	protected LinkedList<Vector2> GetCaminho()
 	{	
 		if (_telaInserido == null)
 			return null;
@@ -253,11 +269,11 @@ public abstract class Personagem extends GameObject implements Serializador
 		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
 		Rectangle aux = new Rectangle(_posicaoTela.x, _posicaoTela.y, _caixaColisao.width, _caixaColisao.height);
-		CelulaCaminho atual = new CelulaCaminho(0, Manhattan(_posicaoTela, destino), null, _posicaoTela);
+		CelulaCaminho atual = new CelulaCaminho(0, Manhattan(_posicaoTela, _destino), null, _posicaoTela);
 		CelulaCaminho temp = null;
 		listaAberta.add(atual);
 				
-		if (this.GetValorCampo(Rectangle.tmp.setPosition(destino).setSize(_caixaColisao.width, _caixaColisao.height)) == Colisoes.NaoPassavel)
+		if (this.GetValorCampo(Rectangle.tmp.setPosition(_destino).setSize(_caixaColisao.width, _caixaColisao.height)) == Colisoes.NaoPassavel)
 			return null;
 		
 		//enquanto não cheguei no meu destino
@@ -278,9 +294,9 @@ public abstract class Personagem extends GameObject implements Serializador
 			listaFechada.add(atual);
 			
 			//se achamos
-			if (aux.setPosition(atual.posicao).contains(destino) || atual.posicao.dst(destino) < _agilidade)
+			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < _agilidade)
 			{
-				_caminho.addFirst(destino);
+				_caminho.addFirst(_destino);
 				
 				//cria a pilha do caminho a percorrer e encerra o loop
 				while (atual.parente != null)
@@ -293,7 +309,7 @@ public abstract class Personagem extends GameObject implements Serializador
 			}
 			
 			//pega os 8 adjacentes a posicao atual
-			adjacentes = this.GetAdjacentesAndaveis(atual, destino);
+			adjacentes = this.GetAdjacentesAndaveis(atual, _destino);
 			
 			//para cada adjacente
 			for (int i = 0; i < adjacentes.size(); i++)
@@ -356,13 +372,13 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return {@link LinkedList<CelulaCaminho> Lista} com os adjacentes andaveis.
 	 */
 	protected LinkedList<CelulaCaminho> GetAdjacentesAndaveis(CelulaCaminho atual, Vector2 destino)
-	{
+	{		
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
 		Rectangle auxCampo = new Rectangle(0, 0, _caixaColisao.width, _caixaColisao.height);
 		Vector2 auxPosicao = new Vector2();
 		
 		//DIREITA
-		auxPosicao.x = atual.posicao.x + _agilidade;
+		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y;
 		auxCampo.setPosition(auxPosicao);
 		Colisoes resultado = Colisoes.Livre;
@@ -376,7 +392,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		
 		//CIMA
 		auxPosicao.x = atual.posicao.x;
-		auxPosicao.y = atual.posicao.y + _agilidade;
+		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
 		auxCampo.setPosition(auxPosicao);
 		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
 		{
@@ -387,7 +403,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//ESQUERDA
-		auxPosicao.x = atual.posicao.x - _agilidade;
+		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y;
 		auxCampo.setPosition(auxPosicao);
 		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
@@ -400,7 +416,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		
 		//BAIXO
 		auxPosicao.x = atual.posicao.x;
-		auxPosicao.y = atual.posicao.y - _agilidade;
+		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
 		auxCampo.setPosition(auxPosicao);
 		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
 		{
@@ -411,8 +427,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//NORDESTE
-		auxPosicao.x = atual.posicao.x + _agilidade;
-		auxPosicao.y = atual.posicao.y + _agilidade;
+		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
+		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
 		auxCampo.setPosition(auxPosicao);
 		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
 		{
@@ -423,8 +439,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//NOROESTE
-		auxPosicao.x = atual.posicao.x - _agilidade;
-		auxPosicao.y = atual.posicao.y + _agilidade;
+		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
+		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
 		auxCampo.setPosition(auxPosicao);
 		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
 		{
@@ -435,8 +451,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//SUDOESTE
-		auxPosicao.x = atual.posicao.x - _agilidade;
-		auxPosicao.y = atual.posicao.y - _agilidade;
+		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
+		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
 		auxCampo.setPosition(auxPosicao);
 		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
 		{
@@ -447,8 +463,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//SUDESTE
-		auxPosicao.x = atual.posicao.x + _agilidade;
-		auxPosicao.y = atual.posicao.y - _agilidade;
+		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
+		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
 		auxCampo.setPosition(auxPosicao);
 		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
 		{
@@ -548,4 +564,10 @@ public abstract class Personagem extends GameObject implements Serializador
 		_arquivo.writeString(personagem, false);
 	}
 	
+	@Override
+	public void AoColidir(GameObject colidiu)
+	{
+		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
+			this.GetCaminho();
+	}
 }

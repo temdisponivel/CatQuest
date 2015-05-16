@@ -21,7 +21,7 @@ public class Cachorro extends Inimigo
 		_camada = Camada.Personagens;
 		_tipo = GameObjects.Inimigo;
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/inimigo")));
-		_agilidade = 10;
+		_agilidade = 8;
 	}
 	
 	@Override

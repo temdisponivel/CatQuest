@@ -183,8 +183,6 @@ public abstract class Personagem extends GameObject implements Serializador
 		return _coeficienteCritico;
 	}
 	
-	
-	//TODO: fazer movimentação segundo deltatime
 	/**
 	 * Movimenta o {@link Personagem personagem} para o destino desejado.
 	 * @param destino {@link Vector2 Destino} do personagem.
@@ -196,7 +194,6 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade * _coeficienteLerp));
-		this.Rotaciona(_posicaoTela.angle(destino));
 		
 		if (_agilidade * _coeficienteLerp == 1)
 		{
@@ -226,7 +223,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		
 		if (this.Movimenta(_caminho.element(), deltaTime))
 		{
-			_caminho.pop();
+			_caminho.removeFirst();
 			return true;
 		}
 		
@@ -262,7 +259,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 */
 	protected LinkedList<Vector2> GetCaminho()
 	{	
-		if (_telaInserido == null)
+		if (_telaInserido == null || _caminho == null)
 			return null;
 					
 		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
@@ -280,6 +277,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		while (!listaAberta.isEmpty())
 		{
 			atual = listaAberta.get(0);
+			
 			//percorre todos os da lista aberta e paga o que tem o menor valor total
 			for (int i= 0; i < listaAberta.size(); i++)
 			{
@@ -567,7 +565,5 @@ public abstract class Personagem extends GameObject implements Serializador
 	@Override
 	public void AoColidir(GameObject colidiu)
 	{
-		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
-			this.GetCaminho();
 	}
 }

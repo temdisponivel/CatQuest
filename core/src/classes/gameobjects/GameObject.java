@@ -100,7 +100,6 @@ public abstract class GameObject
 		{
 			_sprite.setColor(_cor);
 			_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
-			_sprite.setRotation(_posicaoTela.angle());
 			_caixaColisao.set(_sprite.getBoundingRectangle());
 		}
 		

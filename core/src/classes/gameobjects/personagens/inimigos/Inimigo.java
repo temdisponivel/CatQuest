@@ -1,9 +1,15 @@
+//TODO: colocar campo de visao pro A*
+
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
+
 import com.badlogic.gdx.Gdx;
+
 import catquest.CatQuest;
+import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
+import classes.uteis.Camada;
 import classes.uteis.Reciclador;
 import classes.uteis.Reciclavel;
 
@@ -52,6 +58,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public Inimigo()
 	{
 		super();
+		_camada = Camada.Personagens;
+		_tipo = GameObjects.Inimigo;
 		inimigos.put(this.GetId(), this);
 		_colidiveis.put(GameObjects.Heroi, Colisoes.Passavel);
 	}
@@ -82,5 +90,14 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Recicla()
 	{
 		this.Redefine();
+	}
+	
+	@Override
+	public void AoColidir(GameObject colidiu)
+	{
+		super.AoColidir(colidiu);
+		
+		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
+			this.GetCaminho();
 	}
 }

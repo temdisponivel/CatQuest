@@ -230,9 +230,22 @@ public abstract class GameObject
 		_posicaoTela = posicao;
 		_posicaoTelaAux = _posicaoTela.cpy(); 
 		_caixaColisao.setPosition(_posicaoTela);
-		
+	
 		if (_sprite != null)
-			_sprite.setPosition(posicao.x, posicao.y);
+			_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
+		
+		_caixaColisao.setPosition(_posicaoTela);
+		
+		if (this.GetSePai())
+		{
+			GameObject filho = null;
+			
+			for (int i = 0; i < _filhos.size(); i++)
+			{
+				filho = _filhos.get(i);
+				filho.SetPosicaoRelativa(_posicaoTela);
+			}
+		}
 		
 		if (_telaInserido != null)
 		{

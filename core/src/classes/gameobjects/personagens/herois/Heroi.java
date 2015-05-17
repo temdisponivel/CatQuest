@@ -58,12 +58,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 	
 	@Override
-	public void Inicia()
-	{
-		_tipo = GameObjects.Heroi;
-	}
-	
-	@Override
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);

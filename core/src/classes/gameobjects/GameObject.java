@@ -417,7 +417,11 @@ public abstract class GameObject
 			if (colidiu.GetColidiveis().containsKey(_tipo))
 				outro = colidiu.GetColidiveis().get(_tipo);
 			
-			return outro.ordinal() > (este = _colidiveis.get(colidiu.GetTipo())).ordinal() ? outro : este;
+			if (retorno.ordinal() < outro.ordinal())
+				retorno = outro;
+			
+			if (retorno.ordinal() < (este = _colidiveis.get(colidiu.GetTipo())).ordinal())
+				retorno = este;
 		}
 		
 		return retorno;

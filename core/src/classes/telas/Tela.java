@@ -56,8 +56,8 @@ public class Tela implements OnCompletionListener
 	protected LinkedList<GameObject> _gameObjectsIncluir = null;
 	protected LinkedList<GameObject> _gameObjectsExcluir = null;
 	protected LinkedList<GameObject>[][] _matrizMapa = null;
-	protected float _precisaoMapaY = 32f;
-	protected float _precisaoMapaX = 32f;
+	protected float _precisaoMapaY = 8f;
+	protected float _precisaoMapaX = 8f;
 	protected float _alturaMapa = 0;
 	protected float _larguraMapa = 0;
 	protected FileHandle _arquivoMapa = null;
@@ -328,9 +328,9 @@ public class Tela implements OnCompletionListener
 		if (posicao == null)
 			posicao = objeto.GetPosicao();
 		
-		for (int x = 0, i = 0; x < quantidadeX; x++)
+		for (int x = 0, i = 0; x <= quantidadeX; x++)
 		{
-			for (int y = 0, j = 0; y < quantidadeY; y++)
+			for (int y = 0, j = 0; y <= quantidadeY; y++)
 			{
 				i = Math.abs((int) (posicao.x / _precisaoMapaX) + x);
 				j = Math.abs((int) (posicao.y / _precisaoMapaY) + y);
@@ -360,9 +360,9 @@ public class Tela implements OnCompletionListener
 		if (posicao == null)
 			posicao = objeto.GetPosicao();
 		
-		for (int x = 0, i = 0; x < quantidadeX; x++)
+		for (int x = 0, i = 0; x <= quantidadeX; x++)
 		{
-			for (int y = 0, j = 0; y < quantidadeY; y++)
+			for (int y = 0, j = 0; y <= quantidadeY; y++)
 			{
 				i = Math.abs((int) (posicao.x / _precisaoMapaX) + x);
 				j = Math.abs((int) (posicao.y / _precisaoMapaY) + y);
@@ -434,7 +434,7 @@ public class Tela implements OnCompletionListener
 					prop.put("rotation", 0f);
 				
 				if (!prop.containsKey("Textura"))
-					prop.put("Textura", "");
+					prop.put("Textura", "sprites//bloqueio");
 				
 				if (obj instanceof RectangleMapObject)
 					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 

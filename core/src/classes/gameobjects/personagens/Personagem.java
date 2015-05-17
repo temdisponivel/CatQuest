@@ -116,11 +116,14 @@ public abstract class Personagem extends GameObject implements Serializador
 	public Personagem()
 	{
 		super();
+		
+			
 		personagens.put(this.GetId(), this);
 		_colidiveis.put(GameObjects.Cenario, Colisoes.NaoPassavel);
 		_caminho = new LinkedList<Vector2>();
 		_destino = new Vector2();
 		_camada = Camada.Personagens;
+
 	}
 	
 	@Override

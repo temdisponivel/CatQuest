@@ -608,3 +608,4854 @@ Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.7168753
 Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6141056
 
 Data: Sat May 16 00:35:41 BRT 2015 | Mensagem: 1.6195792
+
+Data: Sat May 16 22:53:04 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.Sprite.setColor(Sprite.java:273)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:101)
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:65)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:30)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sat May 16 22:58:23 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.Sprite.setColor(Sprite.java:273)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:101)
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:65)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:30)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sat May 16 22:59:18 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:61)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:30)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:37 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:38 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.0]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.054152217]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.14670736]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.25908485]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.37777892]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.5834319]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.62373966]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.72924864]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.8467905]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:0.9587773]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:1.0777777]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:39 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.2828555]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.0770323]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:1.0434192]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.93203807]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.813706]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.70177644]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.5825932]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.37873214]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.34521225]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.2324907]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.11365866]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:0.0016502962]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-0.11730179]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-0.32304975]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-0.35862678]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-0.46782002]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-0.58649975]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-0.6983522]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-0.81754804]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-1.0184147]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-1.0565631]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:40 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.1686252]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-1.0522661]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.9412792]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.82224286]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.6149198]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.58084977]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.47181064]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.35310045]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.24126412]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:-0.12175472]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.08338755]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.12020104]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.2279195]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.3470096]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.45878142]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.57785714]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.78316426]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.8163885]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:0.9282463]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.0470335]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.1588268]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.2778344]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.4849102]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.5225803]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.6282058]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.7469877]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.858996]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:1.9780145]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.188312]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.2250986]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.328597]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.4477732]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.5590093]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.6784685]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.8829908]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:2.9205015]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.0289223]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.1475859]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.259164]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.3788078]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.58805]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.6220016]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.7297363]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.8473463]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:3.9597273]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.078276]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.2858806]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.3369775]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.444841]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.5484004]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.6600685]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.778227]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:4.986826]
+
+Data: Sat May 16 23:07:41 BRT 2015 | Mensagem: [0.0:5.0267215]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.1297274]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.2473497]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.3596377]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.4783764]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.4783764]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.4783764]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.4783764]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.5982623]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.709251]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:5.8281994]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.034594]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.07018]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.178391]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.297266]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.4093156]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.5282764]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.7359595]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.781231]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.878712]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:6.9974294]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.109393]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.2283487]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.435842]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.469957]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.578564]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.697536]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.8094187]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:7.928437]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.133807]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.168014]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.278515]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.397925]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.509456]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.628517]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.833677]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.866316]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:8.978684]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.098233]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.209719]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.329153]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.535275]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.568204]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.678761]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.79812]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:9.909687]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.029046]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.23651]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.271469]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.379687]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.497719]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.610313]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.728633]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.93639]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:10.970627]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:11.080098]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:11.197747]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:11.310193]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:11.42888]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:11.635753]
+
+Data: Sat May 16 23:07:42 BRT 2015 | Mensagem: [0.0:11.671079]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:11.779625]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:11.8977585]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.010235]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.128807]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.335299]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.368419]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.479411]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.598275]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.710427]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:12.828855]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.035737]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.0677395]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.179843]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.29804]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.410368]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.528981]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.735968]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.772496]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.879587]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:13.998382]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.110707]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.22899]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.436241]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.469808]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.580347]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.698167]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.81066]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:14.929088]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.138409]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.172012]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.280191]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.3982115]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.510676]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.629107]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.836366]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.871742]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:15.9798155]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.098585]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.210922]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.329226]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.53752]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.574074]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.680311]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.798223]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:16.910751]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.02972]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.237427]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.269901]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.379936]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.498423]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.610735]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.729681]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.935766]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:17.96885]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:18.091347]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:18.198439]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:18.31096]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.0:18.429384]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.20712774:18.636513]
+
+Data: Sat May 16 23:07:43 BRT 2015 | Mensagem: [0.24457017:18.673956]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [0.35051823:18.779903]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [0.46909043:18.898476]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [0.58115077:19.010536]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [0.70016557:19.12955]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [0.9049244:19.33431]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [0.93927395:19.36866]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.0502071:19.479593]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.1691413:19.598528]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.2812786:19.710665]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.4002146:19.829601]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.6031349:20.032522]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.6373894:20.066776]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.7504443:20.17983]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.8693318:20.298717]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [1.9813564:20.410742]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [2.100158:20.529543]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [2.307628:20.737013]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [2.3416963:20.771082]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [2.4503143:20.8797]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [2.569218:20.998604]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [2.6813338:21.11072]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [2.8002195:21.229605]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.0108953:21.44028]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.0454938:21.47488]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.1509473:21.580334]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.269385:21.698772]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.3812034:21.81059]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.5004404:21.929829]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.7051632:22.134552]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.7469547:22.176344]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.8513904:22.280779]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [3.9696043:22.398993]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.0821986:22.511587]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.2011294:22.630518]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.4068003:22.83619]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.443601:22.87299]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.552346:22.981735]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.669578:23.098967]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.781823:23.211212]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [4.9007163:23.330105]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.110018:23.539406]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.1444983:23.573887]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.2521434:23.681532]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.369723:23.799112]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.481968:23.911358]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.6006246:24.030014]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.810392:24.23978]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.852203:24.281591]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [5.9534273:24.382816]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.070349:24.499739]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.182196:24.611586]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.3009458:24.730335]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.505699:24.93509]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.5413675:24.970758]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.654512:25.083902]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.7696347:25.199024]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [6.8820014:25.311392]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [7.000651:25.43004]
+
+Data: Sat May 16 23:07:44 BRT 2015 | Mensagem: [7.207295:25.636684]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [7.241734:25.671124]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [7.351947:25.781336]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [7.46977:25.899158]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [7.5821905:26.01158]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [7.6971555:26.126545]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [7.9077935:26.337183]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [7.9408994:26.370289]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.048356:26.477745]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.166708:26.596096]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.279024:26.708412]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.397247:26.826635]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.606923:27.036312]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.640377:27.069765]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.748291:27.17768]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.8663025:27.29569]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [8.978802:27.40819]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [9.097403:27.52679]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [9.306032:27.73542]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [9.351395:27.780783]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [9.448441:27.877829]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [9.566454:27.995842]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [9.678727:28.108116]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [9.797442:28.226831]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.005369:28.43476]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.038425:28.467815]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.149278:28.578669]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.266461:28.695852]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.378932:28.808323]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.497816:28.927206]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.705274:29.134663]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.74241:29.171799]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.849988:29.279377]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [10.966799:29.396187]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.079082:29.508469]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.197511:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.406921:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.439165:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.54797:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.666569:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.778581:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [11.897712:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.105797:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.13856:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.247975:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.366737:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.478949:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.597641:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.806271:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.83767:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [12.948:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.066913:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.178731:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.297699:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.507621:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.549089:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.649367:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.76689:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.878749:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [13.997766:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [14.206766:29.626898]
+
+Data: Sat May 16 23:07:45 BRT 2015 | Mensagem: [14.2396:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [14.348634:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [14.466971:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [14.579103:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [14.697757:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [14.905049:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [14.938768:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.049171:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.167075:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.27967:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.397875:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.605497:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.637722:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.754688:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.867049:29.626898]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [15.97986:29.73971]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [16.097977:29.857826]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [16.306786:30.066635]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [16.366861:30.12671]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [16.448433:30.208282]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [16.567284:30.327133]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [16.67922:30.43907]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [16.798092:30.557941]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.006542:30.766392]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.03999:30.799839]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.148302:30.908152]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.267586:31.027435]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.379517:31.139366]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.498207:31.258057]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.703602:31.463451]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.736368:31.496218]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.848227:31.608076]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [17.967121:31.72697]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.079239:31.839088]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.198168:31.958017]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.403992:32.16384]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.436779:32.19663]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.548632:32.30848]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.667307:32.427155]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.779892:32.53974]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [18.89828:32.65813]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.105528:32.86538]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.142555:32.902405]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.250555:33.010406]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.367699:33.127552]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.480097:33.239952]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.598219:33.358074]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.806692:33.566547]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.83826:33.598114]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [19.949415:33.709267]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.067396:33.827248]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.179802:33.939655]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.298407:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.507685:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.566154:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.656265:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.76753:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.879606:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.760307:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.55076:34.058258]
+
+Data: Sat May 16 23:07:46 BRT 2015 | Mensagem: [20.514055:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [20.410349:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [20.291735:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [20.179693:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [20.060259:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.85403:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.82216:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.710514:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.591515:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.479582:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.360617:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.151577:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.119568:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [19.01003:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.891508:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.779295:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.660631:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.455044:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.370838:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.310263:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.191387:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [18.07957:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.960588:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.75321:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.71807:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.610199:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.491365:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.379519:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.260399:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.052378:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [17.018368:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.910093:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.791582:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.679329:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.559544:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.352077:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.31807:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.21002:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [16.088654:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.9790325:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.859822:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.653508:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.620941:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.509339:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.390708:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.278906:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [15.159351:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.953011:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.920702:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.8098545:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.688059:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.579317:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.459831:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.248949:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.214573:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [14.100249:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [13.9911585:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [13.8787:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [13.760159:34.058258]
+
+Data: Sat May 16 23:07:47 BRT 2015 | Mensagem: [13.55276:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [13.511961:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [13.614821:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [13.733179:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [13.844826:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [13.963955:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.169533:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.201658:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.314321:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.4329605:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.544856:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.664252:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.871758:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [14.904454:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.014089:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.133111:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.245094:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.363935:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.5728445:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.608837:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.715812:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.833077:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [15.945014:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.064148:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.271181:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.302687:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.414602:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.533566:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.645061:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.764091:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [16.969229:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.001152:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.115149:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.233181:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.345531:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.464159:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.670053:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.704224:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.815065:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [17.93363:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.045614:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.164314:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.372458:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.405634:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.515247:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.633354:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.746037:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [18.864254:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.072153:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.105894:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.215405:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.333406:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.445808:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.564425:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.769945:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.802746:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [19.916544:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [20.033665:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [20.14594:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [20.26454:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [20.46956:34.058258]
+
+Data: Sat May 16 23:07:48 BRT 2015 | Mensagem: [20.504917:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [20.61245:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [20.730087:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [20.842503:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [20.960964:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.1705:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.203682:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.31248:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.430178:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.54277:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.661053:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.874092:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [21.906185:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.013554:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.130152:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.242643:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.361195:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.56898:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.601622:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.71218:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.830198:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [22.942648:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.061249:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.273808:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.306782:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.427025:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.530342:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.642807:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.761395:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [23.973812:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.010284:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.112658:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.230734:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.343199:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.46149:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.671917:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.704111:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.813292:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [24.930532:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.042986:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.16153:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.376049:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.408089:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.511906:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.630795:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.74306:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [25.861813:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.070274:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.104723:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.212683:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.331003:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.443027:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.56154:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.769773:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.806551:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [26.913136:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [27.031662:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [27.142614:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [27.26213:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [27.471638:34.058258]
+
+Data: Sat May 16 23:07:49 BRT 2015 | Mensagem: [27.510519:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [27.612501:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [27.734259:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [27.842861:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [27.962742:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.168064:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.20096:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.311913:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.431684:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.542809:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.662575:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.87008:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [28.902462:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.011889:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.131334:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.243196:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.362677:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.573124:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.608803:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.71208:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.832687:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [29.942913:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.062351:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.27193:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.304106:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.412361:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.531387:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.643013:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.762634:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [30.969635:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.00437:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.11237:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.231352:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.34298:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.462484:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.672644:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.70826:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.812422:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [31.931581:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.043404:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.162613:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.372787:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.40555:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.51334:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.631886:34.058258]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.743935:34.170307]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [32.862076:34.28845]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.07397:34.500343]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.10599:34.532364]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.212566:34.63894]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.331192:34.757565]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.44323:34.869602]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.562157:34.98853]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.76827:35.19464]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.802486:35.22886]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [33.91517:35.34154]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [34.0313:35.457672]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [34.14326:35.569633]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [34.262276:35.68865]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [34.470833:35.897205]
+
+Data: Sat May 16 23:07:50 BRT 2015 | Mensagem: [34.507195:35.933567]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [34.61262:36.038994]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [34.73126:36.15763]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [34.84343:36.269802]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [34.96228:36.388653]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.169907:36.59628]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.2033:36.629673]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.312534:36.738907]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.431393:36.857765]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.543697:36.97007]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.662445:37.088818]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.87278:37.299152]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [35.907013:37.333385]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.01275:37.43912]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.13146:37.55783]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.246727:37.6731]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.36284:37.78921]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.570435:37.996807]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.607395:38.033768]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.71387:38.140244]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.831554:38.257927]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [36.944004:38.370377]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.062492:38.488865]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.27148:38.697853]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.304585:38.730957]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.414833:38.841206]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.53154:38.957912]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.64413:39.070503]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.762638:39.18901]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [37.971207:39.39758]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.003117:39.42949]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.114246:39.54062]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.23167:39.658043]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.34406:39.77043]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.462765:39.889137]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.67258:40.098953]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.705647:40.13202]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.813957:40.24033]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [38.93179:40.358162]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.044357:40.47073]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.162785:40.589157]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.370026:40.7964]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.401802:40.828175]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.513817:40.94019]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.63172:41.058094]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.74424:41.170612]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [39.863083:41.289455]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.075546:41.50192]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.109253:41.535625]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.2139:41.640274]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.33203:41.758404]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.44457:41.87094]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.56312:41.989494]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.773388:42.19976]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.808456:42.23483]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [40.93025:42.35662]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [41.032032:42.458405]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [41.14453:42.458405]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [41.262897:42.458405]
+
+Data: Sat May 16 23:07:51 BRT 2015 | Mensagem: [41.471466:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [41.508175:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [41.613426:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [41.73225:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [41.844193:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [41.962963:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.168915:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.20161:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.313282:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.43205:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.544086:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.66307:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.870087:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [42.90196:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.015556:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.13236:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.24411:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.363068:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.573006:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.6061:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.71365:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.832363:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [43.94408:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.063114:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.271267:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.304382:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.413643:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.532246:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.64417:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.76318:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [44.969692:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.002243:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.113663:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.232353:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.344276:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.463352:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.670105:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.70261:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.813686:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [45.932762:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.044296:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.163345:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.371887:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.411118:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.516697:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.632416:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.744427:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [46.863373:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.072056:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.10542:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.213818:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.332592:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.444492:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.56358:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.76903:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.811375:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [47.913834:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [48.03256:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:52 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.140957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.253433:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.371376:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.580997:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.612957:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.721718:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.84063:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [48.952366:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.07153:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.282345:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.316685:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.42175:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.540882:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.458405]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.33905]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.227715]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:42.10864]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.897797]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.86314]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.758293]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.639465]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.527473]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.408127]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.198296]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.16133]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:41.057274]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.939335]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.827103]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.70813]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.49819]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.45953]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.45953]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.45953]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.45953]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.652737:40.45953]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.864998:40.45953]
+
+Data: Sat May 16 23:07:53 BRT 2015 | Mensagem: [49.899654:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.00348:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.121758:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.233765:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.352787:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.563663:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.5991:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.702988:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.822124:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [50.933914:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.053005:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.26184:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.293716:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.40438:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.522198:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.634026:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.753536:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [51.96396:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.00286:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.10501:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.221947:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.33402:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.452995:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.66859:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.701088:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.803722:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [52.92229:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.03419:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.153038:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.36362:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.40809:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.505634:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.622215:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.734577:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [53.853367:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.064423:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.098175:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.20445:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.32235:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.434475:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.553265:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.7656:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.82383:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [54.904457:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.022476:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.135094:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.25352:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.46915:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:54 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:55 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:56 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:57 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:58 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:07:59 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:00 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:01 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:02 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:03 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:04 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:05 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:06 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:07 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:08 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:09 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:10 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:11 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:12 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:13 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:14 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:15 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:16 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]
+
+Data: Sat May 16 23:08:17 BRT 2015 | Mensagem: [55.50114:40.45953]

@@ -1,5 +1,6 @@
 package classes.telas;
 
+import classes.gameobjects.personagens.herois.Barbaro;
 import classes.gameobjects.personagens.inimigos.Cachorro;
 import classes.uteis.controle.Controle;
 
@@ -20,6 +21,7 @@ public class GamePlay extends Tela
 		_tipo = Telas.GAMEPLAY;
 		
 		this.InserirGameObject(new Cachorro());
+		this.InserirGameObject(new Barbaro());
 	}
 
 	@Override

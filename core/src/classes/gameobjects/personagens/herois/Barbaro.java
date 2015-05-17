@@ -23,7 +23,7 @@ public class Barbaro extends Heroi
 		_vida = 150;
 		_ataque = 10;
 		_defesa = 15;
-		_agilidade = 7;
+		_agilidade = 300;
 		
 	}
 

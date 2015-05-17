@@ -1,11 +1,14 @@
 package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
+
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
+import classes.uteis.Log;
 import classes.uteis.Player;
 import classes.uteis.Serializador;
+import classes.uteis.controle.Controle.Direcoes;
 
 /**
  * Classe que representa um herói do jogo.
@@ -49,25 +52,63 @@ public abstract class Heroi extends Personagem implements Serializador
 
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
-	}
-
-	@Override
-	public void Inicia()
-	{
-		_tipo = GameObjects.Heroi;
+		_player = Player.playerPrimario;
+		_player.SetHeroi(this);
 	}
 
 	@Override
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
+ 
+		int playerDirecao;
+		float auxMovimento = this._agilidade * deltaTime;
+		float x = _posicaoTela.x;
+		float y = _posicaoTela.y;
+		
+		//Log.instancia.Logar(_posicaoTela.toString());
+
+		
 		if (_player != null)
 		{
-			_player.GetControle().GetAcao();
-			_player.GetControle().GetHabilidade();
-			_player.GetControle().GetDirecao();
-			_player.GetControle().GetDirecaoAtaque();
+			playerDirecao = _player.GetControle().GetDirecao();
+			
+			if (_player.GetControle().GetAcao())
+				this.Acao();
+			if (_player.GetControle().GetHabilidade())
+				this.HabilidadeAtiva();
+
+			if (playerDirecao != Direcoes.CENTRO)
+			{
+
+				if (playerDirecao == Direcoes.CIMA)
+					this.SetPosicao(x, y + auxMovimento);
+
+				else if (playerDirecao == Direcoes.BAIXO)
+					this.SetPosicao(x, y - auxMovimento);
+
+				else if (playerDirecao == Direcoes.ESQUERDA)
+					this.SetPosicao(x - auxMovimento, y);
+
+				else if (playerDirecao == Direcoes.DIREITA)
+					this.SetPosicao(x + auxMovimento, y);
+
+				else if (playerDirecao == Direcoes.NORDESTE)
+					this.SetPosicao(x + auxMovimento, y + auxMovimento);
+
+				else if (playerDirecao == Direcoes.NOROESTE)
+					this.SetPosicao(x - auxMovimento, y + auxMovimento);
+
+				else if (playerDirecao == Direcoes.SUDESTE)
+					this.SetPosicao(x + auxMovimento, y - auxMovimento);
+
+				else if (playerDirecao == Direcoes.SUDOESTE)
+					this.SetPosicao(x - auxMovimento, y - auxMovimento);
+
+			}
+
 		}
+		_player.GetControle().GetDirecaoAtaque();
 	}
 
 	/**
@@ -101,6 +142,7 @@ public abstract class Heroi extends Personagem implements Serializador
 		if (colidiu instanceof Inimigo)
 		{
 			this.InflingeDano((Inimigo) colidiu);
+			Log.instancia.Logar("Colidiu CARAI");
 		}
 	}
 

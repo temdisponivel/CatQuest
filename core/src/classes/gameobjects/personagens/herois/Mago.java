@@ -2,7 +2,7 @@ package classes.gameobjects.personagens.herois;
 
 /**
  * Classe do herói Mago.
- * @author matheus
+ * @author victor
  *
  */
 public class Mago extends Heroi
@@ -28,6 +28,13 @@ public class Mago extends Heroi
 
 	@Override
 	protected void HabilidadeAtiva()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void AtaqueBasico()
 	{
 		// TODO Auto-generated method stub
 		

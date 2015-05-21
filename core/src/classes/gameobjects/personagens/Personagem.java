@@ -2,13 +2,16 @@ package classes.gameobjects.personagens;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Json;
+
 import classes.gameobjects.GameObject;
+import classes.uteis.Camada;
 import classes.uteis.Serializador;
 
 /**
@@ -114,10 +117,14 @@ public abstract class Personagem extends GameObject implements Serializador
 	public Personagem()
 	{
 		super();
+		
+			
 		personagens.put(this.GetId(), this);
 		_colidiveis.put(GameObjects.Cenario, Colisoes.NaoPassavel);
 		_caminho = new LinkedList<Vector2>();
 		_destino = new Vector2();
+		_camada = Camada.Personagens;
+
 	}
 	
 	@Override
@@ -171,7 +178,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	/**
 	 * @return Chanse de acertar um dano crítico - em percentagem.
 	 */
-	public float GetChanseCritico()
+	public float GetChanceCritico()
 	{
 		return _chanseCritico;
 	}
@@ -248,7 +255,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * Inflige um dano a um {@link GameObject game object}.
 	 * @param inflige {@link Personagem Objeto} a infligir o dano.
 	 */
-	public void InfligeDano(Personagem inflige)
+	public void InflingeDano(Personagem inflige)
 	{
 		inflige.RecebeDano(_ataque);
 	}
@@ -564,7 +571,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		_defesa = personagemTemp.GetDefesa();
 		_ataque = personagemTemp.GetAtaque();
 		_vida = personagemTemp.GetVida();
-		_chanseCritico = personagemTemp.GetChanseCritico();
+		_chanseCritico = personagemTemp.GetChanceCritico();
 		_coeficienteCritico = personagemTemp.GetCoeficienteCritico();
 		
 		return true;

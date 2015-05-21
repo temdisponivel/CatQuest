@@ -2,7 +2,7 @@ package classes.gameobjects.personagens.herois;
 
 /**
  * Classe do herói Lutador.
- * @author matheus
+ * @author victor
  *
  */
 public class Lutador extends Heroi
@@ -28,6 +28,13 @@ public class Lutador extends Heroi
 
 	@Override
 	protected void HabilidadeAtiva()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void AtaqueBasico()
 	{
 		// TODO Auto-generated method stub
 		

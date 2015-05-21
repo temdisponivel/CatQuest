@@ -1,14 +1,14 @@
 package classes.gameobjects.personagens.herois;
 
 /**
- * Classe do herói Bardo.
- * @author matheus
+ * Classe do herói Coringa.
+ * @author victor
  *
  */
-public class Bardo extends Heroi
+public class Coringa extends Heroi
 {
 
-	public Bardo()
+	public Coringa()
 	{
 		super();
 	}
@@ -16,7 +16,7 @@ public class Bardo extends Heroi
 	@Override
 	public String toString()
 	{
-		return "Bardo";
+		return "Coringa";
 	}
 
 	@Override
@@ -28,6 +28,13 @@ public class Bardo extends Heroi
 
 	@Override
 	protected void HabilidadeAtiva()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void AtaqueBasico()
 	{
 		// TODO Auto-generated method stub
 		

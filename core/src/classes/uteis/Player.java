@@ -1,5 +1,6 @@
 package classes.uteis;
 
+import classes.gameobjects.personagens.herois.Heroi;
 import classes.uteis.controle.Controle;
 
 /**
@@ -24,6 +25,7 @@ public class Player
 	static public Player playerSecundario = null;
 	
 	private Controle _controle;
+	private Heroi _heroiControlado;
 	private TipoPlayer _tipo;
 	
 	/**
@@ -64,7 +66,7 @@ public class Player
 	}
 
 	/**
-	 * Deine um novo {@link Controle} para este jogador.
+	 * Define um novo {@link Controle} para este jogador.
 	 * @param controle {@link Controle} deste jogador.
 	 */
 	public void SetControle(Controle controle)
@@ -79,5 +81,23 @@ public class Player
 	public TipoPlayer GetTipo()
 	{
 		return _tipo;
+	}
+
+	/**
+	 * Retorna o {@link Heroi} do jogador.
+	 * @return Heroi controlado por esse player.
+	 */
+	public Heroi GetHeroi()
+	{
+		return _heroiControlado;
+	}
+
+	/**
+	 * Define o {@link Heroi} do jogador
+	 * @param _heroiControlado heroi que sera controlado
+	 */
+	public void SetHeroi(Heroi _heroiControlado)
+	{
+		this._heroiControlado = _heroiControlado;
 	}
 }

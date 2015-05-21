@@ -2,7 +2,7 @@ package classes.gameobjects.personagens.herois;
 
 /**
  * Classe do herói Arqueiro.
- * @author matheus
+ * @author victor
  *
  */
 public class Arqueiro extends Heroi
@@ -27,6 +27,13 @@ public class Arqueiro extends Heroi
 
 	@Override
 	protected void HabilidadeAtiva()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void AtaqueBasico()
 	{
 		// TODO Auto-generated method stub
 		

@@ -275,7 +275,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		CelulaCaminho temp = null;
 		listaAberta.add(atual);
 				
-		if (this.GetValorCampo(Rectangle.tmp.setPosition(_destino).setSize(_caixaColisao.width, _caixaColisao.height)) == Colisoes.NaoPassavel)
+		if (this.GetValorCampo(_destino) == Colisoes.NaoPassavel)
 			return null;
 		
 		//enquanto não cheguei no meu destino
@@ -377,15 +377,13 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected LinkedList<CelulaCaminho> GetAdjacentesAndaveis(CelulaCaminho atual, Vector2 destino)
 	{		
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
-		Rectangle auxCampo = new Rectangle(0, 0, _caixaColisao.width, _caixaColisao.height);
 		Vector2 auxPosicao = new Vector2();
 		
 		//DIREITA
 		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y;
-		auxCampo.setPosition(auxPosicao);
 		Colisoes resultado = Colisoes.Livre;
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -396,8 +394,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		//CIMA
 		auxPosicao.x = atual.posicao.x;
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
-		auxCampo.setPosition(auxPosicao);
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -408,8 +405,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		//ESQUERDA
 		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y;
-		auxCampo.setPosition(auxPosicao);
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -420,8 +416,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		//BAIXO
 		auxPosicao.x = atual.posicao.x;
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
-		auxCampo.setPosition(auxPosicao);
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -432,8 +427,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		//NORDESTE
 		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
-		auxCampo.setPosition(auxPosicao);
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -444,8 +438,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		//NOROESTE
 		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
-		auxCampo.setPosition(auxPosicao);
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -456,8 +449,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		//SUDOESTE
 		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
-		auxCampo.setPosition(auxPosicao);
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -468,8 +460,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		//SUDESTE
 		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
-		auxCampo.setPosition(auxPosicao);
-		if ((resultado = this.GetValorCampo(auxCampo)) != Colisoes.NaoPassavel)
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual, new Vector2(auxPosicao)));
@@ -482,19 +473,15 @@ public abstract class Personagem extends GameObject implements Serializador
 	
 	/**
 	 * Valida se um campo é passável, livre ou não passável.
-	 * Realiza colisões deste objeto com os objetos dentro do campo informado. A caixa de colisão deste objeto é temporatiamente movida para o x e y do campo.
-	 * @param campo {@link Rectangle Campo} para verificar.
+	 * Realiza colisões deste objeto com os objetos dentro do campo formado pela caixa de colisão no x e y do parametro. 
+	 * A caixa de colisão deste objeto é temporatiamente movida para o x e y do campo.
+	 * @param campo {@link Vector2 Posicao} em que a caixa de colisão deve estar para verificar.
 	 * @return Se o campo é livre, passável ou não passável.
 	 */
-	public Colisoes GetValorCampo(Rectangle campo)
+	public Colisoes GetValorCampo(Vector2 campo)
 	{
 		if (_telaInserido == null)
 			return Colisoes.Passavel;
-
-		LinkedList<GameObject> lista = _telaInserido.GetObjetosRegiao(campo);
-		
-		if (lista == null)
-			return Colisoes.NaoPassavel;
 		
 		GameObject outro = null;
 		Colisoes colisaoOutro, colisaoEste;
@@ -504,6 +491,11 @@ public abstract class Personagem extends GameObject implements Serializador
 		float y = _caixaColisao.y;
 		_caixaColisao.x = campo.x;
 		_caixaColisao.y = campo.y;
+
+		LinkedList<GameObject> lista = _telaInserido.GetObjetosRegiao(_caixaColisao);
+		
+		if (lista == null)
+			return Colisoes.NaoPassavel;
 		
 		for (int i = 0; i < lista.size(); i++)
 		{

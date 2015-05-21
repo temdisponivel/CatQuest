@@ -2,6 +2,8 @@ package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
 
+import com.badlogic.gdx.math.Vector2;
+
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
@@ -79,29 +81,45 @@ public abstract class Heroi extends Personagem implements Serializador
 			{
 
 				if (playerDirecao == Direcoes.CIMA)
-					this.SetPosicao(x, y + auxMovimento);
-
+				{
+					if (this.GetValorCampo(new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x, y + auxMovimento);
+				}
 				else if (playerDirecao == Direcoes.BAIXO)
-					this.SetPosicao(x, y - auxMovimento);
-
+				{
+					if (this.GetValorCampo(new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x, y - auxMovimento);
+				}
 				else if (playerDirecao == Direcoes.ESQUERDA)
-					this.SetPosicao(x - auxMovimento, y);
-
+				{
+					if (this.GetValorCampo(new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x - auxMovimento, y);
+				}
 				else if (playerDirecao == Direcoes.DIREITA)
-					this.SetPosicao(x + auxMovimento, y);
-
+				{
+					if (this.GetValorCampo(new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x + auxMovimento, y);
+				}
 				else if (playerDirecao == Direcoes.NORDESTE)
-					this.SetPosicao(x + auxMovimento, y + auxMovimento);
-
+				{
+					if (this.GetValorCampo(new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x + auxMovimento, y + auxMovimento);
+				}
 				else if (playerDirecao == Direcoes.NOROESTE)
-					this.SetPosicao(x - auxMovimento, y + auxMovimento);
-
+				{
+					if (this.GetValorCampo(new Vector2(x - auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x - auxMovimento, y + auxMovimento);
+				}
 				else if (playerDirecao == Direcoes.SUDESTE)
-					this.SetPosicao(x + auxMovimento, y - auxMovimento);
-
+				{
+					if (this.GetValorCampo(new Vector2(x + auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x + auxMovimento, y - auxMovimento);
+				}
 				else if (playerDirecao == Direcoes.SUDOESTE)
-					this.SetPosicao(x - auxMovimento, y - auxMovimento);
-
+				{
+					if (this.GetValorCampo(new Vector2(x - auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(x - auxMovimento, y - auxMovimento);
+				}
 			}
 
 		}

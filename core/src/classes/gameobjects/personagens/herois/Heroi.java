@@ -5,7 +5,6 @@ import java.util.HashMap;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
-import classes.uteis.Log;
 import classes.uteis.Player;
 import classes.uteis.Serializador;
 import classes.uteis.controle.Controle.Direcoes;
@@ -49,19 +48,14 @@ public abstract class Heroi extends Personagem implements Serializador
 	public Heroi()
 	{
 		super();
-
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
-<<<<<<< HEAD
-		_campoVisao = 10f;
-	}
-	
-=======
+		_campoVisao = 300f;
 		_player = Player.playerPrimario;
-		_player.SetHeroi(this);
+		_player.SetPersonagem(this);
+		_colidiveis.put(GameObjects.Inimigo, Colisoes.Passavel);
 	}
 
->>>>>>> origin/classes
 	@Override
 	public void Atualiza(float deltaTime)
 	{
@@ -71,10 +65,7 @@ public abstract class Heroi extends Personagem implements Serializador
 		float auxMovimento = this._agilidade * deltaTime;
 		float x = _posicaoTela.x;
 		float y = _posicaoTela.y;
-		
-		//Log.instancia.Logar(_posicaoTela.toString());
-
-		
+				
 		if (_player != null)
 		{
 			playerDirecao = _player.GetControle().GetDirecao();
@@ -148,7 +139,6 @@ public abstract class Heroi extends Personagem implements Serializador
 		if (colidiu instanceof Inimigo)
 		{
 			this.InflingeDano((Inimigo) colidiu);
-			Log.instancia.Logar("Colidiu CARAI");
 		}
 	}
 

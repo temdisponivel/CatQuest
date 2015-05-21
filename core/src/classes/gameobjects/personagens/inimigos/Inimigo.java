@@ -4,16 +4,10 @@ package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
 
-import com.badlogic.gdx.Gdx;
-
-import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
-<<<<<<< HEAD
 import classes.uteis.Camada;
-=======
 import classes.uteis.Player;
->>>>>>> origin/classes
 import classes.uteis.Reciclador;
 import classes.uteis.Reciclavel;
 
@@ -52,7 +46,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	}
 	
 	static public HashMap<Integer, Inimigo> inimigos = new HashMap<Integer, Inimigo>();
-	static private Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
+	static public Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
 	
 	/**
 	 * Cria um novo inimigo.
@@ -63,6 +57,12 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		_camada = Camada.Personagens;
 		_tipo = GameObjects.Inimigo;
 		inimigos.put(this.GetId(), this);
+	}
+	
+	@Override
+	public void Inicia()
+	{
+		super.Inicia();
 		_colidiveis.put(GameObjects.Heroi, Colisoes.Passavel);
 	}
 	
@@ -77,15 +77,17 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		else
 		{
-			//_destino.set(Gdx.input.getX(), CatQuest.instancia.GetAlturaTela()-Gdx.input.getY());
-			_destino.set(Player.playerPrimario.GetHeroi().GetPosicao());
+			if (!Player.playerPrimario.GetPersonagem().GetVisivel(this))
+				return;
+			
+			_destino.set(Player.playerPrimario.GetPersonagem().GetPosicao());
 			this.GetCaminho();
 		}
 	}
 
 	@Override
 	public void Morre()
-	{
+	{		
 		_reciclador.Recicla(this);
 	}
 	
@@ -97,15 +99,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	
 	@Override
 	public void AoColidir(GameObject colidiu)
-	{
-		super.AoColidir(colidiu);
-		
+	{		
 		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
 			this.GetCaminho();
-	}
-	
-	public void GetPontoRespaw()
-	{
-		
 	}
 }

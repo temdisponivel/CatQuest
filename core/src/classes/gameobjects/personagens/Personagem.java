@@ -116,15 +116,12 @@ public abstract class Personagem extends GameObject implements Serializador
 	 */
 	public Personagem()
 	{
-		super();
-		
-			
+		super();			
 		personagens.put(this.GetId(), this);
 		_colidiveis.put(GameObjects.Cenario, Colisoes.NaoPassavel);
 		_caminho = new LinkedList<Vector2>();
 		_destino = new Vector2();
 		_camada = Camada.Personagens;
-
 	}
 	
 	@Override
@@ -585,10 +582,5 @@ public abstract class Personagem extends GameObject implements Serializador
 		String personagem;
 		personagem = json.toJson((Personagem)this);
 		_arquivo.writeString(personagem, false);
-	}
-	
-	@Override
-	public void AoColidir(GameObject colidiu)
-	{
 	}
 }

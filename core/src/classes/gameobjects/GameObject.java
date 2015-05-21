@@ -152,6 +152,7 @@ public abstract class GameObject
 	 */
 	public void Inicia()
 	{
+		this.SetAtivo(true);
 		_cor = Color.WHITE;
 	}
 	
@@ -386,8 +387,10 @@ public abstract class GameObject
 	 */
 	public Colisoes ValidaColisao(GameObject colidiu, boolean colidi)
 	{
-		GameObject filho = null;
+		if (colidiu == this)
+			return Colisoes.Passavel;
 		
+		GameObject filho = null;
 		Colisoes outro = Colisoes.Livre;
 		Colisoes este = Colisoes.Livre;
 		Colisoes retorno = Colisoes.Livre;
@@ -400,7 +403,6 @@ public abstract class GameObject
 			
 			if (temp.ordinal() > retorno.ordinal())
 				retorno = temp;
-				
 		}
 		
 		if (colidiu == null || !_colidiveis.containsKey(colidiu.GetTipo()) || !_camada.GetColidivel() || (!_colidiPai && colidiu == _pai))
@@ -408,12 +410,6 @@ public abstract class GameObject
 		
 		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))
 		{
-			if (colidi)
-			{
-				colidiu.AoColidir(this);
-				this.AoColidir(colidiu);
-			}
-			
 			if (colidiu.GetColidiveis().containsKey(_tipo))
 				outro = colidiu.GetColidiveis().get(_tipo);
 			
@@ -422,6 +418,12 @@ public abstract class GameObject
 			
 			if (retorno.ordinal() < (este = _colidiveis.get(colidiu.GetTipo())).ordinal())
 				retorno = este;
+			
+			if (colidi)
+			{
+				colidiu.AoColidir(this);
+				this.AoColidir(colidiu);
+			}
 		}
 		
 		return retorno;

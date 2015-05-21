@@ -57,9 +57,19 @@ public class Log
 		
 		if (encerra)
 		{
-			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: " + (e != null ? e.getMessage() == null ? texto : e.getMessage() : "Erro irreversivel."));
+			_stringBuilder.append("O JOGO FOI ENCERRADO POR CAUSA DE: ");
+			
+			if (e != null && e.getLocalizedMessage() != null)
+				_stringBuilder.append(e.getLocalizedMessage());
+			else
+				_stringBuilder.append(texto);
+			
 			_stringBuilder.append("\r\n");
 			CatQuest.instancia.EncerraJogo();
+		}
+		else
+		{
+			_stringBuilder.append(texto);
 		}
 		
 		_log.writeString(_stringBuilder.toString(), true);
@@ -73,7 +83,6 @@ public class Log
 	public void Logar(String texto)
 	{
 		Log.instancia.Logar(texto, null, false);
-		System.out.println(texto);
 	}
 	
 	/**
@@ -84,5 +93,30 @@ public class Log
 	{
 		for (int i = 0; i < textos.length; i++)
 			this.Logar(textos[i]);
+	}
+	
+	/**
+	 * Escrever texto no arquivo de log.
+	 * @param objeto Objeto a ser escrito.
+	 */
+	public void Logar(Object objeto)
+	{
+		if (objeto == null)
+		{
+			Log.instancia.Logar("Log de objeto nulo!", null, false);
+			return;
+		}
+		
+		Log.instancia.Logar(objeto.toString(), null, false);
+	}
+	
+	/**
+	 * Escrever vários textos no arquivo de log.
+	 * @param objeto Objetos a serem escritos.
+	 */
+	public void Logar(Object... objetos)
+	{
+		for (int i = 0; i < objetos.length; i++)
+			this.Logar(objetos[i]);
 	}
 }

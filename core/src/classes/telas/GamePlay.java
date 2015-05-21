@@ -2,6 +2,7 @@ package classes.telas;
 
 import classes.gameobjects.personagens.herois.Barbaro;
 import classes.gameobjects.personagens.inimigos.Cachorro;
+import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.controle.Controle;
 
 import com.badlogic.gdx.Gdx;
@@ -30,7 +31,7 @@ public class GamePlay extends Tela
 		super.Atualiza(deltaTime);
 		
 		if (Controle.GetQualquerPause())
-			this.InserirGameObject(new Cachorro());
+			this.InserirGameObject(Inimigo._reciclador.GetInstancia(Cachorro.class));
 	}
 
 	@Override

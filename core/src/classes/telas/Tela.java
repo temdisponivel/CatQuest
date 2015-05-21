@@ -56,8 +56,8 @@ public class Tela implements OnCompletionListener
 	protected LinkedList<GameObject> _gameObjectsIncluir = null;
 	protected LinkedList<GameObject> _gameObjectsExcluir = null;
 	protected LinkedList<GameObject>[][] _matrizMapa = null;
-	protected float _precisaoMapaY = 8f;
 	protected float _precisaoMapaX = 8f;
+	protected float _precisaoMapaY = 8f;
 	protected float _alturaMapa = 0;
 	protected float _larguraMapa = 0;
 	protected FileHandle _arquivoMapa = null;

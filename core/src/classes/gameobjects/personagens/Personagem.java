@@ -105,6 +105,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/" + this.toString());
 	protected LinkedList<Vector2> _caminho = null;
 	protected Vector2 _destino = null;
+	protected float _campoVisao = 0f;
 	private float _coeficienteLerp = 0;
 	
 	/**
@@ -519,6 +520,23 @@ public abstract class Personagem extends GameObject implements Serializador
 		_caixaColisao.y = y;
 		
 		return retorno;
+	}
+	
+	/**
+	 * Retorna o campo de visão do personagem.
+	 * @return Um float representando o raio de visão deste {@link Personagem personagem}.
+	 */
+	public float GetCampoVisao()
+	{
+		return _campoVisao;
+	}
+	
+	/**
+	 * @return True caso o {@link GameObject objeto} parametrizado esteja no campo de visão deste.
+	 */
+	public boolean GetVisivel(Personagem outro)
+	{
+		return _posicaoTela.dst(outro.GetPosicao()) <= _campoVisao;
 	}
 	
 	/**

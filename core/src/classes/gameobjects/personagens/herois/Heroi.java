@@ -55,6 +55,7 @@ public abstract class Heroi extends Personagem implements Serializador
 		
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
+		_campoVisao = 10f;
 	}
 	
 	@Override

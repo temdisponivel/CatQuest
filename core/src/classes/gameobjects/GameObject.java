@@ -156,7 +156,7 @@ public abstract class GameObject
 	}
 	
 	/**
-	 * Redefine todas as propriedades do objeto.
+	 * Redefine todas as propriedades do objeto. Encerra e inicia novamente.
 	 */
 	public void Redefine()
 	{

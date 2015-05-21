@@ -3,9 +3,7 @@
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
-
 import com.badlogic.gdx.Gdx;
-
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
@@ -20,8 +18,6 @@ import classes.uteis.Reciclavel;
  */
 public abstract class Inimigo extends Personagem implements Reciclavel
 {
-	
-	
 	/**
 	 * Enumerador para os {@link Sound sons} dos {@link Inimigo inimigos}.
 	 * @author matheus
@@ -89,7 +85,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	@Override
 	public void Recicla()
 	{
-		this.Redefine();
+		this.Encerra();
 	}
 	
 	@Override
@@ -99,5 +95,10 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		
 		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
 			this.GetCaminho();
+	}
+	
+	public void GetPontoRespaw()
+	{
+		
 	}
 }

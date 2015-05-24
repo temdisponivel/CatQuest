@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 
 /**
  * Classe do herói Barbaro.
- * @author victor
+ * @author Victor
  *
  */
 public class Barbaro extends Heroi

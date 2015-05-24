@@ -2,19 +2,17 @@ package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
 
-import com.badlogic.gdx.math.Vector2;
-
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.Player;
 import classes.uteis.Serializador;
-import classes.uteis.controle.Controle.Direcoes;
+
 
 /**
  * Classe que representa um herói do jogo.
  * 
- * @author victor
+ * @author Victor
  *
  */
 public abstract class Heroi extends Personagem implements Serializador
@@ -22,8 +20,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	/**
 	 * Enumerador para os {@link Sound sons} dos {@link Heroi heróis}.
 	 * 
-	 * @author victor
-	 *
 	 */
 	protected enum SomHeroi
 	{
@@ -33,8 +29,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	/**
 	 * Enumerador para as {@link Animation animações} dos {@link Heroi heróis}.
 	 * 
-	 * @author victor
-	 *
 	 */
 	protected enum AnimacaoHeroi
 	{
@@ -63,76 +57,17 @@ public abstract class Heroi extends Personagem implements Serializador
 	{
 		super.Atualiza(deltaTime);
  
-		this.Movimenta(deltaTime);
+		this.Movimenta(_player.GetControle().GetDirecao(), deltaTime);
 		
 		_player.GetControle().GetDirecaoAtaque();
+		
+		if (_player.GetControle().GetAcao())
+			this.Acao();
+		
+		if (_player.GetControle().GetHabilidade())
+			this.HabilidadeAtiva();
 	}
 	
-	/**
-	 * Faz a movimentação do herói segundo entrada do usuário.
-	 */
-	protected void Movimenta(float delta)
-	{
-		int playerDirecao;
-		float auxMovimento = this._agilidade * delta;
-		float x = _posicaoTela.x;
-		float y = _posicaoTela.y;
-		Vector2 aux = null;
-				
-		if (_player != null)
-		{
-			playerDirecao = _player.GetControle().GetDirecao();
-			
-			if (_player.GetControle().GetAcao())
-				this.Acao();
-			if (_player.GetControle().GetHabilidade())
-				this.HabilidadeAtiva();
-
-			if (playerDirecao != Direcoes.CENTRO)
-			{
-				if (playerDirecao == Direcoes.CIMA)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.BAIXO)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.ESQUERDA)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.DIREITA)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.NORDESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.NOROESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.SUDESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.SUDOESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
-				}
-			}
-		}
-	}
 
 	/**
 	 * Define um player para este {@link Heroi herói}. Também define no player que este é o personagem que ele está controlando.

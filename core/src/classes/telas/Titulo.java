@@ -41,12 +41,14 @@ public class Titulo extends Tela implements EscutadorBotao
 		{
 			if (botaoClicado == jogar)
 			{
-				Barbaro a, b;
+				Barbaro a, b, c;
 				a = new Barbaro();
 				b = new Barbaro();
+				c = new Barbaro();
 				a.SetPlayer(Player.primario);
 				b.SetPlayer(new Player(TipoPlayer.Primario));
-				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
+				c.SetPlayer(new Player(TipoPlayer.Secundario));
+				CatQuest.instancia.AdicionaTela(new GamePlay(a, b, c), false, false);
 			}
 			else if (botaoClicado == configurar)
 			{

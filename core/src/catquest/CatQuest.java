@@ -4,6 +4,7 @@ package catquest;
 
 import java.io.IOException;
 import java.util.Stack;
+
 import classes.uteis.CarregarMusica;
 import classes.uteis.CarregarSom;
 import classes.uteis.Configuracoes;
@@ -11,6 +12,7 @@ import classes.uteis.Log;
 import classes.uteis.Player;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
+
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -25,6 +27,10 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
  * Classe que cont�m todas as informa��es padr�es do jogo. Quase todos os m�todos e propriedades s�o est�ticos.
@@ -48,6 +54,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private int _idObjeto = 0;
 	private Stack<Tela> _pilhaTelas = null;
 	private SpriteBatch _batch = null;
+	private Viewport _viewPort = null;
 	private OrthographicCamera _camera = null;
 	private float _tempoJogo = 0;
 	private ModoJogo _modoJogo = ModoJogo.SINGLE;
@@ -212,6 +219,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA COM O TAMANHO DAS CONFIGURA��ES
 		_camera = new OrthographicCamera();
 		_camera.setToOrtho(false, Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
+		_viewPort = new StretchViewport(1920, 1080, _camera);
+		_viewPort.apply();
 		
 		//SE FOR PRA COME�AR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
 		if (intro)

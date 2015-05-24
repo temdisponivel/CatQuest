@@ -501,7 +501,7 @@ public class Tela implements OnCompletionListener
 	 * A precisão com que a matriz representativa do mapa está utilizando no eixo X.
 	 * @return Valor da precisão.
 	 */
-	public float GetPrecisarMapaX()
+	public float GetPrecisaoMapaX()
 	{
 		return _precisaoMapaX;
 	}
@@ -510,7 +510,7 @@ public class Tela implements OnCompletionListener
 	 * A precisão com que a matriz representativa do mapa está utilizando no eixo Y.
 	 * @return Valor da precisão.
 	 */
-	public float GetPrecisarMapaY()
+	public float GetPrecisaoMapaY()
 	{
 		return _precisaoMapaY;
 	}

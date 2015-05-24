@@ -1,5 +1,3 @@
-//TODO: arrumar os filhos que aparecem, por um frame ou dois, em um local indevido
-
 package classes.gameobjects;
 
 import java.util.HashMap;
@@ -37,6 +35,7 @@ public abstract class GameObject
 		Heroi,
 		Inimigo,
 		Cenario,
+		GameObject,
 		Ui,
 	};
 	
@@ -81,6 +80,8 @@ public abstract class GameObject
 		_caixaColisao = new Rectangle();
 		_colidiveis = new HashMap<GameObject.GameObjects, Colisoes>();
 		_filhos = new LinkedList<GameObject>();
+		_tipo = GameObjects.GameObject;
+		_camada = Camada.ObjetosEstaticos;
 		gameobjects.put(this.GetId(), this);
 	}
 	
@@ -189,11 +190,14 @@ public abstract class GameObject
 	 */
 	public void SetCamada(Camada novaCamada)
 	{
-		if (_camada != null)
-			_camada.Remover(this);
-		
-		_camada = novaCamada;
-		_camada.Adicionar(this);
+		if (this.GetTela() != null)
+		{
+			this.GetTela().Remover(this);
+			_camada = novaCamada;
+			this.GetTela().InserirGameObject(this);
+		}
+		else
+			_camada = novaCamada;
 	}
 	
 	/**
@@ -477,8 +481,8 @@ public abstract class GameObject
 		filho.SetCamada(_camada);
 		filho.SetPosicaoRelativa(_posicaoTela);
 		
-		if (_camada != null && _camada.ContemObjeto(filho))
-			_camada.Remover(filho);
+		if (_telaInserido != null && _telaInserido.ContemGameObject(filho))
+			_telaInserido.Remover(filho);
 			
 		_filhos.add(filho);
 		
@@ -688,11 +692,8 @@ public abstract class GameObject
 	{
 		this.SetAtivo(false);
 		
-		if (_camada != null)
-			_camada.Remover(this);
-		
-		if (_colidiveis != null)
-			_colidiveis.clear();
+		if (_telaInserido != null)
+			_telaInserido.Remover(this);
 		
 		if (this.GetSePai())
 		{

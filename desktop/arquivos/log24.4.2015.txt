@@ -1,0 +1,22 @@
+
+Data: Sun May 24 00:11:56 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.hashCode(GameObject.java:713)
+java.lang.Object.toString(Unknown Source)
+classes.gameobjects.personagens.Personagem.<init>(Personagem.java:110)
+classes.gameobjects.personagens.herois.Heroi.<init>(Heroi.java:52)
+classes.gameobjects.personagens.herois.Barbaro.<init>(Barbaro.java:17)
+classes.telas.GamePlay.Iniciar(GamePlay.java:26)
+catquest.CatQuest.AdicionaTela(CatQuest.java:329)
+classes.telas.Titulo.Click(Titulo.java:59)
+classes.uteis.UI.Botao.Atualiza(Botao.java:137)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:114)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.Titulo.Atualiza(Titulo.java:38)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

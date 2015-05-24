@@ -22,22 +22,23 @@ public class Barbaro extends Heroi
 	protected void Acao()
 	{
 		// TODO Auto-generated method stub
-		
-		
 	}
 
 	@Override
 	protected void HabilidadeAtiva()
 	{
 		// TODO Auto-generated method stub
-		
-		
 	}
 
 	@Override
 	protected void AtaqueBasico()
 	{
 		// TODO Auto-generated method stub
-		
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Barbaro";
 	}
 }

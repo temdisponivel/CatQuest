@@ -3,7 +3,6 @@ package classes.telas;
 import classes.gameobjects.personagens.herois.Barbaro;
 import classes.gameobjects.personagens.inimigos.Cachorro;
 import classes.gameobjects.personagens.inimigos.Inimigo;
-import classes.uteis.Player;
 import classes.uteis.controle.Controle;
 
 import com.badlogic.gdx.Gdx;
@@ -21,13 +20,8 @@ public class GamePlay extends Tela
 	{
 		super.Iniciar();
 		_tipo = Telas.GAMEPLAY;
-		Barbaro a, b = null;
 		this.InserirGameObject(Inimigo._reciclador.GetInstancia(Cachorro.class));
-		this.InserirGameObject(a = new Barbaro());
-		this.InserirGameObject(b = new Barbaro());
-		
-		a.SetPlayer(Player.playerPrimario);
-		b.SetPlayer(Player.playerSecundario);
+		this.InserirGameObject(new Barbaro());
 	}
 
 	@Override

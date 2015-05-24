@@ -88,8 +88,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	{		
 		_reciclador.Recicla(this);
 		
-		if (_camada != null)
-			_camada.Remover(this);
+		if (_telaInserido != null)
+			_telaInserido.Remover(this);
 	}
 	
 	@Override

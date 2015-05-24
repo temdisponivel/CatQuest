@@ -1,6 +1,5 @@
 package classes.telas;
 
-import classes.gameobjects.personagens.herois.Arqueiro;
 import classes.uteis.UI.Imagem;
 import catquest.CatQuest;
 
@@ -11,11 +10,7 @@ public class Introducao extends Tela
 	{
 		super.Iniciar();
 		_tipo = Telas.INTRODUCAO;
-		
-		Imagem i = new Imagem("sprites//intro");
-		i.GetSprite().setSize(CatQuest.instancia.GetLarguraTela(), CatQuest.instancia.GetAlturaTela());
-		new Arqueiro();
-				
+		Imagem i = new Imagem("sprites//intro");		
 		this.InserirGameObject(i);
 	}
 	
@@ -24,7 +19,7 @@ public class Introducao extends Tela
 	{
 		super.Atualiza(deltaTime);
 		
-		if (CatQuest.instancia.GetTempoJogo() > 3)
+		if (CatQuest.instancia.GetTempoJogo() > 1)
 		{
 			CatQuest.instancia.RetiraTela();
 			CatQuest.instancia.AdicionaTela(new Titulo(), false, false);

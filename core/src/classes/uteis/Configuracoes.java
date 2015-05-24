@@ -2,10 +2,7 @@ package classes.uteis;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Json;
-
-import classes.uteis.Player.TipoPlayer;
 import classes.uteis.controle.ConjuntoComandos;
-import classes.uteis.controle.Controle.TipoControle;
 import catquest.CatQuest;
 
 /**
@@ -45,8 +42,8 @@ public class Configuracoes implements Serializador
 		this.SetMostraFPS(false);
 		this.SetVolumeMusica(50);
 		this.SetVolumeSom(50);
-		_comandoPlayer1 = new ConjuntoComandos(TipoPlayer.Primario, TipoControle.TECLADO);
-		_comandoPlayer2 = new ConjuntoComandos(TipoPlayer.Secundario, TipoControle.TECLADO);
+		_comandoPlayer1 = ConjuntoComandos.tecladoPrimario;
+		_comandoPlayer2 = ConjuntoComandos.tecladoSecundario;
 	}
 
 	/**

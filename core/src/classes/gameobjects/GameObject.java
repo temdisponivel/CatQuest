@@ -81,7 +81,7 @@ public abstract class GameObject
 		_colidiveis = new HashMap<GameObject.GameObjects, Colisoes>();
 		_filhos = new LinkedList<GameObject>();
 		_tipo = GameObjects.GameObject;
-		_camada = Camada.ObjetosEstaticos;
+		_camada = Camada.GameObject;
 		gameobjects.put(this.GetId(), this);
 	}
 	
@@ -155,6 +155,17 @@ public abstract class GameObject
 	{
 		this.SetAtivo(true);
 		_cor = Color.WHITE;
+		
+		if (this.GetSePai() && _desenha)
+		{
+			GameObject filho = null;
+			
+			for (int i = 0; i < _filhos.size(); i++)
+			{
+				filho = _filhos.get(i);
+				filho.Inicia();
+			}
+		}
 	}
 	
 	/**
@@ -694,6 +705,9 @@ public abstract class GameObject
 		
 		if (_telaInserido != null)
 			_telaInserido.Remover(this);
+		
+		if (_pai != null)
+			_pai.RemoveFilho(this);
 		
 		if (this.GetSePai())
 		{

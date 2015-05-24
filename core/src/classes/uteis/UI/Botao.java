@@ -118,7 +118,10 @@ public class Botao extends GameObject
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-
+		
+		if (!_atualiza)
+			return;
+		
 		//se o cursor está em cima do botao
 		if (_caixaColisao.contains(Gdx.input.getX(), CatQuest.instancia.GetAlturaTela() - Gdx.input.getY()))
 		{

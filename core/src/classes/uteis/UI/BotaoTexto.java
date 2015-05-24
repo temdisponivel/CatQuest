@@ -49,6 +49,9 @@ public class BotaoTexto extends Botao
 	{
 		super.Atualiza(deltaTime);
 		
+		if (!_atualiza)
+			return;
+		
 		if (_apertado && !_textoBaixo)
 		{
 			_etiqueta.GetPosicaoAbsoluta().x += 3;

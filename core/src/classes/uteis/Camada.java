@@ -18,6 +18,7 @@ public class Camada
 	public static Camada ObjetosEstaticos = new Camada(Camadas.OBJETOS_ESTATICOS);
 	public static Camada Personagens = new Camada(Camadas.PERSONAGENS);
 	public static Camada UI = new Camada(Camadas.UI);
+	public static Camada GameObject = new Camada(Camadas.GameObject);
 	
 	/**
 	 * Enumerador com todas as camadas do jogo
@@ -29,6 +30,7 @@ public class Camada
 		UI,
 		OBJETOS_ESTATICOS,
 		PERSONAGENS,
+		GameObject,
 	};
 	
 	public Camada(Camadas id)
@@ -45,11 +47,16 @@ public class Camada
 			_colidivel = true;
 			_atualiza = true;
 			_desenha = true;
+			break;
 		case UI: 
-			_colidivel = true;
+			_colidivel = false;
 			_atualiza = true;
 			_desenha = true;
 			break;
+		case GameObject:
+			_colidivel = false;
+			_atualiza = true;
+			_desenha = true;
 		default:
 			break;
 		}

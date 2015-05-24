@@ -21,21 +21,12 @@ public class Player
 		Secundario,
 	}
 	
-	static public Player playerPrimario = null;
-	static public Player playerSecundario = null;
+	static public Player primario = new Player(TipoPlayer.Primario);
+	static public Player secundario = new Player(TipoPlayer.Secundario);
 	
 	private Controle _controle;
 	private Personagem _personagemControlado;
 	private TipoPlayer _tipo;
-	
-	/**
-	 * Contrói os players do jogo.
-	 */
-	public static void ControiPlayers()
-	{
-		playerPrimario = new Player(TipoPlayer.Primario);
-		playerSecundario = new Player(TipoPlayer.Secundario);
-	}
 	
 	/**
 	 * Contrói um player específico.
@@ -44,7 +35,6 @@ public class Player
 	public Player(TipoPlayer tipo)
 	{
 		_tipo = tipo;
-		
 		this.IniciaControle();
 	}
 
@@ -53,7 +43,10 @@ public class Player
 	 */
 	public void IniciaControle()
 	{
-		_controle = new Controle(_tipo);
+		if (_tipo == TipoPlayer.Primario)
+			_controle = new Controle(Configuracoes.instancia.GetComandoPlayerPrimario());
+		else if (_tipo == TipoPlayer.Secundario)
+			_controle = new Controle(Configuracoes.instancia.GetComandoPlayerSecundario());
 	}
 	
 	/**
@@ -81,6 +74,15 @@ public class Player
 	public TipoPlayer GetTipo()
 	{
 		return _tipo;
+	}
+	
+	/**
+	 * @param tipo Novo {@link TipoPlayer tipo} para o player. E {@link #IniciaControle() inicia o controle}.
+	 */
+	public void SetTipo(TipoPlayer tipo)
+	{
+		_tipo = tipo;
+		this.IniciaControle();
 	}
 
 	/**

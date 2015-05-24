@@ -1,18 +1,25 @@
 package classes.telas;
 
-import classes.gameobjects.personagens.herois.Barbaro;
+import classes.gameobjects.personagens.herois.Heroi;
 import classes.gameobjects.personagens.inimigos.Cachorro;
 import classes.gameobjects.personagens.inimigos.Inimigo;
+import classes.uteis.ControladorCamera;
 import classes.uteis.controle.Controle;
-
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+/**
+ * Classe da tela onde o gameplay acontece.
+ * @author matheus
+ *
+ */
 public class GamePlay extends Tela
-{	
-	public GamePlay()
+{
+	Heroi[] _herois = null;
+	
+	public GamePlay(Heroi... herois)
 	{
 		super(Gdx.files.local("arquivos//teste.tmx"));
+		_herois = herois;
 	}
 	
 	@Override
@@ -20,8 +27,8 @@ public class GamePlay extends Tela
 	{
 		super.Iniciar();
 		_tipo = Telas.GAMEPLAY;
-		this.InserirGameObject(Inimigo._reciclador.GetInstancia(Cachorro.class));
-		this.InserirGameObject(new Barbaro());
+		this.InserirGameObject(new ControladorCamera(_herois));
+		this.InserirGameObject(_herois);
 	}
 
 	@Override
@@ -31,18 +38,5 @@ public class GamePlay extends Tela
 		
 		if (Controle.GetQualquerPause())
 			this.InserirGameObject(Inimigo._reciclador.GetInstancia(Cachorro.class));
-	}
-
-	@Override
-	public void Desenha(SpriteBatch spriteBatch)
-	{
-		super.Desenha(spriteBatch);
-	}
-
-	@Override
-	public void Encerrar()
-	{
-		// TODO Auto-generated method stub
-		
 	}
 }

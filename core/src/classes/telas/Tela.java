@@ -191,6 +191,16 @@ public class Tela implements OnCompletionListener
 	}
 	
 	/**
+	 * Função que insere vários novos gameobjects na tela.
+	 * @param gameObject Vetor de {@link GameObject} a ser inserido.
+	 */
+	public void InserirGameObject(GameObject... gameObject)
+	{
+		for (int i = 0; i < gameObject.length; i++)
+			_gameObjectsIncluir.add(gameObject[i]);
+	}
+	
+	/**
 	 * Função que remove um {@link GameObject} da tela.
 	 * @param remover {@link GameObject} a ser removido.
 	 */
@@ -406,14 +416,20 @@ public class Tela implements OnCompletionListener
 		TiledMap mapa = new TmxMapLoader(new LocalFileHandleResolver()).load(_arquivoMapa.toString());
 		MapLayers camadas = mapa.getLayers();
 		MapObjects objetos = null;
-		
 		Imagem fundo = null;
-		this.InserirGameObject(fundo = new Imagem(Gdx.files.local(mapa.getProperties().get("Textura").toString())));
 		
-		this.GerenciaGameObject();
+		if (mapa.getProperties().containsKey("Textura"))
+		{
+			this.InserirGameObject(fundo = new Imagem(Gdx.files.local(mapa.getProperties().get("Textura").toString())));
+			_larguraMapa = fundo.GetLargura();
+			_alturaMapa = fundo.GetAltura();
+		}
 		
-		_alturaMapa = fundo.GetAltura();
-		_larguraMapa = fundo.GetLargura();
+		if (mapa.getProperties().containsKey("largura"))
+			_larguraMapa = mapa.getProperties().get("largura", float.class);
+		
+		if (mapa.getProperties().containsKey("altura"))
+			_alturaMapa = mapa.getProperties().get("altura", float.class);
 		
 		this.CriaMatriz();
 		
@@ -428,6 +444,28 @@ public class Tela implements OnCompletionListener
 			{
 				MapObject obj = objetos.get(j);
 				MapProperties prop = obj.getProperties();
+				
+				//se tem uma classe definida
+				if (prop.containsKey("Classe"))
+				{
+					try
+					{
+						//pega a classe
+						Class<?> classe = Class.forName((String) prop.get("Classe"));
+						
+						//valida se é subclasse de gameobject
+						Class<? extends GameObject> subclasse = classe.asSubclass(GameObject.class);
+						
+						GameObject objeto = subclasse.newInstance();
+						objeto.SetPosicao(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)));
+						this.InserirGameObject(objeto);
+						continue;
+					}
+					catch (Exception e)
+					{
+						Log.instancia.Logar("Tentar carregar objeto do mapa sem sucesso!", e, false);
+					}
+				}
 				
 				//Se não existe as propriedades necessárias, cria padrão
 				if (!prop.containsKey("rotation"))
@@ -463,6 +501,22 @@ public class Tela implements OnCompletionListener
 				_matrizMapa[i][j] = new LinkedList<GameObject>();
 			}
 		}
+	}
+	
+	/** 
+	 * @return Largura do mapa da tela.
+	 */
+	public float GetAlturaMapa()
+	{
+		return _alturaMapa;
+	}
+	
+	/** 
+	 * @return Largura do mapa da tela.
+	 */
+	public float GetLarguraMapa()
+	{
+		return _larguraMapa;
 	}
 	
 	/**

@@ -52,9 +52,6 @@ public abstract class Heroi extends Personagem implements Serializador
 		super();
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
-		_campoVisao = 300f;
-		_player = Player.playerPrimario;
-		_player.SetPersonagem(this);
 		_colidiveis.put(GameObjects.Inimigo, Colisoes.Passavel);
 	}
 
@@ -64,8 +61,6 @@ public abstract class Heroi extends Personagem implements Serializador
 		super.Atualiza(deltaTime);
  
 		this.Movimenta(deltaTime);
-		
-		_player.GetControle().GetDirecaoAtaque();
 	}
 	
 	/**
@@ -74,7 +69,8 @@ public abstract class Heroi extends Personagem implements Serializador
 	protected void Movimenta(float delta)
 	{
 		int playerDirecao;
-		float auxMovimento = this._agilidade * delta;
+		float auxMovimento = _telaInserido.GetPrecisaoMapaX();
+		float alfa = this._agilidade * delta;
 		float x = _posicaoTela.x;
 		float y = _posicaoTela.y;
 		Vector2 aux = null;
@@ -93,42 +89,42 @@ public abstract class Heroi extends Personagem implements Serializador
 				if (playerDirecao == Direcoes.CIMA)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.BAIXO)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.ESQUERDA)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.DIREITA)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.NORDESTE)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.NOROESTE)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.SUDESTE)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.SUDOESTE)
 				{
 					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(aux);
+						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
 				}
 			}
 		}

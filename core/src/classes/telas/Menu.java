@@ -29,7 +29,7 @@ public class Menu extends Tela
 	{
 		super.Atualiza(deltaTime);
 		
-		if (Player.playerPrimario.GetControle().GetPause())
+		if (Player.primario.GetControle().GetPause())
 		{
 			CatQuest.instancia.RetiraTela();
 		}

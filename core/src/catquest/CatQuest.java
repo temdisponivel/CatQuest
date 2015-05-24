@@ -4,15 +4,12 @@ package catquest;
 
 import java.io.IOException;
 import java.util.Stack;
-
 import classes.uteis.CarregarMusica;
 import classes.uteis.CarregarSom;
 import classes.uteis.Configuracoes;
 import classes.uteis.Log;
-import classes.uteis.Player;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
-
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -28,8 +25,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.viewport.FillViewport;
-import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
@@ -161,8 +156,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	    
 	    if (Configuracoes.instancia.GetMostraFPS())
 	    {
-			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), this.GetLarguraTela()-50, this.GetAlturaTela()-25);
-			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getDeltaTime()), this.GetLarguraTela()-300, this.GetAlturaTela()-25);
+			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), 
+					_camera.position.x + this.GetLarguraTela()-50, _camera.position.y + this.GetAlturaTela()-25);
 	    }
 			
 		_batch.end();
@@ -190,14 +185,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		
 		//CARREGA CONFIGURAï¿½ï¿½ES E APLICA
 		new Configuracoes();
-		this.AplicarConfiguracoes();
-		
+				
 		//Inicia os singletons dos carregadores de música e som
 		new CarregarMusica();
 		new CarregarSom();
-		
-		//CONTRï¿½I OS PLAYERS
-		Player.ControiPlayers();
 		
 		//ATUALIZA E DESENHA COMO TRUE PARA GAMELOOP COMPLETO
 		_atualiza = true;
@@ -219,8 +210,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA COM O TAMANHO DAS CONFIGURAï¿½ï¿½ES
 		_camera = new OrthographicCamera();
 		_camera.setToOrtho(false, 1920, 1080);
-		_viewPort = new StretchViewport(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), _camera);
+		_viewPort = new FillViewport(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), _camera);
 		_viewPort.apply(true);
+		
+		this.AplicarConfiguracoes();
 		
 		//SE FOR PRA COMEï¿½AR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
 		if (intro)
@@ -292,6 +285,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public void AplicarConfiguracoes()
 	{		
 		Gdx.graphics.setDisplayMode(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), Configuracoes.instancia.GetFullscreen());
+		_viewPort.setWorldSize(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
+		_viewPort.apply(true);
 	}
 	
 	/**
@@ -406,7 +401,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public float GetLarguraTela()
 	{
-		return Gdx.graphics.getWidth(); 
+		return _viewPort.getWorldWidth(); 
 	}
 	
 	/**
@@ -415,7 +410,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public float GetAlturaTela()
 	{
-		return Gdx.graphics.getHeight(); 
+		return _viewPort.getWorldHeight(); 
 	}
 	
 	/**
@@ -521,14 +516,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		float altura =  _fonte.getBounds(texto).height + bordas;
 		
 		return new Rectangle(0, 0, largura, altura);
-	}
-	
-	/**
-	 * @return Escala para redimencionar as sprites.
-	 */
-	public float GetEscala()
-	{
-		return GetLarguraTela() / GetAlturaTela();
 	}
 	
 	/**

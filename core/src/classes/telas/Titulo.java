@@ -1,14 +1,17 @@
 package classes.telas;
 
 import catquest.CatQuest;
+import classes.gameobjects.personagens.herois.Barbaro;
 import classes.uteis.Player;
+import classes.uteis.Player.TipoPlayer;
 import classes.uteis.UI.Botao;
 import classes.uteis.UI.BotaoTexto;
 import classes.uteis.UI.Botao.EscutadorBotao;
+
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+
 import classes.uteis.UI.Menu;
 
 public class Titulo extends Tela implements EscutadorBotao
@@ -31,24 +34,6 @@ public class Titulo extends Tela implements EscutadorBotao
 		
 		_corFundo = Color.WHITE;
 	}
-
-	@Override
-	public void Atualiza(float deltaTime)
-	{
-		super.Atualiza(deltaTime);
-		
-		if (Player.playerPrimario.GetControle().GetHabilidade())
-		{
-			menu.SetPosicao(menu.GetPosicao().add(0, 10));
-		}
-	}
-
-	@Override
-	public void Desenha(SpriteBatch spriteBatch)
-	{
-		super.Desenha(spriteBatch);
-	}
-
 	@Override
 	public void Click(Botao botaoClicado, BotoesMouse botaoMouse)
 	{
@@ -56,7 +41,12 @@ public class Titulo extends Tela implements EscutadorBotao
 		{
 			if (botaoClicado == jogar)
 			{
-				CatQuest.instancia.AdicionaTela(new GamePlay(), false, false);
+				Barbaro a, b;
+				a = new Barbaro();
+				b = new Barbaro();
+				a.SetPlayer(Player.primario);
+				b.SetPlayer(new Player(TipoPlayer.Primario));
+				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
 			}
 			else if (botaoClicado == configurar)
 			{

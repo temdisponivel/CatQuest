@@ -3,8 +3,8 @@
 package classes.uteis.controle;
 
 import java.util.ArrayList;
-import classes.uteis.Configuracoes;
 import classes.uteis.Player.TipoPlayer;
+import classes.uteis.controle.ConjuntoComandos.TipoConjunto;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.Controllers;
@@ -41,61 +41,67 @@ public class Controle
 	 */
 	public enum TipoControle
 	{
-		TECLADO,
-		CONTROLE,
+		Teclado,
+		Controle,
 	}
 	
-	static public ArrayList<Controle> _controlesEmUso = null;
+	static public ArrayList<Controle> _controlesEmUso = new ArrayList<Controle>();
+	static private ArrayList<Controller> _joystickEmUso = new ArrayList<Controller>();
 	private Controller _controle = null;
 	private ConjuntoComandos _conjunto = null;
 	private float _sensibilidade = 1/3f;
-	private TipoPlayer _tipoPlayer = TipoPlayer.Primario;
 	
 	/**
 	 * Contrï¿½i um novo controle baseado no {@link TipoPlayer} que vai utilizar.
-	 * @param tipoPlayer {@link TipoPlayer} que vai utilizar o controle.
+	 * @param comandos {@link ConjuntoComandos Comandos} para o controle.
+	 * Caso haja joystick disponível, o conjunto será trocado para {@link TipoConjunto#Controle}
 	 */
-	public Controle(TipoPlayer tipo)
+	public Controle(ConjuntoComandos comandos)
 	{
 		//PERCORRE TODOS OS CONTROLES
 		for (Controller controle : Controllers.getControllers())
 		{
 			//VALIDA SE É UM CONTROLE DE XBOX
 			if (controle.getName().toLowerCase().contains("xbox") && controle.getName().toLowerCase().contains("360"))
-			{
-				if (_controlesEmUso == null)
-					_controlesEmUso = new ArrayList<Controle>();
-				
+			{				
 				//SE O CONTROLE JÁ ESTÁ EM USO, TENTA O PROXIMO
-				if (_controlesEmUso.contains(controle))
+				if (_joystickEmUso.contains(controle))
 					continue;
+				else
+					_joystickEmUso.add(controle);
 				
 				//SE NAO ESTÁ EM USO, VAI ENTRAR EM USO AGORA
 				_controle = controle;
+				comandos = ConjuntoComandos.controle;
+				break;
 			}
 		}
 		
-		_tipoPlayer = tipo;
-		
-		this.GerenciaConjunto();
-		
-		if (_controlesEmUso == null)
-			_controlesEmUso = new ArrayList<Controle>();
+		this.SetConjunto(comandos);
 		
 		_controlesEmUso.add(this);
 	}
 	
 	/**
-	 * Gerencia os conjuntos de comandos segundo o tipo do player e o tipo de controle.
+	 * @return True caso exista um joystick de Xbox livre.
 	 */
-	public void GerenciaConjunto()
+	static public boolean ExisteJoystickLivre()
 	{
-		if (_controle != null)
-			this.SetConjunto(new ConjuntoComandos(_tipoPlayer, TipoControle.CONTROLE));
-		else if (_tipoPlayer == TipoPlayer.Primario)
-			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerPrimario());
-		else
-			this.SetConjunto(Configuracoes.instancia.GetComandoPlayerSecundario());
+		//PERCORRE TODOS OS CONTROLES
+		for (Controller controle : Controllers.getControllers())
+		{
+			//VALIDA SE É UM CONTROLE DE XBOX
+			if (controle.getName().toLowerCase().contains("xbox") && controle.getName().toLowerCase().contains("360"))
+			{				
+				//SE O CONTROLE JÁ ESTÁ EM USO, TENTA O PROXIMO
+				if (_joystickEmUso.contains(controle))
+					continue;
+				else
+					return true;
+			}
+		}
+		
+		return false;
 	}
 
 	/**
@@ -183,7 +189,7 @@ public class Controle
 	 */
 	public boolean GetAcao()
 	{
-		if (this.GetTipoControle() == TipoControle.TECLADO)
+		if (this.GetTipoControle() == TipoControle.Teclado)
 		{
 			return Gdx.input.isKeyPressed(_conjunto.ACAO);
 		}
@@ -201,7 +207,7 @@ public class Controle
 	 */
 	public boolean GetHabilidade()
 	{
-		if (this.GetTipoControle() == TipoControle.TECLADO)
+		if (this.GetTipoControle() == TipoControle.Teclado)
 		{
 			return Gdx.input.isKeyPressed(_conjunto.HABILIDADE);
 		}
@@ -220,7 +226,7 @@ public class Controle
 	 */
 	public boolean GetPause()
 	{
-		if (this.GetTipoControle() == TipoControle.TECLADO)
+		if (this.GetTipoControle() == TipoControle.Teclado)
 		{
 			return Gdx.input.isKeyJustPressed(_conjunto.PAUSE);
 		}
@@ -250,9 +256,9 @@ public class Controle
 	public TipoControle GetTipoControle()
 	{
 		if (_controle != null)
-			return TipoControle.CONTROLE;
+			return TipoControle.Controle;
 		else
-			return TipoControle.TECLADO;
+			return TipoControle.Teclado;
 	}
 	
 	/**
@@ -279,13 +285,14 @@ public class Controle
 	 */
 	private boolean ValidaControle()
 	{
+		/*
 		if (!Controllers.getControllers().contains(_controle, true))
 		{
 			_controle = null;
 			this.GerenciaConjunto();
 			return false;
 		}
-
+		 */
 		return true;
 	}
 }

@@ -75,10 +75,10 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		}
 		else
 		{
-			if (!Player.playerPrimario.GetPersonagem().GetVisivel(this))
+			if (!Player.primario.GetPersonagem().GetVisivel(this))
 				return;
 			
-			_destino.set(Player.playerPrimario.GetPersonagem().GetPosicao());
+			_destino.set(Player.primario.GetPersonagem().GetPosicao());
 			this.GetCaminho();
 		}
 	}

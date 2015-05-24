@@ -1,9 +1,6 @@
 //TODO: validar teclado numero
 package classes.uteis.controle;
 
-import classes.uteis.Player.TipoPlayer;
-import classes.uteis.controle.Controle.TipoControle;
-
 import com.badlogic.gdx.Input.Keys;
 
 /**
@@ -12,8 +9,22 @@ import com.badlogic.gdx.Input.Keys;
  */
 public class ConjuntoComandos
 {
-	private TipoPlayer _player;
-	private TipoControle _tipoControle;
+	/**
+	 * Enumerados para os tipos de conjuntos de comandos.
+	 * @author matheus
+	 *
+	 */
+	public enum TipoConjunto
+	{
+		Primario,
+		Secundario,
+		Controle,
+	}
+	
+	static public ConjuntoComandos tecladoPrimario = new ConjuntoComandos(TipoConjunto.Primario);
+	static public ConjuntoComandos tecladoSecundario = new ConjuntoComandos(TipoConjunto.Secundario);
+	static public ConjuntoComandos controle = new ConjuntoComandos(TipoConjunto.Controle);
+	private TipoConjunto _tipoConjunto;
 	public int PAUSE = 0;
 	public int ACAO = 0;
 	public int HABILIDADE = 0;
@@ -26,17 +37,19 @@ public class ConjuntoComandos
 	public int ATAQUE_CIMA = 0;
 	public int ATAQUE_BAIXO = 0;
 	
+	/**
+	 * Contrói um {@link ConjuntoComandos conjunto de comandos} para teclado com o {@link TipoConjunto tipo} primário.
+	 */
 	public ConjuntoComandos() 
 	{
-		this(TipoPlayer.Primario, TipoControle.TECLADO);
-	};
+		this(TipoConjunto.Primario);
+	}
 	
-	public ConjuntoComandos(TipoPlayer playerComandos, TipoControle tipo)
+	public ConjuntoComandos(TipoConjunto conjunto)
 	{
-		_player = playerComandos;
-		_tipoControle = tipo;
+		_tipoConjunto = conjunto;
 		
-		if (_tipoControle == TipoControle.CONTROLE)
+		if (_tipoConjunto == TipoConjunto.Controle)
 			this.SetConjuntoControle();
 		else
 			this.SetConjuntoTeclado();
@@ -47,7 +60,7 @@ public class ConjuntoComandos
 	 */
 	public void SetConjuntoTeclado()
 	{
-		if (_player == TipoPlayer.Primario)
+		if (_tipoConjunto == TipoConjunto.Primario)
 		{
 			PAUSE = Keys.ESCAPE;
 			ACAO = Keys.E;
@@ -61,7 +74,7 @@ public class ConjuntoComandos
 			ATAQUE_BAIXO = Keys.K;
 			HABILIDADE = Keys.SPACE;
 		}
-		else
+		else if (_tipoConjunto == TipoConjunto.Secundario) 
 		{
 			PAUSE = Keys.ESCAPE;
 			ACAO = Keys.NUM_7;
@@ -93,5 +106,13 @@ public class ConjuntoComandos
 		ATAQUE_CIMA = XboxControleMap.AXIS_RIGHT_Y;
 		ATAQUE_BAIXO = XboxControleMap.AXIS_RIGHT_Y;
 		HABILIDADE = XboxControleMap.AXIS_LEFT_TRIGGER;
+	}
+	
+	/**
+	 * @return {@link TipoConjunto Tipo} deste conjunto.
+	 */
+	public TipoConjunto GetTipoConjunto()
+	{
+		return _tipoConjunto;
 	}
 }

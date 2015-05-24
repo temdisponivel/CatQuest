@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="55" height="50" tilewidth="32" tileheight="32" nextobjectid="123">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="48" height="27" tilewidth="32" tileheight="32" nextobjectid="124">
  <properties>
   <property name="Textura" value="sprites//mapa_fundo"/>
  </properties>
@@ -8,34 +8,34 @@
    <image width="1514" height="860" source="../imagens/sprites/mapa_fundo.png"/>
   </tile>
  </tileset>
- <layer name="Tiles" width="55" height="50">
+ <layer name="Tiles" width="48" height="27">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BMQEAAADCoPVPbQ0PoAAAAAAAAAAAAADg3wA+Y3r9+CoAAA==
+   H4sIAAAAAAAAC+3BgQAAAADDoPlTX+AIVQEAAAAAfAPkqTuZQBQAAA==
   </data>
  </layer>
  <objectgroup name="Objetos">
   <properties>
    <property name="Textura" value=""/>
   </properties>
-  <object id="17" gid="1" x="1" y="1598"/>
-  <object id="99" x="510" y="1378" width="686" height="142"/>
-  <object id="101" x="938" y="782" width="250" height="152"/>
-  <object id="102" x="1010" y="858" width="98" height="104"/>
-  <object id="106" x="1118" y="774" width="72" height="746"/>
-  <object id="107" x="1124" y="1158" width="332" height="134"/>
-  <object id="108" x="1414" y="798" width="50" height="502"/>
-  <object id="109" x="1146" y="786" width="318" height="58"/>
-  <object id="110" x="38" y="784" width="812" height="148"/>
-  <object id="111" x="70" y="930" width="466" height="34"/>
-  <object id="112" x="490" y="828" width="56" height="296"/>
-  <object id="114" x="540" y="914" width="42" height="192"/>
-  <object id="115" x="766" y="994" width="62" height="64"/>
-  <object id="116" x="988" y="1168" width="134" height="104"/>
-  <object id="117" x="946" y="1272" width="182" height="98"/>
-  <object id="118" x="30" y="1372" width="402" height="154"/>
-  <object id="119" x="332" y="1046" width="74" height="464"/>
-  <object id="120" x="44" y="1028" width="326" height="156"/>
-  <object id="121" x="194" y="1134" width="140" height="132"/>
-  <object id="122" x="34" y="778" width="78" height="750"/>
+  <object id="17" gid="1" x="4.0303" y="861.636"/>
+  <object id="99" x="513.03" y="641.636" width="686" height="142"/>
+  <object id="101" x="941.03" y="45.6364" width="250" height="152"/>
+  <object id="102" x="1013.03" y="121.636" width="98" height="104"/>
+  <object id="106" x="1121.03" y="37.6364" width="72" height="746"/>
+  <object id="107" x="1127.03" y="421.636" width="332" height="134"/>
+  <object id="108" x="1417.03" y="61.6364" width="50" height="502"/>
+  <object id="109" x="1149.03" y="49.6364" width="318" height="58"/>
+  <object id="110" x="41.0303" y="47.6364" width="812" height="148"/>
+  <object id="111" x="73.0303" y="193.636" width="466" height="34"/>
+  <object id="112" x="493.03" y="91.6364" width="56" height="296"/>
+  <object id="114" x="543.03" y="177.636" width="42" height="192"/>
+  <object id="115" x="769.03" y="257.636" width="62" height="64"/>
+  <object id="116" x="991.03" y="431.636" width="134" height="104"/>
+  <object id="117" x="949.03" y="535.636" width="182" height="98"/>
+  <object id="118" x="33.0303" y="635.636" width="402" height="154"/>
+  <object id="119" x="335.03" y="309.636" width="74" height="464"/>
+  <object id="120" x="47.0303" y="291.636" width="326" height="156"/>
+  <object id="121" x="197.03" y="397.636" width="140" height="132"/>
+  <object id="122" x="37.0303" y="41.6364" width="78" height="750"/>
  </objectgroup>
 </map>

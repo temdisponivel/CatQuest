@@ -16,16 +16,6 @@ public class Barbaro extends Heroi
 	{
 		super();
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/heroi")));
-		_vida = 150;
-		_ataque = 10;
-		_defesa = 15;
-		_agilidade = 300;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "Barbaro";
 	}
 
 	@Override
@@ -50,5 +40,4 @@ public class Barbaro extends Heroi
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

@@ -189,14 +189,11 @@ public abstract class GameObject
 	 */
 	public void SetCamada(Camada novaCamada)
 	{
-		if (this.GetTela() != null)
-		{
-			this.GetTela().Remover(this);
-			_camada = novaCamada;
-			this.GetTela().InserirGameObject(this);
-		}
-		else
-			_camada = novaCamada;
+		if (_camada != null)
+			_camada.Remover(this);
+		
+		_camada = novaCamada;
+		_camada.Adicionar(this);
 	}
 	
 	/**
@@ -390,6 +387,9 @@ public abstract class GameObject
 		if (colidiu == this)
 			return Colisoes.Passavel;
 		
+		if (!this.GetSeAtivo() || !colidiu.GetSeAtivo())
+			return Colisoes.Passavel;
+		
 		GameObject filho = null;
 		Colisoes outro = Colisoes.Livre;
 		Colisoes este = Colisoes.Livre;
@@ -477,8 +477,8 @@ public abstract class GameObject
 		filho.SetCamada(_camada);
 		filho.SetPosicaoRelativa(_posicaoTela);
 		
-		if (_telaInserido != null && _telaInserido.ContemGameObject(filho))
-			_telaInserido.Remover(filho);
+		if (_camada != null && _camada.ContemObjeto(filho))
+			_camada.Remover(filho);
 			
 		_filhos.add(filho);
 		
@@ -688,8 +688,8 @@ public abstract class GameObject
 	{
 		this.SetAtivo(false);
 		
-		if (_telaInserido != null)
-			_telaInserido.Remover(this);
+		if (_camada != null)
+			_camada.Remover(this);
 		
 		if (_colidiveis != null)
 			_colidiveis.clear();

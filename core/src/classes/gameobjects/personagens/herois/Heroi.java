@@ -63,10 +63,21 @@ public abstract class Heroi extends Personagem implements Serializador
 	{
 		super.Atualiza(deltaTime);
  
+		this.Movimenta(deltaTime);
+		
+		_player.GetControle().GetDirecaoAtaque();
+	}
+	
+	/**
+	 * Faz a movimentação do herói segundo entrada do usuário.
+	 */
+	protected void Movimenta(float delta)
+	{
 		int playerDirecao;
-		float auxMovimento = this._agilidade * deltaTime;
+		float auxMovimento = this._agilidade * delta;
 		float x = _posicaoTela.x;
 		float y = _posicaoTela.y;
+		Vector2 aux = null;
 				
 		if (_player != null)
 		{
@@ -79,55 +90,52 @@ public abstract class Heroi extends Personagem implements Serializador
 
 			if (playerDirecao != Direcoes.CENTRO)
 			{
-
 				if (playerDirecao == Direcoes.CIMA)
 				{
-					if (this.GetValorCampo(new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x, y + auxMovimento);
+					if (this.GetValorCampo(aux = new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.BAIXO)
 				{
-					if (this.GetValorCampo(new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x, y - auxMovimento);
+					if (this.GetValorCampo(aux = new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.ESQUERDA)
 				{
-					if (this.GetValorCampo(new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x - auxMovimento, y);
+					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.DIREITA)
 				{
-					if (this.GetValorCampo(new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x + auxMovimento, y);
+					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.NORDESTE)
 				{
-					if (this.GetValorCampo(new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x + auxMovimento, y + auxMovimento);
+					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.NOROESTE)
 				{
-					if (this.GetValorCampo(new Vector2(x - auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x - auxMovimento, y + auxMovimento);
+					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.SUDESTE)
 				{
-					if (this.GetValorCampo(new Vector2(x + auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x + auxMovimento, y - auxMovimento);
+					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 				else if (playerDirecao == Direcoes.SUDOESTE)
 				{
-					if (this.GetValorCampo(new Vector2(x - auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.SetPosicao(x - auxMovimento, y - auxMovimento);
+					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
+						this.SetPosicao(aux);
 				}
 			}
-
 		}
-		_player.GetControle().GetDirecaoAtaque();
 	}
 
 	/**
-	 * Define um player para este {@link Heroi herói}.
+	 * Define um player para este {@link Heroi herói}. Também define no player que este é o personagem que ele está controlando.
 	 * 
 	 * @param player
 	 *            {@link Player} para controlar este herói.
@@ -135,6 +143,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	public void SetPlayer(Player player)
 	{
 		_player = player;
+		_player.SetPersonagem(this);
 	}
 
 	@Override

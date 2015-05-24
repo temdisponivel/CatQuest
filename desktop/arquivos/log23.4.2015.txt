@@ -1,0 +1,44 @@
+
+Data: Sat May 23 21:03:45 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.utils.Json.writeField(Json.java:365)
+com.badlogic.gdx.utils.Json.writeField(Json.java:332)
+classes.gameobjects.personagens.Personagem.Salva(Personagem.java:573)
+classes.gameobjects.personagens.Personagem.Carrega(Personagem.java:549)
+classes.gameobjects.personagens.Personagem.Inicia(Personagem.java:132)
+classes.gameobjects.personagens.inimigos.Inimigo.Inicia(Inimigo.java:65)
+classes.telas.Tela.GerenciaGameObject(Tela.java:152)
+classes.telas.Tela.Atualiza(Tela.java:98)
+classes.telas.GamePlay.Atualiza(GamePlay.java:31)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Serialization trace:
+com.badlogic.gdx.utils.reflect.Field@5cc09c90 (classes.gameobjects.personagens.inimigos.Cachorro)
+
+Data: Sat May 23 21:17:06 BRT 2015 | Mensagem: com.badlogic.gdx.utils.Json@6628ad2b
+com.badlogic.gdx.utils.Json@6628ad2b
+Data: Sat May 23 21:17:06 BRT 2015 | Mensagem: com.badlogic.gdx.utils.Json@6ca1d390
+com.badlogic.gdx.utils.Json@6ca1d390
+Data: Sat May 23 22:17:49 BRT 2015 | Mensagem: Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+StackTrace: 
+java.util.Stack.peek(Unknown Source)
+java.util.Stack.pop(Unknown Source)
+classes.uteis.Reciclador.GetInstancia(Reciclador.java:38)
+classes.telas.GamePlay.Atualiza(GamePlay.java:34)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 23 22:17:49 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaGameObject(Tela.java:145)
+classes.telas.Tela.Atualiza(Tela.java:98)
+classes.telas.GamePlay.Atualiza(GamePlay.java:31)
+catquest.CatQuest.Atualiza(CatQuest.java:122)
+catquest.CatQuest.render(CatQuest.java:101)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

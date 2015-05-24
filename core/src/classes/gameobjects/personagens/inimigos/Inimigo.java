@@ -1,5 +1,3 @@
-//TODO: colocar campo de visao pro A*
-
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
@@ -89,6 +87,9 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Morre()
 	{		
 		_reciclador.Recicla(this);
+		
+		if (_camada != null)
+			_camada.Remover(this);
 	}
 	
 	@Override

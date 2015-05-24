@@ -29,7 +29,7 @@ public class Controle
 		static public final int CIMA = 23;
 		static public final int BAIXO = 31;
 		static public final int NORDESTE = 34;
-		static public final int SUDESTE = 44;
+		static public final int SUDESTE = 42;
 		static public final int NOROESTE = 30;
 		static public final int SUDOESTE = 38;
 	};
@@ -56,7 +56,7 @@ public class Controle
 	 * @param tipoPlayer {@link TipoPlayer} que vai utilizar o controle.
 	 */
 	public Controle(TipoPlayer tipo)
-	{		
+	{
 		//PERCORRE TODOS OS CONTROLES
 		for (Controller controle : Controllers.getControllers())
 		{
@@ -112,6 +112,7 @@ public class Controle
 				direcao += Direcoes.ESQUERDA;
 			else if (Gdx.input.isKeyPressed(_conjunto.DIREITA))
 				direcao += Direcoes.DIREITA;
+			
 			if (Gdx.input.isKeyPressed(_conjunto.CIMA))
 				direcao += Direcoes.CIMA;
 			else if (Gdx.input.isKeyPressed(_conjunto.BAIXO))

@@ -2,6 +2,7 @@ package classes.uteis;
 
 import java.util.HashMap;
 import java.util.Stack;
+
 import classes.gameobjects.GameObject;
 
 /**
@@ -13,7 +14,6 @@ import classes.gameobjects.GameObject;
  */
 public class Reciclador<T extends Reciclavel>
 {
-	private HashMap<Class<? extends T>, Stack<T>> _objetos = null;
 	private HashMap<Class<? extends T>, Stack<T>> _objetosLivres = null;
 	
 	/**
@@ -21,7 +21,6 @@ public class Reciclador<T extends Reciclavel>
 	 */
 	public Reciclador()
 	{
-		_objetos = new HashMap<Class<? extends T>, Stack<T>>();
 		_objetosLivres = new HashMap<Class<? extends T>, Stack<T>>();
 	}
 	
@@ -34,20 +33,16 @@ public class Reciclador<T extends Reciclavel>
 	{
 		try
 		{
-			if (_objetosLivres.containsKey(classe))
+			if (_objetosLivres.containsKey(classe) && !_objetosLivres.get(classe).isEmpty())
 				return _objetosLivres.get(classe).pop();
 			
-			T instancia = classe.newInstance();
-			this.Recicla(instancia);
-			
-			return instancia;
+			return classe.newInstance();
 		}
 		catch (Exception e)
 		{
 			Log.instancia.Logar("Erro ao instanciar um reciclavel do tipo" + classe.toString(), e, false);
+			return null;
 		}
-		
-		return null;
 	}
 	
 	/**
@@ -56,19 +51,44 @@ public class Reciclador<T extends Reciclavel>
 	 */
 	@SuppressWarnings("unchecked")
 	public void Recicla(T reciclavel)
-	{
-		if (_objetos.containsKey(reciclavel.getClass()))
+	{		
+		if (!_objetosLivres.containsKey(reciclavel.getClass()))
 		{
-			_objetos.get(reciclavel.getClass()).remove(reciclavel);
+			_objetosLivres.put((Class<? extends T>) reciclavel.getClass(), new Stack<T>());
 		}
 		
+		reciclavel.Recicla();
+		_objetosLivres.get(reciclavel.getClass()).push(reciclavel);
+	}
+	
+	/**
+	 * Remove o {@link T objeto} do reciclador. Esta instancia não será mais retornada a partir de {@link #GetInstancia(Class)}.
+	 * Caso o objeto não esteja neste reciclador, nada é realizado.
+	 * Esta função não recicla o objeto.
+	 * @param reciclavel Reciclável a remover do reciclador.
+	 */
+	public void Remove(T reciclavel)
+	{		
+		if (_objetosLivres.containsKey(reciclavel.getClass()))
+		{
+			_objetosLivres.get(reciclavel.getClass()).remove(reciclavel);
+		}
+	}
+	
+	/**
+	 * Adiciona o {@link T objeto} no reciclador. Esta instancia agora poderá retornar a partir de {@link #GetInstancia(Class)}.
+	 * Esta função não recicla o objeto.
+	 * @param reciclavel Reciclável a ser adicionado ao reciclador.
+	 */
+	@SuppressWarnings("unchecked")
+	public void Adicionalivre(T reciclavel)
+	{
 		if (!_objetosLivres.containsKey(reciclavel.getClass()))
 		{
 			_objetosLivres.put((Class<? extends T>) reciclavel.getClass(), new Stack<T>());
 		}
 		
 		_objetosLivres.get(reciclavel.getClass()).push(reciclavel);
-		reciclavel.Recicla();
 	}
 	
 	/**
@@ -76,7 +96,6 @@ public class Reciclador<T extends Reciclavel>
 	 */
 	public void Limpa()
 	{
-		_objetos.clear();
 		_objetosLivres.clear();
 	}
 }

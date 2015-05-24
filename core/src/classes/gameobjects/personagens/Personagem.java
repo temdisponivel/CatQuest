@@ -1,17 +1,19 @@
 package classes.gameobjects.personagens;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.Json;
-
+import com.badlogic.gdx.utils.JsonReader;
+import com.badlogic.gdx.utils.JsonValue;
+import com.badlogic.gdx.utils.JsonWriter;
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
+import classes.uteis.Log;
 import classes.uteis.Serializador;
 
 /**
@@ -110,17 +112,16 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected Vector2 _destino = null;
 	protected float _campoVisao = 0f;
 	private float _coeficienteLerp = 0;
+	private JsonValue _valoresArquivo = null;
 	
 	/**
 	 * Cria um novo personagem.
 	 */
 	public Personagem()
 	{
-		super();			
+		super();
 		personagens.put(this.GetId(), this);
 		_colidiveis.put(GameObjects.Cenario, Colisoes.NaoPassavel);
-		_caminho = new LinkedList<Vector2>();
-		_destino = new Vector2();
 		_camada = Camada.Personagens;
 	}
 	
@@ -128,8 +129,12 @@ public abstract class Personagem extends GameObject implements Serializador
 	public void Inicia()
 	{
 		super.Inicia();
-		//TODO: validar o carregamento via arquivo
-		//this.Carrega();
+		
+		this.SetPosicao(new Vector2());
+		_caminho = new LinkedList<Vector2>();
+		_destino = new Vector2();
+		
+		this.Carrega();
 	}
 		
 	/**
@@ -378,11 +383,11 @@ public abstract class Personagem extends GameObject implements Serializador
 	{		
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
 		Vector2 auxPosicao = new Vector2();
+		Colisoes resultado = Colisoes.Livre;
 		
 		//DIREITA
-		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
+		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y;
-		Colisoes resultado = Colisoes.Livre;
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
@@ -393,7 +398,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		
 		//CIMA
 		auxPosicao.x = atual.posicao.x;
-		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
+		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
@@ -403,7 +408,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//ESQUERDA
-		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
+		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y;
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
@@ -415,7 +420,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		
 		//BAIXO
 		auxPosicao.x = atual.posicao.x;
-		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
+		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
@@ -425,8 +430,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//NORDESTE
-		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
-		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
+		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisaoMapaX();
+		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
@@ -436,8 +441,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//NOROESTE
-		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
-		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisarMapaY();
+		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisaoMapaX();
+		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
@@ -447,8 +452,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//SUDOESTE
-		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisarMapaX();
-		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
+		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisaoMapaX();
+		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
@@ -458,8 +463,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		
 		//SUDESTE
-		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisarMapaX();
-		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisarMapaY();
+		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisaoMapaX();
+		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
@@ -545,23 +550,17 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		//se o arquivo nao existe, cria para que possa ser alterado e retorna falso
 		if (!_arquivo.exists())
-		{
 			this.Salva();
-			return false;
-		}
 		
-		Json json = new Json();
-		String personagem = _arquivo.readString();
+		if (_valoresArquivo == null)
+			_valoresArquivo = new JsonReader().parse(_arquivo);
 		
-		//carrega do arquivo
-		Personagem personagemTemp = json.fromJson(Personagem.class, personagem);
-		
-		_agilidade = personagemTemp.GetAgilidade();
-		_defesa = personagemTemp.GetDefesa();
-		_ataque = personagemTemp.GetAtaque();
-		_vida = personagemTemp.GetVida();
-		_chanseCritico = personagemTemp.GetChanceCritico();
-		_coeficienteCritico = personagemTemp.GetCoeficienteCritico();
+		_agilidade = _valoresArquivo.getFloat("_agilidade", 0f);
+		_defesa = _valoresArquivo.getFloat("_defesa", 0f);
+		_ataque = _valoresArquivo.getFloat("_ataque", 0f);
+		_vida = _valoresArquivo.getFloat("_vida", 0f);
+		_chanseCritico = _valoresArquivo.getFloat("_chanseCritico", 0f);
+		_coeficienteCritico = _valoresArquivo.getFloat("_coeficienteCritico", 0f);
 		
 		return true;
 	}
@@ -569,10 +568,23 @@ public abstract class Personagem extends GameObject implements Serializador
 	@Override
 	public void Salva()
 	{
-		Json json = new Json();
-		json.setUsePrototypes(false);
-		String personagem;
-		personagem = json.toJson((Personagem)this);
-		_arquivo.writeString(personagem, false);
+		JsonWriter json = new JsonWriter(_arquivo.writer(false));
+		
+		try
+		{
+			json.object();
+			json.name("_agilidade").value(0f);
+			json.name("_defesa").value(0f);
+			json.name("_ataque").value(0f);
+			json.name("_vida").value(0f);
+			json.name("_chanseCritico").value(0f);
+			json.name("_coeficienteCritico").value(0f);
+			json.close();
+		}
+		catch (IOException e)
+		{
+			Log.instancia.Logar("Erro ao carregar dados de personagem do arquivo!", e, false);
+			_arquivo.delete();
+		}
 	}
 }

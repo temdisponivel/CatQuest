@@ -218,9 +218,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA CAMERA ORTOGRAFICA PARA QUE N�O TENHA DIFEREN�A ENTRE PROFUNDIDADE.
 		//CRIA COM O TAMANHO DAS CONFIGURA��ES
 		_camera = new OrthographicCamera();
-		_camera.setToOrtho(false, Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
-		_viewPort = new StretchViewport(1920, 1080, _camera);
-		_viewPort.apply();
+		_camera.setToOrtho(false, 1920, 1080);
+		_viewPort = new StretchViewport(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), _camera);
+		_viewPort.apply(true);
 		
 		//SE FOR PRA COME�AR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
 		if (intro)

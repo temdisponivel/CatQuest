@@ -434,7 +434,7 @@ public class Tela implements OnCompletionListener
 					prop.put("rotation", 0f);
 				
 				if (!prop.containsKey("Textura"))
-					prop.put("Textura", "sprites//bloqueio");
+					prop.put("Textura", "");
 				
 				if (obj instanceof RectangleMapObject)
 					this.InserirGameObject(new ObjetoCenario(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)), 

@@ -1,8 +1,10 @@
 package classes.uteis;
 
 import com.badlogic.gdx.graphics.Camera;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.telas.Tela;
@@ -14,7 +16,7 @@ import classes.telas.Tela;
 public class ControladorCamera extends GameObject 
 {
 	private GameObject[] _objetos = null;
-	private Camera _camera = null;
+	private OrthographicCamera _camera = null;
 	private Rectangle tamanho = null;
 	
 	/**

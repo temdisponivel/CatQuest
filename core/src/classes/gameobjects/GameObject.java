@@ -2,12 +2,14 @@ package classes.gameobjects;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+
 import classes.uteis.Camada;
-import classes.uteis.CarregarSom;
-import classes.uteis.CarregarSomListner;
 import classes.uteis.Configuracoes;
+import classes.uteis.sons.CarregarSom;
+import classes.uteis.sons.CarregarSomListner;
 import classes.telas.Tela;
 import catquest.CatQuest;
+
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -95,13 +97,18 @@ public abstract class GameObject
 			return;
 		
 		if (_animacao != null)
-			_sprite.setRegion(_animacao.getKeyFrame(CatQuest.instancia.GetTempoJogo()));
+		{
+			if (_sprite == null) _sprite = new Sprite();
+			
+			_sprite.setRegion(_animacao.getKeyFrame(CatQuest.instancia.GetTempoJogo(), true));
+			_sprite.setSize(_sprite.getRegionWidth(), _sprite.getRegionHeight());
+		}
 		
 		if (_sprite != null)
 		{
 			_sprite.setColor(_cor);
 			_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
-			_caixaColisao.set(_sprite.getBoundingRectangle());
+			_caixaColisao.set(_posicaoTela.x, _posicaoTela.y, _sprite.getRegionWidth(), _sprite.getRegionHeight());
 		}
 		
 		_caixaColisao.setPosition(_posicaoTela);
@@ -313,7 +320,8 @@ public abstract class GameObject
 	
 	/**
 	 * Retorna a {@link Tela} que este game object estï¿½ inserido.
-	 * @return Referencia para {@link Tela} deste game object.
+	 * @return Referencia para {@link Tela} deste game object. Ou nulo caso não esteja em nenhum tela.
+	 * @see {@link #GetSeEmTela()}
 	 */
 	public final Tela GetTela()
 	{
@@ -664,7 +672,8 @@ public abstract class GameObject
 		if (!_animacoes.containsKey(chave.ordinal()))
 			return;
 		
-		_animacao = _animacoes.get(chave.ordinal());
+		if (_animacao != _animacoes.get(chave.ordinal()))
+			_animacao = _animacoes.get(chave.ordinal());
 	}
 	
 	/**
@@ -697,17 +706,62 @@ public abstract class GameObject
 	}
 	
 	/**
+	 * @return True caso este {@link GameObject objeto} esteja inserido em alguma tela.
+	 */
+	public boolean GetSeEmTela()
+	{
+		return _telaInserido != null;
+	}
+	
+	/**
+	 * @return True caso este {@link GameObject objeto} seja filho de outro.
+	 */
+	public boolean GetSeFilho()
+	{
+		return _pai != null;
+	}
+	
+	/**
+	 * @return Instancia do pai deste {@link GameObject objeto}. Ou nulo caso não tenha pai.
+	 * @see {@link #GetSeFilho()}.
+	 */
+	public GameObject GetPai()
+	{
+		return _pai;
+	}
+	
+	/**
+	 * Remove este {@link GameObject objeto} do pai. Caso não seja filho, nada acontece.
+	 */
+	public void RemoverDoPai()
+	{
+		if (_pai != null)
+			_pai.RemoveFilho(this);
+		
+		_pai = null;
+	}
+	
+	
+	/**
+	 * Remove este {@link GameObject objeto} da {@link Tela tela}. Caso não esteja em nenhuma tela, nada acontece.
+	 */
+	public void RemoverDaTela()
+	{
+		if (_telaInserido != null)
+			_telaInserido.Remover(this);
+		
+		_telaInserido = null;
+	}
+	
+	/**
 	 * Libera os recursos deste game object.
 	 */
 	public void Encerra()
 	{
 		this.SetAtivo(false);
 		
-		if (_telaInserido != null)
-			_telaInserido.Remover(this);
-		
-		if (_pai != null)
-			_pai.RemoveFilho(this);
+		this.RemoverDaTela();
+		this.RemoverDoPai();
 		
 		if (this.GetSePai())
 		{

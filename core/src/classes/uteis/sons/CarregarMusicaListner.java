@@ -1,4 +1,4 @@
-package classes.uteis;
+package classes.uteis.sons;
 
 import com.badlogic.gdx.audio.Music;
 

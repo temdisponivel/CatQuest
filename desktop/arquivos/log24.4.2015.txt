@@ -136,3 +136,54 @@ catquest.CatQuest.render(CatQuest.java:103)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sun May 24 15:15:28 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.Atualiza(GameObject.java:98)
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:61)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:37)
+catquest.CatQuest.Atualiza(CatQuest.java:124)
+catquest.CatQuest.render(CatQuest.java:103)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sun May 24 15:16:11 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.SpriteBatch.flush(SpriteBatch.java:955)
+com.badlogic.gdx.graphics.g2d.SpriteBatch.switchTexture(SpriteBatch.java:1047)
+com.badlogic.gdx.graphics.g2d.SpriteBatch.draw(SpriteBatch.java:558)
+com.badlogic.gdx.graphics.g2d.Sprite.draw(Sprite.java:515)
+classes.gameobjects.GameObject.Desenha(GameObject.java:131)
+classes.gameobjects.GameObject.Desenha(GameObject.java:140)
+classes.telas.Tela.Desenha(Tela.java:129)
+catquest.CatQuest.Desenha(CatQuest.java:154)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sun May 24 15:51:09 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:101)
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:61)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:37)
+catquest.CatQuest.Atualiza(CatQuest.java:124)
+catquest.CatQuest.render(CatQuest.java:103)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sun May 24 18:07:40 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.ControladorCamera.Atualiza(ControladorCamera.java:87)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:37)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

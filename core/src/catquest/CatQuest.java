@@ -4,12 +4,14 @@ package catquest;
 
 import java.io.IOException;
 import java.util.Stack;
-import classes.uteis.CarregarMusica;
-import classes.uteis.CarregarSom;
+
 import classes.uteis.Configuracoes;
 import classes.uteis.Log;
+import classes.uteis.sons.CarregarMusica;
+import classes.uteis.sons.CarregarSom;
 import classes.gameobjects.GameObject;
 import classes.telas.*;
+
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -25,6 +27,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
@@ -209,9 +212,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA CAMERA ORTOGRAFICA PARA QUE Nï¿½O TENHA DIFERENï¿½A ENTRE PROFUNDIDADE.
 		//CRIA COM O TAMANHO DAS CONFIGURAï¿½ï¿½ES
 		_camera = new OrthographicCamera();
-		_camera.setToOrtho(false, 1920, 1080);
-		_viewPort = new FillViewport(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), _camera);
-		_viewPort.apply(true);
+		
+		//_viewPort = new FillViewport(10000, 10000, _camera); //TODO: viewport
+		//_viewPort.apply(true);
 		
 		this.AplicarConfiguracoes();
 		
@@ -285,8 +288,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public void AplicarConfiguracoes()
 	{		
 		Gdx.graphics.setDisplayMode(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), Configuracoes.instancia.GetFullscreen());
-		_viewPort.setWorldSize(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
-		_viewPort.apply(true);
+		_camera.setToOrtho(false, Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
+		//_viewPort.apply(true);
 	}
 	
 	/**
@@ -386,22 +389,12 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Definir uma nova posiï¿½ï¿½o a {@link OrthographicCamera} do jogo.
-	 * @param posicao {@link Vector2} com o x e y do canto superior esquerda da camera.
-	 */
-	public void SetPosicaoCamera(Vector2 posicao)
-	{
-		if (posicao != null)
-			_camera.translate(posicao);
-	}
-	
-	/**
 	 * Retorna a largura da tela.
 	 * @return Largura da tela.
 	 */
 	public float GetLarguraTela()
 	{
-		return _viewPort.getWorldWidth(); 
+		return Gdx.graphics.getWidth(); 
 	}
 	
 	/**
@@ -410,7 +403,15 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public float GetAlturaTela()
 	{
-		return _viewPort.getWorldHeight(); 
+		return Gdx.graphics.getHeight();
+	}
+	
+	/**
+	 * @return Tamanho da hipotenusa da tela. Que é a raiz quadrada da soma dos quadrados dos catetos (altura e largura). 
+	 */
+	public float GetHipotenusaTela()
+	{
+		return (float) Math.sqrt(Math.pow(CatQuest.instancia.GetLarguraTela(), 2) + Math.pow(CatQuest.instancia.GetAlturaTela(), 2));
 	}
 	
 	/**

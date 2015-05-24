@@ -1,9 +1,11 @@
 package classes.uteis;
 
-import com.badlogic.gdx.graphics.Camera;
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
@@ -45,36 +47,42 @@ public class ControladorCamera extends GameObject
 			return;
 		
 		Vector2 posicao = null;
-		for (int i = 0; i < _objetos.length; i++)
+		Vector2 posicaoLongeA = null, posicaoLongeB = null;
+		float maiorDistancia = 0; 
+		
+		if (_objetos.length > 1)
 		{
-			posicao = _objetos[i].GetPosicao();
-			
-			if (posicao.x > tamanho.getWidth() / 2)
+			//pega distancias e posicao dos objetos
+			for (int i = 0; i < _objetos.length; i++)
 			{
-				tamanho.x = posicao.x - _camera.position.x;
-			}
-			else
-			{
+				posicao = _objetos[i].GetPosicao();
 				
-			}
-			
-			if (posicao.y > tamanho.getWidth() / 2)
-			{
-				tamanho.y = posicao.y - _camera.position.y;
-			}
-			else
-			{
+				//pega a maior distancia entre dois objetos
+				if (posicaoLongeB != null)
+				{
+					if (maiorDistancia < posicao.dst(posicaoLongeB))
+					{
+						posicaoLongeA = posicao;
+						maiorDistancia = posicao.dst(posicaoLongeB);
+					}
+				}
 				
+				posicaoLongeB = posicao;
 			}
 		}
+		else
+		{
+			maiorDistancia = 0;
+		}
 		
-		if ((tamanho.x + tamanho.width) > _telaInserido.GetLarguraMapa())
-			tamanho.x -= (tamanho.x + tamanho.width) - _telaInserido.GetLarguraMapa();
+		//se a distancia entre os dois objetos mais separados, é maior que a hiponusa da tela, dá zoom
+		if (maiorDistancia > CatQuest.instancia.GetHipotenusaTela())
+			_camera.zoom = 1 + (maiorDistancia / 1000);
+		else
+			_camera.zoom = 1 - (maiorDistancia / 1000) >= 1 ? 1 - (maiorDistancia / 1000) : 1;
 		
-		if ((tamanho.y + tamanho.height) > _telaInserido.GetAlturaMapa())
-			tamanho.y -= (tamanho.y + tamanho.height) - _telaInserido.GetAlturaMapa();
-		
-		_camera.translate(tamanho.x, tamanho.y, 0);
+		if (posicaoLongeA != null & posicaoLongeB != null)
+			_camera.position.set(posicaoLongeA.lerp(posicaoLongeB, 0.5f), 0);
 	}
 	
 	@Override

@@ -1,9 +1,10 @@
-package classes.uteis;
+package classes.uteis.reciclador;
 
 import java.util.HashMap;
 import java.util.Stack;
 
 import classes.gameobjects.GameObject;
+import classes.uteis.Log;
 
 /**
  * Classe para auxiliar no gerenciamento de memória.

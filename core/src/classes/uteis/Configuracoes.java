@@ -22,8 +22,8 @@ public class Configuracoes implements Serializador
 	private boolean _fullscreen;
 	private boolean _mostraFPS;
 	private boolean _audio;
-	private ConjuntoComandos _comandoPlayer1;
-	private ConjuntoComandos _comandoPlayer2;
+	private ConjuntoComandos _conjuntoPrimario;
+	private ConjuntoComandos _conjuntoSecundario;
 	
 	public Configuracoes()
 	{
@@ -42,8 +42,10 @@ public class Configuracoes implements Serializador
 		this.SetMostraFPS(false);
 		this.SetVolumeMusica(50);
 		this.SetVolumeSom(50);
-		_comandoPlayer1 = ConjuntoComandos.tecladoPrimario;
-		_comandoPlayer2 = ConjuntoComandos.tecladoSecundario;
+		_conjuntoPrimario = ConjuntoComandos.tecladoPrimario;
+		_conjuntoSecundario = ConjuntoComandos.tecladoSecundario;
+		
+		this.Salva();
 	}
 
 	/**
@@ -178,37 +180,37 @@ public class Configuracoes implements Serializador
 	}
 	
 	/**
-	 * @return O {@link ConjuntoComandos} do player1.
+	 * @return O {@link ConjuntoComandos} primário.
 	 */
-	public ConjuntoComandos GetComandoPlayerPrimario()
+	public ConjuntoComandos GetConjuntoPrimario()
 	{
-		return _comandoPlayer1;
+		return _conjuntoPrimario;
 	}
 
 	/**
-	 * Define um novo {@link ConjuntoComandos} para o player1.
-	 * @param comando Novo {@link ConjuntoComandos} do player1.
+	 * Define um novo {@link ConjuntoComandos} primário.
+	 * @param comando Novo {@link ConjuntoComandos} primário.
 	 */
-	public void SetComandoPlayer1(ConjuntoComandos comando)
+	public void SetConjuntoPrimario(ConjuntoComandos comando)
 	{
-		this._comandoPlayer1 = comando;
+		this._conjuntoPrimario = comando;
 	}
 
 	/**
-	 * @return O {@link ConjuntoComandos} do player2.
+	 * @return O {@link ConjuntoComandos} secundário.
 	 */
-	public ConjuntoComandos GetComandoPlayerSecundario()
+	public ConjuntoComandos GetConjuntoSecundario()
 	{
-		return _comandoPlayer2;
+		return _conjuntoSecundario;
 	}
 
 	/**
-	 * Define um novo {@link ConjuntoComandos} para o player2.
-	 * @param comando Novo {@link ConjuntoComandos} do player2.
+	 * Define um novo {@link ConjuntoComandos} secundário.
+	 * @param comando Novo {@link ConjuntoComandos} secundário.
 	 */
-	public void SetComandoPlayer2(ConjuntoComandos comando)
+	public void SetConjuntoSecundario(ConjuntoComandos comando)
 	{
-		this._comandoPlayer2 = comando;
+		this._conjuntoSecundario = comando;
 	}
 	
 	/**

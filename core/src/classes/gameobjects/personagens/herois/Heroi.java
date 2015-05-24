@@ -59,7 +59,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
- 
 		this.Movimenta(deltaTime);
 	}
 	
@@ -69,7 +68,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	protected void Movimenta(float delta)
 	{
 		int playerDirecao;
-		float auxMovimento = _telaInserido.GetPrecisaoMapaX();
+		float auxMovimento = Math.max(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY());;
 		float alfa = this._agilidade * delta;
 		float x = _posicaoTela.x;
 		float y = _posicaoTela.y;

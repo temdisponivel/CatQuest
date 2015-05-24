@@ -44,9 +44,9 @@ public class Player
 	public void IniciaControle()
 	{
 		if (_tipo == TipoPlayer.Primario)
-			_controle = new Controle(Configuracoes.instancia.GetComandoPlayerPrimario());
+			_controle = new Controle(Configuracoes.instancia.GetConjuntoPrimario());
 		else if (_tipo == TipoPlayer.Secundario)
-			_controle = new Controle(Configuracoes.instancia.GetComandoPlayerSecundario());
+			_controle = new Controle(Configuracoes.instancia.GetConjuntoSecundario());
 	}
 	
 	/**

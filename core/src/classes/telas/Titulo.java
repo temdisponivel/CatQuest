@@ -3,11 +3,9 @@ package classes.telas;
 import catquest.CatQuest;
 import classes.gameobjects.personagens.herois.Barbaro;
 import classes.uteis.Player;
-import classes.uteis.Player.TipoPlayer;
 import classes.uteis.UI.Botao;
 import classes.uteis.UI.BotaoTexto;
 import classes.uteis.UI.Botao.EscutadorBotao;
-
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -41,14 +39,12 @@ public class Titulo extends Tela implements EscutadorBotao
 		{
 			if (botaoClicado == jogar)
 			{
-				Barbaro a, b, c;
+				Barbaro a, b;
 				a = new Barbaro();
 				b = new Barbaro();
-				c = new Barbaro();
 				a.SetPlayer(Player.primario);
-				b.SetPlayer(new Player(TipoPlayer.Primario));
-				c.SetPlayer(new Player(TipoPlayer.Secundario));
-				CatQuest.instancia.AdicionaTela(new GamePlay(a, b, c), false, false);
+				b.SetPlayer(Player.secundario);
+				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
 			}
 			else if (botaoClicado == configurar)
 			{

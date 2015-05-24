@@ -203,6 +203,8 @@ public abstract class Personagem extends GameObject implements Serializador
 	public boolean Movimenta(Vector2 destino, float deltaTime)
 	{
 		this.TocaSom(SomPersonagem.Movimenta);
+		this.SetAnimacao(AnimacaoPersonagem.Movimento);
+		
 		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade * _coeficienteLerp));
 		
 		if (_agilidade * _coeficienteLerp == 1)

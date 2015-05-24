@@ -6,8 +6,8 @@ import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.uteis.Camada;
 import classes.uteis.Player;
-import classes.uteis.Reciclador;
-import classes.uteis.Reciclavel;
+import classes.uteis.reciclador.Reciclador;
+import classes.uteis.reciclador.Reciclavel;
 
 /**
  * Classe base para todos os inimigos do jogo.

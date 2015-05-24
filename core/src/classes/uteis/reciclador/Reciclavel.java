@@ -1,4 +1,4 @@
-package classes.uteis;
+package classes.uteis.reciclador;
 
 /**
  * Utilizado pelo {@link Reciclador reciclador} para liberar e reutilizar aqueles que implementam.

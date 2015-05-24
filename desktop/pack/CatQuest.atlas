@@ -31,18 +31,18 @@ size: 2048,2048
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+sprites/barbaro
+  rotate: false
+  xy: 1924, 2003
+  size: 54, 22
+  orig: 54, 22
+  offset: 0, 0
+  index: -1
 sprites/bloqueio
   rotate: false
   xy: 2, 2
   size: 334, 79
   orig: 334, 79
-  offset: 0, 0
-  index: -1
-sprites/heroi
-  rotate: false
-  xy: 1924, 2003
-  size: 16, 22
-  orig: 16, 22
   offset: 0, 0
   index: -1
 sprites/inimigo
@@ -64,5 +64,18 @@ sprites/mapa_fundo
   xy: 2, 83
   size: 1514, 860
   orig: 1514, 860
+  offset: 0, 0
+  index: -1
+
+CatQuest3.png
+size: 64,32
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+sprites/herois/barbaro
+  rotate: false
+  xy: 2, 2
+  size: 54, 22
+  orig: 54, 22
   offset: 0, 0
   index: -1

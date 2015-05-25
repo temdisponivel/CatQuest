@@ -7,6 +7,7 @@ import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.Player;
 import classes.uteis.Serializador;
+import classes.uteis.controle.Controle.Direcoes;
 
 
 /**
@@ -59,13 +60,16 @@ public abstract class Heroi extends Personagem implements Serializador
  
 		this.Movimenta(_player.GetControle().GetDirecao(), deltaTime);
 		
-		_player.GetControle().GetDirecaoAtaque();
+		if (_player.GetControle().GetDirecaoAtaque() != Direcoes.CENTRO)
+			this.AtaqueBasico();
 		
 		if (_player.GetControle().GetAcao())
 			this.Acao();
 		
 		if (_player.GetControle().GetHabilidade())
 			this.HabilidadeAtiva();
+		
+		
 	}
 	
 
@@ -115,7 +119,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	protected abstract void HabilidadeAtiva();
 
 	/**
-	 * Função chamada quando o herói deve executar um atque normal
+	 * Função chamada quando o herói deve executar um ataque normal
 	 */
 	protected abstract void AtaqueBasico();
 }

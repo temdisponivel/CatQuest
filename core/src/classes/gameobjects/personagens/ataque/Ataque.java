@@ -32,6 +32,7 @@ public abstract class Ataque extends Personagem
 		_direcao = direcao;
 	}
 	
+	
 	@Override
 	public void Morre()
 	{
@@ -59,6 +60,12 @@ public abstract class Ataque extends Personagem
 		}
 	}
 	
-	protected abstract void Movimenta();
+	protected abstract void MovimentaAtaque(float deltaTime);
+
+	protected void Atualiza()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 
 }

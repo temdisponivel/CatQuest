@@ -594,7 +594,11 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Faz a movimentação do {@link Personagem personagem} entrada do usuário.
+	 * Faz a movimentação do {@link Personagem personagem} segundo entrada do usuário. Só movimenta em campo diferente de não passável.
+	 * Ou seja, nunca existe colisão movimentando por aqui. Caso não haja mais posição válida na direção informada, nada acontece.
+	 * @param direcao Direção do ataque.
+	 * @param delta Coeficiente para a agilidade.
+	 * @see {@link Direcoes}
 	 */
 	protected void Movimenta(int direcao, float delta)
 	{
@@ -630,8 +634,7 @@ public abstract class Personagem extends GameObject implements Serializador
 			}
 			else if (playerDirecao == Direcoes.NORDESTE)
 			{
-				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y
-						+ auxMovimento)) != Colisoes.NaoPassavel)
+				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
 			}
 			else if (playerDirecao == Direcoes.NOROESTE)

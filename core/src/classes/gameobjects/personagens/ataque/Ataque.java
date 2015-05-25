@@ -17,9 +17,8 @@ import classes.gameobjects.personagens.inimigos.Inimigo;
 
 public abstract class Ataque extends Personagem
 {
-	
-	protected Vector2 _posicao;
 	protected int _direcao;
+	protected Vector2 _posicaoInicial;
 	
 	public Ataque()
 	{
@@ -28,8 +27,18 @@ public abstract class Ataque extends Personagem
 
 	public Ataque(Vector2 posicao, int direcao)
 	{
-		_posicao = posicao;
+		this();
+		_posicaoInicial = posicao.cpy();
 		_direcao = direcao;
+		_tipo = GameObjects.Ataque;
+	}
+	
+	@Override
+	public void Inicia()
+	{
+		super.Inicia();
+		
+		this.SetPosicao(_posicaoInicial);
 	}
 	
 	

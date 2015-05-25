@@ -123,7 +123,7 @@ public class Botao extends GameObject
 			return;
 		
 		//se o cursor está em cima do botao
-		if (_caixaColisao.contains(Gdx.input.getX(), CatQuest.instancia.GetAlturaTela() - Gdx.input.getY()))
+		if (_caixaColisao.contains(CatQuest.instancia.GetMouse()))
 		{
 			//se apertou o esquerdo
 			if (!_apertado && Gdx.input.isButtonPressed(Buttons.LEFT))

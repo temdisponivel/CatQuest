@@ -30,7 +30,7 @@ public class Configuracoes extends Tela implements EscutadorBotao
 		_controles = new BotaoTexto("Controles", new Rectangle(0, 0, 200, 30), new Vector2(), this);
 		
 		_categoriaConfig = new Menu(new Vector2(), _controles, _audio, _grafico);
-		_categoriaConfig.SetPosicao(10, (CatQuest.instancia.GetAlturaTela() / 2) - (_categoriaConfig.GetAltura() / 2));
+		_categoriaConfig.SetPosicao(10, (CatQuest.instancia.GetAlturaMundo() / 2) - (_categoriaConfig.GetAltura() / 2));
 		
 		//_menus = new Stack<Menu>();
 		

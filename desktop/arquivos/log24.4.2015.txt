@@ -187,3 +187,42 @@ catquest.CatQuest.render(CatQuest.java:106)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sun May 24 19:43:45 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.SpriteBatch.draw(SpriteBatch.java:553)
+com.badlogic.gdx.graphics.g2d.BitmapFontCache.draw(BitmapFontCache.java:238)
+com.badlogic.gdx.graphics.g2d.BitmapFont.draw(BitmapFont.java:261)
+catquest.CatQuest.GetMouse(CatQuest.java:562)
+classes.uteis.UI.Botao.Atualiza(Botao.java:126)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:124)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:109)
+catquest.CatQuest.Atualiza(CatQuest.java:126)
+catquest.CatQuest.render(CatQuest.java:105)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: SpriteBatch.begin must be called before draw.
+
+Data: Sun May 24 21:15:06 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.ControladorCamera.Atualiza(ControladorCamera.java:98)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:126)
+catquest.CatQuest.render(CatQuest.java:105)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sun May 24 21:59:10 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.ControladorCamera.Atualiza(ControladorCamera.java:96)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:126)
+catquest.CatQuest.render(CatQuest.java:105)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

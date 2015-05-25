@@ -1,12 +1,8 @@
 package classes.uteis;
 
-import java.util.ArrayList;
-
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
-
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.telas.Tela;
@@ -19,7 +15,7 @@ public class ControladorCamera extends GameObject
 {
 	private GameObject[] _objetos = null;
 	private OrthographicCamera _camera = null;
-	private Rectangle tamanho = null;
+	private float _maiorDistancia = -1;
 	
 	/**
 	 * Controi um controlador de camera com um ou mais {@link GameObject GameObject} para seguir.
@@ -35,7 +31,6 @@ public class ControladorCamera extends GameObject
 	{
 		super.Inicia();
 		_camera = CatQuest.instancia.GetCamera();
-		tamanho = new Rectangle(0, 0, CatQuest.instancia.GetLarguraTela(), CatQuest.instancia.GetAlturaTela());
 	}
 	
 	@Override
@@ -47,51 +42,71 @@ public class ControladorCamera extends GameObject
 			return;
 		
 		Vector2 posicao = null;
-		Vector2 posicaoLongeA = null, posicaoLongeB = null;
-		float maiorDistancia = 0; 
+		Vector2 posicaoAux = null;
+		Vector2 posicaoA = null;
+		Vector2 posicaoB = null;
+		float distancia = -1;
+		float distanciaAux = 0;
 		
+		//se temos pelo menos 2 objetos
 		if (_objetos.length > 1)
 		{
-			//pega distancias e posicao dos objetos
+			//compara todos com todos e pega a maior distancia entre dois objetos
 			for (int i = 0; i < _objetos.length; i++)
 			{
 				posicao = _objetos[i].GetPosicao();
+				posicaoAux = _objetos[++i].GetPosicao();
 				
-				//pega a maior distancia entre dois objetos
-				if (posicaoLongeB != null)
-				{
-					if (maiorDistancia < posicao.dst(posicaoLongeB))
+				if (_maiorDistancia != (distanciaAux = posicao.dst(posicaoAux)))
+				{					
+					if (distancia < distanciaAux)
 					{
-						posicaoLongeA = posicao;
-						maiorDistancia = posicao.dst(posicaoLongeB);
+						distancia = distanciaAux;
+						posicaoA = posicao;
+						posicaoB = posicaoAux;
 					}
 				}
-				
-				posicaoLongeB = posicao;
 			}
+		}
+		else if (_objetos.length == 1)
+		{
+			posicaoA = _objetos[0].GetPosicao();
 		}
 		else
 		{
-			maiorDistancia = 0;
+			return;
 		}
 		
-		//se a distancia entre os dois objetos mais separados, é maior que a hiponusa da tela, dá zoom
-		if (maiorDistancia > CatQuest.instancia.GetHipotenusaTela())
-			_camera.zoom = 1 + (maiorDistancia / 1000);
-		else
-			_camera.zoom = 1 - (maiorDistancia / 1000) >= 1 ? 1 - (maiorDistancia / 1000) : 1;
+		//se já movemos para está posição
+		if (posicaoA == null)
+			return;
 		
-		if (posicaoLongeA != null & posicaoLongeB != null)
-			_camera.position.set(posicaoLongeA.lerp(posicaoLongeB, 0.5f), 0);
-	}
-	
-	@Override
-	public void SetTela(Tela tela)
-	{
-		super.SetTela(tela);		
+		if (distancia > CatQuest.instancia.GetHipotenusaMundo()/10 && distancia > _maiorDistancia)
+		{
+			//tira zoom para mostrar mais da tela
+			_camera.zoom += .01f;
+		}
+		else
+		{
+			//coloca zoom para mostrar menos da tela
+			if (_camera.zoom - .1f >= 1)
+				_camera.zoom -= .01f;
+		}
+		
+		_maiorDistancia = distancia;
+		
+		//se temos dois objetos
+		if (posicaoB != null)
+		{
+			_camera.position.set(Math.abs(posicaoA.x - posicaoB.x), Math.abs(posicaoA.y - posicaoB.y), 0);
+		}
+		//se temos somente um objeto 
+		else
+		{
+			_camera.position.add(posicaoA.x, posicaoA.y, 0);
+		}
 	}
 	
 	@Override
 	public void AoColidir(GameObject colidiu){}
-	
 }

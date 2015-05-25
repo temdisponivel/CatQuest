@@ -19,6 +19,8 @@ public class Configuracoes implements Serializador
 	private float _volumeSom;
 	private int _width;
 	private int _height;
+	private int _widthViewPort;
+	private int _heightViewPort;
 	private boolean _fullscreen;
 	private boolean _mostraFPS;
 	private boolean _audio;
@@ -31,10 +33,21 @@ public class Configuracoes implements Serializador
 		{
 			instancia = this;
 			
-			if (this.Carrega())
-				return;
+			if (!this.Carrega())
+			{
+				this.SetPadrao();
+				this.Salva();
+			}
 		}
-		
+		else
+			return;
+	}
+	
+	/**
+	 * Define os valores padrões.
+	 */
+	private void SetPadrao()
+	{
 		this.SetAudio(true);
 		this.SetFullScreen(false);
 		this.SetWidth(1024);
@@ -42,10 +55,10 @@ public class Configuracoes implements Serializador
 		this.SetMostraFPS(false);
 		this.SetVolumeMusica(50);
 		this.SetVolumeSom(50);
+		this.SetWidthViewPort(1024);
+		this.SetHeigthViewPort(768);
 		_conjuntoPrimario = ConjuntoComandos.tecladoPrimario;
 		_conjuntoSecundario = ConjuntoComandos.tecladoSecundario;
-		
-		this.Salva();
 	}
 
 	/**
@@ -105,7 +118,7 @@ public class Configuracoes implements Serializador
 	{
 		this._width = width;
 	}
-	
+		
 	/**
 	 * Retorna a altura da tela do jogo. Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma altura.
 	 * @return Altura da tela do jogo.
@@ -123,6 +136,44 @@ public class Configuracoes implements Serializador
 	public void SetHeight(int height)
 	{
 		this._height = height;
+	}
+	
+	/**
+	 * Define uma nova altura para o view port. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
+	 * Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma largura.
+	 * @param widthViewPort Nova largura para o jogo.
+	 */
+	public void SetHeigthViewPort(int heigthViewPort)
+	{
+		this._heightViewPort = heigthViewPort;
+	}
+	
+	/**
+	 * Retorna a altura do view port. O view port garante que pelo menos o tamanho dele vai ser apresentado na tela.
+	 * @return Largura do viewPort (largura do mundo).
+	 */
+	public int GetHeightViewPort()
+	{
+		return _heightViewPort;
+	}
+	
+	/**
+	 * Define uma nova largura para o view port. Após definir, deve aplicar as configurações {@link catquest.CatQuest#AplicarConfiguracoes()}.
+	 * Quando {@link Configuracoes#GetFullscreen()} == true, a tela é esticada - caso necessário -, mas virtualmente mantém mesma largura.
+	 * @param widthViewPort Nova largura para o jogo.
+	 */
+	public void SetWidthViewPort(int widthViewPort)
+	{
+		this._widthViewPort = widthViewPort;
+	}
+	
+	/**
+	 * Retorna a largura do view port. O view port garante que pelo menos o tamanho dele vai ser apresentado na tela.
+	 * @return Largura do viewPort (largura do mundo).
+	 */
+	public int GetWidthViewPort()
+	{
+		return _widthViewPort;
 	}
 	
 	/**
@@ -230,6 +281,18 @@ public class Configuracoes implements Serializador
 		if (_height < 600)
 		{
 			this.SetHeight(600); 
+			erro = true;
+		}
+		
+		if (_widthViewPort < 600)
+		{
+			this.SetWidthViewPort(600);
+			erro = true;
+		}
+		
+		if (_heightViewPort < 600)
+		{
+			this.SetHeigthViewPort(600); 
 			erro = true;
 		}
 		

@@ -26,7 +26,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -72,7 +71,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		if (instancia == null)
 			instancia = this;
 		else
-			this.dispose();
+			this.EncerraJogo();
 	}
 	
 	@Override
@@ -160,7 +159,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	    if (Configuracoes.instancia.GetMostraFPS())
 	    {
 			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), 
-					_camera.position.x + this.GetLarguraTela()-50, _camera.position.y + this.GetAlturaTela()-25);
+					(_camera.position.x - _camera.viewportWidth/2) + 50, this.GetAlturaMundo() - 50);
 	    }
 			
 		_batch.end();
@@ -212,9 +211,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		//CRIA CAMERA ORTOGRAFICA PARA QUE Nï¿½O TENHA DIFERENï¿½A ENTRE PROFUNDIDADE.
 		//CRIA COM O TAMANHO DAS CONFIGURAï¿½ï¿½ES
 		_camera = new OrthographicCamera();
-		
-		//_viewPort = new FillViewport(10000, 10000, _camera); //TODO: viewport
-		//_viewPort.apply(true);
 		
 		this.AplicarConfiguracoes();
 		
@@ -289,7 +285,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{		
 		Gdx.graphics.setDisplayMode(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), Configuracoes.instancia.GetFullscreen());
 		_camera.setToOrtho(false, Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
-		//_viewPort.apply(true);
+		_viewPort = new FitViewport(Configuracoes.instancia.GetWidthViewPort(), Configuracoes.instancia.GetHeightViewPort(), _camera);
+		_viewPort.apply(true);
 	}
 	
 	/**
@@ -389,19 +386,45 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * Retorna a largura da tela.
+	 * Retorna a largura do mundo. Utilizado para relacionar posições de imagens, etc.
+	 * @return Largura do mundo.
+	 */
+	public float GetLarguraMundo()
+	{
+		return _viewPort.getWorldWidth();
+	}
+	
+	/**
+	 * Retorna a altura do mundo. Utilizado para relacionar posições de imagens, etc.
+	 * @return Altura do mundo.
+	 */
+	public float GetAlturaMundo()
+	{
+		return _viewPort.getWorldHeight();
+	}
+	
+	/**
+	 * @return Tamanho da hipotenusa da tela. Que é a raiz quadrada da soma dos quadrados dos catetos (altura e largura). 
+	 */
+	public float GetHipotenusaMundo()
+	{
+		return (float) Math.sqrt(Math.pow(this.GetLarguraMundo(), 2) + Math.pow(this.GetAlturaMundo(), 2));
+	}
+	
+	/**
+	 * Retorna a largura da janela.
 	 * @return Largura da tela.
 	 */
-	public float GetLarguraTela()
+	public float GetLarguraJanela()
 	{
 		return Gdx.graphics.getWidth(); 
 	}
 	
 	/**
-	 * Retorna a altura da tela.
+	 * Retorna a altura da janela.
 	 * @return Altura da tela.
 	 */
-	public float GetAlturaTela()
+	public float GetAlturaJanela()
 	{
 		return Gdx.graphics.getHeight();
 	}
@@ -409,9 +432,9 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	/**
 	 * @return Tamanho da hipotenusa da tela. Que é a raiz quadrada da soma dos quadrados dos catetos (altura e largura). 
 	 */
-	public float GetHipotenusaTela()
+	public float GetHipotenusaJanela()
 	{
-		return (float) Math.sqrt(Math.pow(CatQuest.instancia.GetLarguraTela(), 2) + Math.pow(CatQuest.instancia.GetAlturaTela(), 2));
+		return (float) Math.sqrt(Math.pow(this.GetLarguraJanela(), 2) + Math.pow(this.GetAlturaJanela(), 2));
 	}
 	
 	/**
@@ -527,5 +550,17 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public TextureRegion GetTextura(FileHandle caminho)
 	{
 		return this.GetTextura(caminho.path());
+	}
+	
+	/**
+	 * @return {@link Vector2 Posição} do mouse na tela. Já com as correções de tamanho de tela e tamanho do mundo.
+	 */
+	public Vector2 GetMouse()
+	{
+		float x = Gdx.input.getX() * (this.GetLarguraMundo()/this.GetLarguraJanela());
+		float y = this.GetAlturaJanela() - Gdx.input.getY();
+		y *= (this.GetAlturaMundo()/this.GetAlturaJanela());
+		
+		return new Vector2(x, y);
 	}
 }

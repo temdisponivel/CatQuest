@@ -26,8 +26,7 @@ import classes.uteis.controle.Controle.Direcoes;
  * @author matheus
  *
  */
-public abstract class Personagem extends GameObject implements Serializador
-{
+public abstract class Personagem extends GameObject implements Serializador {
 	/**
 	 * Classe que representa uma célular para calcular o A* e guardar valores de
 	 * custo de movimentação.
@@ -35,8 +34,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @author matheus
 	 *
 	 */
-	static private class CelulaCaminho
-	{
+	static private class CelulaCaminho {
 		int custoTotal = 0;
 		int custoMovimento = 0;
 		int custoHeuristica = 0;
@@ -57,8 +55,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		 *            Posição desta célula.
 		 */
 		public CelulaCaminho(int custoMovimento, int custoHeuristica,
-				CelulaCaminho parente, Vector2 posicao)
-		{
+				CelulaCaminho parente, Vector2 posicao) {
 			this.custoMovimento = custoMovimento;
 			this.custoHeuristica = custoHeuristica;
 			this.parente = parente;
@@ -68,8 +65,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 
 		@Override
-		public boolean equals(Object obj)
-		{
+		public boolean equals(Object obj) {
 			return obj == this;
 		}
 	}
@@ -80,8 +76,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @author matheus
 	 *
 	 */
-	protected enum SomPersonagem
-	{
+	protected enum SomPersonagem {
 		Movimenta, Morte, Dano,
 	}
 
@@ -92,8 +87,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @author matheus
 	 *
 	 */
-	protected enum AnimacaoPersonagem
-	{
+	protected enum AnimacaoPersonagem {
 		Parado, Movimento, Morto, Dano,
 	}
 
@@ -104,8 +98,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @author matheus
 	 *
 	 */
-	public enum Estado
-	{
+	public enum Estado {
 		Atacando, Andando, Parado,
 	}
 
@@ -129,8 +122,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	/**
 	 * Cria um novo personagem.
 	 */
-	public Personagem()
-	{
+	public Personagem() {
 		super();
 		personagens.put(this.GetId(), this);
 		_colidiveis.put(GameObjects.Cenario, Colisoes.NaoPassavel);
@@ -138,8 +130,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	@Override
-	public void Inicia()
-	{
+	public void Inicia() {
 		super.Inicia();
 
 		this.SetPosicao(new Vector2());
@@ -153,8 +144,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return Agilidade com que o {@link Ator ator} se move e interage no
 	 *         ambiente.
 	 */
-	public float GetAgilidade()
-	{
+	public float GetAgilidade() {
 		return _agilidade;
 	}
 
@@ -162,8 +152,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return Quantidade de pontos de defesa do {@link Ator ator}. Pontos de
 	 *         defesa são subtraídos do ataque inflingido a este ator.
 	 */
-	public float GetDefesa()
-	{
+	public float GetDefesa() {
 		return _defesa;
 	}
 
@@ -171,40 +160,35 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return Quantidade de pontos de ataque que este {@link Ator ator} inflige
 	 *         à outro ator.
 	 */
-	public float GetAtaque()
-	{
+	public float GetAtaque() {
 		return _ataque;
 	}
 
 	/**
 	 * @return Quantidade de pontos de vida deste {@link Ator ator}.
 	 */
-	public float GetVida()
-	{
+	public float GetVida() {
 		return _vida;
 	}
 
 	/**
 	 * @return {@link Estado Estado} atual do {@link Ator ator}.
 	 */
-	public Estado GetEstado()
-	{
+	public Estado GetEstado() {
 		return _estado;
 	}
 
 	/**
 	 * @return Chanse de acertar um dano crítico - em percentagem.
 	 */
-	public float GetChanceCritico()
-	{
+	public float GetChanceCritico() {
 		return _chanceCritico;
 	}
 
 	/**
 	 * @return Quantas vezes o dano crítico é mais forte que o comum.
 	 */
-	public float GetCoeficienteCritico()
-	{
+	public float GetCoeficienteCritico() {
 		return _coeficienteCritico;
 	}
 
@@ -218,14 +202,12 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return True caso tenha alcaçado o destino neste frame.
 	 * @see {@link Vector2#lerp(Vector2, float)}
 	 */
-	public boolean Movimenta(Vector2 destino, float deltaTime)
-	{
+	public boolean Movimenta(Vector2 destino, float deltaTime) {
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade
 				* _coeficienteLerp));
 
-		if (_agilidade * _coeficienteLerp == 1)
-		{
+		if (_agilidade * _coeficienteLerp == 1) {
 			_coeficienteLerp = 0;
 			return true;
 		}
@@ -252,13 +234,11 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return True se alcançou o próximo ponto do caminho, falso caso contrário
 	 *         e quando não há caminho.
 	 */
-	public boolean MovimentaCaminho(float deltaTime)
-	{
+	public boolean MovimentaCaminho(float deltaTime) {
 		if (_caminho == null || _caminho.isEmpty())
 			return false;
 
-		if (this.Movimenta(_caminho.element(), deltaTime))
-		{
+		if (this.Movimenta(_caminho.element(), deltaTime)) {
 			_caminho.removeFirst();
 			return true;
 		}
@@ -273,8 +253,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 *            Pontos de dano a inflingir. Repare que destes pontos serão
 	 *            subtraídos a defesa do ator.
 	 */
-	public void RecebeDano(float dano)
-	{
+	public void RecebeDano(float dano) {
 		this.TocaSom(SomPersonagem.Dano);
 		_vida -= Math.abs(dano - _defesa);
 
@@ -288,8 +267,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @param inflige
 	 *            {@link Personagem Objeto} a infligir o dano.
 	 */
-	public void InflingeDano(Personagem inflige)
-	{
+	public void InflingeDano(Personagem inflige) {
 		inflige.RecebeDano(_ataque);
 	}
 
@@ -302,8 +280,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 *         {@link #_caminho}, mas quando não há caminho {@link #_caminho}
 	 *         fica limpa.
 	 */
-	protected LinkedList<Vector2> GetCaminho()
-	{
+	protected LinkedList<Vector2> GetCaminho() {
 		if (_telaInserido == null || _caminho == null)
 			return null;
 
@@ -321,14 +298,12 @@ public abstract class Personagem extends GameObject implements Serializador
 			return null;
 
 		// enquanto não cheguei no meu destino
-		while (!listaAberta.isEmpty())
-		{
+		while (!listaAberta.isEmpty()) {
 			atual = listaAberta.get(0);
 
 			// percorre todos os da lista aberta e paga o que tem o menor valor
 			// total
-			for (int i = 0; i < listaAberta.size(); i++)
-			{
+			for (int i = 0; i < listaAberta.size(); i++) {
 				temp = listaAberta.get(i);
 
 				if (temp.custoTotal < atual.custoTotal)
@@ -341,13 +316,11 @@ public abstract class Personagem extends GameObject implements Serializador
 
 			// se achamos
 			if (aux.setPosition(atual.posicao).contains(_destino)
-					|| atual.posicao.dst(_destino) < _agilidade)
-			{
+					|| atual.posicao.dst(_destino) < _agilidade) {
 				_caminho.addFirst(_destino);
 
 				// cria a pilha do caminho a percorrer e encerra o loop
-				while (atual.parente != null)
-				{
+				while (atual.parente != null) {
 					_caminho.addFirst(atual.posicao);
 					atual = atual.parente;
 				}
@@ -359,8 +332,7 @@ public abstract class Personagem extends GameObject implements Serializador
 			adjacentes = this.GetAdjacentesAndaveis(atual, _destino);
 
 			// para cada adjacente
-			for (int i = 0; i < adjacentes.size(); i++)
-			{
+			for (int i = 0; i < adjacentes.size(); i++) {
 				CelulaCaminho adjacente = adjacentes.get(i);
 
 				// se ja vimos, retorna
@@ -368,20 +340,16 @@ public abstract class Personagem extends GameObject implements Serializador
 					continue;
 
 				// se os adjacentes nao estão na lista aberta, adiciona
-				if (!listaAberta.contains(adjacente))
-				{
+				if (!listaAberta.contains(adjacente)) {
 					listaAberta.add(adjacente);
 				}
 				// se já contém, valida a distancia entre o adjacente e o pai
 				// dele e verifica se há um melhor caminho
-				else
-				{
+				else {
 					// se estamos lidando com um adjacente em algulo reto
 					if ((atual.posicao.x == adjacente.posicao.x)
-							|| (atual.posicao.y == adjacente.posicao.y))
-					{
-						if (atual.custoMovimento + 10 < adjacente.custoMovimento)
-						{
+							|| (atual.posicao.y == adjacente.posicao.y)) {
+						if (atual.custoMovimento + 10 < adjacente.custoMovimento) {
 							adjacente.custoMovimento = atual.custoMovimento + 10;
 							adjacente.custoTotal = adjacente.custoHeuristica
 									+ adjacente.custoMovimento;
@@ -389,10 +357,8 @@ public abstract class Personagem extends GameObject implements Serializador
 						}
 					}
 					// se estamos lidando com um adjacente na diagonal
-					else
-					{
-						if (atual.custoMovimento + 14 < adjacente.custoMovimento)
-						{
+					else {
+						if (atual.custoMovimento + 14 < adjacente.custoMovimento) {
 							adjacente.custoMovimento = atual.custoMovimento + 14;
 							adjacente.custoTotal = adjacente.custoHeuristica
 									+ adjacente.custoMovimento;
@@ -414,8 +380,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @param destino
 	 *            {@link Vector2 Posicao} do destino.
 	 */
-	protected int Manhattan(Vector2 posicao, Vector2 destino)
-	{
+	protected int Manhattan(Vector2 posicao, Vector2 destino) {
 		int x = (int) Math.abs(posicao.x - destino.x);
 		int y = (int) Math.abs(posicao.y - destino.y);
 		return 1 * (x + y);
@@ -428,8 +393,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 *         andaveis.
 	 */
 	protected LinkedList<CelulaCaminho> GetAdjacentesAndaveis(
-			CelulaCaminho atual, Vector2 destino)
-	{
+			CelulaCaminho atual, Vector2 destino) {
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
 		Vector2 auxPosicao = new Vector2();
 		Colisoes resultado = Colisoes.Livre;
@@ -437,8 +401,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// DIREITA
 		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y;
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -450,8 +413,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// CIMA
 		auxPosicao.x = atual.posicao.x;
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -463,8 +425,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// ESQUERDA
 		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y;
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -476,8 +437,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// BAIXO
 		auxPosicao.x = atual.posicao.x;
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -489,8 +449,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// NORDESTE
 		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -502,8 +461,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// NOROESTE
 		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -515,8 +473,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// SUDOESTE
 		auxPosicao.x = atual.posicao.x - _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -528,8 +485,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// SUDESTE
 		auxPosicao.x = atual.posicao.x + _telaInserido.GetPrecisaoMapaX();
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
-		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
-		{
+		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel) {
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
 				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
 						+ resultado.ordinal(), this.Manhattan(auxPosicao,
@@ -552,8 +508,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 *            para verificar.
 	 * @return Se o campo é livre, passável ou não passável.
 	 */
-	public Colisoes GetValorCampo(Vector2 campo)
-	{
+	public Colisoes GetValorCampo(Vector2 campo) {
 		if (_telaInserido == null)
 			return Colisoes.Passavel;
 
@@ -572,8 +527,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		if (lista == null)
 			return Colisoes.NaoPassavel;
 
-		for (int i = 0; i < lista.size(); i++)
-		{
+		for (int i = 0; i < lista.size(); i++) {
 			outro = lista.get(i);
 			colisaoOutro = outro.ValidaColisao(this, false);
 			colisaoEste = this.ValidaColisao(outro, false);
@@ -594,14 +548,18 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Faz a movimentação do {@link Personagem personagem} segundo entrada do usuário. Só movimenta em campo diferente de não passável.
-	 * Ou seja, nunca existe colisão movimentando por aqui. Caso não haja mais posição válida na direção informada, nada acontece.
-	 * @param direcao Direção do ataque.
-	 * @param delta Coeficiente para a agilidade.
+	 * Faz a movimentação do {@link Personagem personagem} segundo entrada do
+	 * usuário. Só movimenta em campo diferente de não passável. Ou seja, nunca
+	 * existe colisão movimentando por aqui. Caso não haja mais posição válida
+	 * na direção informada, nada acontece.
+	 * 
+	 * @param direcao
+	 *            Direção do ataque.
+	 * @param delta
+	 *            Coeficiente para a agilidade.
 	 * @see {@link Direcoes}
 	 */
-	protected void Movimenta(int direcao, float delta)
-	{
+	protected void Movimenta(int direcao, float delta) {
 		int playerDirecao = direcao;
 		float auxMovimento = Math.min(_telaInserido.GetPrecisaoMapaX(),
 				_telaInserido.GetPrecisaoMapaY());
@@ -610,47 +568,32 @@ public abstract class Personagem extends GameObject implements Serializador
 		float y = _posicaoTela.y;
 		Vector2 aux = null;
 
-		if (playerDirecao != Direcoes.CENTRO)
-		{
-			if (playerDirecao == Direcoes.CIMA)
-			{
+		if (playerDirecao != Direcoes.CENTRO) {
+			if (playerDirecao == Direcoes.CIMA) {
 				if (this.GetValorCampo(aux = new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.BAIXO)
-			{
+			} else if (playerDirecao == Direcoes.BAIXO) {
 				if (this.GetValorCampo(aux = new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.ESQUERDA)
-			{
+			} else if (playerDirecao == Direcoes.ESQUERDA) {
 				if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.DIREITA)
-			{
+			} else if (playerDirecao == Direcoes.DIREITA) {
 				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.NORDESTE)
-			{
-				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
+			} else if (playerDirecao == Direcoes.NORDESTE) {
+				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y
+						+ auxMovimento)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.NOROESTE)
-			{
+			} else if (playerDirecao == Direcoes.NOROESTE) {
 				if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y
 						+ auxMovimento)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.SUDESTE)
-			{
+			} else if (playerDirecao == Direcoes.SUDESTE) {
 				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y
 						- auxMovimento)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.SUDOESTE)
-			{
+			} else if (playerDirecao == Direcoes.SUDOESTE) {
 				if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y
 						- auxMovimento)) != Colisoes.NaoPassavel)
 					this.Movimenta(aux, alfa);
@@ -664,8 +607,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return Um float representando o raio de visão deste {@link Personagem
 	 *         personagem}.
 	 */
-	public float GetCampoVisao()
-	{
+	public float GetCampoVisao() {
 		return _campoVisao;
 	}
 
@@ -673,8 +615,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return True caso o {@link GameObject objeto} parametrizado esteja no
 	 *         campo de visão deste.
 	 */
-	public boolean GetVisivel(Personagem outro)
-	{
+	public boolean GetVisivel(Personagem outro) {
 		return _posicaoTela.dst(outro.GetPosicao()) <= _campoVisao;
 	}
 
@@ -685,8 +626,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	abstract public void Morre();
 
 	@Override
-	public boolean Carrega()
-	{
+	public boolean Carrega() {
 		// se o arquivo nao existe, cria para que possa ser alterado e retorna
 		// falso
 		if (!_arquivo.exists())
@@ -707,12 +647,10 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	@Override
-	public void Salva()
-	{
+	public void Salva() {
 		JsonWriter json = new JsonWriter(_arquivo.writer(false));
 
-		try
-		{
+		try {
 			json.object();
 			json.name("_agilidade").value(0f);
 			json.name("_defesa").value(0f);
@@ -721,9 +659,7 @@ public abstract class Personagem extends GameObject implements Serializador
 			json.name("_chanceCritico").value(0f);
 			json.name("_coeficienteCritico").value(0f);
 			json.close();
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			Log.instancia.Logar(
 					"Erro ao carregar dados de personagem do arquivo!", e,
 					false);

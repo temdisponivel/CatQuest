@@ -1,7 +1,7 @@
 package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
-import classes.gameobjects.personagens.ataque.BolaDeFogo;
+import classes.gameobjects.personagens.ataque.Espadada;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -35,7 +35,7 @@ public class Barbaro extends Heroi
 	@Override
 	protected void AtaqueBasico()
 	{
-		this.GetTela().InserirGameObject(new BolaDeFogo(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque()));
+		this.GetTela().InserirGameObject(new Espadada(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque()));
 	}
 	
 	@Override

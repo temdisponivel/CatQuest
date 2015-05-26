@@ -159,7 +159,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	    if (Configuracoes.instancia.GetMostraFPS())
 	    {
 			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), 
-					(_camera.position.x - _camera.viewportWidth/2) + 50, this.GetAlturaMundo() - 50);
+					50, 50);
 	    }
 			
 		_batch.end();
@@ -408,7 +408,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public float GetHipotenusaMundo()
 	{
-		return (float) Math.sqrt(Math.pow(this.GetLarguraMundo(), 2) + Math.pow(this.GetAlturaMundo(), 2));
+		return (float) Math.hypot(this.GetLarguraMundo(), this.GetAlturaMundo());
 	}
 	
 	/**
@@ -434,7 +434,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	 */
 	public float GetHipotenusaJanela()
 	{
-		return (float) Math.sqrt(Math.pow(this.GetLarguraJanela(), 2) + Math.pow(this.GetAlturaJanela(), 2));
+		return (float) Math.hypot(this.GetLarguraJanela(), this.GetAlturaJanela());
 	}
 	
 	/**

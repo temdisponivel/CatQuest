@@ -529,6 +529,14 @@ public class Tela implements OnCompletionListener
 	}
 	
 	/**
+	 * @return Valor da hipotenusa do mapa desta tela.
+	 */
+	public float GetHipotenusaMapa()
+	{
+		return (float) Math.hypot(_alturaMapa, _larguraMapa);
+	}
+	
+	/**
 	 * @return {@link Color Cor} do fundo. Cor que é utilizada para limpar a tela a todo frame que esta tela está no topo.
 	 */
 	public Color GetCorFundo()

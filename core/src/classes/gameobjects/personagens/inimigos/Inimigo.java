@@ -88,5 +88,6 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	{		
 		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
 			this.GetCaminho();
+		
 	}
 }

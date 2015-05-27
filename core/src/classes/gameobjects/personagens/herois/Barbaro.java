@@ -1,6 +1,10 @@
 package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
+<<<<<<< HEAD
+=======
+import classes.gameobjects.personagens.ataque.Espadada;
+>>>>>>> origin/classes
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -8,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 /**
  * Classe do herói Barbaro.
- * @author victor
+ * @author Victor
  *
  */
 public class Barbaro extends Heroi
@@ -46,7 +50,7 @@ public class Barbaro extends Heroi
 	@Override
 	protected void AtaqueBasico()
 	{
-		// TODO Auto-generated method stub
+		this.GetTela().InserirGameObject(new Espadada(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque()));
 	}
 	
 	@Override

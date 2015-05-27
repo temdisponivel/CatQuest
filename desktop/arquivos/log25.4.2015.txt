@@ -1,0 +1,105 @@
+
+Data: Mon May 25 20:29:22 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.gameobjects.personagens.ataque.BolaDeFogo.<init>(BolaDeFogo.java:27)
+classes.gameobjects.personagens.herois.Barbaro.AtaqueBasico(Barbaro.java:38)
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:64)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:30)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Mon May 25 20:36:34 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.gameobjects.personagens.ataque.BolaDeFogo.<init>(BolaDeFogo.java:27)
+classes.gameobjects.personagens.herois.Barbaro.AtaqueBasico(Barbaro.java:38)
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:64)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:30)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Mon May 25 20:38:49 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.CarregaMapa(Tela.java:441)
+classes.telas.Tela.Iniciar(Tela.java:89)
+classes.telas.GamePlay.Iniciar(GamePlay.java:21)
+catquest.CatQuest.AdicionaTela(CatQuest.java:338)
+classes.telas.Titulo.Click(Titulo.java:59)
+classes.uteis.UI.Botao.Atualiza(Botao.java:137)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:118)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.Titulo.Atualiza(Titulo.java:38)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Mon May 25 20:40:31 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.CarregaMapa(Tela.java:441)
+classes.telas.Tela.Iniciar(Tela.java:89)
+classes.telas.GamePlay.Iniciar(GamePlay.java:21)
+catquest.CatQuest.AdicionaTela(CatQuest.java:338)
+classes.telas.Titulo.Click(Titulo.java:59)
+classes.uteis.UI.Botao.Atualiza(Botao.java:137)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:118)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.Titulo.Atualiza(Titulo.java:38)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Mon May 25 20:42:23 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.gameobjects.cenario.ObjetoCenario.<init>(ObjetoCenario.java:30)
+classes.telas.Tela.CarregaMapa(Tela.java:441)
+classes.telas.Tela.Iniciar(Tela.java:89)
+classes.telas.GamePlay.Iniciar(GamePlay.java:21)
+catquest.CatQuest.AdicionaTela(CatQuest.java:338)
+classes.telas.Titulo.Click(Titulo.java:59)
+classes.uteis.UI.Botao.Atualiza(Botao.java:137)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:118)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.Titulo.Atualiza(Titulo.java:38)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Mon May 25 20:48:56 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Configuracoes.Click(Configuracoes.java:59)
+classes.uteis.UI.Botao.Atualiza(Botao.java:137)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:118)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.Configuracoes.Atualiza(Configuracoes.java:45)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

@@ -2,8 +2,6 @@ package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
 
-import com.badlogic.gdx.math.Vector2;
-
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
@@ -11,10 +9,11 @@ import classes.uteis.Player;
 import classes.uteis.Serializador;
 import classes.uteis.controle.Controle.Direcoes;
 
+
 /**
  * Classe que representa um herói do jogo.
  * 
- * @author victor
+ * @author Victor
  *
  */
 public abstract class Heroi extends Personagem implements Serializador
@@ -22,8 +21,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	/**
 	 * Enumerador para os {@link Sound sons} dos {@link Heroi heróis}.
 	 * 
-	 * @author victor
-	 *
 	 */
 	protected enum SomHeroi
 	{
@@ -33,8 +30,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	/**
 	 * Enumerador para as {@link Animation animações} dos {@link Heroi heróis}.
 	 * 
-	 * @author victor
-	 *
 	 */
 	protected enum AnimacaoHeroi
 	{
@@ -59,6 +54,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
+<<<<<<< HEAD
 		this.Movimenta(deltaTime);
 	}
 	
@@ -128,6 +124,23 @@ public abstract class Heroi extends Personagem implements Serializador
 			}
 		}
 	}
+=======
+ 
+		this.Movimenta(_player.GetControle().GetDirecao(), deltaTime);
+		
+		if (_player.GetControle().GetDirecaoAtaque() != Direcoes.CENTRO)
+			this.AtaqueBasico();
+		
+		if (_player.GetControle().GetAcao())
+			this.Acao();
+		
+		if (_player.GetControle().GetHabilidade())
+			this.HabilidadeAtiva();
+		
+		
+	}
+	
+>>>>>>> origin/classes
 
 	/**
 	 * Define um player para este {@link Heroi herói}. Também define no player que este é o personagem que ele está controlando.
@@ -175,7 +188,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	protected abstract void HabilidadeAtiva();
 
 	/**
-	 * Função chamada quando o herói deve executar um atque normal
+	 * Função chamada quando o herói deve executar um ataque normal
 	 */
 	protected abstract void AtaqueBasico();
 }

@@ -61,6 +61,8 @@ public class ControladorCamera extends GameObject
 					posicao = (objA = _objetos[i]).GetPosicao();
 					posicaoAux = (objB = _objetos[j]).GetPosicao();
 					
+					distanciaAux = posicao.dst(posicaoAux);
+					
 					if (maiorDistancia < distanciaAux)
 					{
 						maiorDistancia = distanciaAux;
@@ -73,8 +75,8 @@ public class ControladorCamera extends GameObject
 						
 						//compensa o ponto zero do objeto
 						//como o ponto zero é no inferior esquerdo, devemos compensar com a largura do objeto que esta mais a direita
-						diferencaX += (objA.GetLargura() + objB.GetLargura());
-						diferencaY += (objA.GetAltura() + objB.GetAltura());
+						diferencaX += (objA.GetLargura() + objB.GetLargura()) * 2;
+						diferencaY += (objA.GetAltura() + objB.GetAltura()) * 2;
 						
 						coeficienteZoom = Math.max(coeficienteZoom, (diferencaY / CatQuest.instancia.GetAlturaMundo()));
 						coeficienteZoom = Math.max(coeficienteZoom, (diferencaX / CatQuest.instancia.GetLarguraMundo()));

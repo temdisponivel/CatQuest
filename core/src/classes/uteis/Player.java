@@ -21,9 +21,6 @@ public class Player
 		Secundario,
 	}
 	
-	static public Player primario = new Player(TipoPlayer.Primario);
-	static public Player secundario = new Player(TipoPlayer.Secundario);
-	
 	private Controle _controle;
 	private Personagem _personagemControlado;
 	private TipoPlayer _tipo;

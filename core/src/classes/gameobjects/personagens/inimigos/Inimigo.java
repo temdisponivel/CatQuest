@@ -1,7 +1,9 @@
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
+
 import com.badlogic.gdx.math.Vector2;
+
 import catquest.CatQuest;
 import catquest.CatQuest.Dificuldade;
 import classes.gameobjects.GameObject;
@@ -130,9 +132,12 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	static public Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
 	protected EstadosInimigo _estado = EstadosInimigo.Perambula;
 	protected Personagem _alvo = null;
-	protected Fuzzyficacao _fuzzyVidaAlvo = null;
-	protected Fuzzyficacao _fuzzyVidaPropria = null;
-	protected Fuzzyficacao _fuzzyDistancia = null;
+	static protected Fuzzyficacao _fuzzyVidaAlvo = null;
+	static protected Fuzzyficacao _fuzzyVidaPropria = null;
+	static protected Fuzzyficacao _fuzzyDistancia = null;
+	static protected int _quantiColunasBaseConhecimento = 4; //quatro colunas porque vamos considerar 3 dados e 1 resultado
+	static protected int _quantiLinhasBaseConhecimento = 27; //27 linhas porque são 3 possíveis valores em cada coluna, portanto 3 a quarta
+	static protected Object[][] _baseConhecimento = new Object[_quantiLinhasBaseConhecimento][_quantiColunasBaseConhecimento];
 	
 	/**
 	 * Cria um novo inimigo.
@@ -143,6 +148,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		_camada = Camada.Personagens;
 		_tipo = GameObjects.Inimigo;
 		inimigos.put(this.GetId(), this);
+		this.ControiBaseConhecimento();
 	}
 	
 	@Override
@@ -189,7 +195,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 
 	@Override
 	public void Morre()
-	{		
+	{
 		_reciclador.Recicla(this);
 		
 		if (_telaInserido != null)
@@ -286,11 +292,67 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	}
 	
 	/**
-	 * Função que contrói a base de conhecimento para o fuzzy.
+	 * Função que contrói a base de conhecimento para o fuzzy. Não define os valores para cada combinação.
 	 */
 	protected void ControiBaseConhecimento()
 	{
+		DistanciaFuzzyficada[] distancia = new DistanciaFuzzyficada[]{DistanciaFuzzyficada.Perto, DistanciaFuzzyficada.Proximo, DistanciaFuzzyficada.Distante};
+		VidaFuzzyficada[] vida = new VidaFuzzyficada[]{VidaFuzzyficada.Baixa, VidaFuzzyficada.Media, VidaFuzzyficada.Alta};
+		Dificuldade[] dificuldade = new Dificuldade[]{Dificuldade.Facil, Dificuldade.Normal, Dificuldade.Dificil};
 		
+		int auxDistancia = 0;
+		int auxVida = 0;
+		int auxDificuldade = 0;
+		for (int i = 0; i < _quantiLinhasBaseConhecimento; i++)
+		{
+			if (i % 9 == 0 && i != 0)
+				auxDistancia = ++auxDistancia % 3;
+			
+			if (i % 3 == 0 && i != 0)
+				auxVida = ++auxVida % 3;
+			
+			_baseConhecimento[i][0] = distancia[auxDistancia];
+			_baseConhecimento[i][1] = vida[auxVida];
+			_baseConhecimento[i][2] = dificuldade[auxDificuldade];
+			
+			auxDificuldade = ++auxDificuldade % 3;
+		}
+	}
+	
+	/**
+	 * Define os valores para cada combinação da base de conhecimento. Esta sendo construída manualmente segundo o arquivo contendo a base de conhecimento.
+	 * Arquivo na pasta do jogo.
+	 * @see {@link #ControiBaseConhecimento()}.
+	 */
+	public void DefineValoresBaseConhecimento()
+	{
+		_baseConhecimento[0][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[1][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[2][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[3][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[4][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[5][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[6][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[7][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[8][4] = EstadosInimigo.Ataca;
+		_baseConhecimento[9][4] = EstadosInimigo.Perambula;
+		_baseConhecimento[10][4] = EstadosInimigo.Segue;
+		_baseConhecimento[11][4] = EstadosInimigo.Segue;
+		_baseConhecimento[12][4] = EstadosInimigo.Segue;
+		_baseConhecimento[13][4] = EstadosInimigo.Segue;
+		_baseConhecimento[14][4] = EstadosInimigo.Segue;
+		_baseConhecimento[15][4] = EstadosInimigo.Segue;
+		_baseConhecimento[16][4] = EstadosInimigo.Segue;
+		_baseConhecimento[17][4] = EstadosInimigo.Segue;
+		_baseConhecimento[18][4] = EstadosInimigo.Perambula;
+		_baseConhecimento[19][4] = EstadosInimigo.Perambula;
+		_baseConhecimento[20][4] = EstadosInimigo.Segue;
+		_baseConhecimento[21][4] = EstadosInimigo.Perambula;
+		_baseConhecimento[22][4] = EstadosInimigo.Perambula;
+		_baseConhecimento[23][4] = EstadosInimigo.Segue;
+		_baseConhecimento[24][4] = EstadosInimigo.Perambula;
+		_baseConhecimento[25][4] = EstadosInimigo.Perambula;
+		_baseConhecimento[26][4] = EstadosInimigo.Segue;
 	}
 	
 	/**

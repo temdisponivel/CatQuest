@@ -401,7 +401,7 @@ public abstract class GameObject
 	}
 	
 	/**
-	 * Funï¿½ï¿½o que valida colisï¿½o entre este {@link GameObject} e outro. Caso positivo, chama a funï¿½ï¿½o {@link GameObject#AoColidir(GameObject)} dos dois game objects.
+	 * Funï¿½ï¿½o que valida colisï¿½o entre este {@link GameObject} e outro.
 	 * @param colidiu {@link GameObject} a validar colisï¿½o.
 	 * @param colidi Se, caso haja colisão, deve chamar {@link GameObject#AoColidir(GameObject)} dos objetos. 
 	 * @return True caso tenha colidido.
@@ -450,6 +450,58 @@ public abstract class GameObject
 			}
 		}
 		
+		return retorno;
+	}
+	
+	/**
+	 * Valida se um campo é passável, livre ou não passável. Realiza colisões
+	 * deste objeto com os objetos dentro do campo formado pela caixa de colisão
+	 * no x e y do parametro. A caixa de colisão deste objeto é temporatiamente
+	 * movida para o x e y do campo.
+	 * 
+	 * @param campo
+	 *            {@link Vector2 Posicao} em que a caixa de colisão deve estar
+	 *            para verificar.
+	 * @return Se o campo é livre, passável ou não passável.
+	 */
+	public Colisoes GetValorCampo(Vector2 campo)
+	{
+		if (_telaInserido == null)
+			return Colisoes.Passavel;
+
+		GameObject outro = null;
+		Colisoes colisaoOutro, colisaoEste;
+		Colisoes retorno = Colisoes.Livre;
+
+		float x = _caixaColisao.x;
+		float y = _caixaColisao.y;
+		_caixaColisao.x = campo.x;
+		_caixaColisao.y = campo.y;
+
+		LinkedList<GameObject> lista = _telaInserido
+				.GetObjetosRegiao(_caixaColisao);
+
+		if (lista == null)
+			return Colisoes.NaoPassavel;
+
+		for (int i = 0; i < lista.size(); i++)
+		{
+			outro = lista.get(i);
+			colisaoOutro = outro.ValidaColisao(this, false);
+			colisaoEste = this.ValidaColisao(outro, false);
+
+			if (colisaoEste.ordinal() > colisaoOutro.ordinal())
+				retorno = colisaoEste;
+			else
+				retorno = colisaoOutro;
+
+			if (retorno == Colisoes.NaoPassavel)
+				break;
+		}
+
+		_caixaColisao.x = x;
+		_caixaColisao.y = y;
+
 		return retorno;
 	}
 	
@@ -774,6 +826,16 @@ public abstract class GameObject
 				filho.Encerra();
 			}
 		}
+	}
+	
+	/**
+	 * Distancia entre este e outro {@link GameObject objeto}.
+	 * @param outro {@link GameObject} objeto para ver a distancia.
+	 * @return Distancia em pixels.
+	 */
+	public float GetDistancia(GameObject outro)
+	{
+		return this.GetPosicao().dst(outro.GetPosicao());
 	}
 	
 	@Override

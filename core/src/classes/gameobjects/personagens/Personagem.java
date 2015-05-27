@@ -1,3 +1,5 @@
+//TODO: transferir o A* para uma classe separada e definir uma interface para GetValorCampo
+
 package classes.gameobjects.personagens;
 
 import java.io.IOException;
@@ -142,7 +144,6 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		super.Inicia();
 
-		this.SetPosicao(new Vector2());
 		_caminho = new LinkedList<Vector2>();
 		_destino = new Vector2();
 
@@ -223,7 +224,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetAnimacao(AnimacaoPersonagem.Movimento);
 
-		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade * _coeficienteLerp));
+		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade
+				* _coeficienteLerp));
 
 		if (_agilidade * _coeficienteLerp == 1)
 		{
@@ -544,74 +546,21 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Valida se um campo é passável, livre ou não passável. Realiza colisões
-	 * deste objeto com os objetos dentro do campo formado pela caixa de colisão
-	 * no x e y do parametro. A caixa de colisão deste objeto é temporatiamente
-	 * movida para o x e y do campo.
-	 * 
-	 * @param campo
-	 *            {@link Vector2 Posicao} em que a caixa de colisão deve estar
-	 *            para verificar.
-	 * @return Se o campo é livre, passável ou não passável.
-	 */
-	public Colisoes GetValorCampo(Vector2 campo)
-	{
-		if (_telaInserido == null)
-			return Colisoes.Passavel;
-
-		GameObject outro = null;
-		Colisoes colisaoOutro, colisaoEste;
-		Colisoes retorno = Colisoes.Livre;
-
-		float x = _caixaColisao.x;
-		float y = _caixaColisao.y;
-		_caixaColisao.x = campo.x;
-		_caixaColisao.y = campo.y;
-
-		LinkedList<GameObject> lista = _telaInserido
-				.GetObjetosRegiao(_caixaColisao);
-
-		if (lista == null)
-			return Colisoes.NaoPassavel;
-
-		for (int i = 0; i < lista.size(); i++)
-		{
-			outro = lista.get(i);
-			colisaoOutro = outro.ValidaColisao(this, false);
-			colisaoEste = this.ValidaColisao(outro, false);
-
-			if (colisaoEste.ordinal() > colisaoOutro.ordinal())
-				retorno = colisaoEste;
-			else
-				retorno = colisaoOutro;
-
-			if (retorno == Colisoes.NaoPassavel)
-				break;
-		}
-
-		_caixaColisao.x = x;
-		_caixaColisao.y = y;
-
-		return retorno;
-	}
-
-	/**
 	 * Faz a movimentação do {@link Personagem personagem} segundo entrada do
 	 * usuário. Só movimenta em campo diferente de não passável. Ou seja, nunca
 	 * existe colisão movimentando por aqui. Caso não haja mais posição válida
 	 * na direção informada, nada acontece.
 	 * 
 	 * @param direcao
-	 *            Direção do ataque.
+	 *            {@link Direcoes Direção} para movimentar.
 	 * @param delta
-	 *            Coeficiente para a agilidade.
+	 *            Coeficiente para a agilidade. Valor utilizado para multiplicar a agilidade, o que define o quanto ele vai andar na direção informada.
 	 * @see {@link Direcoes}
 	 */
 	protected void Movimenta(int direcao, float delta)
 	{
 		int playerDirecao = direcao;
-		float auxMovimento = Math.min(_telaInserido.GetPrecisaoMapaX(),
-				_telaInserido.GetPrecisaoMapaY());
+		float auxMovimento = Math.min(_telaInserido.GetPrecisaoMapaX(),	_telaInserido.GetPrecisaoMapaY());
 		float alfa = this._agilidade * delta;
 		float x = _posicaoTela.x;
 		float y = _posicaoTela.y;
@@ -678,12 +627,23 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * @return True caso o {@link GameObject objeto} parametrizado esteja no
-	 *         campo de visão deste.
+	 * @return True caso o {@link Personagem personagem} parametrizado esteja no campo de visão deste e não haja nada colidível entre os dois objetos.
+	 * @param outro {@link Personagem} para validar.
+	 * @see {@link #GetSeRangeVisao(Personagem)}
 	 */
-	public boolean GetVisivel(Personagem outro)
+	public boolean GetSeVisivel(Personagem outro)
 	{
 		return _posicaoTela.dst(outro.GetPosicao()) <= _campoVisao;
+	}
+	
+	/**
+	 * @param outro {@link Personagem} para validar.
+	 * @return True caso o outro personagem esteja no campo de visão deste. Não valida se há algo entre eles.
+	 * @see {@link #GetSeVisivel(Personagem)}.
+	 */
+	public boolean GetSeRangeVisao(Personagem outro)
+	{
+		return this.GetSeVisivel(outro) & _telaInserido.GetLinhaLivre(this, outro);
 	}
 
 	/**

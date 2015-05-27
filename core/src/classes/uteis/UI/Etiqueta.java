@@ -33,6 +33,7 @@ public class Etiqueta extends GameObject
 		_camada = Camada.UI;
 		_cor = Color.BLACK;
 		_tipo = GameObjects.Ui;
+		_fonte = CatQuest.instancia.GetFonte(); 
 	}
 	
 	/**

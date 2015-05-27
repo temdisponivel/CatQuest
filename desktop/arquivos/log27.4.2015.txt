@@ -1,0 +1,38 @@
+
+Data: Wed May 27 05:11:54 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.UI.Etiqueta.Desenha(Etiqueta.java:76)
+classes.gameobjects.GameObject.Desenha(GameObject.java:147)
+classes.gameobjects.GameObject.Desenha(GameObject.java:147)
+classes.telas.Tela.Desenha(Tela.java:131)
+catquest.CatQuest.Desenha(CatQuest.java:169)
+catquest.CatQuest.render(CatQuest.java:121)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Wed May 27 05:22:47 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GetObjetosCaminho(Tela.java:596)
+classes.telas.Tela.GetLinhaLivre(Tela.java:540)
+classes.gameobjects.personagens.herois.Barbaro.Atualiza(Barbaro.java:43)
+classes.telas.Tela.Atualiza(Tela.java:111)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:139)
+catquest.CatQuest.render(CatQuest.java:118)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: -1
+
+Data: Wed May 27 05:25:43 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GetObjetosCaminho(Tela.java:598)
+classes.telas.Tela.GetLinhaLivre(Tela.java:540)
+classes.gameobjects.personagens.herois.Barbaro.Atualiza(Barbaro.java:43)
+classes.telas.Tela.Atualiza(Tela.java:111)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:139)
+catquest.CatQuest.render(CatQuest.java:118)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: -1

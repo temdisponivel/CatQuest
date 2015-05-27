@@ -29,4 +29,11 @@ public class Cachorro extends Inimigo
 	public void AoColidir(GameObject colidiu)
 	{
 	}
+
+	@Override
+	protected void Ataque()
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }

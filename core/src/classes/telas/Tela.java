@@ -4,10 +4,12 @@ package classes.telas;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map.Entry;
+
 import classes.gameobjects.GameObject;
 import classes.gameobjects.cenario.ObjetoCenario;
 import classes.uteis.*;
 import classes.uteis.UI.Imagem;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.loaders.resolvers.LocalFileHandleResolver;
 import com.badlogic.gdx.audio.Music;
@@ -22,6 +24,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -575,6 +578,36 @@ public class Tela implements OnCompletionListener
 	public float GetPrecisaoMapaY()
 	{
 		return _precisaoMapaY;
+	}
+	
+	/**
+	 * @return Uma posição válida aleatória dentro do mapa.
+	 */
+	public Vector2 GetPosicaoAleatoria()
+	{
+		float x = MathUtils.random(0, _larguraMapa) / _precisaoMapaX;
+		float y = MathUtils.random(0, _alturaMapa) / _precisaoMapaY;
+		
+		return new Vector2(x * _precisaoMapaX, y * _precisaoMapaY);
+	}
+	
+	/**
+	 * @param relativo {@link Vector2 Posição} atual.
+	 * @param distancia Distância máxima entre a posição aleatória e a posição altual.
+	 * @return Uma posição válida aleatória entre a posição atual e a distancia informada.
+	 */
+	public Vector2 GetPosicaoAleatoria(Vector2 relativo, float distancia)
+	{
+		float x = MathUtils.random(relativo.x, (relativo.x + distancia)) / _precisaoMapaX;
+		float y = MathUtils.random(relativo.y, (relativo.y + distancia))  / _precisaoMapaY;
+		
+		if (x < 0 || x > _larguraMapa * _precisaoMapaX)
+			x = 0;
+		
+		if (y < 0 || y > _alturaMapa * _precisaoMapaY)
+			y = 0;
+		
+		return new Vector2(x * _precisaoMapaX, y * _precisaoMapaY);
 	}
 	
 	@Override

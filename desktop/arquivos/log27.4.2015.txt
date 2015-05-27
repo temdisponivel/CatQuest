@@ -36,3 +36,14 @@ catquest.CatQuest.render(CatQuest.java:118)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: -1
+
+Data: Wed May 27 07:29:28 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.personagens.inimigos.Inimigo.Atualiza(Inimigo.java:187)
+classes.telas.Tela.Atualiza(Tela.java:112)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:139)
+catquest.CatQuest.render(CatQuest.java:118)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

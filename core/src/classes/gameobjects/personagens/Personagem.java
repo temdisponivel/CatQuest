@@ -224,13 +224,11 @@ public abstract class Personagem extends GameObject implements Serializador
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetAnimacao(AnimacaoPersonagem.Movimento);
 
-		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade
-				* _coeficienteLerp));
+		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade * _coeficienteLerp));
 
 		if (_agilidade * _coeficienteLerp == 1)
 		{
 			_coeficienteLerp = 0;
-
 			return true;
 		}
 
@@ -240,8 +238,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		// nunca chega,
 		// devemos utilizar um coeficiente multiplicador para compensar isso
 		// se chegamos no destino
-		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + deltaTime, 0f,
-				1 / _agilidade);
+		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + deltaTime, 0f, 1 / _agilidade);
 
 		return false;
 	}
@@ -261,7 +258,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		if (_caminho == null || _caminho.isEmpty())
 			return false;
 
-		if (this.Movimenta(_caminho.element(), deltaTime))
+		if (this.Movimenta(_caminho.element().cpy(), deltaTime))
 		{
 			_caminho.removeFirst();
 			return true;
@@ -327,6 +324,10 @@ public abstract class Personagem extends GameObject implements Serializador
 		// enquanto não cheguei no meu destino
 		while (!listaAberta.isEmpty())
 		{
+			//corta o A* se a lista aberta for muito grande pra economizar desempenho //TODO: validar isso
+			if (listaAberta.size() > 500)
+				return null;
+				
 			atual = listaAberta.get(0);
 
 			// percorre todos os da lista aberta e paga o que tem o menor valor
@@ -546,8 +547,8 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Faz a movimentação do {@link Personagem personagem} segundo entrada do
-	 * usuário. Só movimenta em campo diferente de não passável. Ou seja, nunca
+	 * Faz a movimentação do {@link Personagem personagem}.
+	 * Só movimenta em campo diferente de não passável. Ou seja, nunca
 	 * existe colisão movimentando por aqui. Caso não haja mais posição válida
 	 * na direção informada, nada acontece.
 	 * 
@@ -629,21 +630,10 @@ public abstract class Personagem extends GameObject implements Serializador
 	/**
 	 * @return True caso o {@link Personagem personagem} parametrizado esteja no campo de visão deste e não haja nada colidível entre os dois objetos.
 	 * @param outro {@link Personagem} para validar.
-	 * @see {@link #GetSeRangeVisao(Personagem)}
 	 */
 	public boolean GetSeVisivel(Personagem outro)
 	{
 		return _posicaoTela.dst(outro.GetPosicao()) <= _campoVisao;
-	}
-	
-	/**
-	 * @param outro {@link Personagem} para validar.
-	 * @return True caso o outro personagem esteja no campo de visão deste. Não valida se há algo entre eles.
-	 * @see {@link #GetSeVisivel(Personagem)}.
-	 */
-	public boolean GetSeRangeVisao(Personagem outro)
-	{
-		return this.GetSeVisivel(outro) & _telaInserido.GetLinhaLivre(this, outro);
 	}
 
 	/**

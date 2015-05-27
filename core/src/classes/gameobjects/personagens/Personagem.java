@@ -120,10 +120,10 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected float _coeficienteCritico = 0;
 	protected Estado _estado = Estado.Parado;
 	protected boolean _colidido = false;
-	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/"
-			+ this.toString());
+	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/"	+ this.toString());
 	protected LinkedList<Vector2> _caminho = null;
 	protected Vector2 _destino = null;
+	protected Vector2 _ultimoDestinoCalculado = null;
 	protected float _campoVisao = 0f;
 	private float _coeficienteLerp = 0;
 	private JsonValue _valoresArquivo = null;
@@ -307,6 +307,11 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		if (_telaInserido == null || _caminho == null)
 			return null;
+		
+		//se o destino atual é igual a o ultimo calculado e o caminho ainda tem ponto nao passados, retorna o caminho
+		if (_destino.equals(_ultimoDestinoCalculado) && !_caminho.isEmpty())
+			return _caminho;
+			
 
 		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
@@ -345,8 +350,7 @@ public abstract class Personagem extends GameObject implements Serializador
 			listaFechada.add(atual);
 
 			// se achamos
-			if (aux.setPosition(atual.posicao).contains(_destino)
-					|| atual.posicao.dst(_destino) < _agilidade)
+			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < _agilidade)
 			{
 				_caminho.addFirst(_destino);
 
@@ -356,6 +360,8 @@ public abstract class Personagem extends GameObject implements Serializador
 					_caminho.addFirst(atual.posicao);
 					atual = atual.parente;
 				}
+				
+				_ultimoDestinoCalculado = _destino;
 
 				break;
 			}

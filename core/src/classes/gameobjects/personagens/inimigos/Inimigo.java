@@ -161,17 +161,13 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		//se devemos seguir o alvo, segue
 		if (_estado == EstadosInimigo.Segue)
 		{
-			if (_alvo != null && (_destino == null || CatQuest.instancia.GetDificuldade() == Dificuldade.Dificil))
+			if (_alvo != null && (_caminho.isEmpty() || CatQuest.instancia.GetDificuldade() == Dificuldade.Dificil))
 			{
 				_destino.set(_alvo.GetPosicao());
 				this.GetCaminho();
 			}
 			
-			if (this.MovimentaCaminho(deltaTime))
-			{
-				_destino.set(_alvo.GetPosicao());
-				this.GetCaminho();
-			}				
+			this.MovimentaCaminho(deltaTime);
 		}
 		else if (_estado == EstadosInimigo.Ataca)
 		{

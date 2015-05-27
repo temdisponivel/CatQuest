@@ -13,7 +13,6 @@ public class ControladorCamera extends GameObject
 {
 	private GameObject[] _objetos = null;
 	private OrthographicCamera _camera = null;
-	private float _ultimaDistancia = -1;
 	
 	/**
 	 * Controi um controlador de camera com um ou mais {@link GameObject GameObject} para seguir.
@@ -71,10 +70,9 @@ public class ControladorCamera extends GameObject
 						
 						//pega os catetos do triangulo retangulo formado pelos dois maiores objetos até agora
 						diferencaX = Math.abs(posicaoA.x - posicaoB.x);
-						diferencaY = Math.abs(posicaoA.y - posicaoB.y);								
+						diferencaY = Math.abs(posicaoA.y - posicaoB.y);
 						
-						//compensa o ponto zero do objeto
-						//como o ponto zero é no inferior esquerdo, devemos compensar com a largura do objeto que esta mais a direita
+						//adiciona um campo de visão para que a tela comece a abrir antes de que o gameobject encoste na borda
 						diferencaX += (objA.GetLargura() + objB.GetLargura()) * 2;
 						diferencaY += (objA.GetAltura() + objB.GetAltura()) * 2;
 						
@@ -100,9 +98,6 @@ public class ControladorCamera extends GameObject
 		//tira zoom para mostrar mais da tela
 		if (coeficienteZoom >= 1)
 			_camera.zoom = coeficienteZoom;
-		
-		//atualiza maior distancia
-		_ultimaDistancia = maiorDistancia;
 		
 		//se temos dois objetos
 		if (posicaoB != null)

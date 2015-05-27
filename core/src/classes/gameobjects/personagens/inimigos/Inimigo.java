@@ -1,11 +1,9 @@
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
-
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.uteis.Camada;
-import classes.uteis.Player;
 import classes.uteis.reciclador.Reciclador;
 import classes.uteis.reciclador.Reciclavel;
 
@@ -68,19 +66,6 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-		
-		if (!_caminho.isEmpty())
-		{
-			this.MovimentaCaminho(deltaTime);
-		}
-		else
-		{
-			if (!Player.primario.GetPersonagem().GetVisivel(this))
-				return;
-			
-			_destino.set(Player.primario.GetPersonagem().GetPosicao());
-			this.GetCaminho();
-		}
 	}
 
 	@Override

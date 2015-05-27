@@ -1,9 +1,7 @@
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
-
 import com.badlogic.gdx.math.Vector2;
-
 import catquest.CatQuest;
 import catquest.CatQuest.Dificuldade;
 import classes.gameobjects.GameObject;
@@ -54,7 +52,6 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	 */
 	protected enum EstadosInimigo
 	{
-		Vigia,
 		Perambula,
 		Segue,
 		Ataca,
@@ -131,9 +128,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	
 	static public HashMap<Integer, Inimigo> inimigos = new HashMap<Integer, Inimigo>();
 	static public Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
-	protected EstadosInimigo _estado = EstadosInimigo.Vigia;
+	protected EstadosInimigo _estado = EstadosInimigo.Perambula;
 	protected Personagem _alvo = null;
-	protected HashMap<Float, DistanciaFuzzyficada> _valorFuzzyDistancia = new HashMap<Float, DistanciaFuzzyficada>();
 	protected Fuzzyficacao _fuzzyVidaAlvo = null;
 	protected Fuzzyficacao _fuzzyVidaPropria = null;
 	protected Fuzzyficacao _fuzzyDistancia = null;
@@ -160,6 +156,39 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
+		this.DecideOQueFazer();
+		
+		//se devemos seguir o alvo, segue
+		if (_estado == EstadosInimigo.Segue)
+		{
+			if (_alvo != null && (_destino == null || CatQuest.instancia.GetDificuldade() == Dificuldade.Dificil))
+			{
+				_destino.set(_alvo.GetPosicao());
+				this.GetCaminho();
+			}
+			
+			if (this.MovimentaCaminho(deltaTime))
+			{
+				_destino.set(_alvo.GetPosicao());
+				this.GetCaminho();
+			}				
+		}
+		else if (_estado == EstadosInimigo.Ataca)
+		{
+			this.Ataque();
+		}
+		else if (_estado == EstadosInimigo.Perambula)
+		{
+			if (_caminho.isEmpty())
+			{
+				if (_telaInserido != null)
+					_destino.set(_telaInserido.GetPosicaoAleatoria(this.GetPosicao(), 300));
+				
+				this.GetCaminho();
+			}
+			
+			this.MovimentaCaminho(deltaTime);
+		}
 	}
 
 	@Override
@@ -192,7 +221,10 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	protected void DecideOQueFazer()
 	{
 		if (_alvo == null || _fuzzyDistancia == null || _fuzzyVidaAlvo == null || _fuzzyVidaPropria == null)
+		{
+			_estado = EstadosInimigo.Perambula;
 			return;
+		}
 		
 		Dificuldade dificuldade = CatQuest.instancia.GetDificuldade();
 		float vidaAlvo = _alvo.GetVida();
@@ -256,4 +288,17 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		else
 			return 0;
 	}
+	
+	/**
+	 * Função que contrói a base de conhecimento para o fuzzy.
+	 */
+	protected void ControiBaseConhecimento()
+	{
+		
+	}
+	
+	/**
+	 * Função chamada quando devemos atacar o {@link #_alvo alvo}.
+	 */
+	protected abstract void Ataque();
 }

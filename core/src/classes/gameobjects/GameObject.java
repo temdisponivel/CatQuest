@@ -38,6 +38,7 @@ public abstract class GameObject
 		Inimigo,
 		Cenario,
 		GameObject,
+		Ataque,
 		Ui,
 	};
 	

@@ -1,11 +1,7 @@
 package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
-<<<<<<< HEAD
-=======
 import classes.gameobjects.personagens.ataque.Espadada;
->>>>>>> origin/classes
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;

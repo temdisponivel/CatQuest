@@ -54,78 +54,6 @@ public abstract class Heroi extends Personagem implements Serializador
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-<<<<<<< HEAD
-		this.Movimenta(deltaTime);
-	}
-	
-	/**
-	 * Faz a movimentação do herói segundo entrada do usuário.
-	 */
-	protected void Movimenta(float delta)
-	{
-		int playerDirecao;
-		float auxMovimento = Math.max(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY());;
-		float alfa = this._agilidade * delta;
-		float x = _posicaoTela.x;
-		float y = _posicaoTela.y;
-		Vector2 aux = null;
-				
-		if (_player != null)
-		{
-			playerDirecao = _player.GetControle().GetDirecao();
-			
-			if (_player.GetControle().GetAcao())
-				this.Acao();
-			if (_player.GetControle().GetHabilidade())
-				this.HabilidadeAtiva();
-
-			if (playerDirecao != Direcoes.CENTRO)
-			{
-				if (playerDirecao == Direcoes.CIMA)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.BAIXO)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.ESQUERDA)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.DIREITA)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.NORDESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.NOROESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y + auxMovimento)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.SUDESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-				else if (playerDirecao == Direcoes.SUDOESTE)
-				{
-					if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y - auxMovimento)) != Colisoes.NaoPassavel)
-						this.Movimenta(aux, alfa);//this.SetPosicao(aux);
-				}
-			}
-		}
-	}
-=======
- 
 		this.Movimenta(_player.GetControle().GetDirecao(), deltaTime);
 		
 		if (_player.GetControle().GetDirecaoAtaque() != Direcoes.CENTRO)
@@ -135,12 +63,8 @@ public abstract class Heroi extends Personagem implements Serializador
 			this.Acao();
 		
 		if (_player.GetControle().GetHabilidade())
-			this.HabilidadeAtiva();
-		
-		
+			this.HabilidadeAtiva();	
 	}
-	
->>>>>>> origin/classes
 
 	/**
 	 * Define um player para este {@link Heroi herói}. Também define no player que este é o personagem que ele está controlando.

@@ -70,11 +70,7 @@ public class Mensagem extends GameObject
 		
 		if (CatQuest.instancia.GetTempoJogo() >= tempoInicio + duracao)
 		{
-			if (_telaInserido != null)
-				_telaInserido.Remover(this);
-			
-			if (_pai != null)
-				_pai.RemoveFilho(this);
+			this.Encerra();
 		}
 	}
 	

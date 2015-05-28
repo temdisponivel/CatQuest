@@ -47,18 +47,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		SINGLE,
 	};
 	
-	/**
-	 * Enumerados para as dificuldades do jogo.
-	 * @author matheus
-	 *
-	 */
-	public enum Dificuldade
-	{
-		Facil,
-		Normal,
-		Dificil,
-	}
-	
 	static public CatQuest instancia;
 	private int _idObjeto = 0;
 	private Stack<Tela> _pilhaTelas = null;
@@ -74,7 +62,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private boolean _trocaTela = false, _removeTela = false;
 	private Tela _proximaTela = null;
 	private boolean _encerrar = false;
-	private Dificuldade _dificuldade = Dificuldade.Normal;
+	private float _dificuldade = 1f;
 	
 	/**
 	 * Contrutor do singleton.
@@ -578,10 +566,19 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	}
 	
 	/**
-	 * @return {@link Dificuldade} do jogo.
+	 * @return Dificuldade do jogo (0~1) 0 = Fácil, 0.5 = Normal e 1 = Difícil.
 	 */
-	public Dificuldade GetDificuldade()
+	public float GetDificuldade()
 	{
 		return _dificuldade;
+	}
+	
+	/**
+	 * @param dif Nova dificuldade, deve ser entre 0~1. 0= Fácil, 0.5 = Normal e 1 =difícil.
+	 * @see {@link #GetDificuldade()}.
+	 */
+	public void SetDificuldade(float dif)
+	{
+		_dificuldade = dif;
 	}
 }

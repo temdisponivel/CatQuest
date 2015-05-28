@@ -553,8 +553,8 @@ public abstract class GameObject
 		filho.SetCamada(_camada);
 		filho.SetPosicaoRelativa(_posicaoTela);
 		
-		if (_telaInserido != null && _telaInserido.ContemGameObject(filho))
-			_telaInserido.Remover(filho);
+		if (filho.GetTela() != null && filho.GetTela().ContemGameObject(filho))
+			filho.GetTela().Remover(filho);
 			
 		_filhos.add(filho);
 		

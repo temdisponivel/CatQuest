@@ -93,3 +93,91 @@ catquest.CatQuest.render(CatQuest.java:118)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+Data: Wed May 27 23:47:12 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.personagens.inimigos.Inimigo.DecideOQueFazer(Inimigo.java:284)
+classes.gameobjects.personagens.inimigos.Inimigo.Atualiza(Inimigo.java:184)
+classes.telas.Tela.Atualiza(Tela.java:112)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: classes.gameobjects.personagens.inimigos.Inimigo$VidaFuzzyficada cannot be cast to java.lang.Float
+
+Data: Wed May 27 23:56:46 BRT 2015 | Mensagem: Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+StackTrace: 
+classes.gameobjects.personagens.inimigos.Inimigo.DefineValoresBaseConhecimento(Inimigo.java:389)
+classes.gameobjects.personagens.inimigos.Inimigo.ControiBaseConhecimento(Inimigo.java:379)
+classes.gameobjects.personagens.inimigos.Inimigo.<init>(Inimigo.java:166)
+classes.gameobjects.personagens.inimigos.Cachorro.<init>(Cachorro.java:23)
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+java.lang.reflect.Constructor.newInstance(Unknown Source)
+java.lang.Class.newInstance(Unknown Source)
+classes.uteis.reciclador.Reciclador.GetInstancia(Reciclador.java:40)
+classes.telas.GamePlay.Atualiza(GamePlay.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+Data: Wed May 27 23:56:46 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaGameObject(Tela.java:148)
+classes.telas.Tela.Atualiza(Tela.java:101)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Wed May 27 23:57:10 BRT 2015 | Mensagem: Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+StackTrace: 
+classes.gameobjects.personagens.inimigos.Inimigo.DefineValoresBaseConhecimento(Inimigo.java:389)
+classes.gameobjects.personagens.inimigos.Inimigo.ControiBaseConhecimento(Inimigo.java:379)
+classes.gameobjects.personagens.inimigos.Inimigo.<init>(Inimigo.java:166)
+classes.gameobjects.personagens.inimigos.Cachorro.<init>(Cachorro.java:23)
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+java.lang.reflect.Constructor.newInstance(Unknown Source)
+java.lang.Class.newInstance(Unknown Source)
+classes.uteis.reciclador.Reciclador.GetInstancia(Reciclador.java:40)
+classes.telas.GamePlay.Atualiza(GamePlay.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+Data: Wed May 27 23:57:10 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaGameObject(Tela.java:148)
+classes.telas.Tela.Atualiza(Tela.java:101)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Wed May 27 23:57:53 BRT 2015 | Mensagem: Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+StackTrace: 
+classes.gameobjects.personagens.inimigos.Inimigo.DefineValoresBaseConhecimento(Inimigo.java:389)
+classes.gameobjects.personagens.inimigos.Inimigo.ControiBaseConhecimento(Inimigo.java:379)
+classes.gameobjects.personagens.inimigos.Inimigo.<init>(Inimigo.java:166)
+classes.gameobjects.personagens.inimigos.Cachorro.<init>(Cachorro.java:23)
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+java.lang.reflect.Constructor.newInstance(Unknown Source)
+java.lang.Class.newInstance(Unknown Source)
+classes.uteis.reciclador.Reciclador.GetInstancia(Reciclador.java:40)
+classes.telas.GamePlay.Atualiza(GamePlay.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro

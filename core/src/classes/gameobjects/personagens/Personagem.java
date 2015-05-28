@@ -127,6 +127,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	private float _coeficienteLerp = 0;
 	private float _duracaoLerp = 0;
 	private JsonValue _valoresArquivo = null;
+	private Vector2 _inicioLerp = null;
 
 	/**
 	 * Cria um novo personagem.
@@ -224,16 +225,20 @@ public abstract class Personagem extends GameObject implements Serializador
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetAnimacao(AnimacaoPersonagem.Movimento);
 		
-		if (_coeficienteLerp == 0)
+		if (_inicioLerp == null)
+		{
 			_duracaoLerp = _posicaoTela.dst(destino) / _agilidade;
+			_inicioLerp = _posicaoTela.cpy();
+		}
 		
-		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + deltaTime, 0f, 1);
+		_coeficienteLerp = MathUtils.clamp((_coeficienteLerp + deltaTime) / _duracaoLerp, 0f, 1);
 		
-		this.SetPosicao(_posicaoTela.lerp(destino, _coeficienteLerp / _duracaoLerp));
+		this.SetPosicao(_inicioLerp.lerp(destino, _coeficienteLerp));
 
-		if (_agilidade * _coeficienteLerp >= 1)
+		if (_coeficienteLerp >= 1)
 		{
 			_coeficienteLerp = 0;
+			_inicioLerp = null;
 			return true;
 		}
 
@@ -305,11 +310,6 @@ public abstract class Personagem extends GameObject implements Serializador
 		if (_telaInserido == null || _caminho == null)
 			return null;
 
-		// se o destino atual é igual a o ultimo calculado e o caminho ainda tem
-		// ponto nao passados, retorna o caminho
-		if (_destino.equals(_ultimoDestinoCalculado) && !_caminho.isEmpty())
-			return _caminho;
-
 		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
@@ -323,10 +323,7 @@ public abstract class Personagem extends GameObject implements Serializador
 
 		// enquanto não cheguei no meu destino
 		while (!listaAberta.isEmpty())
-		{
-			if (listaAberta.size() > 250)
-				return null;
-			
+		{			
 			atual = listaAberta.get(0);
 
 			// percorre todos os da lista aberta e paga o que tem o menor valor
@@ -344,7 +341,7 @@ public abstract class Personagem extends GameObject implements Serializador
 			listaFechada.add(atual);
 
 			// se achamos
-			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < _telaInserido.GetPrecisaoMapaX())
+			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()))
 			{
 				_caminho.addFirst(_destino);
 
@@ -588,6 +585,43 @@ public abstract class Personagem extends GameObject implements Serializador
 			{
 				return null;
 			}
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Retorna a {@link Vector2 Posição} na {@link Direcoes direção} informada.
+	 * @param direcao Direção para lhar.
+	 * @return {@link Vector2 Posição} na direção informada. Nulo caso seja uma {@link Direcoes direção} inválida, ou centro.
+	 */
+	public Vector2 GetPosicaoDirecao(int direcao)
+	{
+		float auxPosicao = Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY());
+		float x = _posicaoTela.x;
+		float y = _posicaoTela.y;
+		Vector2 aux = null;
+
+		if (direcao != Direcoes.CENTRO)
+		{
+			if (direcao == Direcoes.CIMA)
+				aux = new Vector2(x, y + auxPosicao);
+			else if (direcao == Direcoes.BAIXO)
+				aux = new Vector2(x, y - auxPosicao);
+			else if (direcao == Direcoes.ESQUERDA)
+				aux = new Vector2(x - auxPosicao, y);
+			else if (direcao == Direcoes.DIREITA)
+				aux = new Vector2(x + auxPosicao, y);
+			else if (direcao == Direcoes.NORDESTE)
+				aux = new Vector2(x + auxPosicao, y + auxPosicao);
+			else if (direcao == Direcoes.NOROESTE)
+				aux = new Vector2(x - auxPosicao, y + auxPosicao);
+			else if (direcao == Direcoes.SUDESTE)
+				aux = new Vector2(x + auxPosicao, y - auxPosicao);
+			else if (direcao == Direcoes.SUDOESTE)
+				aux = new Vector2(x - auxPosicao, y - auxPosicao);
+			
+			return aux;
 		}
 		
 		return null;

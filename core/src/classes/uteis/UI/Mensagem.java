@@ -29,6 +29,7 @@ public class Mensagem extends GameObject
 		this.AdicionaFilho(new Etiqueta(mensagem, posicao.cpy(), cor));
 		tempoInicio = CatQuest.instancia.GetTempoJogo();
 		duracao = segundos;
+		this.SetPosicao(posicao.cpy());
 		this.ControiFundo();
 	}
 

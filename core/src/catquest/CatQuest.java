@@ -24,6 +24,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -641,5 +642,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	public void SetDificuldade(float dif)
 	{
 		_dificuldade = dif;
+	}
+	
+	/**
+	 * @param objetos Objetos para randomizar entre.
+	 * @return Um dos objetos parametrizados.
+	 */
+	public Object GetAleatorio(Object... objetos)
+	{
+		return objetos[MathUtils.random(0, objetos.length-1)];
 	}
 }

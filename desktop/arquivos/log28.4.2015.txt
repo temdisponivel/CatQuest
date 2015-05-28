@@ -126,3 +126,30 @@ catquest.CatQuest.render(CatQuest.java:107)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 05:18:13 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+catquest.CatQuest.GetAleatorio(CatQuest.java:653)
+classes.gameobjects.personagens.inimigos.Inimigo.TrocaDirecaoPerambula(Inimigo.java:282)
+classes.gameobjects.personagens.inimigos.Inimigo.Inicia(Inimigo.java:194)
+classes.telas.Tela.GerenciaGameObject(Tela.java:184)
+classes.telas.Tela.Atualiza(Tela.java:109)
+classes.telas.GamePlay.Atualiza(GamePlay.java:41)
+catquest.CatQuest.Atualiza(CatQuest.java:130)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: 8
+
+Data: Thu May 28 05:28:06 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.GetValorCampo(GameObject.java:524)
+classes.gameobjects.personagens.inimigos.Inimigo.ValidaPerambula(Inimigo.java:275)
+classes.gameobjects.personagens.inimigos.Inimigo.Atualiza(Inimigo.java:220)
+classes.telas.Tela.Atualiza(Tela.java:120)
+classes.telas.GamePlay.Atualiza(GamePlay.java:41)
+catquest.CatQuest.Atualiza(CatQuest.java:130)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

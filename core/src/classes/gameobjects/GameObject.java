@@ -67,6 +67,7 @@ public abstract class GameObject
 	protected boolean _colidiPai = false;
 	protected GameObject _pai = null;
 	protected Color _cor = null;
+	protected boolean _iniciado = false;
 	protected HashMap<Integer, Sound> _sons = null;
 
 	/**
@@ -171,17 +172,7 @@ public abstract class GameObject
 	{
 		this.SetAtivo(true);
 		_cor = Color.WHITE;
-
-		if (this.GetSePai() && _desenha)
-		{
-			GameObject filho = null;
-
-			for (int i = 0; i < _filhos.size(); i++)
-			{
-				filho = _filhos.get(i);
-				filho.Inicia();
-			}
-		}
+		_iniciado = true;
 	}
 
 	/**
@@ -922,6 +913,8 @@ public abstract class GameObject
 				filho.Encerra();
 			}
 		}
+		
+		_iniciado = false;
 	}
 
 	/**
@@ -934,6 +927,14 @@ public abstract class GameObject
 	public float GetDistancia(GameObject outro)
 	{
 		return this.GetPosicao().dst(outro.GetPosicao());
+	}
+	
+	/**
+	 * REtorna se este objeto está iniciado.
+	 */
+	public boolean GetSeIniciado()
+	{
+		return _iniciado;
 	}
 
 	@Override

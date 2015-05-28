@@ -1,11 +1,15 @@
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
+
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.uteis.Camada;
+import classes.uteis.controle.Controle.Direcoes;
 import classes.uteis.reciclador.Reciclador;
 import classes.uteis.reciclador.Reciclavel;
 
@@ -141,12 +145,15 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	static public Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
 	protected EstadosInimigo _estado = EstadosInimigo.Perambula;
 	protected Personagem _alvo = null;
-	static protected Fuzzyficacao _fuzzyVidaAlvo = null;
-	static protected Fuzzyficacao _fuzzyDistancia = null;
-	static protected Fuzzyficacao _fuzzyDificuldade = null;
+	protected Fuzzyficacao _fuzzyVidaAlvo = null;
+	protected Fuzzyficacao _fuzzyDistancia = null;
+	protected Fuzzyficacao _fuzzyDificuldade = null;
 	static protected int _quantiColunasBaseConhecimento = 4; //quatro colunas porque vamos considerar 3 dados e 1 resultado
 	static protected int _quantiLinhasBaseConhecimento = 27; //27 linhas porque são 3 possíveis valores em cada coluna, portanto 3 a quarta
 	static protected Object[][] _baseConhecimento = new Object[_quantiLinhasBaseConhecimento][_quantiColunasBaseConhecimento];
+	int _direcaoPerambula = Direcoes.DIREITA;
+	float _tempoEntreIA = MathUtils.random(1);
+	float _ultimaIA = 0;
 	
 	/**
 	 * Cria um novo inimigo.
@@ -158,8 +165,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		_tipo = GameObjects.Inimigo;
 		inimigos.put(this.GetId(), this);
 		this.ControiBaseConhecimento();
-		
-		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-400, 400), new TrianguloFuzzy(200, 500), new TrianguloFuzzy(350, 1000));
+		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-400, 400), new TrianguloFuzzy(200, 500), new TrianguloFuzzy(350, CatQuest.instancia.GetHipotenusaMundo()));
 		_fuzzyVidaAlvo = new Fuzzyficacao(new TrianguloFuzzy(0, 50), new TrianguloFuzzy(25, 75), new TrianguloFuzzy(50, 150));
 		_fuzzyDificuldade = new Fuzzyficacao(new TrianguloFuzzy(-.3f, 0.3f), new TrianguloFuzzy(0f, 0.7f), new TrianguloFuzzy(.35f, 1.35f));
 	}
@@ -175,7 +181,14 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-		this.DecideOQueFazer();
+		
+		Vector2 movimento = null;
+		
+		if (CatQuest.instancia.GetTempoJogo() - _ultimaIA > _tempoEntreIA)
+		{
+			this.DecideOQueFazer();
+			_ultimaIA = CatQuest.instancia.GetTempoJogo(); 
+		}
 		
 		//se devemos seguir o alvo, segue
 		if (_estado == EstadosInimigo.Segue)
@@ -183,7 +196,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 			if (_alvo != null && _caminho.isEmpty())
 			{
 				_destino.set(_alvo.GetPosicao());
-				this.GetCaminho();
+				if (this.GetCaminho() == null)
+					_estado = EstadosInimigo.Perambula;
 			}
 			
 			this.MovimentaCaminho(deltaTime);
@@ -191,18 +205,16 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		else if (_estado == EstadosInimigo.Ataca)
 		{
 			this.Ataque();
+			_caminho.clear();
 		}
 		else if (_estado == EstadosInimigo.Perambula)
 		{
-			if (_caminho.isEmpty())
-			{
-				if (_telaInserido != null)
-					_destino.set(_telaInserido.GetPosicaoAleatoria(this.GetPosicao(), 300));
-				
-				this.GetCaminho();
-			}
+			movimento = this.Movimenta(_direcaoPerambula, deltaTime, true);
 			
-			this.MovimentaCaminho(deltaTime);
+			if ((movimento.x < 0 || movimento.x > _telaInserido.GetLarguraMapa()) || (movimento.y < 0 || movimento.y > _telaInserido.GetAlturaMapa()))
+				this.TrocaDirecaoPerambula();
+			
+			_caminho.clear();
 		}
 	}
 
@@ -226,8 +238,45 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void AoColidir(GameObject colidiu)
 	{		
 		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
-			this.GetCaminho();
-		
+		{
+			this.TrocaDirecaoPerambula();
+		}
+	}
+	
+	/**
+	 * Troca a direção para o qual estamos perambulando.
+	 */
+	public void TrocaDirecaoPerambula()
+	{
+		switch (_direcaoPerambula)
+		{
+		case Direcoes.DIREITA:
+			_direcaoPerambula = Direcoes.BAIXO;
+			break;
+		case Direcoes.ESQUERDA:
+			_direcaoPerambula = Direcoes.NORDESTE;
+			break;
+		case Direcoes.BAIXO:
+			_direcaoPerambula = Direcoes.ESQUERDA;
+			break;
+		case Direcoes.CIMA:
+			_direcaoPerambula = Direcoes.SUDOESTE;
+			break;
+		case Direcoes.NORDESTE:
+			_direcaoPerambula = Direcoes.NOROESTE;
+			break;
+		case Direcoes.SUDOESTE:
+			_direcaoPerambula = Direcoes.DIREITA;
+			break;
+		case Direcoes.NOROESTE:
+			_direcaoPerambula = Direcoes.SUDESTE;
+			break;
+		case Direcoes.SUDESTE:
+			_direcaoPerambula = Direcoes.CIMA;
+			break;
+		default:
+			break;
+		}
 	}
 	
 	/**
@@ -235,9 +284,11 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	 */
 	protected void DecideOQueFazer()
 	{
+		//define o estado padrão como perambula
+		_estado = EstadosInimigo.Perambula;
+		
 		if (_alvo == null || _fuzzyDistancia == null || _fuzzyVidaAlvo == null || _fuzzyDificuldade == null)
 		{
-			_estado = EstadosInimigo.Perambula;
 			return;
 		}
 		
@@ -247,7 +298,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		HashMap<Object, Float> valoresFuzzyficados = new HashMap<Object, Float>();
 		HashMap<EstadosInimigo, Float> valorRegra = new HashMap<EstadosInimigo, Float>();
 		float[] valoresPertinencia = null;
-		float aux = -1;
+		float aux = 0;
 		
 		//valor pertinencia vida do alvo
 		valoresPertinencia = this.GetValorPertinencia(vidaAlvo, _fuzzyVidaAlvo);
@@ -399,10 +450,10 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		_baseConhecimento[17][3] = EstadosInimigo.Segue;
 		_baseConhecimento[18][3] = EstadosInimigo.Perambula;
 		_baseConhecimento[19][3] = EstadosInimigo.Perambula;
-		_baseConhecimento[20][3] = EstadosInimigo.Segue;
+		_baseConhecimento[20][3] = EstadosInimigo.Perambula;
 		_baseConhecimento[21][3] = EstadosInimigo.Perambula;
 		_baseConhecimento[22][3] = EstadosInimigo.Perambula;
-		_baseConhecimento[23][3] = EstadosInimigo.Segue;
+		_baseConhecimento[23][3] = EstadosInimigo.Perambula;
 		_baseConhecimento[24][3] = EstadosInimigo.Perambula;
 		_baseConhecimento[25][3] = EstadosInimigo.Perambula;
 		_baseConhecimento[26][3] = EstadosInimigo.Segue;

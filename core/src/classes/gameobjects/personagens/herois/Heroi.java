@@ -9,7 +9,6 @@ import classes.uteis.Player;
 import classes.uteis.Serializador;
 import classes.uteis.controle.Controle.Direcoes;
 
-
 /**
  * Classe que representa um herói do jogo.
  * 
@@ -54,20 +53,22 @@ public abstract class Heroi extends Personagem implements Serializador
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-		this.Movimenta(_player.GetControle().GetDirecao(), deltaTime);
 		
+		this.Movimenta(_player.GetControle().GetDirecao(), deltaTime, false);
+
 		if (_player.GetControle().GetDirecaoAtaque() != Direcoes.CENTRO)
 			this.AtaqueBasico();
-		
+
 		if (_player.GetControle().GetAcao())
 			this.Acao();
-		
+
 		if (_player.GetControle().GetHabilidade())
-			this.HabilidadeAtiva();	
+			this.HabilidadeAtiva();
 	}
 
 	/**
-	 * Define um player para este {@link Heroi herói}. Também define no player que este é o personagem que ele está controlando.
+	 * Define um player para este {@link Heroi herói}. Também define no player
+	 * que este é o personagem que ele está controlando.
 	 * 
 	 * @param player
 	 *            {@link Player} para controlar este herói.

@@ -1,0 +1,128 @@
+
+Data: Thu May 28 00:47:26 BRT 2015 | Mensagem: Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+StackTrace: 
+classes.gameobjects.personagens.inimigos.Inimigo.<init>(Inimigo.java:162)
+classes.gameobjects.personagens.inimigos.Cachorro.<init>(Cachorro.java:24)
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+java.lang.reflect.Constructor.newInstance(Unknown Source)
+java.lang.Class.newInstance(Unknown Source)
+classes.uteis.reciclador.Reciclador.GetInstancia(Reciclador.java:40)
+classes.telas.GamePlay.Atualiza(GamePlay.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+Data: Thu May 28 00:47:26 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaGameObject(Tela.java:148)
+classes.telas.Tela.Atualiza(Tela.java:101)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 00:52:48 BRT 2015 | Mensagem: Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+StackTrace: 
+classes.gameobjects.personagens.inimigos.Inimigo.<init>(Inimigo.java:161)
+classes.gameobjects.personagens.inimigos.Cachorro.<init>(Cachorro.java:24)
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+java.lang.reflect.Constructor.newInstance(Unknown Source)
+java.lang.Class.newInstance(Unknown Source)
+classes.uteis.reciclador.Reciclador.GetInstancia(Reciclador.java:40)
+classes.telas.GamePlay.Atualiza(GamePlay.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Erro ao instanciar um reciclavel do tipoclass classes.gameobjects.personagens.inimigos.Cachorro
+Data: Thu May 28 00:52:48 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaGameObject(Tela.java:148)
+classes.telas.Tela.Atualiza(Tela.java:101)
+classes.telas.GamePlay.Atualiza(GamePlay.java:40)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 02:08:48 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaColisoes(Tela.java:150)
+classes.telas.Tela.Atualiza(Tela.java:117)
+classes.telas.Introducao.Atualiza(Introducao.java:20)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 02:09:06 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Tela.GerenciaColisoes(Tela.java:150)
+classes.telas.Tela.Atualiza(Tela.java:117)
+classes.telas.Introducao.Atualiza(Introducao.java:20)
+catquest.CatQuest.Atualiza(CatQuest.java:127)
+catquest.CatQuest.render(CatQuest.java:106)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 03:13:52 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.GetValorCampo(GameObject.java:524)
+classes.gameobjects.personagens.Personagem.Movimenta(Personagem.java:582)
+classes.gameobjects.personagens.herois.Heroi.Atualiza(Heroi.java:61)
+classes.telas.Tela.Atualiza(Tela.java:120)
+classes.telas.GamePlay.Atualiza(GamePlay.java:41)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:107)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 03:22:33 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+java.util.LinkedList$ListItr.checkForComodification(Unknown Source)
+java.util.LinkedList$ListItr.next(Unknown Source)
+classes.telas.Tela.GerenciaColisoes(Tela.java:155)
+classes.telas.Tela.Atualiza(Tela.java:124)
+classes.telas.GamePlay.Atualiza(GamePlay.java:41)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:107)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 03:23:34 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+java.util.LinkedList$ListItr.checkForComodification(Unknown Source)
+java.util.LinkedList$ListItr.next(Unknown Source)
+classes.telas.Tela.GerenciaColisoes(Tela.java:155)
+classes.telas.Tela.Atualiza(Tela.java:124)
+classes.telas.GamePlay.Atualiza(GamePlay.java:41)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:107)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Thu May 28 03:24:39 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+java.util.LinkedList$ListItr.checkForComodification(Unknown Source)
+java.util.LinkedList$ListItr.next(Unknown Source)
+classes.telas.Tela.GerenciaColisoes(Tela.java:155)
+classes.telas.Tela.Atualiza(Tela.java:124)
+classes.telas.GamePlay.Atualiza(GamePlay.java:41)
+catquest.CatQuest.Atualiza(CatQuest.java:129)
+catquest.CatQuest.render(CatQuest.java:107)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

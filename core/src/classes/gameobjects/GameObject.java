@@ -21,39 +21,35 @@ import com.badlogic.gdx.math.Vector2;
 
 /**
  * Classe base para todos os objetos do que aparecem no jogo.
+ * 
  * @author Matheus
  *
  */
 public abstract class GameObject
 {
 	/**
-	 * Enumerador para os tipos de GameObject. Utilizado para evitar casts dinamicos e lista de colidiveis.
+	 * Enumerador para os tipos de GameObject. Utilizado para evitar casts
+	 * dinamicos e lista de colidiveis.
+	 * 
 	 * @author Matheus
 	 *
 	 */
 	public enum GameObjects
 	{
-		Tile,
-		Heroi,
-		Inimigo,
-		Cenario,
-		GameObject,
-		Ataque,
-		Ui,
+		Tile, Heroi, Inimigo, Cenario, GameObject, Ataque, Ui,
 	};
-	
+
 	/**
 	 * Enumerador para resultado de colisões.
+	 * 
 	 * @author matheus
 	 *
 	 */
 	public enum Colisoes
 	{
-		Livre,
-		Passavel,
-		NaoPassavel,
+		Livre, Passavel, NaoPassavel,
 	}
-	
+
 	static public HashMap<Integer, GameObject> gameobjects = new HashMap<Integer, GameObject>();
 	protected Sprite _sprite = null;
 	protected GameObjects _tipo;
@@ -72,7 +68,7 @@ public abstract class GameObject
 	protected GameObject _pai = null;
 	protected Color _cor = null;
 	protected HashMap<Integer, Sound> _sons = null;
-	
+
 	/**
 	 * Cria o gameobject e inicia as propriedades primárias dele.
 	 */
@@ -87,60 +83,67 @@ public abstract class GameObject
 		_camada = Camada.GameObject;
 		gameobjects.put(this.GetId(), this);
 	}
-	
+
 	/**
-	 * Funï¿½ï¿½o chamada a todo frame. Nï¿½o esquecer de chamar nas classes filhas, ao final da funï¿½ï¿½o reescrita.
-	 * @param deltaTime Direnï¿½a do tempo entre os dois ï¿½ltimos loops.
+	 * Funï¿½ï¿½o chamada a todo frame. Nï¿½o esquecer de chamar nas classes
+	 * filhas, ao final da funï¿½ï¿½o reescrita.
+	 * 
+	 * @param deltaTime
+	 *            Direnï¿½a do tempo entre os dois ï¿½ltimos loops.
 	 */
 	public void Atualiza(float deltaTime)
 	{
 		if (!_atualiza)
 			return;
-		
+
 		if (_animacao != null)
 		{
-			if (_sprite == null) _sprite = new Sprite();
-			
+			if (_sprite == null)
+				_sprite = new Sprite();
+
 			_sprite.setRegion(_animacao.getKeyFrame(CatQuest.instancia.GetTempoJogo(), true));
 			_sprite.setSize(_sprite.getRegionWidth(), _sprite.getRegionHeight());
 		}
-		
+
 		if (_sprite != null)
 		{
 			_sprite.setColor(_cor);
 			_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
 			_caixaColisao.set(_posicaoTela.x, _posicaoTela.y, _sprite.getRegionWidth(), _sprite.getRegionHeight());
 		}
-		
+
 		_caixaColisao.setPosition(_posicaoTela);
-		
+
 		if (this.GetSePai())
 		{
 			GameObject filho = null;
-			
+
 			for (int i = 0; i < _filhos.size(); i++)
 			{
 				filho = _filhos.get(i);
-				
+
 				filho.Atualiza(deltaTime);
 				filho.SetPosicaoRelativa(_posicaoTela);
 			}
 		}
 	}
-	
+
 	/**
-	 * Funï¿½ï¿½o que desenha a sprite atual - atualizada a todo frame pela {@link #Atualiza(float)} baseada na {@link Animation}.
-	 * @param bash {@link SpriteBatch} utilizada para desenhar objetos na tela.
+	 * Funï¿½ï¿½o que desenha a sprite atual - atualizada a todo frame pela
+	 * {@link #Atualiza(float)} baseada na {@link Animation}.
+	 * 
+	 * @param bash
+	 *            {@link SpriteBatch} utilizada para desenhar objetos na tela.
 	 */
 	public void Desenha(SpriteBatch batch)
 	{
 		if (_desenha && _sprite != null)
 			_sprite.draw(batch);
-		
+
 		if (this.GetSePai() && _desenha)
 		{
 			GameObject filho = null;
-			
+
 			for (int i = 0; i < _filhos.size(); i++)
 			{
 				filho = _filhos.get(i);
@@ -148,26 +151,31 @@ public abstract class GameObject
 			}
 		}
 	}
-	
+
 	/**
-	 * Funï¿½ï¿½o chamada sempre que este objeto colidi com um objeto da lista objetos colidiveis.
-	 * @param colidiu {@link GameObject} que colidiu com este.
-	 * @return 
+	 * Funï¿½ï¿½o chamada sempre que este objeto colidi com um objeto da lista
+	 * objetos colidiveis.
+	 * 
+	 * @param colidiu
+	 *            {@link GameObject} que colidiu com este.
+	 * @return
 	 */
-	public abstract void AoColidir(GameObject colidiu);	
-	
+	public abstract void AoColidir(GameObject colidiu);
+
 	/**
-	 * Funï¿½ï¿½o com toda a rotina de iniciaï¿½ï¿½o das propriedades do objeto. Com excessï¿½o do ID, porque o ID jï¿½ ï¿½ definido no contrutor desta classe.
+	 * Funï¿½ï¿½o com toda a rotina de iniciaï¿½ï¿½o das propriedades do objeto.
+	 * Com excessï¿½o do ID, porque o ID jï¿½ ï¿½ definido no contrutor desta
+	 * classe.
 	 */
 	public void Inicia()
 	{
 		this.SetAtivo(true);
 		_cor = Color.WHITE;
-		
+
 		if (this.GetSePai() && _desenha)
 		{
 			GameObject filho = null;
-			
+
 			for (int i = 0; i < _filhos.size(); i++)
 			{
 				filho = _filhos.get(i);
@@ -175,7 +183,7 @@ public abstract class GameObject
 			}
 		}
 	}
-	
+
 	/**
 	 * Redefine todas as propriedades do objeto. Encerra e inicia novamente.
 	 */
@@ -184,28 +192,32 @@ public abstract class GameObject
 		this.Encerra();
 		this.Inicia();
 	}
-	
+
 	/**
 	 * Retorna o id do game object.
+	 * 
 	 * @return ID do game object.
 	 */
 	public final Integer GetId()
 	{
 		return _id;
 	}
-	
+
 	/**
 	 * Retorna a camada do game objeto.
+	 * 
 	 * @return Uma constante para a {@link Camada} deste game object.
 	 */
 	public final Camada GetCamada()
 	{
 		return _camada;
 	}
-	
+
 	/**
 	 * Seta uma nova camada.
-	 * @param novaCamada {@link Camada} nova camada do objeto.
+	 * 
+	 * @param novaCamada
+	 *            {@link Camada} nova camada do objeto.
 	 */
 	public void SetCamada(Camada novaCamada)
 	{
@@ -218,28 +230,33 @@ public abstract class GameObject
 		else
 			_camada = novaCamada;
 	}
-	
+
 	/**
 	 * Retorna a posiï¿½ï¿½o deste game object na tela;
+	 * 
 	 * @return {@link Vector2}
 	 */
 	public final Vector2 GetPosicao()
 	{
 		return _posicaoTela;
 	}
-	
+
 	/**
-	 * Caso este objeto tenha um pai, retorna a posiï¿½ï¿½o absoluta - sem relaï¿½ï¿½o com o pai;
+	 * Caso este objeto tenha um pai, retorna a posiï¿½ï¿½o absoluta - sem
+	 * relaï¿½ï¿½o com o pai;
+	 * 
 	 * @return {@link Vector2}
 	 */
 	public final Vector2 GetPosicaoAbsoluta()
 	{
 		return _posicaoTelaAux;
 	}
-	
+
 	/**
 	 * Seta a nova posiï¿½ï¿½o do game object.
-	 * @param posicao {@link Vector2} com a nova posiï¿½ï¿½o do game object. 
+	 * 
+	 * @param posicao
+	 *            {@link Vector2} com a nova posiï¿½ï¿½o do game object.
 	 */
 	public void SetPosicao(Vector2 posicao)
 	{
@@ -247,37 +264,37 @@ public abstract class GameObject
 		{
 			_telaInserido.RemoverDaMatriz(this, null);
 		}
-		
+
 		_posicaoTela = posicao;
-		_posicaoTelaAux = _posicaoTela.cpy(); 
+		_posicaoTelaAux = _posicaoTela.cpy();
 		_caixaColisao.setPosition(_posicaoTela);
-	
+
 		if (_sprite != null)
 			_sprite.setPosition(_posicaoTela.x, _posicaoTela.y);
-		
+
 		_caixaColisao.setPosition(_posicaoTela);
-		
+
 		if (this.GetSePai())
 		{
 			GameObject filho = null;
-			
+
 			for (int i = 0; i < _filhos.size(); i++)
 			{
 				filho = _filhos.get(i);
 				filho.SetPosicaoRelativa(_posicaoTela);
 			}
 		}
-		
+
 		if (_telaInserido != null)
 		{
 			_telaInserido.InserirNaMatriz(this, null);
+			_telaInserido.AdicionaColidir(this);
 		}
-		
-		this.ValidaColisaoRegiao();
 	}
-	
+
 	/**
-	 * Valida colisão com os {@link GameObject objetos} que estão na região deste.
+	 * Valida colisão com os {@link GameObject objetos} que estão na região
+	 * deste.
 	 */
 	public void ValidaColisaoRegiao()
 	{
@@ -287,172 +304,201 @@ public abstract class GameObject
 			{
 				LinkedList<GameObject> objetos = _telaInserido.GetObjetosRegiao(_caixaColisao);
 				GameObject objeto = null;
-				
-				if (objetos == null) return;
-				
+
+				if (objetos == null)
+					return;
+
 				for (int i = 0; i < objetos.size(); i++)
 				{
 					objeto = objetos.get(i);
-					
+
 					this.ValidaColisao(objeto, true);
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * Seta a nova posiï¿½ï¿½o do game object.
-	 * @param x Novo x - canto inferior esquerdo.
-	 * @param y Novo y - canto inferior esquerdo.
+	 * 
+	 * @param x
+	 *            Novo x - canto inferior esquerdo.
+	 * @param y
+	 *            Novo y - canto inferior esquerdo.
 	 */
 	public void SetPosicao(float x, float y)
 	{
 		this.SetPosicao(new Vector2(x, y));
 	}
-	
+
 	/**
 	 * Retorna a {@link Sprite} atual do game object.
+	 * 
 	 * @return {@link Sprite} atual do object.
 	 */
 	public final Sprite GetSprite()
 	{
 		return _sprite;
 	}
-	
+
 	/**
 	 * Retorna a {@link Tela} que este game object estï¿½ inserido.
-	 * @return Referencia para {@link Tela} deste game object. Ou nulo caso não esteja em nenhum tela.
+	 * 
+	 * @return Referencia para {@link Tela} deste game object. Ou nulo caso não
+	 *         esteja em nenhum tela.
 	 * @see {@link #GetSeEmTela()}
 	 */
 	public final Tela GetTela()
 	{
 		return _telaInserido;
 	}
-	
+
 	/**
 	 * Seta uma nova {@link Tela} para este game object.
-	 * @param tela Nova {@link Tela} para este game object. 
+	 * 
+	 * @param tela
+	 *            Nova {@link Tela} para este game object.
 	 */
 	public void SetTela(Tela tela)
 	{
 		_telaInserido = tela;
 	}
-	
+
 	/**
-	 * Retorna se objeto serï¿½ atualizado ou nï¿½o. Se nï¿½o (false), nï¿½o roda a rotina de {@link #Atualiza(float)}. 
+	 * Retorna se objeto serï¿½ atualizado ou nï¿½o. Se nï¿½o (false), nï¿½o
+	 * roda a rotina de {@link #Atualiza(float)}.
+	 * 
 	 * @return True caso atualize.
 	 */
 	public final boolean GetSeAtualiza()
 	{
 		return _atualiza;
 	}
-	
+
 	/**
-	 * Retorna se objeto serï¿½ desenhado ou nï¿½o. Se nï¿½o (false), nï¿½o roda a rotina de {@link #Desenha(SpriteBatch)}.  
+	 * Retorna se objeto serï¿½ desenhado ou nï¿½o. Se nï¿½o (false), nï¿½o roda
+	 * a rotina de {@link #Desenha(SpriteBatch)}.
+	 * 
 	 * @return True caso desenhe.
 	 */
 	public final boolean GetSeDesenha()
 	{
 		return _desenha;
 	}
-	
+
 	/**
-	 * Define se o game object serï¿½ atualiza. Se false, nï¿½o roda a rotina de {@link #Atualiza(float)}. 
-	 * @param atualiza True para rodar a rotina de {@link #Atualiza(float)}. 
+	 * Define se o game object serï¿½ atualiza. Se false, nï¿½o roda a rotina de
+	 * {@link #Atualiza(float)}.
+	 * 
+	 * @param atualiza
+	 *            True para rodar a rotina de {@link #Atualiza(float)}.
 	 */
 	public void SetSeAtualiza(boolean atualiza)
 	{
 		_atualiza = atualiza;
 	}
-	
+
 	/**
-	 * Define se o game object serï¿½ desenhado. Se false, nï¿½o roda a rotina de {@link #Desenha(SpriteBatch)}. 
-	 * @param desenha True para rodar a rotina de {@link #Desenha(SpriteBatch)}. 
+	 * Define se o game object serï¿½ desenhado. Se false, nï¿½o roda a rotina
+	 * de {@link #Desenha(SpriteBatch)}.
+	 * 
+	 * @param desenha
+	 *            True para rodar a rotina de {@link #Desenha(SpriteBatch)}.
 	 */
 	public void SetSeDesenha(boolean desenha)
 	{
 		_desenha = desenha;
 	}
-	
+
 	/**
 	 * 
-	 * @return False caso nï¿½o esteja rodando a rotina de {@link #Atualiza(float)} <b>e</b> {@link #Desenha(SpriteBatch)}. True caso esteja rodando qualquer uma - ou ambas - as duas.
+	 * @return False caso nï¿½o esteja rodando a rotina de
+	 *         {@link #Atualiza(float)} <b>e</b> {@link #Desenha(SpriteBatch)}.
+	 *         True caso esteja rodando qualquer uma - ou ambas - as duas.
 	 */
 	public boolean GetSeAtivo()
 	{
 		return _desenha || _atualiza;
 	}
-	
+
 	/**
-	 * @param ativo True para ativar a chamada das rotinas de {@link #Atualiza(float)} e {@link #Desenha(SpriteBatch)}. False para desabilitar ambas.
+	 * @param ativo
+	 *            True para ativar a chamada das rotinas de
+	 *            {@link #Atualiza(float)} e {@link #Desenha(SpriteBatch)}.
+	 *            False para desabilitar ambas.
 	 */
 	public void SetAtivo(boolean ativo)
 	{
 		_desenha = _atualiza = ativo;
 	}
-	
+
 	/**
 	 * Retorna o {@link GameObjects} do game object.
+	 * 
 	 * @return O tipo do game object.
 	 */
 	public final GameObjects GetTipo()
 	{
 		return _tipo;
 	}
-	
+
 	/**
 	 * Funï¿½ï¿½o que valida colisï¿½o entre este {@link GameObject} e outro.
-	 * @param colidiu {@link GameObject} a validar colisï¿½o.
-	 * @param colidi Se, caso haja colisão, deve chamar {@link GameObject#AoColidir(GameObject)} dos objetos. 
+	 * 
+	 * @param colidiu
+	 *            {@link GameObject} a validar colisï¿½o.
+	 * @param colidi
+	 *            Se, caso haja colisão, deve chamar
+	 *            {@link GameObject#AoColidir(GameObject)} dos objetos.
 	 * @return True caso tenha colidido.
 	 */
 	public Colisoes ValidaColisao(GameObject colidiu, boolean colidi)
 	{
 		if (colidiu == this)
 			return Colisoes.Passavel;
-		
+
 		if (!this.GetSeAtivo() || !colidiu.GetSeAtivo())
 			return Colisoes.Passavel;
-		
+
 		GameObject filho = null;
 		Colisoes outro = Colisoes.Livre;
 		Colisoes este = Colisoes.Livre;
 		Colisoes retorno = Colisoes.Livre;
 		Colisoes temp;
-		
+
 		for (int i = 0; i < _filhos.size(); i++)
 		{
 			filho = _filhos.get(i);
 			temp = filho.ValidaColisao(colidiu, colidi);
-			
+
 			if (temp.ordinal() > retorno.ordinal())
 				retorno = temp;
 		}
-		
+
 		if (colidiu == null || !_colidiveis.containsKey(colidiu.GetTipo()) || !_camada.GetColidivel() || (!_colidiPai && colidiu == _pai))
 			return retorno;
-		
+
 		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))
 		{
 			if (colidiu.GetColidiveis().containsKey(_tipo))
 				outro = colidiu.GetColidiveis().get(_tipo);
-			
+
 			if (retorno.ordinal() < outro.ordinal())
 				retorno = outro;
-			
+
 			if (retorno.ordinal() < (este = _colidiveis.get(colidiu.GetTipo())).ordinal())
 				retorno = este;
-			
+
 			if (colidi)
 			{
 				colidiu.AoColidir(this);
 				this.AoColidir(colidiu);
 			}
 		}
-		
+
 		return retorno;
 	}
-	
+
 	/**
 	 * Valida se um campo é passável, livre ou não passável. Realiza colisões
 	 * deste objeto com os objetos dentro do campo formado pela caixa de colisão
@@ -478,8 +524,7 @@ public abstract class GameObject
 		_caixaColisao.x = campo.x;
 		_caixaColisao.y = campo.y;
 
-		LinkedList<GameObject> lista = _telaInserido
-				.GetObjetosRegiao(_caixaColisao);
+		LinkedList<GameObject> lista = _telaInserido.GetObjetosRegiao(_caixaColisao);
 
 		if (lista == null)
 			return Colisoes.NaoPassavel;
@@ -504,14 +549,15 @@ public abstract class GameObject
 
 		return retorno;
 	}
-	
+
 	public Rectangle GetCaixaColisao()
 	{
 		return _caixaColisao;
 	}
-	
+
 	/**
 	 * Retorna se este {@link GameObject} ï¿½ colidï¿½vel.
+	 * 
 	 * @return True caso seja colidï¿½vel.
 	 */
 	public boolean GetColidivel()
@@ -521,10 +567,13 @@ public abstract class GameObject
 		else
 			return false;
 	}
-	
+
 	/**
 	 * Retorna a lista de {@link GameObject} que podem colidir com este.
-	 * @return {@link HashMap} de {@link GameObject.TipoGameObject} de {@link GameObject} que podem colidir com este. Ou nulo caso nï¿½o exista colidï¿½veis ({@link GameObject#GetColidivel()} == false).
+	 * 
+	 * @return {@link HashMap} de {@link GameObject.TipoGameObject} de
+	 *         {@link GameObject} que podem colidir com este. Ou nulo caso nï¿½o
+	 *         exista colidï¿½veis ({@link GameObject#GetColidivel()} == false).
 	 * @see {@link GameObject#GetColidivel()}.
 	 * @see O valor vinculado a chave do Hash é o resultado caso eles colidão.
 	 */
@@ -533,37 +582,47 @@ public abstract class GameObject
 	{
 		return _colidiveis;
 	}
-	
+
 	/**
-	 * Funï¿½ï¿½o que adiciona um filho a este {@link GameObject}. Todos os filhos sï¿½o atualizados e desenhados logo apï¿½s o pai.
-	 * Ao adicionar um filho, a camada do filho passa a ser a camada do pai; ele sï¿½ serï¿½ atualizado e desenhado a partir do pai;
-	 * Portante, se o pai nï¿½o ï¿½ atualizado, o filho tambï¿½m nï¿½o. Se o pai nï¿½o ï¿½ desenhado, o filho tambï¿½m nï¿½o.
-	 * Entretanto, as colisï¿½es sï¿½o realizadas independentes do pai. A colisï¿½o com o pai ï¿½ desativada por padrï¿½o, mas pode ser mudada em {@link GameObject#SetColidiPai(boolean)}.
-	 * O novo filho não é {@link #Inicia() iniciado} aqui. 
-	 * Portanto, caso ainda não tenha iniciado - o que ocorre ao {@link Tela#InserirGameObject(GameObject) adicionar a uma tela} - inicie antes dessa função.
-	 * @param filho {@link GameObject} filho.
+	 * Funï¿½ï¿½o que adiciona um filho a este {@link GameObject}. Todos os
+	 * filhos sï¿½o atualizados e desenhados logo apï¿½s o pai. Ao adicionar um
+	 * filho, a camada do filho passa a ser a camada do pai; ele sï¿½ serï¿½
+	 * atualizado e desenhado a partir do pai; Portante, se o pai nï¿½o ï¿½
+	 * atualizado, o filho tambï¿½m nï¿½o. Se o pai nï¿½o ï¿½ desenhado, o filho
+	 * tambï¿½m nï¿½o. Entretanto, as colisï¿½es sï¿½o realizadas independentes
+	 * do pai. A colisï¿½o com o pai ï¿½ desativada por padrï¿½o, mas pode ser
+	 * mudada em {@link GameObject#SetColidiPai(boolean)}. O novo filho não é
+	 * {@link #Inicia() iniciado} aqui. Portanto, caso ainda não tenha iniciado
+	 * - o que ocorre ao {@link Tela#InserirGameObject(GameObject) adicionar a
+	 * uma tela} - inicie antes dessa função.
+	 * 
+	 * @param filho
+	 *            {@link GameObject} filho.
 	 * @return {@link GameObject Filho} adicionado.
 	 */
 	public GameObject AdicionaFilho(GameObject filho)
 	{
 		if (_filhos == null)
 			_filhos = new LinkedList<GameObject>();
-		
+
 		filho.SetPai(this);
 		filho.SetCamada(_camada);
 		filho.SetPosicaoRelativa(_posicaoTela);
-		
+
 		if (filho.GetTela() != null && filho.GetTela().ContemGameObject(filho))
 			filho.GetTela().Remover(filho);
-			
+
 		_filhos.add(filho);
-		
+
 		return filho;
 	}
-	
+
 	/**
-	 * Adiciona uma sï¿½rie de filhos a este gameobject. O mesmo que {@link GameObject#adicionaFilho(GameObject)}.
-	 * @param filhos Filhos a serem adicionados.
+	 * Adiciona uma sï¿½rie de filhos a este gameobject. O mesmo que
+	 * {@link GameObject#adicionaFilho(GameObject)}.
+	 * 
+	 * @param filhos
+	 *            Filhos a serem adicionados.
 	 * @see {@link GameObject#adicionaFilho(GameObject)}
 	 */
 	public void AdicionaFilhos(GameObject... filhos)
@@ -571,45 +630,54 @@ public abstract class GameObject
 		for (int i = 0; i < filhos.length; i++)
 			AdicionaFilho(filhos[i]);
 	}
-	
+
 	/**
-	 * Define um pai para este {@link GameObject}. Deve ser utilizado quando este gameobject ï¿½ adicionado como filho de outro. 
-	 * @param pai {@link GameObject} que serï¿½ referenciado como pai.
+	 * Define um pai para este {@link GameObject}. Deve ser utilizado quando
+	 * este gameobject ï¿½ adicionado como filho de outro.
+	 * 
+	 * @param pai
+	 *            {@link GameObject} que serï¿½ referenciado como pai.
 	 */
 	public void SetPai(GameObject pai)
 	{
 		_pai = pai;
 		_posicaoTelaAux = _posicaoTela.cpy();
 	}
-	
+
 	/**
-	 * Define a posiï¿½ï¿½o atual deste {@link GameObject} em relaï¿½ï¿½o a do objeto parametrizado.
-	 * Ou seja, toma como ponto ZERO o vetor parametrizado.
-	 * @param posicaoRelativa {@link Vector2 vetor} a relacionar como ponto ZERO.
+	 * Define a posiï¿½ï¿½o atual deste {@link GameObject} em relaï¿½ï¿½o a do
+	 * objeto parametrizado. Ou seja, toma como ponto ZERO o vetor
+	 * parametrizado.
+	 * 
+	 * @param posicaoRelativa
+	 *            {@link Vector2 vetor} a relacionar como ponto ZERO.
 	 */
 	public void SetPosicaoRelativa(Vector2 posicaoRelativa)
 	{
 		_posicaoTela.x = posicaoRelativa.x + _posicaoTelaAux.x;
 		_posicaoTela.y = posicaoRelativa.y + _posicaoTelaAux.y;
 	}
-	
+
 	/**
 	 * Define quando este {@link GameObject} deve validar colisï¿½o com seu pai.
-	 * @param colidiPai True se ï¿½ pra validar colisï¿½o.
+	 * 
+	 * @param colidiPai
+	 *            True se ï¿½ pra validar colisï¿½o.
 	 */
 	public void SetColidiPai(boolean colidiPai)
 	{
 		_colidiPai = colidiPai;
 	}
-	
+
 	/**
-	 * @return True se a colisï¿½o deste {@link GameObject} ï¿½ calculada tambï¿½m com o pai. Ou seja, se ele colidi com o pai.
+	 * @return True se a colisï¿½o deste {@link GameObject} ï¿½ calculada
+	 *         tambï¿½m com o pai. Ou seja, se ele colidi com o pai.
 	 */
 	public boolean GetColidiPai()
 	{
 		return _colidiPai;
 	}
-	
+
 	/**
 	 * @return True se este {@link GameObject} tem algum filho.
 	 */
@@ -620,27 +688,30 @@ public abstract class GameObject
 		else
 			return false;
 	}
-	
+
 	/**
-	 * @return {@link LinkedList<T>} dos filhos deste objeto. Pode ser nulo caso nï¿½o tenha filhos. Validar via {@link GameObject#GetSePai()}.
+	 * @return {@link LinkedList<T>} dos filhos deste objeto. Pode ser nulo caso
+	 *         nï¿½o tenha filhos. Validar via {@link GameObject#GetSePai()}.
 	 */
 	public LinkedList<GameObject> GetFilhos()
 	{
 		return _filhos;
 	}
-	
+
 	/**
 	 * Retira um filho deste {@link GameObject}.
-	 * @param filho {@link GameObject} filho a ser removido.
+	 * 
+	 * @param filho
+	 *            {@link GameObject} filho a ser removido.
 	 */
 	public void RemoveFilho(GameObject filho)
 	{
 		if (!this.GetSePai())
 			return;
-		
+
 		_filhos.remove(filho);
 	}
-	
+
 	/**
 	 * @return Largura atual do {@link GameObject objeto}.
 	 */
@@ -648,7 +719,7 @@ public abstract class GameObject
 	{
 		return _caixaColisao.width;
 	}
-	
+
 	/**
 	 * @return Altura atual do {@link GameObject objeto}.
 	 */
@@ -656,53 +727,64 @@ public abstract class GameObject
 	{
 		return _caixaColisao.height;
 	}
-	
+
 	/**
-	 * @return {@link Color Cor} com que as sprites deste objeto estï¿½o sendo desenhadas. {@link Color#WHITE} por padrï¿½o.
+	 * @return {@link Color Cor} com que as sprites deste objeto estï¿½o sendo
+	 *         desenhadas. {@link Color#WHITE} por padrï¿½o.
 	 */
 	public Color GetColor()
 	{
 		return _cor;
 	}
-	
+
 	/**
 	 * Define uma nova {@link Color cor} para desenhar as sprites deste objeto.
-	 * @param cor Nova cor.
+	 * 
+	 * @param cor
+	 *            Nova cor.
 	 */
 	public void SetColor(Color cor)
 	{
 		_cor = cor;
 	}
-	
+
 	/**
 	 * Toma um som do {@link GameObject objeto}.
-	 * @param chave Chave utilizada para inserir o som na {@link #_sons lista de sons} através de {@link #IncluirSom(EnumSom, FileHandle)}.
-	 * @return -1 caso o som não exista. {@link Sound#play(float) ID} caso contrário.
+	 * 
+	 * @param chave
+	 *            Chave utilizada para inserir o som na {@link #_sons lista de
+	 *            sons} através de {@link #IncluirSom(EnumSom, FileHandle)}.
+	 * @return -1 caso o som não exista. {@link Sound#play(float) ID} caso
+	 *         contrário.
 	 */
 	protected <T extends Enum<?>> long TocaSom(T chave)
 	{
 		Sound som = null;
-		
+
 		if (_sons == null)
 			return -1;
-		
+
 		if (!_sons.containsKey(chave))
 			return -1;
-		
+
 		som = _sons.get(chave);
 		return som.play(Configuracoes.instancia.GetVolumeSom());
 	}
-	
+
 	/**
-	 * Inclui os {@link Sounds sons} na {@link #_sons lista de sons}. 
-	 * @param som {@link FileHandle Arquivos} do som para adicionar.
-	 * @param chave {@link EnumSom Chave} para vincular o som na lista de sons. Utilizar uma enum que implemente {@link EnumSom} para indexar.
+	 * Inclui os {@link Sounds sons} na {@link #_sons lista de sons}.
+	 * 
+	 * @param som
+	 *            {@link FileHandle Arquivos} do som para adicionar.
+	 * @param chave
+	 *            {@link EnumSom Chave} para vincular o som na lista de sons.
+	 *            Utilizar uma enum que implemente {@link EnumSom} para indexar.
 	 */
 	protected <T extends Enum<?>> void IncluirSom(final T chave, FileHandle som)
 	{
 		if (_sons == null)
 			_sons = new HashMap<Integer, Sound>();
-		
+
 		CarregarSom.instancia.Carrega(som, new CarregarSomListner()
 		{
 			@Override
@@ -712,60 +794,72 @@ public abstract class GameObject
 			}
 		});
 	}
-	
+
 	/**
-	 * Define uma {@link Animation animação} como a atual. A que será utilizada até a próxima alteração. Caso não haja animação vinculada a chave, nada acontece.
-	 * @param chave {@link T Chave} vinculada a animação. A mesma utilizada para {@link #IncluirAnimacao adicionar a animação}.
+	 * Define uma {@link Animation animação} como a atual. A que será utilizada
+	 * até a próxima alteração. Caso não haja animação vinculada a chave, nada
+	 * acontece.
+	 * 
+	 * @param chave
+	 *            {@link T Chave} vinculada a animação. A mesma utilizada para
+	 *            {@link #IncluirAnimacao adicionar a animação}.
 	 */
 	protected <T extends Enum<?>> void SetAnimacao(T chave)
 	{
 		if (_animacoes == null)
 			return;
-		
+
 		if (!_animacoes.containsKey(chave.ordinal()))
 			return;
-		
+
 		if (_animacao != _animacoes.get(chave.ordinal()))
 			_animacao = _animacoes.get(chave.ordinal());
 	}
-	
+
 	/**
-	 * Rotaciona a {@link Vector2 posição} e sprite deste objeto pelo angulo informado.
-	 * @param angulo Angulo em radiano.
+	 * Rotaciona a {@link Vector2 posição} e sprite deste objeto pelo angulo
+	 * informado.
+	 * 
+	 * @param angulo
+	 *            Angulo em radiano.
 	 * @see {@link Vector2#rotate(float)}
-	 * @see {@link Sprite#setRotation(float)
+	 * @see {@link Sprite#setRotation(float)
 	 */
 	public void Rotaciona(float angulo)
 	{
 		_posicaoTela.rotate(angulo);
-		
+
 		if (_sprite != null)
 			_sprite.rotate(angulo);
-		
+
 		_caixaColisao.set(_sprite.getBoundingRectangle());
 	}
-	
+
 	/**
 	 * Inclui uma nova animação ao {@link GameObject game object}.
-	 * @param chave {@link T Chave} a ser vinculada a nova animação.
-	 * @param animacao {@link Animation Animação} a ser incluída.
+	 * 
+	 * @param chave
+	 *            {@link T Chave} a ser vinculada a nova animação.
+	 * @param animacao
+	 *            {@link Animation Animação} a ser incluída.
 	 */
 	protected <T extends Enum<?>> void IncluirAnimacao(T chave, Animation animacao)
 	{
 		if (_animacoes == null)
 			_animacoes = new HashMap<Integer, Animation>();
-		
+
 		_animacoes.put(chave.ordinal(), animacao);
 	}
-	
+
 	/**
-	 * @return True caso este {@link GameObject objeto} esteja inserido em alguma tela.
+	 * @return True caso este {@link GameObject objeto} esteja inserido em
+	 *         alguma tela.
 	 */
 	public boolean GetSeEmTela()
 	{
 		return _telaInserido != null;
 	}
-	
+
 	/**
 	 * @return True caso este {@link GameObject objeto} seja filho de outro.
 	 */
@@ -773,53 +867,55 @@ public abstract class GameObject
 	{
 		return _pai != null;
 	}
-	
+
 	/**
-	 * @return Instancia do pai deste {@link GameObject objeto}. Ou nulo caso não tenha pai.
+	 * @return Instancia do pai deste {@link GameObject objeto}. Ou nulo caso
+	 *         não tenha pai.
 	 * @see {@link #GetSeFilho()}.
 	 */
 	public GameObject GetPai()
 	{
 		return _pai;
 	}
-	
+
 	/**
-	 * Remove este {@link GameObject objeto} do pai. Caso não seja filho, nada acontece.
+	 * Remove este {@link GameObject objeto} do pai. Caso não seja filho, nada
+	 * acontece.
 	 */
 	public void RemoverDoPai()
 	{
 		if (_pai != null)
 			_pai.RemoveFilho(this);
-		
+
 		_pai = null;
 	}
-	
-	
+
 	/**
-	 * Remove este {@link GameObject objeto} da {@link Tela tela}. Caso não esteja em nenhuma tela, nada acontece.
+	 * Remove este {@link GameObject objeto} da {@link Tela tela}. Caso não
+	 * esteja em nenhuma tela, nada acontece.
 	 */
 	public void RemoverDaTela()
 	{
 		if (_telaInserido != null)
 			_telaInserido.Remover(this);
-		
+
 		_telaInserido = null;
 	}
-	
+
 	/**
 	 * Libera os recursos deste game object.
 	 */
 	public void Encerra()
 	{
 		this.SetAtivo(false);
-		
+
 		this.RemoverDaTela();
 		this.RemoverDoPai();
-		
+
 		if (this.GetSePai())
 		{
 			GameObject filho = null;
-			
+
 			for (int i = 0; i < _filhos.size(); i++)
 			{
 				filho = _filhos.get(i);
@@ -827,17 +923,19 @@ public abstract class GameObject
 			}
 		}
 	}
-	
+
 	/**
 	 * Distancia entre este e outro {@link GameObject objeto}.
-	 * @param outro {@link GameObject} objeto para ver a distancia.
+	 * 
+	 * @param outro
+	 *            {@link GameObject} objeto para ver a distancia.
 	 * @return Distancia em pixels.
 	 */
 	public float GetDistancia(GameObject outro)
 	{
 		return this.GetPosicao().dst(outro.GetPosicao());
 	}
-	
+
 	@Override
 	public int hashCode()
 	{

@@ -58,8 +58,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		 * @param posicao
 		 *            Posição desta célula.
 		 */
-		public CelulaCaminho(int custoMovimento, int custoHeuristica,
-				CelulaCaminho parente, Vector2 posicao)
+		public CelulaCaminho(int custoMovimento, int custoHeuristica, CelulaCaminho parente, Vector2 posicao)
 		{
 			this.custoMovimento = custoMovimento;
 			this.custoHeuristica = custoHeuristica;
@@ -120,12 +119,13 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected float _coeficienteCritico = 0;
 	protected Estado _estado = Estado.Parado;
 	protected boolean _colidido = false;
-	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/"	+ this.toString());
+	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/" + this.toString());
 	protected LinkedList<Vector2> _caminho = null;
 	protected Vector2 _destino = null;
 	protected Vector2 _ultimoDestinoCalculado = null;
 	protected float _campoVisao = 0f;
 	private float _coeficienteLerp = 0;
+	private float _duracaoLerp = 0;
 	private JsonValue _valoresArquivo = null;
 
 	/**
@@ -223,22 +223,19 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetAnimacao(AnimacaoPersonagem.Movimento);
+		
+		if (_coeficienteLerp == 0)
+			_duracaoLerp = _posicaoTela.dst(destino) / _agilidade;
+		
+		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + deltaTime, 0f, 1);
+		
+		this.SetPosicao(_posicaoTela.lerp(destino, _coeficienteLerp / _duracaoLerp));
 
-		this.SetPosicao(_posicaoTela.lerp(destino, _agilidade * _coeficienteLerp));
-
-		if (_agilidade * _coeficienteLerp == 1)
+		if (_agilidade * _coeficienteLerp >= 1)
 		{
 			_coeficienteLerp = 0;
 			return true;
 		}
-
-		// como o lerp tem por padrão o smooth, ou seja, sempre anda uma parte
-		// do caminho
-		// e conforme o caminho diminui, ele anda menos do caminho e portanto
-		// nunca chega,
-		// devemos utilizar um coeficiente multiplicador para compensar isso
-		// se chegamos no destino
-		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + deltaTime, 0f, 1 / _agilidade);
 
 		return false;
 	}
@@ -307,19 +304,17 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		if (_telaInserido == null || _caminho == null)
 			return null;
-		
-		//se o destino atual é igual a o ultimo calculado e o caminho ainda tem ponto nao passados, retorna o caminho
+
+		// se o destino atual é igual a o ultimo calculado e o caminho ainda tem
+		// ponto nao passados, retorna o caminho
 		if (_destino.equals(_ultimoDestinoCalculado) && !_caminho.isEmpty())
 			return _caminho;
-			
 
 		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
-		Rectangle aux = new Rectangle(_posicaoTela.x, _posicaoTela.y,
-				_caixaColisao.width, _caixaColisao.height);
-		CelulaCaminho atual = new CelulaCaminho(0, Manhattan(_posicaoTela,
-				_destino), null, _posicaoTela);
+		Rectangle aux = new Rectangle(_posicaoTela.x, _posicaoTela.y, _caixaColisao.width, _caixaColisao.height);
+		CelulaCaminho atual = new CelulaCaminho(0, Manhattan(_posicaoTela, _destino), null, _posicaoTela);
 		CelulaCaminho temp = null;
 		listaAberta.add(atual);
 
@@ -329,10 +324,9 @@ public abstract class Personagem extends GameObject implements Serializador
 		// enquanto não cheguei no meu destino
 		while (!listaAberta.isEmpty())
 		{
-			//corta o A* se a lista aberta for muito grande pra economizar desempenho //TODO: validar isso
-			if (listaAberta.size() > 500)
+			if (listaAberta.size() > 250)
 				return null;
-				
+			
 			atual = listaAberta.get(0);
 
 			// percorre todos os da lista aberta e paga o que tem o menor valor
@@ -350,7 +344,7 @@ public abstract class Personagem extends GameObject implements Serializador
 			listaFechada.add(atual);
 
 			// se achamos
-			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < _agilidade)
+			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < _telaInserido.GetPrecisaoMapaX())
 			{
 				_caminho.addFirst(_destino);
 
@@ -360,7 +354,7 @@ public abstract class Personagem extends GameObject implements Serializador
 					_caminho.addFirst(atual.posicao);
 					atual = atual.parente;
 				}
-				
+
 				_ultimoDestinoCalculado = _destino;
 
 				break;
@@ -388,14 +382,12 @@ public abstract class Personagem extends GameObject implements Serializador
 				else
 				{
 					// se estamos lidando com um adjacente em algulo reto
-					if ((atual.posicao.x == adjacente.posicao.x)
-							|| (atual.posicao.y == adjacente.posicao.y))
+					if ((atual.posicao.x == adjacente.posicao.x) || (atual.posicao.y == adjacente.posicao.y))
 					{
 						if (atual.custoMovimento + 10 < adjacente.custoMovimento)
 						{
 							adjacente.custoMovimento = atual.custoMovimento + 10;
-							adjacente.custoTotal = adjacente.custoHeuristica
-									+ adjacente.custoMovimento;
+							adjacente.custoTotal = adjacente.custoHeuristica + adjacente.custoMovimento;
 							adjacente.parente = atual;
 						}
 					}
@@ -405,8 +397,7 @@ public abstract class Personagem extends GameObject implements Serializador
 						if (atual.custoMovimento + 14 < adjacente.custoMovimento)
 						{
 							adjacente.custoMovimento = atual.custoMovimento + 14;
-							adjacente.custoTotal = adjacente.custoHeuristica
-									+ adjacente.custoMovimento;
+							adjacente.custoTotal = adjacente.custoHeuristica + adjacente.custoMovimento;
 							adjacente.parente = atual;
 						}
 					}
@@ -438,8 +429,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * @return {@link LinkedList<CelulaCaminho> Lista} com os adjacentes
 	 *         andaveis.
 	 */
-	protected LinkedList<CelulaCaminho> GetAdjacentesAndaveis(
-			CelulaCaminho atual, Vector2 destino)
+	protected LinkedList<CelulaCaminho> GetAdjacentesAndaveis(CelulaCaminho atual, Vector2 destino)
 	{
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
 		Vector2 auxPosicao = new Vector2();
@@ -451,9 +441,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -464,9 +453,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -477,9 +465,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -490,9 +477,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -503,9 +489,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -516,9 +501,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -529,9 +513,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -542,9 +525,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
 			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14
-						+ resultado.ordinal(), this.Manhattan(auxPosicao,
-						destino), atual, new Vector2(auxPosicao)));
+				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
+						new Vector2(auxPosicao)));
 			else
 				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
 		}
@@ -553,73 +535,62 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Faz a movimentação do {@link Personagem personagem}.
-	 * Só movimenta em campo diferente de não passável. Ou seja, nunca
-	 * existe colisão movimentando por aqui. Caso não haja mais posição válida
-	 * na direção informada, nada acontece.
+	 * Faz a movimentação do {@link Personagem personagem}. Só movimenta em
+	 * campo diferente de não passável. Ou seja, nunca existe colisão
+	 * movimentando por aqui. Caso não haja mais posição válida na direção
+	 * informada, nada acontece.
 	 * 
 	 * @param direcao
 	 *            {@link Direcoes Direção} para movimentar.
 	 * @param delta
-	 *            Coeficiente para a agilidade. Valor utilizado para multiplicar a agilidade, o que define o quanto ele vai andar na direção informada.
+	 *            Coeficiente para a agilidade. Valor utilizado para multiplicar
+	 *            a agilidade, o que define o quanto ele vai andar na direção
+	 *            informada.
+	 * @param colidi
+	 *            True caso seja para andar mesmo que o campo não seja válido. O
+	 *            que resultará numa colisão.
+	 * @return {@link Vector2 Posição} para o qual se moveu ou nulo caso não tenha se movido. É possível que ele não chegue na posição neste frame.
+	 * @see {@link #Movimenta(Vector2, float)
 	 * @see {@link Direcoes}
 	 */
-	protected void Movimenta(int direcao, float delta)
+	protected Vector2 Movimenta(int direcao, float delta, boolean colidi)
 	{
-		int playerDirecao = direcao;
-		float auxMovimento = Math.min(_telaInserido.GetPrecisaoMapaX(),	_telaInserido.GetPrecisaoMapaY());
-		float alfa = this._agilidade * delta;
+		float auxPosicao = Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY());
 		float x = _posicaoTela.x;
 		float y = _posicaoTela.y;
 		Vector2 aux = null;
 
-		if (playerDirecao != Direcoes.CENTRO)
+		if (direcao != Direcoes.CENTRO)
 		{
-			if (playerDirecao == Direcoes.CIMA)
+			if (direcao == Direcoes.CIMA)
+				aux = new Vector2(x, y + auxPosicao);
+			else if (direcao == Direcoes.BAIXO)
+				aux = new Vector2(x, y - auxPosicao);
+			else if (direcao == Direcoes.ESQUERDA)
+				aux = new Vector2(x - auxPosicao, y);
+			else if (direcao == Direcoes.DIREITA)
+				aux = new Vector2(x + auxPosicao, y);
+			else if (direcao == Direcoes.NORDESTE)
+				aux = new Vector2(x + auxPosicao, y + auxPosicao);
+			else if (direcao == Direcoes.NOROESTE)
+				aux = new Vector2(x - auxPosicao, y + auxPosicao);
+			else if (direcao == Direcoes.SUDESTE)
+				aux = new Vector2(x + auxPosicao, y - auxPosicao);
+			else if (direcao == Direcoes.SUDOESTE)
+				aux = new Vector2(x - auxPosicao, y - auxPosicao);
+			
+			if (this.GetValorCampo(aux) != Colisoes.NaoPassavel || colidi)
 			{
-				if (this.GetValorCampo(aux = new Vector2(x, y + auxMovimento)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
+				this.Movimenta(aux, delta);
+				return aux;
 			}
-			else if (playerDirecao == Direcoes.BAIXO)
+			else
 			{
-				if (this.GetValorCampo(aux = new Vector2(x, y - auxMovimento)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.ESQUERDA)
-			{
-				if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.DIREITA)
-			{
-				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.NORDESTE)
-			{
-				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y
-						+ auxMovimento)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.NOROESTE)
-			{
-				if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y
-						+ auxMovimento)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.SUDESTE)
-			{
-				if (this.GetValorCampo(aux = new Vector2(x + auxMovimento, y
-						- auxMovimento)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
-			}
-			else if (playerDirecao == Direcoes.SUDOESTE)
-			{
-				if (this.GetValorCampo(aux = new Vector2(x - auxMovimento, y
-						- auxMovimento)) != Colisoes.NaoPassavel)
-					this.Movimenta(aux, alfa);
+				return null;
 			}
 		}
+		
+		return null;
 	}
 
 	/**
@@ -634,8 +605,11 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * @return True caso o {@link Personagem personagem} parametrizado esteja no campo de visão deste e não haja nada colidível entre os dois objetos.
-	 * @param outro {@link Personagem} para validar.
+	 * @return True caso o {@link Personagem personagem} parametrizado esteja no
+	 *         campo de visão deste e não haja nada colidível entre os dois
+	 *         objetos.
+	 * @param outro
+	 *            {@link Personagem} para validar.
 	 */
 	public boolean GetSeVisivel(Personagem outro)
 	{
@@ -664,8 +638,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		_ataque = _valoresArquivo.getFloat("_ataque", 0f);
 		_vida = _valoresArquivo.getFloat("_vida", 0f);
 		_chanceCritico = _valoresArquivo.getFloat("_chanceCritico", 0f);
-		_coeficienteCritico = _valoresArquivo.getFloat("_coeficienteCritico",
-				0f);
+		_coeficienteCritico = _valoresArquivo.getFloat("_coeficienteCritico", 0f);
 
 		return true;
 	}
@@ -688,9 +661,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		}
 		catch (IOException e)
 		{
-			Log.instancia.Logar(
-					"Erro ao carregar dados de personagem do arquivo!", e,
-					false);
+			Log.instancia.Logar("Erro ao carregar dados de personagem do arquivo!", e, false);
 			_arquivo.delete();
 		}
 	}

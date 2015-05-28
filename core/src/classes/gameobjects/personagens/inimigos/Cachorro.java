@@ -3,17 +3,14 @@ package classes.gameobjects.personagens.inimigos;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-
 import catquest.CatQuest;
-import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.herois.Heroi;
-import classes.gameobjects.personagens.inimigos.Inimigo.Fuzzyficacao;
-import classes.gameobjects.personagens.inimigos.Inimigo.TrianguloFuzzy;
 import classes.uteis.UI.Mensagem;
 
 /**
  * Classe do inimigo Cachorro.
+ * 
  * @author matheus
  *
  */
@@ -23,20 +20,14 @@ public class Cachorro extends Inimigo
 	{
 		super();
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/inimigo")));
-		_agilidade = 8;		
 		_alvo = (Personagem) Heroi.herois.values().toArray()[0];
 		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-30, 30), new TrianguloFuzzy(0, 500), new TrianguloFuzzy(250, 1000));
 	}
-	
+
 	@Override
 	public String toString()
 	{
 		return "Cachorro";
-	}
-
-	@Override
-	public void AoColidir(GameObject colidiu)
-	{
 	}
 
 	@Override

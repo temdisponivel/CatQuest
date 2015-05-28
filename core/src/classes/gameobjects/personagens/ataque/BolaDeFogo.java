@@ -17,49 +17,60 @@ import classes.gameobjects.personagens.inimigos.Inimigo;
  *
  *         Se move em linha reta e ao colidir coloca fogo no chão.
  */
-public class BolaDeFogo extends Ataque {
+public class BolaDeFogo extends Ataque
+{
 
-	public BolaDeFogo(Vector2 posicao, int direcao) {
+	public BolaDeFogo(Vector2 posicao, int direcao)
+	{
 		super(posicao, direcao);
-		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files
-				.local("sprites/boladefogo")));
+		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/boladefogo")));
 	}
 
 	@Override
-	public void Atualiza(float deltaTime) {
+	public void Atualiza(float deltaTime)
+	{
 		this.MovimentaAtaque(deltaTime);
 	}
 
 	@Override
-	protected void MovimentaAtaque(float deltaTime) {
+	protected void MovimentaAtaque(float deltaTime)
+	{
 		// Movimenta em linha reta a partir da direção do heroi.
-		this.Movimenta(_direcao, deltaTime);
+		this.Movimenta(_direcao, deltaTime, true);
 
 	}
 
 	@Override
-	public void Morre() {
+	public void Morre()
+	{
 		// TODO Criar um campo de fogo aonde a bola morreu.
 		this.Encerra();
 	}
-	
+
 	@Override
-	public void AoColidir(GameObject colidiu) {
+	public void AoColidir(GameObject colidiu)
+	{
 		_colidido = true;
 
-		if (colidiu instanceof Inimigo) {
+		if (colidiu instanceof Inimigo)
+		{
 			// O que acontece quando colide com Inimigo.
 
-		} else if (colidiu instanceof Heroi) {
+		}
+		else if (colidiu instanceof Heroi)
+		{
 			// O que acontece quando colide com Heroi.
 
-		} else if (colidiu instanceof ObjetoCenario) {
+		}
+		else if (colidiu instanceof ObjetoCenario)
+		{
 			this.Morre();
 		}
 	}
 
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return "BolaDeFogo";
 	}
 

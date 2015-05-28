@@ -11,19 +11,20 @@ import com.badlogic.gdx.graphics.Color;
 
 /**
  * Classe da tela onde o gameplay acontece.
+ * 
  * @author matheus
  *
  */
 public class GamePlay extends Tela
 {
 	Heroi[] _herois = null;
-	
+
 	public GamePlay(Heroi... herois)
 	{
 		super(Gdx.files.local("arquivos//teste.tmx"));
 		_herois = herois;
 	}
-	
+
 	@Override
 	public void Iniciar()
 	{
@@ -38,7 +39,7 @@ public class GamePlay extends Tela
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-		
+
 		if (Controle.GetQualquerPause())
 			this.InserirGameObject(Inimigo._reciclador.GetInstancia(Cachorro.class));
 	}

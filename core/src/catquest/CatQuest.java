@@ -30,23 +30,25 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
- * Classe que contï¿½m todas as informaï¿½ï¿½es padrï¿½es do jogo. Quase todos os mï¿½todos e propriedades sï¿½o estï¿½ticos.
+ * Classe que contï¿½m todas as informaï¿½ï¿½es padrï¿½es do jogo. Quase todos
+ * os mï¿½todos e propriedades sï¿½o estï¿½ticos.
+ * 
  * @author Matheus
  *
  */
 public class CatQuest implements ApplicationListener, OnCompletionListener
-{	
+{
 	/**
 	 * Enumerador com todos os modos do jogo
+	 * 
 	 * @author Matheus
 	 *
 	 */
 	public enum ModoJogo
 	{
-		COOP,
-		SINGLE,
+		COOP, SINGLE,
 	};
-	
+
 	static public CatQuest instancia;
 	private int _idObjeto = 0;
 	private Stack<Tela> _pilhaTelas = null;
@@ -63,7 +65,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private Tela _proximaTela = null;
 	private boolean _encerrar = false;
 	private float _dificuldade = 1f;
-	
+
 	/**
 	 * Contrutor do singleton.
 	 */
@@ -74,7 +76,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		else
 			this.EncerraJogo();
 	}
-	
+
 	@Override
 	public void create()
 	{
@@ -87,7 +89,6 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			Log.instancia.Logar("Erro ao iniciar o jogo.", e, true);
 		}
 	}
-	
 
 	@Override
 	public void resize(int width, int height)
@@ -101,10 +102,10 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		{
 			if (_encerrar)
 				this.Encerrar();
-			
+
 			if (_atualiza)
 				this.Atualiza();
-	
+
 			if (_desenha)
 				this.Desenha();
 		}
@@ -113,116 +114,130 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			Log.instancia.Logar("Erro no loop principal", e, true);
 		}
 	}
-	
+
 	/**
-	 * Funï¿½ï¿½o que roda a lï¿½gica de atualizaï¿½ï¿½o do jogo. AI, coliï¿½ï¿½es, mudanï¿½a de posiï¿½ï¿½es, etc; sï¿½o gerenciadas aqui.
+	 * Funï¿½ï¿½o que roda a lï¿½gica de atualizaï¿½ï¿½o do jogo. AI,
+	 * coliï¿½ï¿½es, mudanï¿½a de posiï¿½ï¿½es, etc; sï¿½o gerenciadas aqui.
 	 */
 	private void Atualiza()
 	{
 		this.GerenciaTelas();
-		
+
 		for (Tela tela : _pilhaTelas)
 		{
 			if (tela.GetSeAtualiza())
 				tela.Atualiza(Gdx.graphics.getDeltaTime());
 		}
-		
+
 		_tempoJogo += Gdx.graphics.getDeltaTime();
-		
-		//ATUALIZA CAMERA E SETA AS MATRIZES DA CAMERA NO BATCH
+
+		// ATUALIZA CAMERA E SETA AS MATRIZES DA CAMERA NO BATCH
 		_camera.update();
 		_batch.setProjectionMatrix(_camera.combined);
-		
-		/* ---------------- FIM ATUALIZA --------------------*/
+
+		/* ---------------- FIM ATUALIZA -------------------- */
 	}
-	
+
 	/**
 	 * Funï¿½ï¿½o que roda a lï¿½gica de desenho do jogo.
 	 */
 	private void Desenha()
 	{
-		/* ---------------- DESENHA -----------------------*/
-		
-		//LIMPA TELA
-		Gdx.gl.glClearColor(_pilhaTelas.lastElement().GetCorFundo().r, _pilhaTelas.lastElement().GetCorFundo().g, _pilhaTelas.lastElement().GetCorFundo().b, 1f);
-	    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		
-	    //DESENHA
-	    _batch.setColor(Color.WHITE);
-	    
-	    _batch.begin();
-	    for (Tela tela : _pilhaTelas)
+		/* ---------------- DESENHA ----------------------- */
+
+		// LIMPA TELA
+		Gdx.gl.glClearColor(_pilhaTelas.lastElement().GetCorFundo().r, _pilhaTelas.lastElement().GetCorFundo().g, _pilhaTelas.lastElement()
+				.GetCorFundo().b, 1f);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		// DESENHA
+		_batch.setColor(Color.WHITE);
+
+		_batch.begin();
+		for (Tela tela : _pilhaTelas)
 		{
-	    	if (tela.GetSeDesenha())
-	    		tela.Desenha(_batch);
+			if (tela.GetSeDesenha())
+				tela.Desenha(_batch);
 		}
-	    
-	    if (Configuracoes.instancia.GetMostraFPS())
-	    {
-			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), 
-					50, 50);
-	    }
-			
+
+		if (Configuracoes.instancia.GetMostraFPS())
+		{
+			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), 50, 50);
+		}
+
 		_batch.end();
-		
-		/* ----------------- FIM DESENHA  --------------------*/
+
+		/* ----------------- FIM DESENHA -------------------- */
 	}
 
 	@Override
-	public void pause()	{}
+	public void pause()
+	{
+	}
 
 	@Override
-	public void resume() {}
+	public void resume()
+	{
+	}
 
 	@Override
-	public void dispose() {}
-	
+	public void dispose()
+	{
+	}
+
 	/**
-	 * Inicia o jogo. Roda toda a rotina de iniciar as propriedades, chamas as primeiras funï¿½ï¿½es, carregar telas, etc.
-	 * @throws IOException Quando nï¿½o for possï¿½vel criar arquivo de log.
+	 * Inicia o jogo. Roda toda a rotina de iniciar as propriedades, chamas as
+	 * primeiras funï¿½ï¿½es, carregar telas, etc.
+	 * 
+	 * @throws IOException
+	 *             Quando nï¿½o for possï¿½vel criar arquivo de log.
 	 */
 	private void IniciaJogo(boolean intro) throws IOException
 	{
-		//INICIA SINGLETON do LOG
+		// INICIA SINGLETON do LOG
 		new Log();
-		
-		//CARREGA CONFIGURAï¿½ï¿½ES E APLICA
+
+		// CARREGA CONFIGURAï¿½ï¿½ES E APLICA
 		new Configuracoes();
-				
-		//Inicia os singletons dos carregadores de música e som
+
+		// Inicia os singletons dos carregadores de música e som
 		new CarregarMusica();
 		new CarregarSom();
-		
-		//ATUALIZA E DESENHA COMO TRUE PARA GAMELOOP COMPLETO
+
+		// ATUALIZA E DESENHA COMO TRUE PARA GAMELOOP COMPLETO
 		_atualiza = true;
 		_desenha = true;
-		
-		//CARREGA FONTE
+
+		// CARREGA FONTE
 		_fonte = new BitmapFont(Gdx.files.local("fonte/catquest.fnt"));
-		
-		//CRIA SPRITEBATCH PARA DESENHAR COISAS NA TELA
+
+		// CRIA SPRITEBATCH PARA DESENHAR COISAS NA TELA
 		_batch = new SpriteBatch();
-		
-		//CRIA A COR PADRAO PARA OS OBJETOS DO JOGO
-		_corJogo = new Color(1, 0.8f, 0.8f, 1); //ROSINHA: RGB: 255, 204, 204, 255. Conversï¿½o via 1/255*quantidadeRGB
-		
-		//Controi o texture atlas
+
+		// CRIA A COR PADRAO PARA OS OBJETOS DO JOGO
+		_corJogo = new Color(1, 0.8f, 0.8f, 1); // ROSINHA: RGB: 255, 204, 204,
+												// 255. Conversï¿½o via
+												// 1/255*quantidadeRGB
+
+		// Controi o texture atlas
 		_textureAtlas = new TextureAtlas(Gdx.files.local("pack/CatQuest.atlas"));
-		
-		//CRIA CAMERA ORTOGRAFICA PARA QUE Nï¿½O TENHA DIFERENï¿½A ENTRE PROFUNDIDADE.
-		//CRIA COM O TAMANHO DAS CONFIGURAï¿½ï¿½ES
+
+		// CRIA CAMERA ORTOGRAFICA PARA QUE Nï¿½O TENHA DIFERENï¿½A ENTRE
+		// PROFUNDIDADE.
+		// CRIA COM O TAMANHO DAS CONFIGURAï¿½ï¿½ES
 		_camera = new OrthographicCamera();
-		
+
 		this.AplicarConfiguracoes();
-		
-		//SE FOR PRA COMEï¿½AR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A INTRO NA PILHA
+
+		// SE FOR PRA COMEï¿½AR O JOGO DA TELA DE INTRO (DO INICIO), ADICIONA A
+		// INTRO NA PILHA
 		if (intro)
 			this.AdicionaTela(new Introducao(), false, false);
-		//SE Nï¿½O, COMEï¿½A DO MENU (USADO QUANDO REINICIAR O JOGO).
+		// SE Nï¿½O, COMEï¿½A DO MENU (USADO QUANDO REINICIAR O JOGO).
 		else
 			this.AdicionaTela(new Titulo(), false, false);
 	}
-	
+
 	/**
 	 * Reinicia o jogo do inicio a partir do titulo.
 	 */
@@ -231,16 +246,16 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		try
 		{
 			_batch.dispose();
-			
-			//ENCERRA TODAS AS TELAS, LIMPA O VETOR E REINICIA O JOGO
+
+			// ENCERRA TODAS AS TELAS, LIMPA O VETOR E REINICIA O JOGO
 			for (Tela tela : _pilhaTelas)
 			{
 				tela.Encerrar();
 				tela = null;
 			}
-			
+
 			_pilhaTelas.clear();
-			
+
 			this.IniciaJogo(false);
 		}
 		catch (Exception e)
@@ -248,7 +263,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			Log.instancia.Logar("Erro ao reiniciar o jogo.", e, true);
 		}
 	}
-	
+
 	/**
 	 * Funï¿½ï¿½o que fecha o jogo.
 	 */
@@ -256,7 +271,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		_encerrar = true;
 	}
-	
+
 	/**
 	 * Funï¿½ï¿½o que fecha o jogo.
 	 */
@@ -264,55 +279,66 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		_atualiza = false;
 		_desenha = false;
-		
-		//ENCERRA TODAS AS TELAS, LIMPA O VETOR E ENCERRA O JOGO
+
+		// ENCERRA TODAS AS TELAS, LIMPA O VETOR E ENCERRA O JOGO
 		if (_pilhaTelas != null)
 		{
 			for (Tela tela : _pilhaTelas)
 			{
 				tela.Encerrar();
 			}
-			
+
 			_pilhaTelas = null;
 		}
-		
+
 		Gdx.app.exit();
 	}
-	
+
 	/**
-	 * Define as configuraï¿½ï¿½es atuais do jogo. Caso as configuraï¿½ï¿½es ainda nï¿½o tenham sido definidas, chama {@link CatQuest#CarregarConfig()} e depois define.
+	 * Define as configuraï¿½ï¿½es atuais do jogo. Caso as configuraï¿½ï¿½es
+	 * ainda nï¿½o tenham sido definidas, chama
+	 * {@link CatQuest#CarregarConfig()} e depois define.
 	 */
 	public void AplicarConfiguracoes()
-	{		
+	{
 		Gdx.graphics.setDisplayMode(Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight(), Configuracoes.instancia.GetFullscreen());
 		_camera.setToOrtho(false, Configuracoes.instancia.GetWidth(), Configuracoes.instancia.GetHeight());
 		_viewPort = new FitViewport(Configuracoes.instancia.GetWidthViewPort(), Configuracoes.instancia.GetHeightViewPort(), _camera);
 		_viewPort.apply(true);
 	}
-	
+
 	/**
 	 * Retorna um novo ID ï¿½nico para {@link GameObject}.
+	 * 
 	 * @return Um novo ID para GameObject
 	 */
 	public Integer GetNovoId()
 	{
 		return new Integer(_idObjeto++);
 	}
-	
+
 	/**
 	 * Retorna a SpriteBatch do jogo.
+	 * 
 	 * @return Referencia para {@link SpriteBatch} do jogo.
 	 */
 	public SpriteBatch GetSpriteBatch()
 	{
 		return _batch;
 	}
-	
+
 	/**
-	 * Adiciona uma tela a pilha de telas do jogo. A nova tela serï¿½ a ï¿½ltima a ser atualizada/desenhada.
-	 * @param tela {@link Tela} a ser adicionada na pilha.
-	 * @param atualizaAntiga Se true, a tela atualmente no topo da pilha continuarï¿½ sendo atualizada.
-	 * @param desenhaAntiga Se true, a tela atualmente no topo da pilha continuarï¿½ sendo desenhada.
+	 * Adiciona uma tela a pilha de telas do jogo. A nova tela serï¿½ a ï¿½ltima
+	 * a ser atualizada/desenhada.
+	 * 
+	 * @param tela
+	 *            {@link Tela} a ser adicionada na pilha.
+	 * @param atualizaAntiga
+	 *            Se true, a tela atualmente no topo da pilha continuarï¿½ sendo
+	 *            atualizada.
+	 * @param desenhaAntiga
+	 *            Se true, a tela atualmente no topo da pilha continuarï¿½ sendo
+	 *            desenhada.
 	 * @see {@link Tela#Atualiza(float)}
 	 * @see {@link Tela#Desenha(SpriteBatch)}
 	 */
@@ -320,44 +346,47 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		if (_pilhaTelas == null)
 			_pilhaTelas = new Stack<Tela>();
-		
+
 		if (!_pilhaTelas.isEmpty())
 		{
 			_pilhaTelas.lastElement().SetSeAtualiza(atualizaAntiga);
 			_pilhaTelas.lastElement().SetSeDesenha(desenhaAntiga);
 		}
-		
-		//_pilhaTelas.add(tela);
+
+		// _pilhaTelas.add(tela);
 		_proximaTela = tela;
 		_trocaTela = true;
-		
+
 		tela.Iniciar();
 	}
-	
+
 	/**
-	 * Retirar a ï¿½ltima tela da pilha. A tela que estï¿½ abaixo serï¿½ definida como ativa.
+	 * Retirar a ï¿½ltima tela da pilha. A tela que estï¿½ abaixo serï¿½
+	 * definida como ativa.
+	 * 
 	 * @see {@link Tela#SetAtiva(boolean)}
 	 */
 	public void RetiraTela()
 	{
 		_removeTela = true;
 	}
-	
+
 	/**
-	 * Adiciona uma tela ou remove caso haja alteraï¿½ï¿½es na pilha ainda nï¿½o feitas.
+	 * Adiciona uma tela ou remove caso haja alteraï¿½ï¿½es na pilha ainda nï¿½o
+	 * feitas.
 	 */
 	private void GerenciaTelas()
 	{
 		if (_removeTela)
 		{
 			_pilhaTelas.pop();
-			
+
 			if (!_pilhaTelas.isEmpty())
 				_pilhaTelas.lastElement().SetAtiva(true);
-			
+
 			_removeTela = false;
 		}
-		
+
 		if (_trocaTela)
 		{
 			if (_proximaTela != null)
@@ -367,113 +396,130 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 			}
 		}
 	}
-	
+
 	/**
 	 * Retorna a {@link Tela} atual do jogo. A ï¿½ltima tela da pilha.
+	 * 
 	 * @return A tela atual.
 	 */
 	public Tela GetTelaAtual()
 	{
 		return _pilhaTelas.lastElement();
 	}
-	
+
 	/**
 	 * Retorna a {@link OrthographicCamera} do jogo.
+	 * 
 	 * @return Camera do jogo.
 	 */
 	public OrthographicCamera GetCamera()
 	{
 		return _camera;
 	}
-	
+
 	/**
-	 * Retorna a largura do mundo. Utilizado para relacionar posições de imagens, etc.
+	 * Retorna a largura do mundo. Utilizado para relacionar posições de
+	 * imagens, etc.
+	 * 
 	 * @return Largura do mundo.
 	 */
 	public float GetLarguraMundo()
 	{
 		return _viewPort.getWorldWidth();
 	}
-	
+
 	/**
-	 * Retorna a altura do mundo. Utilizado para relacionar posições de imagens, etc.
+	 * Retorna a altura do mundo. Utilizado para relacionar posições de imagens,
+	 * etc.
+	 * 
 	 * @return Altura do mundo.
 	 */
 	public float GetAlturaMundo()
 	{
 		return _viewPort.getWorldHeight();
 	}
-	
+
 	/**
-	 * @return Tamanho da hipotenusa da tela. Que é a raiz quadrada da soma dos quadrados dos catetos (altura e largura). 
+	 * @return Tamanho da hipotenusa da tela. Que é a raiz quadrada da soma dos
+	 *         quadrados dos catetos (altura e largura).
 	 */
 	public float GetHipotenusaMundo()
 	{
 		return (float) Math.hypot(this.GetLarguraMundo(), this.GetAlturaMundo());
 	}
-	
+
 	/**
 	 * Retorna a largura da janela.
+	 * 
 	 * @return Largura da tela.
 	 */
 	public float GetLarguraJanela()
 	{
-		return Gdx.graphics.getWidth(); 
+		return Gdx.graphics.getWidth();
 	}
-	
+
 	/**
 	 * Retorna a altura da janela.
+	 * 
 	 * @return Altura da tela.
 	 */
 	public float GetAlturaJanela()
 	{
 		return Gdx.graphics.getHeight();
 	}
-	
+
 	/**
-	 * @return Tamanho da hipotenusa da tela. Que é a raiz quadrada da soma dos quadrados dos catetos (altura e largura). 
+	 * @return Tamanho da hipotenusa da tela. Que é a raiz quadrada da soma dos
+	 *         quadrados dos catetos (altura e largura).
 	 */
 	public float GetHipotenusaJanela()
 	{
 		return (float) Math.hypot(this.GetLarguraJanela(), this.GetAlturaJanela());
 	}
-	
+
 	/**
 	 * Retorna se estï¿½ em full screen.
+	 * 
 	 * @return True se estï¿½ em full screen.
 	 */
 	public boolean GetFullScreen()
 	{
 		return Gdx.graphics.isFullscreen();
 	}
-	
+
 	/**
-	 * Retorna o state time. A soma de todos os {@link com.badlogic.gdx.Graphics#getDeltaTime()} desde o inicio do jogo.
+	 * Retorna o state time. A soma de todos os
+	 * {@link com.badlogic.gdx.Graphics#getDeltaTime()} desde o inicio do jogo.
+	 * 
 	 * @return Retorna um float com a soma dos deltatimes do jogo.
 	 */
 	public final float GetTempoJogo()
 	{
 		return _tempoJogo;
 	}
-	
+
 	/**
 	 * Define se o jogo deve rodar a rotina de atualizaï¿½ï¿½o.
-	 * @param atualiza True para rodar a rotina de atualizaï¿½ï¿½o.
+	 * 
+	 * @param atualiza
+	 *            True para rodar a rotina de atualizaï¿½ï¿½o.
 	 */
 	public void SetSeAtualiza(boolean atualiza)
 	{
 		_atualiza = atualiza;
 	}
-	
+
 	/**
 	 * Define se o jogo deve rodar a rotina de desenho.
-	 * @param desenha True para rodar a rotina de desenha do gameloop.
+	 * 
+	 * @param desenha
+	 *            True para rodar a rotina de desenha do gameloop.
 	 */
 	public void SetSeDesenha(boolean desenha)
 	{
 		_desenha = desenha;
 	}
-	
+
 	/**
 	 * 
 	 * @return Modo do jogo.
@@ -482,10 +528,12 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		return _modoJogo;
 	}
-	
+
 	/**
 	 * Seta um novo modo para o jogo. O jogo ï¿½ reiniciado apï¿½s setar.
-	 * @param modo Novo modo de jogo.
+	 * 
+	 * @param modo
+	 *            Novo modo de jogo.
 	 */
 	public void SetModoJogo(ModoJogo modo)
 	{
@@ -500,16 +548,17 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		music.dispose();
 	}
-	
+
 	/**
 	 * Retorna a fonte do jogo.
+	 * 
 	 * @return {@link BitmapFont} com a fonte do jogo.
 	 */
 	public BitmapFont GetFonte()
 	{
 		return _fonte;
 	}
-	
+
 	/**
 	 * @return {@link Color Cor} padrï¿½o para textos e objetos do jogo.
 	 */
@@ -517,11 +566,15 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		return _corJogo;
 	}
-	
+
 	/**
 	 * Funï¿½ï¿½o que retorna a {@link TextureRegion} desejada.
-	 * @param caminho 
-	 * 		Caminho do arquivo fï¿½sico da textura, sem a extenï¿½ï¿½o do arquivo e sem a pasta raiz. Exemplo: arquivo//imagens//imagem.png (a partir da pasta raiz da plataforma) - parametrizar como: imagens//imagem
+	 * 
+	 * @param caminho
+	 *            Caminho do arquivo fï¿½sico da textura, sem a extenï¿½ï¿½o do
+	 *            arquivo e sem a pasta raiz. Exemplo:
+	 *            arquivo//imagens//imagem.png (a partir da pasta raiz da
+	 *            plataforma) - parametrizar como: imagens//imagem
 	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
 	 * @see {@link TextureAtlas#findRegion(String)}
 	 */
@@ -529,42 +582,48 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		return _textureAtlas.findRegion(caminho);
 	}
-	
+
 	/**
-	 * @param texto Texto para calcular o tamanho.
-	 * @param bordas Tamanho da borda entre o texto e o fim do retangulo.
-	 * @return {@link Rectangle Retangulo} com o tamanho do texto mais as bordas.
+	 * @param texto
+	 *            Texto para calcular o tamanho.
+	 * @param bordas
+	 *            Tamanho da borda entre o texto e o fim do retangulo.
+	 * @return {@link Rectangle Retangulo} com o tamanho do texto mais as
+	 *         bordas.
 	 */
 	public Rectangle GetTamanhoTexto(String texto, int bordas)
 	{
 		float largura = _fonte.getBounds(texto).width + bordas;
-		float altura =  _fonte.getBounds(texto).height + bordas;
-		
+		float altura = _fonte.getBounds(texto).height + bordas;
+
 		return new Rectangle(0, 0, largura, altura);
 	}
-	
+
 	/**
 	 * Funï¿½ï¿½o que retorna a {@link TextureRegion} desejada.
-	 * @param caminho {@link FileHandle Caminho} do arquivo fï¿½sico da textura.
+	 * 
+	 * @param caminho
+	 *            {@link FileHandle Caminho} do arquivo fï¿½sico da textura.
 	 * @return Retorna uma nova {@link TextureRegion} com a imagem desejada.
 	 */
 	public TextureRegion GetTextura(FileHandle caminho)
 	{
 		return this.GetTextura(caminho.path());
 	}
-	
+
 	/**
-	 * @return {@link Vector2 Posição} do mouse na tela. Já com as correções de tamanho de tela e tamanho do mundo.
+	 * @return {@link Vector2 Posição} do mouse na tela. Já com as correções de
+	 *         tamanho de tela e tamanho do mundo.
 	 */
 	public Vector2 GetMouse()
 	{
-		float x = Gdx.input.getX() * (this.GetLarguraMundo()/this.GetLarguraJanela());
+		float x = Gdx.input.getX() * (this.GetLarguraMundo() / this.GetLarguraJanela());
 		float y = this.GetAlturaJanela() - Gdx.input.getY();
-		y *= (this.GetAlturaMundo()/this.GetAlturaJanela());
-		
+		y *= (this.GetAlturaMundo() / this.GetAlturaJanela());
+
 		return new Vector2(x, y);
 	}
-	
+
 	/**
 	 * @return Dificuldade do jogo (0~1) 0 = Fácil, 0.5 = Normal e 1 = Difícil.
 	 */
@@ -572,9 +631,11 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	{
 		return _dificuldade;
 	}
-	
+
 	/**
-	 * @param dif Nova dificuldade, deve ser entre 0~1. 0= Fácil, 0.5 = Normal e 1 =difícil.
+	 * @param dif
+	 *            Nova dificuldade, deve ser entre 0~1. 0= Fácil, 0.5 = Normal e
+	 *            1 =difícil.
 	 * @see {@link #GetDificuldade()}.
 	 */
 	public void SetDificuldade(float dif)

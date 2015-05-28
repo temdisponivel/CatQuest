@@ -33,6 +33,5 @@ public class Cachorro extends Inimigo
 	@Override
 	protected void Ataque()
 	{
-		this.AdicionaFilho(new Mensagem("ataque", 1, this.GetPosicao(), Color.BLACK));
 	}
 }

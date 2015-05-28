@@ -3,8 +3,10 @@
 package classes.gameobjects.personagens;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -125,7 +127,6 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected Vector2 _ultimoDestinoCalculado = null;
 	protected float _campoVisao = 0f;
 	private float _coeficienteLerp = 0;
-	private float _duracaoLerp = 0;
 	private JsonValue _valoresArquivo = null;
 	private Vector2 _inicioLerp = null;
 
@@ -224,15 +225,12 @@ public abstract class Personagem extends GameObject implements Serializador
 	{
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetAnimacao(AnimacaoPersonagem.Movimento);
-		
+
 		if (_inicioLerp == null)
-		{
-			_duracaoLerp = _posicaoTela.dst(destino) / _agilidade;
 			_inicioLerp = _posicaoTela.cpy();
-		}
-		
-		_coeficienteLerp = MathUtils.clamp((_coeficienteLerp + deltaTime) / _duracaoLerp, 0f, 1);
-		
+
+		_coeficienteLerp = MathUtils.clamp((_coeficienteLerp + deltaTime) * _agilidade, 0f, 1);
+
 		this.SetPosicao(_inicioLerp.lerp(destino, _coeficienteLerp));
 
 		if (_coeficienteLerp >= 1)
@@ -310,12 +308,19 @@ public abstract class Personagem extends GameObject implements Serializador
 		if (_telaInserido == null || _caminho == null)
 			return null;
 
-		LinkedList<CelulaCaminho> listaAberta = new LinkedList<CelulaCaminho>();
-		LinkedList<CelulaCaminho> listaFechada = new LinkedList<CelulaCaminho>();
+		PriorityQueue<CelulaCaminho> listaAberta = new PriorityQueue<CelulaCaminho>(new Comparator<CelulaCaminho>()
+		{
+			@Override
+			public int compare(CelulaCaminho o1, CelulaCaminho o2)
+			{
+				return o1.custoTotal - o2.custoTotal;
+			}
+		});
+		
+		HashMap<Vector2, CelulaCaminho> listaFechada = new HashMap<Vector2, CelulaCaminho>();
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
 		Rectangle aux = new Rectangle(_posicaoTela.x, _posicaoTela.y, _caixaColisao.width, _caixaColisao.height);
 		CelulaCaminho atual = new CelulaCaminho(0, Manhattan(_posicaoTela, _destino), null, _posicaoTela);
-		CelulaCaminho temp = null;
 		listaAberta.add(atual);
 
 		if (this.GetValorCampo(_destino) == Colisoes.NaoPassavel)
@@ -323,22 +328,11 @@ public abstract class Personagem extends GameObject implements Serializador
 
 		// enquanto não cheguei no meu destino
 		while (!listaAberta.isEmpty())
-		{			
-			atual = listaAberta.get(0);
-
-			// percorre todos os da lista aberta e paga o que tem o menor valor
-			// total
-			for (int i = 0; i < listaAberta.size(); i++)
-			{
-				temp = listaAberta.get(i);
-
-				if (temp.custoTotal < atual.custoTotal)
-					atual = temp;
-			}
+		{
+			atual = listaAberta.poll();
 
 			// retira da lista aberta e coloca na lista fechada
-			listaAberta.remove(atual);
-			listaFechada.add(atual);
+			listaFechada.put(atual.posicao, atual);
 
 			// se achamos
 			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()))
@@ -366,13 +360,13 @@ public abstract class Personagem extends GameObject implements Serializador
 				CelulaCaminho adjacente = adjacentes.get(i);
 
 				// se ja vimos, retorna
-				if (listaFechada.contains(adjacente))
+				if (listaFechada.containsKey(adjacente.posicao))
 					continue;
 
 				// se os adjacentes nao estão na lista aberta, adiciona
 				if (!listaAberta.contains(adjacente))
 				{
-					listaAberta.add(adjacente);
+					listaAberta.offer(adjacente);
 				}
 				// se já contém, valida a distancia entre o adjacente e o pai
 				// dele e verifica se há um melhor caminho
@@ -531,7 +525,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		return adjacentes;
 	}
 
-	/**
+/**
 	 * Faz a movimentação do {@link Personagem personagem}. Só movimenta em
 	 * campo diferente de não passável. Ou seja, nunca existe colisão
 	 * movimentando por aqui. Caso não haja mais posição válida na direção
@@ -575,7 +569,7 @@ public abstract class Personagem extends GameObject implements Serializador
 				aux = new Vector2(x + auxPosicao, y - auxPosicao);
 			else if (direcao == Direcoes.SUDOESTE)
 				aux = new Vector2(x - auxPosicao, y - auxPosicao);
-			
+
 			if (this.GetValorCampo(aux) != Colisoes.NaoPassavel || colidi)
 			{
 				this.Movimenta(aux, delta);
@@ -586,14 +580,17 @@ public abstract class Personagem extends GameObject implements Serializador
 				return null;
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Retorna a {@link Vector2 Posição} na {@link Direcoes direção} informada.
-	 * @param direcao Direção para lhar.
-	 * @return {@link Vector2 Posição} na direção informada. Nulo caso seja uma {@link Direcoes direção} inválida, ou centro.
+	 * 
+	 * @param direcao
+	 *            Direção para lhar.
+	 * @return {@link Vector2 Posição} na direção informada. Nulo caso seja uma
+	 *         {@link Direcoes direção} inválida, ou centro.
 	 */
 	public Vector2 GetPosicaoDirecao(int direcao)
 	{
@@ -620,10 +617,10 @@ public abstract class Personagem extends GameObject implements Serializador
 				aux = new Vector2(x + auxPosicao, y - auxPosicao);
 			else if (direcao == Direcoes.SUDOESTE)
 				aux = new Vector2(x - auxPosicao, y - auxPosicao);
-			
+
 			return aux;
 		}
-		
+
 		return null;
 	}
 

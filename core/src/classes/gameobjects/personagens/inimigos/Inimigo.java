@@ -1,6 +1,7 @@
 package classes.gameobjects.personagens.inimigos;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
@@ -153,6 +154,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	protected Fuzzyficacao _fuzzyVidaAlvo = null;
 	protected Fuzzyficacao _fuzzyDistancia = null;
 	protected Fuzzyficacao _fuzzyDificuldade = null;
+	protected Fuzzyficacao _fuzzyEstado = null;
 	static protected int _quantiColunasBaseConhecimento = 4;
 	static protected int _quantiLinhasBaseConhecimento = 27;
 	static protected Object[][] _baseConhecimento = new Object[_quantiLinhasBaseConhecimento][_quantiColunasBaseConhecimento];
@@ -171,10 +173,18 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		_tipo = GameObjects.Inimigo;
 		inimigos.put(this.GetId(), this);
 		this.ControiBaseConhecimento();
-		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-400, 400), new TrianguloFuzzy(200, 500), new TrianguloFuzzy(350,
-				CatQuest.instancia.GetHipotenusaMundo()));
+		
+		//esquerda = perto, centro = proximo, direita = distante
+		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-400, 400), new TrianguloFuzzy(200, 500), new TrianguloFuzzy(350, CatQuest.instancia.GetHipotenusaMundo()));
+		
+		//esquerda = baixo, centro = media, direita = alta
 		_fuzzyVidaAlvo = new Fuzzyficacao(new TrianguloFuzzy(0, 50), new TrianguloFuzzy(25, 75), new TrianguloFuzzy(50, 150));
+		
+		//esquerda = facil, centro = normal, direita = dificil
 		_fuzzyDificuldade = new Fuzzyficacao(new TrianguloFuzzy(-.3f, 0.3f), new TrianguloFuzzy(0f, 0.7f), new TrianguloFuzzy(.35f, 1.35f));
+		
+		//esquerda = ataca, centro = segue, direita = perambula
+		_fuzzyEstado = new Fuzzyficacao(new TrianguloFuzzy(0, 20), new TrianguloFuzzy(10, 40), new TrianguloFuzzy(25, 60));
 	}
 
 	@Override
@@ -189,8 +199,6 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-
-		Vector2 movimento = null;
 
 		if (CatQuest.instancia.GetTempoJogo() - _ultimaIA > _tempoEntreIA)
 		{
@@ -219,7 +227,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		{
 			this.ValidaPerambula();
 			
-			movimento = this.Movimenta(_direcaoPerambula, deltaTime, false);
+			this.Movimenta(_direcaoPerambula, deltaTime, false);
 
 			_caminho.clear();
 		}
@@ -293,16 +301,16 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		_estado = EstadosInimigo.Perambula;
 
 		if (_alvo == null || _fuzzyDistancia == null || _fuzzyVidaAlvo == null || _fuzzyDificuldade == null)
-		{
 			return;
-		}
 
 		float dificuldade = CatQuest.instancia.GetDificuldade();
 		float vidaAlvo = _alvo.GetVida();
 		float distanciaAlvo = _alvo.GetPosicao().dst(this.GetPosicao());
 		HashMap<Object, Float> valoresFuzzyficados = new HashMap<Object, Float>();
 		HashMap<EstadosInimigo, Float> valorRegra = new HashMap<EstadosInimigo, Float>();
+		HashMap<EstadosInimigo, Float> valorFinal = new HashMap<EstadosInimigo, Float>();
 		float[] valoresPertinencia = null;
+		float calculoDesfuzzy = 0;
 		float aux = 0;
 
 		// valor pertinencia vida do alvo
@@ -339,10 +347,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 				valorRegra.put((EstadosInimigo) resultadoCombinacao, minimo);
 
 				if (minimo > aux)
-				{
-					_estado = (EstadosInimigo) resultadoCombinacao;
 					aux = minimo;
-				}
 
 				continue;
 			}
@@ -353,10 +358,41 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 				valorRegra.replace((EstadosInimigo) resultadoCombinacao, minimo);
 
 				if (minimo > aux)
-				{
-					_estado = (EstadosInimigo) resultadoCombinacao;
 					aux = minimo;
-				}
+			}
+		}
+		
+		//percorre o valor das regras e pega o maximo
+		for (Entry<EstadosInimigo, Float> regra : valorRegra.entrySet())
+		{
+			if (!valorFinal.containsKey(regra.getKey()))
+				valorFinal.put(regra.getKey(), regra.getValue());
+			else
+				if (valorFinal.get(regra.getKey()) < regra.getValue())
+					valorFinal.replace(regra.getKey(), regra.getValue());
+		}
+		
+		//desfuzzyfica o resultado
+		calculoDesfuzzy = (valorFinal.get(EstadosInimigo.Ataca) * _fuzzyEstado.esquerda.centro) + (valorFinal.get(EstadosInimigo.Segue) * _fuzzyEstado.centro.centro) + (valorFinal.get(EstadosInimigo.Perambula) * _fuzzyEstado.direita.centro);
+		calculoDesfuzzy = calculoDesfuzzy / (valorFinal.get(EstadosInimigo.Ataca) + valorFinal.get(EstadosInimigo.Segue) + valorFinal.get(EstadosInimigo.Perambula));
+		
+		//get a pertinencia dos estados
+		valoresPertinencia = this.GetValorPertinencia(calculoDesfuzzy, _fuzzyEstado);
+		
+		//define o estado como o de maior pertinencia
+		aux = 0;
+		for (int i = 0; i < valoresPertinencia.length; i++)
+		{
+			if (valoresPertinencia[i] > aux)
+			{
+				if (i == 0)
+					_estado = EstadosInimigo.Ataca;
+				else if (i == 1)
+					_estado = EstadosInimigo.Segue;
+				else if (i == 2)
+					_estado = EstadosInimigo.Perambula;
+				
+				aux = valoresPertinencia[i];
 			}
 		}
 	}

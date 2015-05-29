@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 
+import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.cenario.ObjetoCenario;
 import classes.uteis.*;
@@ -93,7 +94,7 @@ public class Tela implements OnCompletionListener
 		_gameObjectsIncluir = new LinkedList<GameObject>();
 		_gameObjectsExcluir = new LinkedList<GameObject>();
 		_gameObjectsColidir = new LinkedList<GameObject>();
-		_corFundo = Color.WHITE;
+		_corFundo = CatQuest.instancia.GetCorFundo();
 		this.CarregaMapa();
 	}
 

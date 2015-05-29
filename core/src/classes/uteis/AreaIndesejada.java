@@ -12,15 +12,28 @@ import classes.gameobjects.GameObject;
 public class AreaIndesejada extends GameObject
 {
 	/**
-	 * Cria uma área indesejada na posição informada.
+	 * Cria uma área que objetos devem evitar.
+	 * @param posicao Posição da área.
+	 * @param tamanho Tamanho da área.
+	 * @param quem Lista de tipo de objetos que devem evitar.
 	 */
-	public AreaIndesejada(Vector2 posicao, Rectangle tamanho)
+	public AreaIndesejada(Vector2 posicao, Rectangle tamanho, GameObjects... quem)
 	{
 		super();
 		_caixaColisao = tamanho;
-		_colidiveis.put(GameObjects.Inimigo, Colisoes.Evitavel);
 		_sprite.setSize(tamanho.width, tamanho.height);
 		this.SetPosicao(posicao);
+		
+		for (int i = 0; i < quem.length; i++)
+			_colidiveis.put(quem[i], Colisoes.Evitavel);
+	}
+	
+	/**
+	 * Define o tamanho da área.
+	 */
+	public void SetTamanho(Rectangle tamanho)
+	{
+		_caixaColisao = tamanho;
 	}
 	
 	@Override

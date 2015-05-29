@@ -1,5 +1,7 @@
 package classes.telas;
 
+import catquest.CatQuest;
+
 import com.badlogic.gdx.graphics.Color;
 
 /**
@@ -19,7 +21,7 @@ public class Menu extends Tela
 	public void Iniciar()
 	{
 		super.Iniciar();
-		_corFundo = Color.WHITE;
+		_corFundo = CatQuest.instancia.GetCorFundo();
 	}
 	
 	@Override

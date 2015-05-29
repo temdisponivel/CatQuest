@@ -31,7 +31,7 @@ public class Etiqueta extends GameObject
 		_texto = texto;
 		_posicaoTela = posicao;
 		_camada = Camada.UI;
-		_cor = Color.BLACK;
+		_cor = CatQuest.instancia.GetCorTexto();
 		_tipo = GameObjects.Ui;
 		_fonte = CatQuest.instancia.GetFonte(); 
 	}

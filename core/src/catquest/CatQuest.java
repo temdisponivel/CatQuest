@@ -61,6 +61,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 	private boolean _atualiza = true, _desenha = true;
 	private BitmapFont _fonte = null;
 	private Color _corJogo = null;
+	private Color _corJogoTexto = null;
+	private Color _corJogoFundo = null;
 	private TextureAtlas _textureAtlas = null;
 	private boolean _trocaTela = false, _removeTela = false;
 	private Tela _proximaTela = null;
@@ -216,9 +218,17 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		_batch = new SpriteBatch();
 
 		// CRIA A COR PADRAO PARA OS OBJETOS DO JOGO
-		_corJogo = new Color(1, 0.8f, 0.8f, 1); // ROSINHA: RGB: 255, 204, 204,
-												// 255. Convers�o via
-												// 1/255*quantidadeRGB
+		_corJogo = new Color(0.109f, 0.168f, 0.21f, 1);
+		_corJogoTexto = new Color(0.168f, 0.38f, 0.258f, 1);
+		_corJogoFundo = new Color(0.058f, 0.09f, 0.11f, 1 );
+		
+		/*
+		 * AZUL:		    R: [ 28 ] G: [ 43 ] B: [ 54 ] 
+		 * AZUL ESCURO:		R: [ 15 ] G: [ 23 ] B: [ 29 ]
+		 * VERDE:		    R: [ 43 ] G: [ 97 ] B: [ 66 ] 
+		 * 
+		 * CONVERTER COM /255
+		*/
 
 		// Controi o texture atlas
 		_textureAtlas = new TextureAtlas(Gdx.files.local("pack/CatQuest.atlas"));
@@ -568,6 +578,14 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		return _corJogo;
 	}
 
+	public Color GetCorTexto(){
+		return _corJogoTexto;
+	}
+	
+	public Color GetCorFundo(){
+		return _corJogoFundo;
+	}
+	
 	/**
 	 * Fun��o que retorna a {@link TextureRegion} desejada.
 	 * 

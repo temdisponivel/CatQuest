@@ -36,7 +36,6 @@ public class GamePlay extends Tela
 		_corFundo = Color.BLACK;
 		this.InserirGameObject(new ControladorCamera(_herois));
 		this.InserirGameObject(_herois);
-		this.InserirGameObject(new AreaIndesejada(new Vector2(150, 30), new Rectangle(0, 0, 50, 50)));
 	}
 
 	@Override

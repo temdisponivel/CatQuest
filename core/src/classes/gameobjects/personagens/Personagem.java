@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.MathUtils;
@@ -16,7 +15,6 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.JsonWriter;
-
 import classes.gameobjects.GameObject;
 import classes.uteis.Camada;
 import classes.uteis.Log;
@@ -128,7 +126,6 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected float _campoVisao = 0f;
 	private float _coeficienteLerp = 0;
 	private JsonValue _valoresArquivo = null;
-	private Vector2 _inicioLerp = null;
 
 	/**
 	 * Cria um novo personagem.
@@ -226,17 +223,13 @@ public abstract class Personagem extends GameObject implements Serializador
 		this.TocaSom(SomPersonagem.Movimenta);
 		this.SetAnimacao(AnimacaoPersonagem.Movimento);
 
-		if (_inicioLerp == null)
-			_inicioLerp = _posicaoTela.cpy();
+		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + (deltaTime * _agilidade), 0f, 1);
 
-		_coeficienteLerp = MathUtils.clamp((_coeficienteLerp + deltaTime) * _agilidade, 0f, 1);
-
-		this.SetPosicao(_inicioLerp.lerp(destino, _coeficienteLerp));
-
+		this.SetPosicao(_posicaoTela.lerp(destino, (deltaTime * _agilidade)));
+		
 		if (_coeficienteLerp >= 1)
 		{
 			_coeficienteLerp = 0;
-			_inicioLerp = null;
 			return true;
 		}
 

@@ -41,6 +41,7 @@ public class GamePlay extends Tela
 		super.Atualiza(deltaTime);
 
 		if (Controle.GetQualquerPause())
-			this.InserirGameObject(Inimigo._reciclador.GetInstancia(Cachorro.class));
+			for (int i = 0; i < 100; i++)
+				this.InserirGameObject(Inimigo._reciclador.GetInstancia(Cachorro.class));
 	}
 }

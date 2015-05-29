@@ -1,0 +1,15 @@
+
+Data: Fri May 29 03:05:08 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.GameObject.ValidaColisao(GameObject.java:480)
+classes.gameobjects.GameObject.GetValorCampo(GameObject.java:527)
+classes.gameobjects.personagens.Personagem.GetAdjacentesAndaveis(Personagem.java:449)
+classes.gameobjects.personagens.Personagem.GetCaminho(Personagem.java:348)
+classes.gameobjects.personagens.inimigos.Inimigo.Atualiza(Inimigo.java:215)
+classes.telas.Tela.Atualiza(Tela.java:120)
+classes.telas.GamePlay.Atualiza(GamePlay.java:45)
+catquest.CatQuest.Atualiza(CatQuest.java:130)
+catquest.CatQuest.render(CatQuest.java:108)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

@@ -6,6 +6,7 @@ import classes.uteis.Player;
 import classes.uteis.Player.TipoPlayer;
 import classes.uteis.UI.Botao;
 import classes.uteis.UI.BotaoTexto;
+import classes.uteis.UI.Imagem;
 import classes.uteis.UI.Botao.EscutadorBotao;
 
 import com.badlogic.gdx.graphics.Color;
@@ -24,6 +25,8 @@ public class Titulo extends Tela implements EscutadorBotao
 	{
 		super.Iniciar();
 		_tipo = Telas.MENU;
+		
+		this.InserirGameObject(new Imagem("sprites//intro"));
 		
 		menu = new Menu(new Vector2(CatQuest.instancia.GetLarguraMundo() - 280, 60));
 		menu.AdicionaFilho(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));

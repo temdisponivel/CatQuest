@@ -226,7 +226,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + (deltaTime * _agilidade), 0f, 1);
 
 		this.SetPosicao(_posicaoTela.lerp(destino, (deltaTime * _agilidade)));
-		
+
 		if (_coeficienteLerp >= 1)
 		{
 			_coeficienteLerp = 0;
@@ -309,7 +309,7 @@ public abstract class Personagem extends GameObject implements Serializador
 				return o1.custoTotal - o2.custoTotal;
 			}
 		});
-		
+
 		HashMap<Vector2, CelulaCaminho> listaFechada = new HashMap<Vector2, CelulaCaminho>();
 		LinkedList<CelulaCaminho> adjacentes = new LinkedList<CelulaCaminho>();
 		Rectangle aux = new Rectangle(_posicaoTela.x, _posicaoTela.y, _caixaColisao.width, _caixaColisao.height);
@@ -328,7 +328,8 @@ public abstract class Personagem extends GameObject implements Serializador
 			listaFechada.put(atual.posicao, atual);
 
 			// se achamos
-			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()))
+			if (aux.setPosition(atual.posicao).contains(_destino)
+					|| atual.posicao.dst(_destino) < Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()))
 			{
 				_caminho.addFirst(_destino);
 
@@ -424,11 +425,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y;
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		// CIMA
@@ -436,11 +434,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		// ESQUERDA
@@ -448,11 +443,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y;
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		// BAIXO
@@ -460,11 +452,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 10 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		// NORDESTE
@@ -472,11 +461,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		// NOROESTE
@@ -484,11 +470,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y + _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		// SUDOESTE
@@ -496,11 +479,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		// SUDESTE
@@ -508,11 +488,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		auxPosicao.y = atual.posicao.y - _telaInserido.GetPrecisaoMapaY();
 		if ((resultado = this.GetValorCampo(auxPosicao)) != Colisoes.NaoPassavel)
 		{
-			if (!CelulaCaminho.celulas.containsKey(auxPosicao))
-				adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + resultado.ordinal(), this.Manhattan(auxPosicao, destino), atual,
-						new Vector2(auxPosicao)));
-			else
-				adjacentes.add(CelulaCaminho.celulas.get(auxPosicao));
+			adjacentes.add(new CelulaCaminho(atual.custoMovimento + 14 + (resultado.ordinal() * 2), this.Manhattan(auxPosicao, destino), atual,
+					new Vector2(auxPosicao)));
 		}
 
 		return adjacentes;

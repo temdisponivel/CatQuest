@@ -47,7 +47,7 @@ public abstract class GameObject
 	 */
 	public enum Colisoes
 	{
-		Livre, Passavel, NaoPassavel,
+		Livre, Passavel, Evitavel, NaoPassavel,
 	}
 
 	static public HashMap<Integer, GameObject> gameobjects = new HashMap<Integer, GameObject>();
@@ -466,7 +466,7 @@ public abstract class GameObject
 				retorno = temp;
 		}
 
-		if (colidiu == null || !_colidiveis.containsKey(colidiu.GetTipo()) || !_camada.GetColidivel() || (!_colidiPai && colidiu == _pai))
+		if (colidiu == null || (!_colidiveis.containsKey(colidiu.GetTipo()) &&  !colidiu.GetColidiveis().containsKey(_tipo)) || !_camada.GetColidivel() || (!_colidiPai && colidiu == _pai))
 			return retorno;
 
 		if (this.GetCaixaColisao().overlaps(colidiu.GetCaixaColisao()))
@@ -476,9 +476,12 @@ public abstract class GameObject
 
 			if (retorno.ordinal() < outro.ordinal())
 				retorno = outro;
-
-			if (retorno.ordinal() < (este = _colidiveis.get(colidiu.GetTipo())).ordinal())
-				retorno = este;
+			
+			if (_colidiveis.containsKey(colidiu.GetTipo()))
+			{
+				if (retorno.ordinal() < (este = _colidiveis.get(colidiu.GetTipo())).ordinal())
+					retorno = este;
+			}
 
 			if (colidi)
 			{
@@ -507,7 +510,7 @@ public abstract class GameObject
 			return Colisoes.Passavel;
 
 		GameObject outro = null;
-		Colisoes colisaoOutro, colisaoEste;
+		Colisoes colisao;
 		Colisoes retorno = Colisoes.Livre;
 
 		float x = _caixaColisao.x;
@@ -523,13 +526,10 @@ public abstract class GameObject
 		for (int i = 0; i < lista.size(); i++)
 		{
 			outro = lista.get(i);
-			colisaoOutro = outro.ValidaColisao(this, false);
-			colisaoEste = this.ValidaColisao(outro, false);
+			colisao = this.ValidaColisao(outro, false);
 
-			if (colisaoEste.ordinal() > colisaoOutro.ordinal())
-				retorno = colisaoEste;
-			else
-				retorno = colisaoOutro;
+			if (retorno.ordinal() < colisao.ordinal())
+				retorno = colisao; 
 
 			if (retorno == Colisoes.NaoPassavel)
 				break;

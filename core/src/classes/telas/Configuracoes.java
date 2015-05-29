@@ -15,8 +15,8 @@ import classes.uteis.controle.Controle;
  */
 public class Configuracoes extends Tela implements EscutadorBotao
 {
-	private Botao _grafico = null, _audio = null, _controles = null;
-	Menu _categoriaConfig = null, _menuGrafico = null, _menuControles = null, _menuAudio = null;
+	private Botao _grafico = null, _audio = null, _controles = null, _voltar = null;
+	Menu _categoriaConfig = null, _menuGrafico = null, _menuControles = null, _menuAudio = null, _menuVoltar = null;
 	int fluxoMenu = 1;
 	
 	@Override
@@ -25,12 +25,15 @@ public class Configuracoes extends Tela implements EscutadorBotao
 		super.Iniciar();
 		_tipo = Telas.INTRODUCAO;
 		
-		_grafico = new BotaoTexto("Grafico", new Rectangle(0, 0, 200, 30), new Vector2(), this);
-		_audio = new BotaoTexto("Audio", new Rectangle(0, 0, 200, 30), new Vector2(), this);
-		_controles = new BotaoTexto("Controles", new Rectangle(0, 0, 200, 30), new Vector2(), this);
+		_voltar = new BotaoTexto("< VOLTAR", new Rectangle(0, 0, 220, 30), new Vector2(), this);
 		
-		_categoriaConfig = new Menu(new Vector2(), _controles, _audio, _grafico);
-		_categoriaConfig.SetPosicao(10, (CatQuest.instancia.GetAlturaMundo() / 2) - (_categoriaConfig.GetAltura() / 2));
+		_grafico = new BotaoTexto("VIDEO", new Rectangle(0, 0, 220, 30), new Vector2(), this);
+		_audio = new BotaoTexto("AUDIO", new Rectangle(0, 0, 220, 30), new Vector2(), this);
+		_controles = new BotaoTexto("CONTROLES", new Rectangle(0, 0, 220, 30), new Vector2(), this);
+		
+		
+		_categoriaConfig = new Menu(new Vector2(), _voltar, _controles, _audio, _grafico);
+		_categoriaConfig.SetPosicao(CatQuest.instancia.GetLarguraMundo() / 2 - 80, (CatQuest.instancia.GetAlturaMundo() / 2) - (_categoriaConfig.GetAltura() / 2));
 		
 		//_menus = new Stack<Menu>();
 		
@@ -59,18 +62,31 @@ public class Configuracoes extends Tela implements EscutadorBotao
 			_menuGrafico.SetAtivo(true);
 			_menuAudio.SetAtivo(false);
 			_menuControles.SetAtivo(false);
+			_menuVoltar.SetAtivo(false);
 		}
 		else if (botaoClicado ==  _audio)
 		{
 			_menuGrafico.SetAtivo(false);
 			_menuAudio.SetAtivo(true);
 			_menuControles.SetAtivo(false);
+			_menuVoltar.SetAtivo(false);
 		}
 		else if (botaoClicado == _controles)
 		{
 			_menuGrafico.SetAtivo(false);
 			_menuAudio.SetAtivo(false);
 			_menuControles.SetAtivo(true);
+			_menuVoltar.SetAtivo(false);
+		}
+		else if (botaoClicado == _voltar)
+		{
+			CatQuest.instancia.RetiraTela();
+			
+			_menuGrafico.SetAtivo(false);
+			_menuAudio.SetAtivo(false);
+			_menuControles.SetAtivo(false);
+			_menuVoltar.SetAtivo(true);
+
 		}
 	}
 	

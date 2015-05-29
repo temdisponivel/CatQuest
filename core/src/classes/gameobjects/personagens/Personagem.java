@@ -23,7 +23,7 @@ import classes.uteis.controle.Controle.Direcoes;
 
 /**
  * Classe que representa as classes do jogo. Tem propriedades como agilidade,
- * defesa, ataque, vida, chanse de dano crítico, etc.
+ * defesa, ataque, vida, chanse de dano crï¿½tico, etc.
  * 
  * @author matheus
  *
@@ -31,8 +31,8 @@ import classes.uteis.controle.Controle.Direcoes;
 public abstract class Personagem extends GameObject implements Serializador
 {
 	/**
-	 * Classe que representa uma célular para calcular o A* e guardar valores de
-	 * custo de movimentação.
+	 * Classe que representa uma cï¿½lular para calcular o A* e guardar valores de
+	 * custo de movimentaï¿½ï¿½o.
 	 * 
 	 * @author matheus
 	 *
@@ -47,16 +47,16 @@ public abstract class Personagem extends GameObject implements Serializador
 		static HashMap<Vector2, CelulaCaminho> celulas = new HashMap<Vector2, CelulaCaminho>();
 
 		/**
-		 * Cria uma nova célula para o A*
+		 * Cria uma nova cï¿½lula para o A*
 		 * 
 		 * @param custoMovimento
 		 *            Custo de movimento.
 		 * @param custoHeuristica
 		 *            Custo da heuristica.
 		 * @param parente
-		 *            Parente desta célula.
+		 *            Parente desta cï¿½lula.
 		 * @param posicao
-		 *            Posição desta célula.
+		 *            Posiï¿½ï¿½o desta cï¿½lula.
 		 */
 		public CelulaCaminho(int custoMovimento, int custoHeuristica, CelulaCaminho parente, Vector2 posicao)
 		{
@@ -87,7 +87,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Enumerador para as {@link Animation animações} dos {@link Personagem
+	 * Enumerador para as {@link Animation animaï¿½ï¿½es} dos {@link Personagem
 	 * personagens}.
 	 * 
 	 * @author matheus
@@ -160,7 +160,7 @@ public abstract class Personagem extends GameObject implements Serializador
 
 	/**
 	 * @return Quantidade de pontos de defesa do {@link Ator ator}. Pontos de
-	 *         defesa são subtraídos do ataque inflingido a este ator.
+	 *         defesa sï¿½o subtraï¿½dos do ataque inflingido a este ator.
 	 */
 	public float GetDefesa()
 	{
@@ -169,7 +169,7 @@ public abstract class Personagem extends GameObject implements Serializador
 
 	/**
 	 * @return Quantidade de pontos de ataque que este {@link Ator ator} inflige
-	 *         à outro ator.
+	 *         ï¿½ outro ator.
 	 */
 	public float GetAtaque()
 	{
@@ -193,7 +193,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * @return Chanse de acertar um dano crítico - em percentagem.
+	 * @return Chanse de acertar um dano crï¿½tico - em percentagem.
 	 */
 	public float GetChanceCritico()
 	{
@@ -201,7 +201,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * @return Quantas vezes o dano crítico é mais forte que o comum.
+	 * @return Quantas vezes o dano crï¿½tico ï¿½ mais forte que o comum.
 	 */
 	public float GetCoeficienteCritico()
 	{
@@ -215,7 +215,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	 *            {@link Vector2 Destino} do personagem.
 	 * @param deltaTime
 	 *            Delta time do frame para multriplar como alpha.
-	 * @return True caso tenha alcaçado o destino neste frame.
+	 * @return True caso tenha alcaï¿½ado o destino neste frame.
 	 * @see {@link Vector2#lerp(Vector2, float)}
 	 */
 	public boolean Movimenta(Vector2 destino, float deltaTime)
@@ -238,13 +238,13 @@ public abstract class Personagem extends GameObject implements Serializador
 
 	/**
 	 * Movimenta o personagem pelo caminho definido em {@link #_caminho}. Caso o
-	 * caminho esteja vazio ou nulo, não faz nada. Ele vai se movimentar da
-	 * posição atual, até a próxima da pilha de caminho segundo este deltatime.
+	 * caminho esteja vazio ou nulo, nï¿½o faz nada. Ele vai se movimentar da
+	 * posiï¿½ï¿½o atual, atï¿½ a prï¿½xima da pilha de caminho segundo este deltatime.
 	 * 
 	 * @param deltaTime
-	 *            Deltatime do frame para realizar a movimentação.
-	 * @return True se alcançou o próximo ponto do caminho, falso caso contrário
-	 *         e quando não há caminho.
+	 *            Deltatime do frame para realizar a movimentaï¿½ï¿½o.
+	 * @return True se alcanï¿½ou o prï¿½ximo ponto do caminho, falso caso contrï¿½rio
+	 *         e quando nï¿½o hï¿½ caminho.
 	 */
 	public boolean MovimentaCaminho(float deltaTime)
 	{
@@ -264,8 +264,8 @@ public abstract class Personagem extends GameObject implements Serializador
 	 * Inflinge dano ao {@link Ator ator}.
 	 * 
 	 * @param dano
-	 *            Pontos de dano a inflingir. Repare que destes pontos serão
-	 *            subtraídos a defesa do ator.
+	 *            Pontos de dano a inflingir. Repare que destes pontos serï¿½o
+	 *            subtraï¿½dos a defesa do ator.
 	 */
 	public void RecebeDano(float dano)
 	{
@@ -288,12 +288,12 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Função que retorna um caminho até o {@link #_destino destino}. Calculado
+	 * Funï¿½ï¿½o que retorna um caminho atï¿½ o {@link #_destino destino}. Calculado
 	 * com A*.
 	 * 
-	 * @return {@link LinkedList<Vector2> Fila} da posição atual até o destino.
-	 *         Ou nulo caso não haja caminho. Este caminho também é defino em
-	 *         {@link #_caminho}, mas quando não há caminho {@link #_caminho}
+	 * @return {@link LinkedList<Vector2> Fila} da posiï¿½ï¿½o atual atï¿½ o destino.
+	 *         Ou nulo caso nï¿½o haja caminho. Este caminho tambï¿½m ï¿½ defino em
+	 *         {@link #_caminho}, mas quando nï¿½o hï¿½ caminho {@link #_caminho}
 	 *         fica limpa.
 	 */
 	protected LinkedList<Vector2> GetCaminho()
@@ -319,7 +319,7 @@ public abstract class Personagem extends GameObject implements Serializador
 		if (this.GetValorCampo(_destino) == Colisoes.NaoPassavel)
 			return null;
 
-		// enquanto não cheguei no meu destino
+		// enquanto nï¿½o cheguei no meu destino
 		while (!listaAberta.isEmpty())
 		{
 			atual = listaAberta.poll();
@@ -357,13 +357,13 @@ public abstract class Personagem extends GameObject implements Serializador
 				if (listaFechada.containsKey(adjacente.posicao))
 					continue;
 
-				// se os adjacentes nao estão na lista aberta, adiciona
+				// se os adjacentes nao estï¿½o na lista aberta, adiciona
 				if (!listaAberta.contains(adjacente))
 				{
 					listaAberta.offer(adjacente);
 				}
-				// se já contém, valida a distancia entre o adjacente e o pai
-				// dele e verifica se há um melhor caminho
+				// se jï¿½ contï¿½m, valida a distancia entre o adjacente e o pai
+				// dele e verifica se hï¿½ um melhor caminho
 				else
 				{
 					// se estamos lidando com um adjacente em algulo reto
@@ -394,7 +394,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Retorna um custo heurístico entre a posição e o destino.
+	 * Retorna um custo heurï¿½stico entre a posiï¿½ï¿½o e o destino.
 	 * 
 	 * @param posicao
 	 *            {@link Vector2 Posicao} atual.
@@ -496,21 +496,21 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 /**
-	 * Faz a movimentação do {@link Personagem personagem}. Só movimenta em
-	 * campo diferente de não passável. Ou seja, nunca existe colisão
-	 * movimentando por aqui. Caso não haja mais posição válida na direção
+	 * Faz a movimentaï¿½ï¿½o do {@link Personagem personagem}. Sï¿½ movimenta em
+	 * campo diferente de nï¿½o passï¿½vel. Ou seja, nunca existe colisï¿½o
+	 * movimentando por aqui. Caso nï¿½o haja mais posiï¿½ï¿½o vï¿½lida na direï¿½ï¿½o
 	 * informada, nada acontece.
 	 * 
 	 * @param direcao
-	 *            {@link Direcoes Direção} para movimentar.
+	 *            {@link Direcoes Direï¿½ï¿½o} para movimentar.
 	 * @param delta
 	 *            Coeficiente para a agilidade. Valor utilizado para multiplicar
-	 *            a agilidade, o que define o quanto ele vai andar na direção
+	 *            a agilidade, o que define o quanto ele vai andar na direï¿½ï¿½o
 	 *            informada.
 	 * @param colidi
-	 *            True caso seja para andar mesmo que o campo não seja válido. O
-	 *            que resultará numa colisão.
-	 * @return {@link Vector2 Posição} para o qual se moveu ou nulo caso não tenha se movido. É possível que ele não chegue na posição neste frame.
+	 *            True caso seja para andar mesmo que o campo nï¿½o seja vï¿½lido. O
+	 *            que resultarï¿½ numa colisï¿½o.
+	 * @return {@link Vector2 Posiï¿½ï¿½o} para o qual se moveu ou nulo caso nï¿½o tenha se movido. ï¿½ possï¿½vel que ele nï¿½o chegue na posiï¿½ï¿½o neste frame.
 	 * @see {@link #Movimenta(Vector2, float)
 	 * @see {@link Direcoes}
 	 */
@@ -555,12 +555,12 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Retorna a {@link Vector2 Posição} na {@link Direcoes direção} informada.
+	 * Retorna a {@link Vector2 Posiï¿½ï¿½o} na {@link Direcoes direï¿½ï¿½o} informada.
 	 * 
 	 * @param direcao
-	 *            Direção para lhar.
-	 * @return {@link Vector2 Posição} na direção informada. Nulo caso seja uma
-	 *         {@link Direcoes direção} inválida, ou centro.
+	 *            Direï¿½ï¿½o para lhar.
+	 * @return {@link Vector2 Posiï¿½ï¿½o} na direï¿½ï¿½o informada. Nulo caso seja uma
+	 *         {@link Direcoes direï¿½ï¿½o} invï¿½lida, ou centro.
 	 */
 	public Vector2 GetPosicaoDirecao(int direcao)
 	{
@@ -595,9 +595,9 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Retorna o campo de visão do personagem.
+	 * Retorna o campo de visï¿½o do personagem.
 	 * 
-	 * @return Um float representando o raio de visão deste {@link Personagem
+	 * @return Um float representando o raio de visï¿½o deste {@link Personagem
 	 *         personagem}.
 	 */
 	public float GetCampoVisao()
@@ -607,7 +607,7 @@ public abstract class Personagem extends GameObject implements Serializador
 
 	/**
 	 * @return True caso o {@link Personagem personagem} parametrizado esteja no
-	 *         campo de visão deste e não haja nada colidível entre os dois
+	 *         campo de visï¿½o deste e nï¿½o haja nada colidï¿½vel entre os dois
 	 *         objetos.
 	 * @param outro
 	 *            {@link Personagem} para validar.
@@ -618,7 +618,7 @@ public abstract class Personagem extends GameObject implements Serializador
 	}
 
 	/**
-	 * Função para quando o personagem morrer. Ou seja, quando seu
+	 * Funï¿½ï¿½o para quando o personagem morrer. Ou seja, quando seu
 	 * {@link #_vida =< 0}.
 	 */
 	abstract public void Morre();

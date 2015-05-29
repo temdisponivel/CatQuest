@@ -2,6 +2,8 @@ package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
 
+
+
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
@@ -10,7 +12,7 @@ import classes.uteis.Serializador;
 import classes.uteis.controle.Controle.Direcoes;
 
 /**
- * Classe que representa um herói do jogo.
+ * Classe que representa um herï¿½i do jogo.
  * 
  * @author Victor
  *
@@ -18,7 +20,7 @@ import classes.uteis.controle.Controle.Direcoes;
 public abstract class Heroi extends Personagem implements Serializador
 {
 	/**
-	 * Enumerador para os {@link Sound sons} dos {@link Heroi heróis}.
+	 * Enumerador para os {@link Sound sons} dos {@link Heroi herï¿½is}.
 	 * 
 	 */
 	protected enum SomHeroi
@@ -27,7 +29,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 
 	/**
-	 * Enumerador para as {@link Animation animações} dos {@link Heroi heróis}.
+	 * Enumerador para as {@link Animation animaï¿½ï¿½es} dos {@link Heroi herï¿½is}.
 	 * 
 	 */
 	protected enum AnimacaoHeroi
@@ -39,7 +41,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	protected Player _player = null;
 
 	/**
-	 * Cria um novo herói.
+	 * Cria um novo herï¿½i.
 	 */
 	public Heroi()
 	{
@@ -47,6 +49,7 @@ public abstract class Heroi extends Personagem implements Serializador
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
 		_colidiveis.put(GameObjects.Inimigo, Colisoes.Passavel);
+		
 	}
 
 	@Override
@@ -67,11 +70,11 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 
 	/**
-	 * Define um player para este {@link Heroi herói}. Também define no player
-	 * que este é o personagem que ele está controlando.
+	 * Define um player para este {@link Heroi herï¿½i}. Tambï¿½m define no player
+	 * que este ï¿½ o personagem que ele estï¿½ controlando.
 	 * 
 	 * @param player
-	 *            {@link Player} para controlar este herói.
+	 *            {@link Player} para controlar este herï¿½i.
 	 */
 	public void SetPlayer(Player player)
 	{
@@ -103,17 +106,17 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 
 	/**
-	 * Função chamada quando o herói deve executar sua ação.
+	 * Funï¿½ï¿½o chamada quando o herï¿½i deve executar sua aï¿½ï¿½o.
 	 */
 	protected abstract void Acao();
 
 	/**
-	 * Função chamada quando o herói deve executar sua habilidade ativa.
+	 * Funï¿½ï¿½o chamada quando o herï¿½i deve executar sua habilidade ativa.
 	 */
 	protected abstract void HabilidadeAtiva();
 
 	/**
-	 * Função chamada quando o herói deve executar um ataque normal
+	 * Funï¿½ï¿½o chamada quando o herï¿½i deve executar um ataque normal
 	 */
 	protected abstract void AtaqueBasico();
 }

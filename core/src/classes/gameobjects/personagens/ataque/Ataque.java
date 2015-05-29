@@ -1,5 +1,6 @@
 package classes.gameobjects.personagens.ataque;
 
+
 import com.badlogic.gdx.math.Vector2;
 
 import classes.gameobjects.GameObject;
@@ -9,8 +10,9 @@ import classes.gameobjects.personagens.herois.Heroi;
 import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.controle.Controle.Direcoes;
 
+
 /**
- * Classe de ataques e projéteis.
+ * Classe de ataques e projï¿½teis.
  * 
  * @author Victor
  *
@@ -19,6 +21,7 @@ import classes.uteis.controle.Controle.Direcoes;
 public abstract class Ataque extends Personagem
 {
 	protected int _direcao;
+	protected float _alturaHeroi, _larguraHeroi;
 	protected Vector2 _posicaoInicial;
 
 	public Ataque()
@@ -26,29 +29,20 @@ public abstract class Ataque extends Personagem
 		super();
 	}
 
-	public Ataque(Vector2 posicao, int direcao)
+	public Ataque(Vector2 posicao, int direcao, float alturaHeroi, float larguraHeroi)
 	{
 		this();
 		_posicaoInicial = posicao.cpy();
+		_alturaHeroi = alturaHeroi;
+		_larguraHeroi = larguraHeroi;
+		this.CorrecaoSpriteAtaque();
+		
 		_direcao = direcao;
 		_tipo = GameObjects.Ataque;
+		
 
-		// TODO Corrigir o posicionamento do ataque baseado na direcao do heroi.
-		// >_>
-		switch (_direcao)
-		{
-		case Direcoes.CIMA:
-			_posicaoInicial.y += 30;
-			break;
-		case Direcoes.BAIXO:
-			_posicaoInicial.y -= 30;
-			break;
-		case Direcoes.ESQUERDA:
-			_posicaoInicial.x -= 30;
-			break;
-		case Direcoes.DIREITA:
-			_posicaoInicial.x += 30;
-		}
+		
+		
 
 	}
 
@@ -65,7 +59,7 @@ public abstract class Ataque extends Personagem
 	{
 		this.Encerra();
 	}
-
+	
 	@Override
 	public void AoColidir(GameObject colidiu)
 	{
@@ -86,9 +80,46 @@ public abstract class Ataque extends Personagem
 			this.Morre();
 		}
 	}
+	
+	protected void CorrecaoSpriteAtaque(){
+		switch (_direcao)
+		{
+		case Direcoes.CIMA:
+			_posicaoInicial.y += _alturaHeroi;
+			break;
+		case Direcoes.BAIXO:
+			_posicaoInicial.y -= _alturaHeroi;
+			break;
+		case Direcoes.ESQUERDA:
+			_posicaoInicial.x -= _larguraHeroi;
+			break;
+		case Direcoes.DIREITA:
+			_posicaoInicial.x += _larguraHeroi;
+			break;
+		case Direcoes.NORDESTE:
+			_posicaoInicial.x += _larguraHeroi;
+			_posicaoInicial.y += _alturaHeroi;
+			break;
+		case Direcoes.NOROESTE:
+			_posicaoInicial.x -= _larguraHeroi;
+			_posicaoInicial.y += _alturaHeroi;
+			break;
+		case Direcoes.SUDESTE:
+			_posicaoInicial.x += _larguraHeroi;
+			_posicaoInicial.y -= _alturaHeroi;
+			break;
+		case Direcoes.SUDOESTE:
+			_posicaoInicial.x += _larguraHeroi;
+			_posicaoInicial.y -= _alturaHeroi;
+			break;
+			
+		}
+	}
 
 	protected abstract void MovimentaAtaque(float deltaTime);
 
+
+	
 	protected void Atualiza()
 	{
 		// TODO Auto-generated method stub

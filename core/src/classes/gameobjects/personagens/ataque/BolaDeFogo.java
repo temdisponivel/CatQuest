@@ -10,20 +10,23 @@ import classes.gameobjects.cenario.ObjetoCenario;
 import classes.gameobjects.personagens.herois.Heroi;
 import classes.gameobjects.personagens.inimigos.Inimigo;
 
+
 /**
  * Classe de BolaDeFogo (Mago)
  * 
  * @author Victor
  *
- *         Se move em linha reta e ao colidir coloca fogo no chão.
+ *         Se move em linha reta e ao colidir coloca fogo no chï¿½o.
  */
 public class BolaDeFogo extends Ataque
 {
 
-	public BolaDeFogo(Vector2 posicao, int direcao)
+	public BolaDeFogo(Vector2 posicao, int direcao, float alturaHeroi, float larguraHeroi)
 	{
-		super(posicao, direcao);
+		super(posicao, direcao, alturaHeroi, larguraHeroi);
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/boladefogo")));
+		
+		this.CorrecaoSpriteAtaque();
 	}
 
 	@Override
@@ -35,7 +38,7 @@ public class BolaDeFogo extends Ataque
 	@Override
 	protected void MovimentaAtaque(float deltaTime)
 	{
-		// Movimenta em linha reta a partir da direção do heroi.
+		// Movimenta em linha reta a partir da direï¿½ï¿½o do heroi.
 		this.Movimenta(_direcao, deltaTime, true);
 
 	}
@@ -73,5 +76,8 @@ public class BolaDeFogo extends Ataque
 	{
 		return "BolaDeFogo";
 	}
+
+
+
 
 }

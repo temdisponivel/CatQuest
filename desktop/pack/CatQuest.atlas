@@ -75,14 +75,21 @@ sprites/mapa_fundo
   index: -1
 
 CatQuest3.png
-size: 64,32
+size: 8192,256
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 sprites/herois/barbaro
   rotate: false
   xy: 2, 2
-  size: 54, 22
-  orig: 54, 22
+  size: 2048, 128
+  orig: 2048, 128
+  offset: 0, 0
+  index: -1
+sprites/herois/mago
+  rotate: false
+  xy: 2052, 2
+  size: 2048, 128
+  orig: 2048, 128
   offset: 0, 0
   index: -1

@@ -174,10 +174,10 @@ public class Controle
 				direcao += Direcoes.ESQUERDA;
 			else if (_controle.getAxis(_conjunto.ATAQUE_DIREITA) >= _sensibilidade)
 				direcao += Direcoes.DIREITA;
-			if (_controle.getAxis(_conjunto.ATAQUE_CIMA) >= 1/3f)
-				direcao += Direcoes.CIMA;
-			else if (_controle.getAxis(_conjunto.ATAQUE_BAIXO)  <= -_sensibilidade)
+			if (_controle.getAxis(_conjunto.ATAQUE_CIMA) >= _sensibilidade)
 				direcao += Direcoes.BAIXO;
+			else if (_controle.getAxis(_conjunto.ATAQUE_BAIXO)  <= -_sensibilidade)
+				direcao += Direcoes.CIMA;
 		}
 		
 		return direcao;

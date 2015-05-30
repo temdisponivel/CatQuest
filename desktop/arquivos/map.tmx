@@ -55,10 +55,35 @@
    <property name="Classe" value="classes.gameobjects.personagens.ObjetoQuebravel"/>
    <property name="Texture" value="sprites/janela"/>
   </properties>
-  <object id="3" x="1204" y="1810" width="112" height="133"/>
-  <object id="22" x="1460" y="1809.67" width="112" height="133"/>
-  <object id="23" x="1878" y="1810.17" width="112" height="133"/>
-  <object id="24" x="2069" y="1809.67" width="112" height="133"/>
-  <object id="25" x="1778.91" y="879.742" width="112" height="133"/>
+  <object id="3" x="1204" y="1810" width="112" height="133">
+   <properties>
+    <property name="Classe" value="classes.gameobjects.personagens.ObjetoQuebravel"/>
+    <property name="Textura" value="sprites/janela"/>
+   </properties>
+  </object>
+  <object id="22" x="1460" y="1809.67" width="112" height="133">
+   <properties>
+    <property name="Classe" value="classes.gameobjects.personagens.ObjetoQuebravel"/>
+    <property name="Textura" value="sprites/janela"/>
+   </properties>
+  </object>
+  <object id="23" x="1878" y="1810.17" width="112" height="133">
+   <properties>
+    <property name="Textura" value="sprites/janela"/>
+    <property name="classe" value="classes.gameobjects.personagens.ObjetoQuebravel"/>
+   </properties>
+  </object>
+  <object id="24" x="2069" y="1809.67" width="112" height="133">
+   <properties>
+    <property name="Classe" value="classes.gameobjects.personagens.ObjetoQuebravel"/>
+    <property name="Textura" value="sprites/janela"/>
+   </properties>
+  </object>
+  <object id="25" x="1778.91" y="879.742" width="112" height="133">
+   <properties>
+    <property name="Classe" value="classes.gameobjects.personagens.ObjetoQuebravel"/>
+    <property name="Textura" value="sprites/janela"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

@@ -13,9 +13,9 @@ import com.badlogic.gdx.math.Vector2;
 public class Espadada extends Ataque
 {
 
-	public Espadada(Vector2 posicao, int direcao)
+	public Espadada(Vector2 posicao, int direcao, float largura, float altura)
 	{
-		super(posicao, direcao);
+		super(posicao, direcao, largura, altura);
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/boladefogo")));
 	}
 

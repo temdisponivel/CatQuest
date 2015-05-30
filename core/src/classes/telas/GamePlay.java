@@ -48,8 +48,6 @@ public class GamePlay extends Tela implements CarregarMusicaListner
 	public void Desenha(SpriteBatch spriteBatch)
 	{
 		super.Desenha(spriteBatch);
-		
-		
 	}
 	
 	@Override

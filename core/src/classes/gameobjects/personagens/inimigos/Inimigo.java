@@ -44,7 +44,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	 */
 	protected enum AnimacaoInimigo
 	{
-		Parado, Movimento, Morto, Dano, Ataque,
+		Parado, MovimentoCima, MovimentoBaixo, MovimentoEsquerda, MovimentoDireita, Morto, Dano, Ativo, Passivo,
 	}
 
 	/**
@@ -177,7 +177,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		this.ControiBaseConhecimento();
 		
 		//esquerda = perto, centro = proximo, direita = distante
-		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-400, 400), new TrianguloFuzzy(200, 700), new TrianguloFuzzy(450, CatQuest.instancia.GetHipotenusaMundo()));
+		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-1000, 1000), new TrianguloFuzzy(0, 2000), new TrianguloFuzzy(1000, CatQuest.instancia.GetHipotenusaMundo()));
 		
 		//esquerda = baixo, centro = media, direita = alta
 		_fuzzyVidaAlvo = new Fuzzyficacao(new TrianguloFuzzy(0, 50), new TrianguloFuzzy(25, 75), new TrianguloFuzzy(50, 150));

@@ -2,9 +2,7 @@ package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
 import classes.gameobjects.personagens.ataque.Espadada;
-import classes.gameobjects.personagens.herois.Heroi.AnimacaoHeroi;
 import classes.uteis.controle.Controle.Direcoes;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -55,6 +53,14 @@ public class Barbaro extends Heroi
 		case Direcoes.DIREITA:
 			animacao = AnimacaoHeroi.MovimentoDireita;
 			break;
+		case Direcoes.NORDESTE:
+		case Direcoes.NOROESTE:
+			animacao = AnimacaoHeroi.MovimentoCima;
+			break;
+		case Direcoes.SUDESTE:
+		case Direcoes.SUDOESTE:
+			animacao = AnimacaoHeroi.MovimentoBaixo;
+			break;
 		default:
 			break;
 		}
@@ -77,7 +83,6 @@ public class Barbaro extends Heroi
 	@Override
 	protected void AtaqueBasico()
 	{
-		
 		this.GetTela().InserirGameObject(new Espadada(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque(), _sprite.getHeight(), _sprite.getWidth()));
 	}
 	

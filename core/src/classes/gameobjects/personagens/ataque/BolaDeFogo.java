@@ -7,8 +7,10 @@ import com.badlogic.gdx.math.Vector2;
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.cenario.ObjetoCenario;
+import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.herois.Heroi;
 import classes.gameobjects.personagens.inimigos.Inimigo;
+import classes.uteis.controle.Controle.Direcoes;
 
 
 /**
@@ -26,7 +28,39 @@ public class BolaDeFogo extends Ataque
 		super(posicao, direcao, alturaHeroi, larguraHeroi);
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/boladefogo")));
 		
+		_sprite.setOrigin(_sprite.getWidth()/2, _sprite.getHeight()/2);
+		switch (direcao)
+		{
+		case Direcoes.CIMA:
+			_sprite.rotate90(false);
+			break;
+		case Direcoes.BAIXO:
+			_sprite.rotate90(true);
+			break;
+		case Direcoes.ESQUERDA:
+			_sprite.rotate90(true);
+			_sprite.rotate90(true);
+			break;
+		case Direcoes.DIREITA:
+			break;
+		case Direcoes.NORDESTE:
+			_sprite.rotate(-30);
+		case Direcoes.NOROESTE:
+			_sprite.rotate(-120);
+			break;
+		case Direcoes.SUDESTE:
+			_sprite.rotate(-30);
+		case Direcoes.SUDOESTE:
+			_sprite.rotate90(true);
+			_sprite.rotate(-30);
+			break;
+		default:
+			break;
+		}
+		
 		this.CorrecaoSpriteAtaque();
+		
+		_colidiveis.put(GameObjects.Inimigo, Colisoes.Passavel);
 	}
 
 	@Override
@@ -60,8 +94,7 @@ public class BolaDeFogo extends Ataque
 	{
 		if (colidiu instanceof Inimigo)
 		{
-			// O que acontece quando colide com Inimigo.
-
+			this.InflingeDano((Personagem) colidiu);
 		}
 		else if (colidiu instanceof Heroi)
 		{
@@ -70,7 +103,7 @@ public class BolaDeFogo extends Ataque
 		}
 		else if (colidiu instanceof ObjetoCenario)
 		{
-			this.Morre();
+			this.Encerra();
 		}
 	}
 

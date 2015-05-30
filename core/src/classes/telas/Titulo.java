@@ -44,6 +44,9 @@ public class Titulo extends Tela implements EscutadorBotao, CarregarMusicaListne
 		CarregarMusica.instancia.Carrega(Gdx.files.local("audio/musica/tela_inicial.mp3"), 0, true, true, this);
 		
 		_corFundo = Color.WHITE;
+		
+		CatQuest.instancia.GetCamera().setToOrtho(false);
+		CatQuest.instancia.GetCamera().zoom = 1;
 	}
 	
 	@Override

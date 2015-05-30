@@ -3,7 +3,6 @@ package classes.gameobjects.personagens.herois;
 import catquest.CatQuest;
 import classes.gameobjects.personagens.ataque.BolaDeFogo;
 import classes.uteis.controle.Controle.Direcoes;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -52,6 +51,14 @@ public class Mago extends Heroi
 		case Direcoes.DIREITA:
 			animacao = AnimacaoHeroi.MovimentoDireita;
 			break;
+		case Direcoes.NORDESTE:
+		case Direcoes.NOROESTE:
+			animacao = AnimacaoHeroi.MovimentoCima;
+			break;
+		case Direcoes.SUDESTE:
+		case Direcoes.SUDOESTE:
+			animacao = AnimacaoHeroi.MovimentoBaixo;
+			break;
 		default:
 			break;
 		}
@@ -83,6 +90,5 @@ public class Mago extends Heroi
 	protected void AtaqueBasico()
 	{
 		this.GetTela().InserirGameObject(new BolaDeFogo(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque(), _sprite.getHeight(), _sprite.getWidth()));
-		
 	}
 }

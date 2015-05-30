@@ -39,7 +39,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	 */
 	protected enum AnimacaoHeroi
 	{
-		Parado, Movimento, Morto, Dano, Ativo, Passivo,
+		Parado, MovimentoCima, MovimentoBaixo, MovimentoEsquerda, MovimentoDireita, Morto, Dano, Ativo, Passivo,
 	}
 
 	static public HashMap<Integer, Heroi> herois = new HashMap<Integer, Heroi>();

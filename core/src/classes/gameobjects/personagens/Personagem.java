@@ -220,7 +220,6 @@ public abstract class Personagem extends GameObject implements Serializador
 	public boolean Movimenta(Vector2 destino, float deltaTime)
 	{
 		this.TocaSom(SomPersonagem.Movimenta);
-		this.SetAnimacao(AnimacaoPersonagem.Movimento);
 
 		_coeficienteLerp = MathUtils.clamp(_coeficienteLerp + (deltaTime * _agilidade), 0f, 1);
 

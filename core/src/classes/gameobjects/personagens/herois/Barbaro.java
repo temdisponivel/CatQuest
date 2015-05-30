@@ -2,10 +2,13 @@ package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
 import classes.gameobjects.personagens.ataque.Espadada;
+import classes.gameobjects.personagens.herois.Heroi.AnimacaoHeroi;
+import classes.uteis.controle.Controle.Direcoes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 
 
 /**
@@ -29,9 +32,34 @@ public class Barbaro extends Heroi
 			for (int j = 0; j < framesTemp[i].length; j++)
 				frames[indice++] = framesTemp[i][j];
 		
-		Animation andando = new Animation(0.2f, frames);
-		this.IncluirAnimacao(AnimacaoHeroi.Movimento, andando);
-
+		AnimacaoHeroi[] animacoes = new AnimacaoHeroi[]{AnimacaoHeroi.MovimentoCima, AnimacaoHeroi.MovimentoBaixo, AnimacaoHeroi.MovimentoEsquerda, AnimacaoHeroi.MovimentoDireita, AnimacaoHeroi.Ativo};
+		for (int i = 0, ii = 0; i < frames.length-1;)
+		{
+			Animation andando = new Animation(0.2f, frames[i++], frames[i++], frames[i++]);
+			this.IncluirAnimacao(animacoes[ii++], andando);
+		}
+	}
+	
+	@Override
+	protected Vector2 Movimenta(int direcao, float delta, boolean colidi)
+	{
+		AnimacaoHeroi animacao = AnimacaoHeroi.MovimentoCima;
+		switch (direcao)
+		{
+		case Direcoes.BAIXO:
+			animacao = AnimacaoHeroi.MovimentoBaixo;
+			break;
+		case Direcoes.ESQUERDA:
+			animacao = AnimacaoHeroi.MovimentoEsquerda;
+			break;
+		case Direcoes.DIREITA:
+			animacao = AnimacaoHeroi.MovimentoDireita;
+			break;
+		default:
+			break;
+		}
+		this.SetAnimacao(animacao);
+		return super.Movimenta(direcao, delta, colidi);
 	}
 
 	@Override

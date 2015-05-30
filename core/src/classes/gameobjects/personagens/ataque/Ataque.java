@@ -3,11 +3,13 @@ package classes.gameobjects.personagens.ataque;
 
 import com.badlogic.gdx.math.Vector2;
 
+import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.cenario.ObjetoCenario;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.herois.Heroi;
 import classes.gameobjects.personagens.inimigos.Inimigo;
+
 import classes.uteis.controle.Controle.Direcoes;
 
 
@@ -22,6 +24,7 @@ public abstract class Ataque extends Personagem
 {
 	protected int _direcao;
 	protected float _alturaHeroi, _larguraHeroi;
+	protected float _tempoAtaque;
 	protected Vector2 _posicaoInicial;
 
 	public Ataque()
@@ -37,13 +40,13 @@ public abstract class Ataque extends Personagem
 		_larguraHeroi = larguraHeroi;
 		this.CorrecaoSpriteAtaque();
 		
+		_tempoAtaque = CatQuest.instancia.GetTempoJogo();
+		
 		_direcao = direcao;
 		_tipo = GameObjects.Ataque;
 		
 
 		
-		
-
 	}
 
 	@Override
@@ -117,11 +120,9 @@ public abstract class Ataque extends Personagem
 
 	protected abstract void MovimentaAtaque(float deltaTime);
 
-
-	
 	protected void Atualiza()
 	{
-		// TODO Auto-generated method stub
+
 
 	}
 

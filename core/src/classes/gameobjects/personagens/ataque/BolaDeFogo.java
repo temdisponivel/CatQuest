@@ -20,7 +20,7 @@ import classes.gameobjects.personagens.inimigos.Inimigo;
  */
 public class BolaDeFogo extends Ataque
 {
-
+	
 	public BolaDeFogo(Vector2 posicao, int direcao, float alturaHeroi, float larguraHeroi)
 	{
 		super(posicao, direcao, alturaHeroi, larguraHeroi);
@@ -32,6 +32,11 @@ public class BolaDeFogo extends Ataque
 	@Override
 	public void Atualiza(float deltaTime)
 	{
+		if (CatQuest.instancia.GetTempoJogo() > _tempoAtaque + this._defesa)
+		{
+			this.Morre();
+		}
+		
 		this.MovimentaAtaque(deltaTime);
 	}
 
@@ -69,6 +74,7 @@ public class BolaDeFogo extends Ataque
 		}
 	}
 
+	
 	@Override
 	public String toString()
 	{

@@ -25,6 +25,7 @@ public class Espadada extends Ataque
 		// N‹o realiza movimento!
 
 	}
+	
 
 	@Override
 	public void AoColidir(GameObject colidiu)
@@ -42,6 +43,7 @@ public class Espadada extends Ataque
 		}
 
 	}
+	
 
 	@Override
 	public String toString()

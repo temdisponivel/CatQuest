@@ -1814,3 +1814,15 @@ catquest.CatQuest.render(CatQuest.java:110)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
 O JOGO FOI ENCERRADO POR CAUSA DE: 16
+
+Data: Sat May 30 08:39:05 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.gameobjects.personagens.Personagem.Movimenta(Personagem.java:522)
+classes.gameobjects.personagens.ataque.BolaDeFogo.MovimentaAtaque(BolaDeFogo.java:47)
+classes.gameobjects.personagens.ataque.BolaDeFogo.Atualiza(BolaDeFogo.java:40)
+classes.telas.Tela.Atualiza(Tela.java:122)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal

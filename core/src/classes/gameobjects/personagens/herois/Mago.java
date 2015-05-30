@@ -1,6 +1,7 @@
 package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
+import classes.gameobjects.personagens.ataque.BolaDeFogo;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -53,7 +54,7 @@ public class Mago extends Heroi
 	@Override
 	protected void AtaqueBasico()
 	{
-		// TODO Auto-generated method stub
+		this.GetTela().InserirGameObject(new BolaDeFogo(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque(), _sprite.getHeight(), _sprite.getWidth()));
 		
 	}
 }

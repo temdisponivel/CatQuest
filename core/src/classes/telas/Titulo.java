@@ -45,10 +45,10 @@ public class Titulo extends Tela implements EscutadorBotao
 		{
 			if (botaoClicado == jogar)
 			{
-				Barbaro a;
-				Mago b;
-				a = new Barbaro();
-				b = new Mago();
+				Barbaro b;
+				Mago a;
+				b = new Barbaro();
+				a = new Mago();
 				a.SetPlayer(new Player(TipoPlayer.Primario));
 				b.SetPlayer(new Player(TipoPlayer.Secundario));
 				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);

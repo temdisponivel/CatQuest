@@ -24,7 +24,7 @@ public class GamePlay extends Tela
 
 	public GamePlay(Heroi... herois)
 	{
-		super(Gdx.files.local("arquivos//teste.tmx"));
+		super(Gdx.files.local("arquivos//map.tmx"));
 		_herois = herois;
 	}
 

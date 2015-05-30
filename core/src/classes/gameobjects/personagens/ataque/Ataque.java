@@ -68,6 +68,7 @@ public abstract class Ataque extends Personagem
 		if (colidiu instanceof Inimigo)
 		{
 			// O que acontece quando colide com Inimigo.
+			this.Morre();
 
 		}
 		else if (colidiu instanceof Heroi)
@@ -109,7 +110,7 @@ public abstract class Ataque extends Personagem
 			_posicaoInicial.y -= _alturaHeroi;
 			break;
 		case Direcoes.SUDOESTE:
-			_posicaoInicial.x += _larguraHeroi;
+			_posicaoInicial.x -= _larguraHeroi;
 			_posicaoInicial.y -= _alturaHeroi;
 			break;
 			

@@ -19,7 +19,7 @@ public class Introducao extends Tela
 	{
 		super.Atualiza(deltaTime);
 		
-		if (CatQuest.instancia.GetTempoJogo() > 1)
+		if (CatQuest.instancia.GetTempoJogo() > 5)
 		{
 			CatQuest.instancia.RetiraTela();
 			CatQuest.instancia.AdicionaTela(new Titulo(), false, false);

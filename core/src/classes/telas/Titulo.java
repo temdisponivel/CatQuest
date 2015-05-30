@@ -32,7 +32,7 @@ public class Titulo extends Tela implements EscutadorBotao, CarregarMusicaListne
 		super.Iniciar();
 		_tipo = Telas.MENU;
 		
-		this.InserirGameObject(new Imagem("sprites//intro"));
+		this.InserirGameObject(new Imagem("sprites//titulo"));
 		
 		menu = new Menu(new Vector2(CatQuest.instancia.GetLarguraMundo() / 2 - 60, 60));
 		menu.AdicionaFilho(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
@@ -60,6 +60,7 @@ public class Titulo extends Tela implements EscutadorBotao, CarregarMusicaListne
 		{
 			if (botaoClicado == jogar)
 			{
+<<<<<<< HEAD
 				Barbaro a, b;
 				a = new Barbaro();
 				b = new Barbaro();
@@ -67,6 +68,15 @@ public class Titulo extends Tela implements EscutadorBotao, CarregarMusicaListne
 				b.SetPlayer(new Player(TipoPlayer.Secundario));
 				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
 				_musica.dispose();
+=======
+				Barbaro b;
+				Mago a;
+				b = new Barbaro();
+				a = new Mago();
+				a.SetPlayer(new Player(TipoPlayer.Primario));
+				b.SetPlayer(new Player(TipoPlayer.Secundario));
+				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
+>>>>>>> origin/classes
 			}
 			else if (botaoClicado == configurar)
 			{

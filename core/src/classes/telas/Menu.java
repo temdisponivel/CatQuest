@@ -2,6 +2,11 @@ package classes.telas;
 
 import catquest.CatQuest;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/classes
 /**
  * Classe do menu de pause.
  * @author Matheus

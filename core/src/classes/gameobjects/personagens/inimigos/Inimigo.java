@@ -10,8 +10,8 @@ import catquest.CatQuest;
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
 import classes.uteis.Camada;
+import classes.uteis.FabricaInimigo;
 import classes.uteis.controle.Controle.Direcoes;
-import classes.uteis.reciclador.Reciclador;
 import classes.uteis.reciclador.Reciclavel;
 
 /**
@@ -148,13 +148,13 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	}
 
 	static public HashMap<Integer, Inimigo> inimigos = new HashMap<Integer, Inimigo>();
-	static public Reciclador<Inimigo> _reciclador = new Reciclador<Inimigo>();
 	protected EstadosInimigo _estado = EstadosInimigo.Perambula;
 	protected Personagem _alvo = null;
 	protected Fuzzyficacao _fuzzyVidaAlvo = null;
 	protected Fuzzyficacao _fuzzyDistancia = null;
 	protected Fuzzyficacao _fuzzyDificuldade = null;
 	protected Fuzzyficacao _fuzzyEstado = null;
+	protected FabricaInimigo _fabrica = null;
 	static protected int _quantiColunasBaseConhecimento = 4;
 	static protected int _quantiLinhasBaseConhecimento = 27;
 	static protected Object[][] _baseConhecimento = new Object[_quantiLinhasBaseConhecimento][_quantiColunasBaseConhecimento];
@@ -236,10 +236,8 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	@Override
 	public void Morre()
 	{
-		_reciclador.Recicla(this);
-
-		if (_telaInserido != null)
-			_telaInserido.Remover(this);
+		if (_fabrica != null)
+			_fabrica.Recicla(this);
 	}
 
 	@Override
@@ -517,4 +515,12 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	 * Função chamada quando devemos atacar o {@link #_alvo alvo}.
 	 */
 	protected abstract void Ataque();
+	
+	/**
+	 * Define um {@link FabricaInimigo fábrica} para este inimigo.
+	 */
+	public void SetFabrica(FabricaInimigo fabrica)
+	{
+		_fabrica = fabrica;
+	}
 }

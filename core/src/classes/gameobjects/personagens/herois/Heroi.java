@@ -1,6 +1,7 @@
 package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.Personagem;
@@ -116,4 +117,27 @@ public abstract class Heroi extends Personagem implements Serializador
 	 * Função chamada quando o herói deve executar um ataque normal
 	 */
 	protected abstract void AtaqueBasico();
+	
+	/**
+	 * REtorna o {@link Player player} que esta controlando este herói.
+	 */
+	public Player GetPlayer()
+	{
+		return _player;
+	}
+	
+	/**
+	 * Retorna todos os {@link Heroi heróis} ativos - que tem algum player definido.
+	 */
+	static public LinkedList<Heroi> GetHeroisAtivos()
+	{
+		LinkedList<Heroi> ativos = new LinkedList<Heroi>();
+		for (Heroi heroi : herois.values())
+		{
+			if (heroi.GetPlayer() != null)
+				ativos.add(heroi);
+		}
+		
+		return ativos;
+	}
 }

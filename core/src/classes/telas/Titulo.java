@@ -8,11 +8,9 @@ import classes.uteis.UI.Botao;
 import classes.uteis.UI.BotaoTexto;
 import classes.uteis.UI.Imagem;
 import classes.uteis.UI.Botao.EscutadorBotao;
-
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-
 import classes.uteis.UI.Menu;
 
 public class Titulo extends Tela implements EscutadorBotao
@@ -37,6 +35,14 @@ public class Titulo extends Tela implements EscutadorBotao
 		
 		_corFundo = Color.WHITE;
 	}
+	
+	@Override
+	public void Atualiza(float deltaTime)
+	{
+		// TODO Auto-generated method stub
+		super.Atualiza(deltaTime);
+	}
+	
 	@Override
 	public void Click(Botao botaoClicado, BotoesMouse botaoMouse)
 	{

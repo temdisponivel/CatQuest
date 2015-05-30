@@ -23,6 +23,7 @@ public class AreaIndesejada extends GameObject
 		_caixaColisao = tamanho;
 		_sprite.setSize(tamanho.width, tamanho.height);
 		this.SetPosicao(posicao);
+		this.SetSeDesenha(false);
 		
 		for (int i = 0; i < quem.length; i++)
 			_colidiveis.put(quem[i], Colisoes.Evitavel);

@@ -8,15 +8,22 @@ import classes.uteis.UI.Botao;
 import classes.uteis.UI.BotaoTexto;
 import classes.uteis.UI.Imagem;
 import classes.uteis.UI.Botao.EscutadorBotao;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import classes.uteis.UI.Menu;
 
-public class Titulo extends Tela implements EscutadorBotao
+import classes.uteis.UI.Menu;
+import classes.uteis.sons.CarregarMusica;
+import classes.uteis.sons.CarregarMusicaListner;
+
+public class Titulo extends Tela implements EscutadorBotao, CarregarMusicaListner
 {
-	Botao jogar, configurar, sair;
-	Menu menu;
+	private Botao jogar, configurar, sair;
+	private Menu menu;
+	private Music _musica = null;
 	
 	@Override
 	public void Iniciar()
@@ -32,6 +39,8 @@ public class Titulo extends Tela implements EscutadorBotao
 		menu.AdicionaFilho(jogar = new BotaoTexto("JOGAR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
 		
 		this.InserirGameObject(menu);
+		
+		CarregarMusica.instancia.Carrega(Gdx.files.local("audio/musica/tela_inicial.mp3"), 0, true, true, this);
 		
 		_corFundo = Color.WHITE;
 	}
@@ -50,14 +59,13 @@ public class Titulo extends Tela implements EscutadorBotao
 		{
 			if (botaoClicado == jogar)
 			{
-				Barbaro a, b, c;
+				Barbaro a, b;
 				a = new Barbaro();
 				b = new Barbaro();
-				c = new Barbaro();
 				a.SetPlayer(new Player(TipoPlayer.Primario));
 				b.SetPlayer(new Player(TipoPlayer.Secundario));
-				c.SetPlayer(new Player(TipoPlayer.Primario));
-				CatQuest.instancia.AdicionaTela(new GamePlay(a, b, c), false, false);
+				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
+				_musica.dispose();
 			}
 			else if (botaoClicado == configurar)
 			{
@@ -68,5 +76,11 @@ public class Titulo extends Tela implements EscutadorBotao
 				CatQuest.instancia.EncerraJogo();
 			}
 		}
+	}
+
+	@Override
+	public void AoCarregar(Music somCarregada)
+	{
+		_musica = somCarregada;		
 	}
 }

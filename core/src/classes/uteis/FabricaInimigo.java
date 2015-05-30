@@ -34,6 +34,12 @@ public class FabricaInimigo extends GameObject
 	public FabricaInimigo()
 	{
 		super();
+	}
+	
+	@Override
+	public void Inicia()
+	{
+		super.Inicia();
 		_reciclador = new Reciclador<Inimigo>();
 		_pontosLancamento = new LinkedList<Vector2>();
 		_pontosLancamento.add(new Vector2(0, 0));
@@ -59,6 +65,7 @@ public class FabricaInimigo extends GameObject
 	 */
 	private void CriaInimigo()
 	{
+		/*
 		Inimigo novo = null;
 		if (CatQuest.instancia.GetTempoJogo() - _ultimoTempoHunter > _intervaloHunter)
 		{
@@ -72,6 +79,7 @@ public class FabricaInimigo extends GameObject
 			this.CriaInimigo(Cachorro.class, _pontosLancamento.get((int) (_ultimoLancamentoSiege++ % _pontosLancamento.size())));
 			_ultimoLancamentoSiege = CatQuest.instancia.GetTempoJogo();
 		}
+		*/
 	}
 
 	/**

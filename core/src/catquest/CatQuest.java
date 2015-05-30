@@ -165,7 +165,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 
 		if (Configuracoes.instancia.GetMostraFPS())
 		{
-			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), 50, 50);
+			_fonte.draw(_batch, String.valueOf(Gdx.graphics.getFramesPerSecond()), (_camera.position.x - (_camera.viewportWidth/2)) + 50, 
+																					(_camera.position.y - (_camera.viewportHeight/2)) + (this.GetAlturaMundo() - 50));
 		}
 
 		_batch.end();
@@ -221,6 +222,8 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 		_corJogo = new Color(0.109f, 0.168f, 0.21f, 1);
 		_corJogoTexto = new Color(0.168f, 0.38f, 0.258f, 1);
 		_corJogoFundo = new Color(0.058f, 0.09f, 0.11f, 1 );
+		
+		_fonte.setColor(_corJogoTexto);
 		
 		/*
 		 * AZUL:		    R: [ 28 ] G: [ 43 ] B: [ 54 ] 

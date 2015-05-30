@@ -2,8 +2,8 @@ package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-
 import classes.gameobjects.GameObject;
+import classes.gameobjects.personagens.ObjetoQuebravel;
 import classes.gameobjects.personagens.Personagem;
 import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.Player;
@@ -48,6 +48,7 @@ public abstract class Heroi extends Personagem implements Serializador
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
 		_colidiveis.put(GameObjects.Inimigo, Colisoes.Passavel);
+		_colidiveis.put(GameObjects.GameObject, Colisoes.Livre);
 	}
 
 	@Override
@@ -100,6 +101,10 @@ public abstract class Heroi extends Personagem implements Serializador
 		if (colidiu instanceof Inimigo)
 		{
 			this.InflingeDano((Inimigo) colidiu);
+		}	
+		else if (colidiu instanceof ObjetoQuebravel)
+		{
+			this.InflingeDano((ObjetoQuebravel) colidiu);
 		}
 	}
 

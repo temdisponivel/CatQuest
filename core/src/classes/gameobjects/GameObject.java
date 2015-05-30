@@ -936,6 +936,15 @@ public abstract class GameObject
 	{
 		return _iniciado;
 	}
+	
+	/**
+	 * Define uma {@link Sprite sprite} para o {@link GameObject objeto}.
+	 */
+	public void SetSprite(Sprite sprite)
+	{
+		_sprite = sprite;
+		_caixaColisao.set(_posicaoTela.x, _posicaoTela.y, _sprite.getRegionWidth(), _sprite.getRegionHeight());
+	}
 
 	@Override
 	public int hashCode()

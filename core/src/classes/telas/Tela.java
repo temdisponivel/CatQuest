@@ -18,6 +18,7 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Music.OnCompletionListener;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.MapObject;
@@ -473,7 +474,6 @@ public class Tela implements OnCompletionListener
 		_listasGameObject.clear();
 	}
 
-	// TODO: terminar implementação
 	/**
 	 * Carrega um mapa .TMX e coloca os objetos nas suas posições.
 	 */
@@ -527,12 +527,17 @@ public class Tela implements OnCompletionListener
 
 						GameObject objeto = subclasse.newInstance();
 						objeto.SetPosicao(new Vector2(prop.get("x", Float.class), prop.get("y", Float.class)));
+						if (prop.containsKey("Textura"))
+							objeto.SetSprite(new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local(prop.get("Textura").toString()))));
+						
 						this.InserirGameObject(objeto);
+						
 						continue;
 					}
 					catch (Exception e)
 					{
 						Log.instancia.Logar("Tentar carregar objeto do mapa sem sucesso!", e, false);
+						continue;
 					}
 				}
 

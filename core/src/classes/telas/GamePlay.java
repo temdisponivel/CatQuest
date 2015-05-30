@@ -33,10 +33,4 @@ public class GamePlay extends Tela
 		this.InserirGameObject(_herois);
 		this.InserirGameObject(new FabricaInimigo());
 	}
-
-	@Override
-	public void Atualiza(float deltaTime)
-	{
-		super.Atualiza(deltaTime);
-	}
 }

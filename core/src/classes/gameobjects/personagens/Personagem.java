@@ -145,7 +145,7 @@ public abstract class Personagem extends GameObject implements Serializador
 
 		_caminho = new LinkedList<Vector2>();
 		_destino = new Vector2();
-
+		
 		this.Carrega();
 	}
 

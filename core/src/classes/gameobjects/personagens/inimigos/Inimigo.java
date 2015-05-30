@@ -523,4 +523,21 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	{
 		_fabrica = fabrica;
 	}
+	
+	/**
+	 * @return Instância do {@link Personagem alvo} deste inimigo. Pode ser nulo.
+	 */
+	public Personagem GetAlvo()
+	{
+		return _alvo;
+	}
+	
+	/**
+	 * Define um novo alvo para este inimigo.
+	 * @param alvo Novo {@link Personagem alvo}.
+	 */
+	public void SetAlvo(Personagem alvo)
+	{
+		_alvo = alvo;
+	}
 }

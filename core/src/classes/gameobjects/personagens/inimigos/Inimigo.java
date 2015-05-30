@@ -8,7 +8,9 @@ import com.badlogic.gdx.math.Vector2;
 
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
+import classes.gameobjects.personagens.ObjetoQuebravel;
 import classes.gameobjects.personagens.Personagem;
+import classes.gameobjects.personagens.herois.Heroi;
 import classes.uteis.Camada;
 import classes.uteis.FabricaInimigo;
 import classes.uteis.controle.Controle.Direcoes;
@@ -159,7 +161,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	static protected int _quantiLinhasBaseConhecimento = 27;
 	static protected Object[][] _baseConhecimento = new Object[_quantiLinhasBaseConhecimento][_quantiColunasBaseConhecimento];
 	int _direcaoPerambula = Direcoes.DIREITA;
-	float _tempoEntreIA = MathUtils.random(1);
+	float _tempoEntreIA = MathUtils.random(3f);
 	float _ultimaIA = 0;
 	float _quantValidacaoPerambula = 0;
 
@@ -199,15 +201,19 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
-
+		
 		if (CatQuest.instancia.GetTempoJogo() - _ultimaIA > _tempoEntreIA)
 		{
+			if (_alvo instanceof Heroi)
+				_alvo = Heroi.GetHeroiMaisProximo(_posicaoTela);
+			else if (_alvo instanceof ObjetoQuebravel)
+				_alvo = ObjetoQuebravel.GetObjetoQuebravelMaisProximo(_posicaoTela);
+			
 			this.DecideOQueFazer();
 			_ultimaIA = CatQuest.instancia.GetTempoJogo();
 		}
-
 		// se devemos seguir o alvo, segue
-		if (_estado == EstadosInimigo.Segue)
+		else if (_estado == EstadosInimigo.Segue)
 		{
 			if (_alvo != null && _caminho.isEmpty())
 			{

@@ -1,6 +1,9 @@
 package classes.gameobjects.personagens;
 
 import java.util.HashMap;
+import java.util.Iterator;
+
+import com.badlogic.gdx.math.Vector2;
 
 import classes.gameobjects.GameObject;
 
@@ -52,5 +55,30 @@ public class ObjetoQuebravel extends Personagem
 	{
 		
 		this.Encerra();
+	}
+	
+	/**
+	 * Retorna o {@link ObjetoQuebravel objeto quebrável} mais próximo da posição informada.
+	 * @param posicao {@link Vector2 Posição} para procurar pelo mais próximo.
+	 * @return Objeto quebravel mais próximo.
+	 */
+	static public ObjetoQuebravel GetObjetoQuebravelMaisProximo(Vector2 posicao)
+	{
+		Iterator<ObjetoQuebravel> objetos = objetosquebraveis.values().iterator();
+		ObjetoQuebravel retorno = null, aux = null;
+		
+		float menorDistancia = Integer.MAX_VALUE;
+		while (objetos.hasNext())
+		{
+			aux = objetos.next();
+			
+			if (posicao.dst(aux.GetPosicao()) < menorDistancia)
+			{
+				retorno = aux;
+				menorDistancia = posicao.dst(aux.GetPosicao());
+			}
+		}
+		
+		return retorno;
 	}
 }

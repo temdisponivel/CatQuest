@@ -1,7 +1,11 @@
 package classes.gameobjects.personagens.herois;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
+
+import com.badlogic.gdx.math.Vector2;
+
 import classes.gameobjects.GameObject;
 import classes.gameobjects.personagens.ObjetoQuebravel;
 import classes.gameobjects.personagens.Personagem;
@@ -144,5 +148,30 @@ public abstract class Heroi extends Personagem implements Serializador
 		}
 		
 		return ativos;
+	}
+	
+	/**
+	 * Retorna o {@link Heroi herói} mais próximo da posição informada.
+	 * @param posicao {@link Vector2 Posição} para procurar pelo mais próximo.
+	 * @return Herói mais próximo.
+	 */
+	static public Heroi GetHeroiMaisProximo(Vector2 posicao)
+	{
+		Iterator<Heroi> herois = Heroi.GetHeroisAtivos().iterator();
+		Heroi retorno = null, aux = null;
+		
+		float menorDistancia = Integer.MAX_VALUE;
+		while (herois.hasNext())
+		{
+			aux = herois.next();
+			
+			if (posicao.dst(aux.GetPosicao()) < menorDistancia)
+			{
+				retorno = aux;
+				menorDistancia = posicao.dst(aux.GetPosicao());
+			}
+		}
+		
+		return retorno;
 	}
 }

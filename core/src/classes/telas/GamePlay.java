@@ -5,7 +5,6 @@ import classes.uteis.ControladorCamera;
 import classes.uteis.FabricaInimigo;
 import classes.uteis.sons.CarregarMusica;
 import classes.uteis.sons.CarregarMusicaListner;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;

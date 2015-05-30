@@ -318,18 +318,23 @@ public abstract class Personagem extends GameObject implements Serializador
 
 		if (this.GetValorCampo(_destino) == Colisoes.NaoPassavel)
 			return null;
+		
+		if (this.GetValorCampo(_posicaoTela) == Colisoes.NaoPassavel)
+			return null;
 
 		// enquanto não cheguei no meu destino
 		while (!listaAberta.isEmpty())
 		{
+			if (listaAberta.size() > 5000) //corta o A* caso fique mt pesado
+				return null;
+			
 			atual = listaAberta.poll();
 
 			// retira da lista aberta e coloca na lista fechada
 			listaFechada.put(atual.posicao, atual);
 
 			// se achamos
-			if (aux.setPosition(atual.posicao).contains(_destino)
-					|| atual.posicao.dst(_destino) < Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()))
+			if (aux.setPosition(atual.posicao).contains(_destino) || atual.posicao.dst(_destino) < Math.max(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()) * 2)
 			{
 				_caminho.addFirst(_destino);
 

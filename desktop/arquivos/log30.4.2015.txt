@@ -1,26 +1,373 @@
 
-Data: Sat May 30 04:34:47 BRT 2015 | Mensagem: Erro no loop principal
+Data: Sat May 30 00:06:09 BRT 2015 | Mensagem: Tentar carregar objeto do mapa sem sucesso!
 StackTrace: 
-com.badlogic.gdx.utils.XmlReader.parse(XmlReader.java:83)
-com.badlogic.gdx.maps.tiled.TmxMapLoader.load(TmxMapLoader.java:92)
-com.badlogic.gdx.maps.tiled.TmxMapLoader.load(TmxMapLoader.java:80)
-classes.telas.Tela.CarregaMapa(Tela.java:485)
-classes.telas.Tela.Iniciar(Tela.java:98)
-classes.telas.GamePlay.Iniciar(GamePlay.java:34)
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.telas.Tela.CarregaMapa(Tela.java:534)
+classes.telas.Tela.Iniciar(Tela.java:99)
+classes.telas.GamePlay.Iniciar(GamePlay.java:29)
 catquest.CatQuest.AdicionaTela(CatQuest.java:371)
-classes.telas.Titulo.Click(Titulo.java:55)
+classes.telas.Titulo.Click(Titulo.java:60)
 classes.uteis.UI.Botao.Atualiza(Botao.java:140)
 classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
 classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
 classes.uteis.UI.Menu.Atualiza(Menu.java:49)
-classes.telas.Tela.Atualiza(Tela.java:121)
+classes.telas.Tela.Atualiza(Tela.java:122)
+classes.telas.Titulo.Atualiza(Titulo.java:43)
 catquest.CatQuest.Atualiza(CatQuest.java:132)
 catquest.CatQuest.render(CatQuest.java:110)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
 com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
-O JOGO FOI ENCERRADO POR CAUSA DE: Error parsing file: arquivos/teste.tmx
+Tentar carregar objeto do mapa sem sucesso!
+Data: Sat May 30 00:06:09 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.gameobjects.cenario.ObjetoCenario.<init>(ObjetoCenario.java:30)
+classes.telas.Tela.CarregaMapa(Tela.java:553)
+classes.telas.Tela.Iniciar(Tela.java:99)
+classes.telas.GamePlay.Iniciar(GamePlay.java:29)
+catquest.CatQuest.AdicionaTela(CatQuest.java:371)
+classes.telas.Titulo.Click(Titulo.java:60)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:122)
+classes.telas.Titulo.Atualiza(Titulo.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
 
-Data: Sat May 30 04:36:26 BRT 2015 | Mensagem: Erro no loop principal
+Data: Sat May 30 00:07:09 BRT 2015 | Mensagem: Tentar carregar objeto do mapa sem sucesso!
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.telas.Tela.CarregaMapa(Tela.java:534)
+classes.telas.Tela.Iniciar(Tela.java:99)
+classes.telas.GamePlay.Iniciar(GamePlay.java:29)
+catquest.CatQuest.AdicionaTela(CatQuest.java:371)
+classes.telas.Titulo.Click(Titulo.java:60)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:122)
+classes.telas.Titulo.Atualiza(Titulo.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Tentar carregar objeto do mapa sem sucesso!
+Data: Sat May 30 00:07:09 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.gameobjects.cenario.ObjetoCenario.<init>(ObjetoCenario.java:30)
+classes.telas.Tela.CarregaMapa(Tela.java:553)
+classes.telas.Tela.Iniciar(Tela.java:99)
+classes.telas.GamePlay.Iniciar(GamePlay.java:29)
+catquest.CatQuest.AdicionaTela(CatQuest.java:371)
+classes.telas.Titulo.Click(Titulo.java:60)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:122)
+classes.telas.Titulo.Atualiza(Titulo.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sat May 30 00:07:33 BRT 2015 | Mensagem: Tentar carregar objeto do mapa sem sucesso!
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.telas.Tela.CarregaMapa(Tela.java:534)
+classes.telas.Tela.Iniciar(Tela.java:99)
+classes.telas.GamePlay.Iniciar(GamePlay.java:29)
+catquest.CatQuest.AdicionaTela(CatQuest.java:371)
+classes.telas.Titulo.Click(Titulo.java:60)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:122)
+classes.telas.Titulo.Atualiza(Titulo.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Tentar carregar objeto do mapa sem sucesso!
+Data: Sat May 30 00:07:47 BRT 2015 | Mensagem: Tentar carregar objeto do mapa sem sucesso!
+StackTrace: 
+com.badlogic.gdx.graphics.g2d.TextureRegion.setRegion(TextureRegion.java:112)
+com.badlogic.gdx.graphics.g2d.Sprite.<init>(Sprite.java:83)
+classes.telas.Tela.CarregaMapa(Tela.java:534)
+classes.telas.Tela.Iniciar(Tela.java:99)
+classes.telas.GamePlay.Iniciar(GamePlay.java:29)
+catquest.CatQuest.AdicionaTela(CatQuest.java:371)
+classes.telas.Titulo.Click(Titulo.java:60)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:122)
+classes.telas.Titulo.Atualiza(Titulo.java:43)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+Tentar carregar objeto do mapa sem sucesso!
+Data: Sat May 30 00:13:07 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.telas.Configuracoes.Click(Configuracoes.java:85)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:122)
+classes.telas.Configuracoes.Atualiza(Configuracoes.java:48)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sat May 30 02:43:46 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+classes.uteis.FabricaInimigo.CriaInimigo(FabricaInimigo.java:83)
+classes.uteis.FabricaInimigo.Atualiza(FabricaInimigo.java:64)
+classes.telas.Tela.Atualiza(Tela.java:122)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Erro no loop principal
+
+Data: Sat May 30 02:49:12 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:12 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:13 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:25 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:26 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:49:27 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:53:24 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:53:24 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 02:53:36 BRT 2015 | Mensagem: Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Mais uma instancia: class classes.gameobjects.personagens.inimigos.Cachorro
+Data: Sat May 30 06:17:09 BRT 2015 | Mensagem: Erro no loop principal
 StackTrace: 
 com.badlogic.gdx.graphics.Pixmap.<init>(Pixmap.java:140)
 com.badlogic.gdx.graphics.TextureData$Factory.loadFromFile(TextureData.java:98)
@@ -33,7 +380,7 @@ classes.telas.Tela.CarregaMapa(Tela.java:485)
 classes.telas.Tela.Iniciar(Tela.java:98)
 classes.telas.GamePlay.Iniciar(GamePlay.java:34)
 catquest.CatQuest.AdicionaTela(CatQuest.java:371)
-classes.telas.Titulo.Click(Titulo.java:55)
+classes.telas.Titulo.Click(Titulo.java:54)
 classes.uteis.UI.Botao.Atualiza(Botao.java:140)
 classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
 classes.gameobjects.GameObject.Atualiza(GameObject.java:126)

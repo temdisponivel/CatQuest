@@ -27,7 +27,7 @@ public class Titulo extends Tela implements EscutadorBotao
 		super.Iniciar();
 		_tipo = Telas.MENU;
 		
-		this.InserirGameObject(new Imagem("sprites//intro"));
+		this.InserirGameObject(new Imagem("sprites//titulo"));
 		
 		menu = new Menu(new Vector2(CatQuest.instancia.GetLarguraMundo() / 2 - 60, 60));
 		menu.AdicionaFilho(sair = new BotaoTexto("SAIR", new Rectangle(0, 0, 220, 30), new Vector2(), this));
@@ -45,14 +45,13 @@ public class Titulo extends Tela implements EscutadorBotao
 		{
 			if (botaoClicado == jogar)
 			{
-				Barbaro a, b, c;
+				Barbaro a;
+				Mago b;
 				a = new Barbaro();
-				b = new Barbaro();
-				c = new Barbaro();
+				b = new Mago();
 				a.SetPlayer(new Player(TipoPlayer.Primario));
 				b.SetPlayer(new Player(TipoPlayer.Secundario));
-				c.SetPlayer(new Player(TipoPlayer.Primario));
-				CatQuest.instancia.AdicionaTela(new GamePlay(a, b, c), false, false);
+				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
 			}
 			else if (botaoClicado == configurar)
 			{

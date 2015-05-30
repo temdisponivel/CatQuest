@@ -29,7 +29,7 @@ public class Barbaro extends Heroi
 			for (int j = 0; j < framesTemp[i].length; j++)
 				frames[indice++] = framesTemp[i][j];
 		
-		Animation andando = new Animation(0.3f, frames);
+		Animation andando = new Animation(0.2f, frames);
 		this.IncluirAnimacao(AnimacaoHeroi.Movimento, andando);
 
 	}

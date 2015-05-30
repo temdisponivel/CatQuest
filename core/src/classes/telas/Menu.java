@@ -2,7 +2,7 @@ package classes.telas;
 
 import catquest.CatQuest;
 
-import com.badlogic.gdx.graphics.Color;
+
 
 /**
  * Classe do menu de pause.

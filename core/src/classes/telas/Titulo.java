@@ -60,15 +60,6 @@ public class Titulo extends Tela implements EscutadorBotao, CarregarMusicaListne
 		{
 			if (botaoClicado == jogar)
 			{
-<<<<<<< HEAD
-				Barbaro a, b;
-				a = new Barbaro();
-				b = new Barbaro();
-				a.SetPlayer(new Player(TipoPlayer.Primario));
-				b.SetPlayer(new Player(TipoPlayer.Secundario));
-				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
-				_musica.dispose();
-=======
 				Barbaro b;
 				Mago a;
 				b = new Barbaro();
@@ -76,7 +67,7 @@ public class Titulo extends Tela implements EscutadorBotao, CarregarMusicaListne
 				a.SetPlayer(new Player(TipoPlayer.Primario));
 				b.SetPlayer(new Player(TipoPlayer.Secundario));
 				CatQuest.instancia.AdicionaTela(new GamePlay(a, b), false, false);
->>>>>>> origin/classes
+				_musica.dispose();
 			}
 			else if (botaoClicado == configurar)
 			{

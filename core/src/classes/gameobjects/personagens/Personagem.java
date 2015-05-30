@@ -329,7 +329,7 @@ public abstract class Personagem extends GameObject implements Serializador
 
 			// se achamos
 			if (aux.setPosition(atual.posicao).contains(_destino)
-					|| atual.posicao.dst(_destino) < Math.pow(Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()), 2))
+					|| atual.posicao.dst(_destino) < Math.min(_telaInserido.GetPrecisaoMapaX(), _telaInserido.GetPrecisaoMapaY()))
 			{
 				_caminho.addFirst(_destino);
 

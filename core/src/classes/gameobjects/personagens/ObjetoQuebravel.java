@@ -1,5 +1,7 @@
 package classes.gameobjects.personagens;
 
+import java.util.HashMap;
+
 import classes.gameobjects.GameObject;
 
 /**
@@ -10,11 +12,13 @@ public class ObjetoQuebravel extends Personagem
 {
 	static float _vidaTotal = 0;
 	static int _quantInstancia = 0;
+	static public HashMap<Integer, ObjetoQuebravel> objetosquebraveis = new HashMap<Integer, ObjetoQuebravel>();
 	
 	public ObjetoQuebravel()
 	{
 		super();
-		_quantInstancia++;		
+		_quantInstancia++;
+		objetosquebraveis.put(this.GetId(), this);
 	}
 	
 	@Override

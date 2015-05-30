@@ -9,6 +9,7 @@ import classes.uteis.sons.CarregarMusicaListner;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
  * Classe da tela onde o gameplay acontece.
@@ -20,6 +21,7 @@ public class GamePlay extends Tela implements CarregarMusicaListner
 {
 	private Heroi[] _herois = null;
 	private Music _musica = null;
+	private boolean _encerrada = false;
 	
 	/**
 	 * Tela onde ocorre o gameplay do jogo.
@@ -41,6 +43,20 @@ public class GamePlay extends Tela implements CarregarMusicaListner
 		this.InserirGameObject(_herois);
 		this.InserirGameObject(new FabricaInimigo());
 		CarregarMusica.instancia.Carrega(Gdx.files.local("audio/musica/game_play.mp3"), 0, true, true, this);
+	}
+	
+	@Override
+	public void Desenha(SpriteBatch spriteBatch)
+	{
+		super.Desenha(spriteBatch);
+		
+		
+	}
+	
+	@Override
+	public void Encerrar()
+	{
+		_atualiza = false;
 	}
 
 	@Override

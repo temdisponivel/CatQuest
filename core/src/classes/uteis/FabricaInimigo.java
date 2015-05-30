@@ -1,5 +1,7 @@
 package classes.uteis;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -7,6 +9,8 @@ import com.badlogic.gdx.math.Vector2;
 
 import catquest.CatQuest;
 import classes.gameobjects.GameObject;
+import classes.gameobjects.personagens.ObjetoQuebravel;
+import classes.gameobjects.personagens.herois.Heroi;
 import classes.gameobjects.personagens.inimigos.Cachorro;
 import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.reciclador.Reciclador;
@@ -24,8 +28,8 @@ public class FabricaInimigo extends GameObject
 	private float _ultimoLancamentoSiege = 0;
 	private float _ultimoTempoHunter = 0;
 	private float _ultimoTempoSiege = 0;
-	private float _intervaloHunter = (float) Math.log(5 * (CatQuest.instancia.GetDificuldade() > 0.0f ? CatQuest.instancia.GetDificuldade() : 0.1f));
-	private float _intervaloSiege = (float) Math.log(10 * (CatQuest.instancia.GetDificuldade() > 0.0f ? CatQuest.instancia.GetDificuldade() : 0.1f));
+	private float _intervaloHunter = (float) Math.log(10 * (CatQuest.instancia.GetDificuldade() > 0.0f ? CatQuest.instancia.GetDificuldade() : 0.1f));
+	private float _intervaloSiege = (float) Math.log(20 * (CatQuest.instancia.GetDificuldade() > 0.0f ? CatQuest.instancia.GetDificuldade() : 0.1f));
 	private LinkedList<Vector2> _pontosLancamento = null;
 
 	/**
@@ -43,14 +47,14 @@ public class FabricaInimigo extends GameObject
 		_reciclador = new Reciclador<Inimigo>();
 		_pontosLancamento = new LinkedList<Vector2>();
 		_pontosLancamento.add(new Vector2(0, 0));
-		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa() / 2, 0));
-		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa(), 0));
-		_pontosLancamento.add(new Vector2(0, _telaInserido.GetAlturaMapa() / 2));
-		_pontosLancamento.add(new Vector2(0, _telaInserido.GetAlturaMapa()));
-		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa(), _telaInserido.GetLarguraMapa()));
-		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa(), _telaInserido.GetLarguraMapa() / 2));
-		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa(), _telaInserido.GetLarguraMapa()));
-		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa() / 2, _telaInserido.GetLarguraMapa()));
+		_pontosLancamento.add(new Vector2((_telaInserido.GetLarguraMapa() / 2) - 50, 0));
+		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa() - 50, 0));
+		_pontosLancamento.add(new Vector2(0, (_telaInserido.GetAlturaMapa() / 2) - 50));
+		_pontosLancamento.add(new Vector2(0, _telaInserido.GetAlturaMapa() - 50));
+		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa() - 50, _telaInserido.GetLarguraMapa() - 50));
+		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa() - 50, (_telaInserido.GetLarguraMapa() / 2) - 50));
+		_pontosLancamento.add(new Vector2(_telaInserido.GetLarguraMapa() - 50, _telaInserido.GetLarguraMapa() - 50));
+		_pontosLancamento.add(new Vector2((_telaInserido.GetLarguraMapa() / 2) - 50, _telaInserido.GetLarguraMapa() - 50));
 	}
 
 	@Override
@@ -65,21 +69,21 @@ public class FabricaInimigo extends GameObject
 	 */
 	private void CriaInimigo()
 	{
-		/*
 		Inimigo novo = null;
+		
 		if (CatQuest.instancia.GetTempoJogo() - _ultimoTempoHunter > _intervaloHunter)
 		{
 			novo = this.CriaInimigo(Cachorro.class, _pontosLancamento.get((int) (_ultimoLancamentoHunter++ % _pontosLancamento.size())));
-			//novo.SetAlvo(alvo);
+			novo.SetAlvo(this.GetHeroiMaisProximo(novo.GetPosicao()));
 			_ultimoTempoHunter = CatQuest.instancia.GetTempoJogo();
 		}
 
 		if (CatQuest.instancia.GetTempoJogo() - _ultimoTempoSiege > _intervaloSiege)
 		{
-			this.CriaInimigo(Cachorro.class, _pontosLancamento.get((int) (_ultimoLancamentoSiege++ % _pontosLancamento.size())));
-			_ultimoLancamentoSiege = CatQuest.instancia.GetTempoJogo();
+			novo = this.CriaInimigo(Cachorro.class, _pontosLancamento.get((int) (_ultimoLancamentoSiege++ % _pontosLancamento.size())));
+			novo.SetAlvo(this.GetObjetoQuebravelMaisProximo(novo.GetPosicao()));
+			_ultimoTempoSiege = CatQuest.instancia.GetTempoJogo();
 		}
-		*/
 	}
 
 	/**
@@ -105,9 +109,10 @@ public class FabricaInimigo extends GameObject
 	public Inimigo CriaInimigo(Class<? extends Inimigo> classe, Vector2 posicao)
 	{
 		Inimigo inimigo = _reciclador.GetInstancia(classe);
-		_telaInserido.InserirGameObject(inimigo);
-		inimigo.SetPosicao(posicao);
+		inimigo.SetPosicao(posicao.cpy());
 		inimigo.SetFabrica(this);
+		
+		_telaInserido.InserirGameObject(inimigo);
 
 		return inimigo;
 	}
@@ -130,6 +135,54 @@ public class FabricaInimigo extends GameObject
 		}
 		
 		return posicao.cpy();
+	}
+	
+	/**
+	 * Retorna o {@link Heroi herói} mais próximo da posição informada.
+	 * @param posicao {@link Vector2 Posição} para procurar pelo mais próximo.
+	 * @return Herói mais próximo.
+	 */
+	private Heroi GetHeroiMaisProximo(Vector2 posicao)
+	{
+		Iterator<Heroi> herois = Heroi.GetHeroisAtivos().iterator();
+		Heroi retorno = null, aux = null;
+		
+		float menorDistancia = _telaInserido.GetHipotenusaMapa() + 10;
+		while (herois.hasNext())
+		{
+			aux = herois.next();
+			
+			if (posicao.dst(aux.GetPosicao()) < menorDistancia)
+			{
+				retorno = aux;
+			}
+		}
+		
+		return retorno;
+	}
+	
+	/**
+	 * Retorna o {@link ObjetoQuebravel objeto quebrável} mais próximo da posição informada.
+	 * @param posicao {@link Vector2 Posição} para procurar pelo mais próximo.
+	 * @return Objeto quebravel mais próximo.
+	 */
+	private ObjetoQuebravel GetObjetoQuebravelMaisProximo(Vector2 posicao)
+	{
+		Iterator<ObjetoQuebravel> objetos = ObjetoQuebravel.objetosquebraveis.values().iterator();
+		ObjetoQuebravel retorno = null, aux = null;
+		
+		float menorDistancia = _telaInserido.GetHipotenusaMapa() + 10;
+		while (objetos.hasNext())
+		{
+			aux = objetos.next();
+			
+			if (posicao.dst(aux.GetPosicao()) < menorDistancia)
+			{
+				retorno = aux;
+			}
+		}
+		
+		return retorno;
 	}
 
 	@Override

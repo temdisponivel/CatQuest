@@ -324,8 +324,8 @@ public abstract class Personagem extends GameObject implements Serializador
 		// enquanto n�o cheguei no meu destino
 		while (!listaAberta.isEmpty())
 		{
-			if (listaAberta.size() > 5000) //corta o A* caso fique mt pesado
-				return null;
+			//if (listaAberta.size() > 15000) //corta o A* caso fique mt pesado
+				//return null;
 			
 			atual = listaAberta.poll();
 

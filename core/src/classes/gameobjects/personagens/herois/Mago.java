@@ -2,6 +2,7 @@ package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
 import classes.gameobjects.personagens.ataque.BolaDeFogo;
+import classes.gameobjects.personagens.herois.Heroi.AnimacaoHeroi;
 import classes.uteis.controle.Controle.Direcoes;
 
 import com.badlogic.gdx.Gdx;
@@ -51,6 +52,14 @@ public class Mago extends Heroi
 			break;
 		case Direcoes.DIREITA:
 			animacao = AnimacaoHeroi.MovimentoDireita;
+			break;
+		case Direcoes.NORDESTE:
+		case Direcoes.NOROESTE:
+			animacao = AnimacaoHeroi.MovimentoCima;
+			break;
+		case Direcoes.SUDESTE:
+		case Direcoes.SUDOESTE:
+			animacao = AnimacaoHeroi.MovimentoBaixo;
 			break;
 		default:
 			break;

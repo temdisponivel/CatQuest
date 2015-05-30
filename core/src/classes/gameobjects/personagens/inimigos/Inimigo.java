@@ -44,7 +44,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	 */
 	protected enum AnimacaoInimigo
 	{
-		Parado, Movimento, Morto, Dano, Ataque,
+		Parado, MovimentoCima, MovimentoBaixo, MovimentoEsquerda, MovimentoDireita, Morto, Dano, Ativo, Passivo,
 	}
 
 	/**

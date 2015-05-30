@@ -5,7 +5,9 @@ import java.util.Iterator;
 
 import com.badlogic.gdx.math.Vector2;
 
+import catquest.CatQuest;
 import classes.gameobjects.GameObject;
+import classes.telas.FimJogo;
 
 /**
  * 
@@ -22,6 +24,7 @@ public class ObjetoQuebravel extends Personagem
 		super();
 		_quantInstancia++;
 		objetosquebraveis.put(this.GetId(), this);
+		_tipo = GameObjects.Cenario;
 	}
 	
 	@Override
@@ -37,8 +40,11 @@ public class ObjetoQuebravel extends Personagem
 		super.RecebeDano(dano);
 		_vidaTotal -= Math.abs(dano - _defesa);
 
-		if (_vidaTotal <= 0);
-			//TODO: perde o jogo;
+		if (_vidaTotal <= 0)
+		{
+			CatQuest.instancia.RetiraTela();
+			CatQuest.instancia.AdicionaTela(new FimJogo(), false, false);
+		}
 	}
 
 	@Override
@@ -53,7 +59,6 @@ public class ObjetoQuebravel extends Personagem
 	@Override
 	public void Morre()
 	{
-		
 		this.Encerra();
 	}
 	

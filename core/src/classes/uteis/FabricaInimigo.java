@@ -26,14 +26,6 @@ public class FabricaInimigo extends GameObject
 	private float _intervaloHunter = (float) Math.log(10 * (CatQuest.instancia.GetDificuldade() > 0.0f ? CatQuest.instancia.GetDificuldade() : 0.1f));
 	private float _intervaloSiege = (float) Math.log(20 * (CatQuest.instancia.GetDificuldade() > 0.0f ? CatQuest.instancia.GetDificuldade() : 0.1f));
 	private LinkedList<Vector2> _pontosLancamento = null;
-
-	/**
-	 * Cria uma nova fábrica.
-	 */
-	public FabricaInimigo()
-	{
-		super();
-	}
 	
 	@Override
 	public void Inicia()

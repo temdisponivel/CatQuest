@@ -55,6 +55,14 @@ public class Barbaro extends Heroi
 		case Direcoes.DIREITA:
 			animacao = AnimacaoHeroi.MovimentoDireita;
 			break;
+		case Direcoes.NORDESTE:
+		case Direcoes.NOROESTE:
+			animacao = AnimacaoHeroi.MovimentoCima;
+			break;
+		case Direcoes.SUDESTE:
+		case Direcoes.SUDOESTE:
+			animacao = AnimacaoHeroi.MovimentoBaixo;
+			break;
 		default:
 			break;
 		}

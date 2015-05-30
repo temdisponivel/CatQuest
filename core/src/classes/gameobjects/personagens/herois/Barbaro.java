@@ -2,12 +2,14 @@ package classes.gameobjects.personagens.herois;
 
 import catquest.CatQuest;
 import classes.gameobjects.personagens.ataque.Espadada;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+
 /**
- * Classe do herói Barbaro.
+ * Classe do herï¿½i Barbaro.
  * @author Victor
  *
  */
@@ -18,17 +20,18 @@ public class Barbaro extends Heroi
 	{
 		super();
 		
-		TextureRegion texturaAndando = CatQuest.instancia.GetTextura(Gdx.files.local("sprites/barbaro"));
-		TextureRegion[][] framesTemp = texturaAndando.split(texturaAndando.getRegionWidth()/3, texturaAndando.getRegionHeight()/1);
-		TextureRegion[] frames = new TextureRegion[3];
+		TextureRegion texturaAndando = CatQuest.instancia.GetTextura(Gdx.files.local("sprites/herois/barbaro"));
+		TextureRegion[][] framesTemp = texturaAndando.split(texturaAndando.getRegionWidth()/16, texturaAndando.getRegionHeight()/1);
+		TextureRegion[] frames = new TextureRegion[16];
 		
 		int indice = 0;
 		for (int i = 0; i < framesTemp.length; i++)
 			for (int j = 0; j < framesTemp[i].length; j++)
 				frames[indice++] = framesTemp[i][j];
 		
-		Animation andando = new Animation(0.5f, frames);
+		Animation andando = new Animation(0.3f, frames);
 		this.IncluirAnimacao(AnimacaoHeroi.Movimento, andando);
+
 	}
 
 	@Override
@@ -46,7 +49,8 @@ public class Barbaro extends Heroi
 	@Override
 	protected void AtaqueBasico()
 	{
-		this.GetTela().InserirGameObject(new Espadada(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque()));
+		
+		this.GetTela().InserirGameObject(new Espadada(this.GetPosicao(), _player.GetControle().GetDirecaoAtaque(), _sprite.getHeight(), _sprite.getWidth()));
 	}
 	
 	@Override

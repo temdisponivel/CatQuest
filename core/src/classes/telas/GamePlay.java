@@ -28,7 +28,7 @@ public class GamePlay extends Tela implements CarregarMusicaListner
 	 */
 	public GamePlay(Heroi... herois)
 	{
-		super(Gdx.files.local("arquivos//teste.tmx"));
+		super(Gdx.files.local("arquivos/map.tmx"));
 		_herois = herois;
 	}
 

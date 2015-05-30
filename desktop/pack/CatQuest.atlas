@@ -27,13 +27,13 @@ icones/32
   index: -1
 
 CatQuest2.png
-size: 8192,2048
+size: 8192,4096
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 sprites/barbaro
   rotate: false
-  xy: 4954, 1805
+  xy: 2, 2
   size: 54, 22
   orig: 54, 22
   offset: 0, 0
@@ -47,42 +47,56 @@ sprites/bloqueio
   index: -1
 sprites/boladefogo
   rotate: false
-  xy: 3032, 715
+  xy: 5126, 3277
   size: 63, 30
   orig: 63, 30
   offset: 0, 0
   index: -1
 sprites/inimigo
   rotate: false
-  xy: 2, 2
+  xy: 338, 83
   size: 16, 22
   orig: 16, 22
   offset: 0, 0
   index: -1
 sprites/intro
   rotate: false
-  xy: 3032, 747
+  xy: 3204, 2227
   size: 1920, 1080
   orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+sprites/janela
+  rotate: false
+  xy: 3204, 2082
+  size: 96, 143
+  orig: 96, 143
   offset: 0, 0
   index: -1
 sprites/mapa_fundo
   rotate: false
   xy: 2, 107
-  size: 3028, 1720
-  orig: 3028, 1720
+  size: 3200, 3200
+  orig: 3200, 3200
   offset: 0, 0
   index: -1
 
 CatQuest3.png
-size: 64,32
+size: 8192,256
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 sprites/herois/barbaro
   rotate: false
   xy: 2, 2
-  size: 54, 22
-  orig: 54, 22
+  size: 2048, 128
+  orig: 2048, 128
+  offset: 0, 0
+  index: -1
+sprites/herois/mago
+  rotate: false
+  xy: 2052, 2
+  size: 2048, 128
+  orig: 2048, 128
   offset: 0, 0
   index: -1

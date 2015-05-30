@@ -3,15 +3,10 @@ package classes.gameobjects.personagens.herois;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
-
 import com.badlogic.gdx.math.Vector2;
-
-
-
+import catquest.CatQuest;
 import classes.gameobjects.GameObject;
-import classes.gameobjects.personagens.ObjetoQuebravel;
 import classes.gameobjects.personagens.Personagem;
-import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.Player;
 import classes.uteis.Serializador;
 import classes.uteis.controle.Controle.Direcoes;
@@ -44,6 +39,8 @@ public abstract class Heroi extends Personagem implements Serializador
 
 	static public HashMap<Integer, Heroi> herois = new HashMap<Integer, Heroi>();
 	protected Player _player = null;
+	private float _tempoMorto = 0;
+	private boolean _morto = false;
 
 	/**
 	 * Cria um novo her�i.
@@ -54,13 +51,20 @@ public abstract class Heroi extends Personagem implements Serializador
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
 		_colidiveis.put(GameObjects.Inimigo, Colisoes.Passavel);
-		
+		_colidiveis.put(GameObjects.Heroi, Colisoes.Passavel);		
 	}
 
 	@Override
 	public void Atualiza(float deltaTime)
 	{
 		super.Atualiza(deltaTime);
+		
+		if (_morto && CatQuest.instancia.GetTempoJogo() - _tempoMorto > 3)
+		{
+			CatQuest.instancia.RetiraTela();
+			CatQuest.instancia.GetCamera().setToOrtho(false);
+			return;
+		}
 		
 		this.Movimenta(_player.GetControle().GetDirecao(), deltaTime, false);
 
@@ -90,7 +94,8 @@ public abstract class Heroi extends Personagem implements Serializador
 	@Override
 	public void Morre()
 	{
-		// TODO Auto-generated method stub
+		_tempoMorto = CatQuest.instancia.GetTempoJogo();
+		_morto = true;
 	}
 
 	@Override
@@ -100,7 +105,13 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 
 	@Override
-	public void AoColidir(GameObject colidiu){}
+	public void AoColidir(GameObject colidiu)
+	{
+		if (colidiu instanceof Heroi)
+		{
+			_morto = false;
+		}
+	}
 
 	/**
 	 * Fun��o chamada quando o her�i deve executar sua a��o.

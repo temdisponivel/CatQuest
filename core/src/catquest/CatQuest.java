@@ -400,7 +400,7 @@ public class CatQuest implements ApplicationListener, OnCompletionListener
 
 			_removeTela = false;
 		}
-
+		
 		if (_trocaTela)
 		{
 			if (_proximaTela != null)

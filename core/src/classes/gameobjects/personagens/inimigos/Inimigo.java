@@ -177,7 +177,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 		this.ControiBaseConhecimento();
 		
 		//esquerda = perto, centro = proximo, direita = distante
-		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-400, 400), new TrianguloFuzzy(200, 500), new TrianguloFuzzy(350, CatQuest.instancia.GetHipotenusaMundo()));
+		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-400, 400), new TrianguloFuzzy(200, 700), new TrianguloFuzzy(450, CatQuest.instancia.GetHipotenusaMundo()));
 		
 		//esquerda = baixo, centro = media, direita = alta
 		_fuzzyVidaAlvo = new Fuzzyficacao(new TrianguloFuzzy(0, 50), new TrianguloFuzzy(25, 75), new TrianguloFuzzy(50, 150));

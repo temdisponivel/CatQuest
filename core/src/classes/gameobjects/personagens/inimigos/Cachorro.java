@@ -16,7 +16,6 @@ public class Cachorro extends Inimigo
 	{
 		super();
 		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/inimigo")));
-		_fuzzyDistancia = new Fuzzyficacao(new TrianguloFuzzy(-50, 50), new TrianguloFuzzy(0, 500), new TrianguloFuzzy(250, 1000));
 	}
 
 	@Override

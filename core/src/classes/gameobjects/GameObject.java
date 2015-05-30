@@ -173,6 +173,7 @@ public abstract class GameObject
 		this.SetAtivo(true);
 		_cor = Color.WHITE;
 		_iniciado = true;
+		_colidiveis.put(GameObjects.GameObject, Colisoes.Passavel);
 	}
 
 	/**

@@ -50,8 +50,6 @@ public class BolaDeFogo extends Ataque
 	@Override
 	public void AoColidir(GameObject colidiu)
 	{
-		_colidido = true;
-
 		if (colidiu instanceof Inimigo)
 		{
 			// O que acontece quando colide com Inimigo.

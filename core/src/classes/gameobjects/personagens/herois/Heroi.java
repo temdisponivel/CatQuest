@@ -52,7 +52,6 @@ public abstract class Heroi extends Personagem implements Serializador
 		herois.put(this.GetId(), this);
 		_tipo = GameObjects.Heroi;
 		_colidiveis.put(GameObjects.Inimigo, Colisoes.Passavel);
-		_colidiveis.put(GameObjects.GameObject, Colisoes.Livre);
 	}
 
 	@Override
@@ -98,19 +97,7 @@ public abstract class Heroi extends Personagem implements Serializador
 	}
 
 	@Override
-	public void AoColidir(GameObject colidiu)
-	{
-		_colidido = true;
-
-		if (colidiu instanceof Inimigo)
-		{
-			this.InflingeDano((Inimigo) colidiu);
-		}	
-		else if (colidiu instanceof ObjetoQuebravel)
-		{
-			this.InflingeDano((ObjetoQuebravel) colidiu);
-		}
-	}
+	public void AoColidir(GameObject colidiu){}
 
 	/**
 	 * Função chamada quando o herói deve executar sua ação.

@@ -10,28 +10,33 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
-public class Espadada extends Ataque {
+public class Espadada extends Ataque
+{
 
-	public Espadada(Vector2 posicao, int direcao) {
+	public Espadada(Vector2 posicao, int direcao)
+	{
 		super(posicao, direcao);
-		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files
-				.local("sprites/boladefogo")));
+		_sprite = new Sprite(CatQuest.instancia.GetTextura(Gdx.files.local("sprites/boladefogo")));
 	}
 
 	@Override
-	protected void MovimentaAtaque(float deltaTime) {
-		//N‹o realiza movimento!
+	protected void MovimentaAtaque(float deltaTime)
+	{
+		// N‹o realiza movimento!
 
 	}
 
 	@Override
-	public void AoColidir(GameObject colidiu) {
-		_colidido = true;
+	public void AoColidir(GameObject colidiu)
+	{
 
-		if (colidiu instanceof Inimigo) {
+		if (colidiu instanceof Inimigo)
+		{
 			// O que acontece quando colide com Inimigo.
 
-		} else if (colidiu instanceof Heroi) {
+		}
+		else if (colidiu instanceof Heroi)
+		{
 			// O que acontece quando colide com Heroi.
 
 		}
@@ -39,7 +44,8 @@ public class Espadada extends Ataque {
 	}
 
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return "Espadada";
 	}
 }

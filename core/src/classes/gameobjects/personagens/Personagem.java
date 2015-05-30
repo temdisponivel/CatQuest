@@ -118,7 +118,6 @@ public abstract class Personagem extends GameObject implements Serializador
 	protected float _chanceCritico = 0;
 	protected float _coeficienteCritico = 0;
 	protected Estado _estado = Estado.Parado;
-	protected boolean _colidido = false;
 	protected FileHandle _arquivo = Gdx.files.local("arquivos/personagens/" + this.toString());
 	protected LinkedList<Vector2> _caminho = null;
 	protected Vector2 _destino = null;

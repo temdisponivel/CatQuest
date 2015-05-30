@@ -193,7 +193,7 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	public void Inicia()
 	{
 		super.Inicia();
-		_colidiveis.put(GameObjects.Heroi, Colisoes.Passavel);
+		_colidiveis.put(GameObjects.Heroi, Colisoes.Livre);
 		this.TrocaDirecaoPerambula();
 	}
 
@@ -256,6 +256,11 @@ public abstract class Inimigo extends Personagem implements Reciclavel
 	@Override
 	public void AoColidir(GameObject colidiu)
 	{
+		if (colidiu instanceof Heroi)
+		{
+			this.InflingeDano((Personagem) colidiu);
+		}
+		
 		if (_colidiveis.get(colidiu.GetTipo()) == Colisoes.NaoPassavel)
 		{
 			this.TrocaDirecaoPerambula();

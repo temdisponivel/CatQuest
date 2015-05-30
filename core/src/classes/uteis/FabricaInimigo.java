@@ -11,8 +11,9 @@ import classes.gameobjects.personagens.inimigos.Inimigo;
 import classes.uteis.reciclador.Reciclador;
 
 /**
+<<<<<<< Updated upstream
  * Classe que gerencia a criação e reciclagem de inimigos.
- * 
+ *
  * @author matheus
  *
  */
@@ -27,8 +28,15 @@ public class FabricaInimigo extends GameObject
 	private float _intervaloSiege = (float) Math.log(20 * (CatQuest.instancia.GetDificuldade() > 0.0f ? CatQuest.instancia.GetDificuldade() : 0.1f));
 	private LinkedList<Vector2> _pontosLancamento = null;
 	
+<<<<<<< Updated upstream
 	@Override
 	public void Inicia()
+=======
+	/**
+	 * Cria uma nova fï¿½brica.
+	 */
+	public FabricaInimigo()
+>>>>>>> Stashed changes
 	{
 		super.Inicia();
 		_reciclador = new Reciclador<Inimigo>();

@@ -1,0 +1,46 @@
+
+Data: Sat May 30 04:34:47 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.utils.XmlReader.parse(XmlReader.java:83)
+com.badlogic.gdx.maps.tiled.TmxMapLoader.load(TmxMapLoader.java:92)
+com.badlogic.gdx.maps.tiled.TmxMapLoader.load(TmxMapLoader.java:80)
+classes.telas.Tela.CarregaMapa(Tela.java:485)
+classes.telas.Tela.Iniciar(Tela.java:98)
+classes.telas.GamePlay.Iniciar(GamePlay.java:34)
+catquest.CatQuest.AdicionaTela(CatQuest.java:371)
+classes.telas.Titulo.Click(Titulo.java:55)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:121)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Error parsing file: arquivos/teste.tmx
+
+Data: Sat May 30 04:36:26 BRT 2015 | Mensagem: Erro no loop principal
+StackTrace: 
+com.badlogic.gdx.graphics.Pixmap.<init>(Pixmap.java:140)
+com.badlogic.gdx.graphics.TextureData$Factory.loadFromFile(TextureData.java:98)
+com.badlogic.gdx.graphics.GLTexture.createTextureData(GLTexture.java:185)
+com.badlogic.gdx.graphics.Texture.<init>(Texture.java:103)
+com.badlogic.gdx.graphics.Texture.<init>(Texture.java:99)
+com.badlogic.gdx.maps.tiled.TmxMapLoader.load(TmxMapLoader.java:95)
+com.badlogic.gdx.maps.tiled.TmxMapLoader.load(TmxMapLoader.java:80)
+classes.telas.Tela.CarregaMapa(Tela.java:485)
+classes.telas.Tela.Iniciar(Tela.java:98)
+classes.telas.GamePlay.Iniciar(GamePlay.java:34)
+catquest.CatQuest.AdicionaTela(CatQuest.java:371)
+classes.telas.Titulo.Click(Titulo.java:55)
+classes.uteis.UI.Botao.Atualiza(Botao.java:140)
+classes.uteis.UI.BotaoTexto.Atualiza(BotaoTexto.java:50)
+classes.gameobjects.GameObject.Atualiza(GameObject.java:126)
+classes.uteis.UI.Menu.Atualiza(Menu.java:49)
+classes.telas.Tela.Atualiza(Tela.java:121)
+catquest.CatQuest.Atualiza(CatQuest.java:132)
+catquest.CatQuest.render(CatQuest.java:110)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:208)
+com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:114)
+O JOGO FOI ENCERRADO POR CAUSA DE: Couldn't load file: mapa_fundo.png
